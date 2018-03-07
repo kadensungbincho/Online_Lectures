@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Tacos</h2>
+    {% if tacos %}
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>Protein</th>
+              <th>Shell</th>
+              <th>Cheese?</th>
+              <th>Extras</th>
+              <th>When it's made?</th>
+            </tr>
+          </thead>
+          <tbody>
+         {% for taco in tacos %}
+              <tr>
+                <!-- taco attributes here -->
+                 <th> {{ taco.protein }} </th>
+                 <th> {{ taco.shell }} </th>
+                 <th> {{ taco.cheese }} </th>
+                 <th> {{ taco.extras }} </th>
+                 <th> {{ taco.timestamp }} </th>
+              </tr>
+          {% endfor %}
+
+
+          </tbody>
+        </table>
+    {% else %}
+        <!-- message for missing tacos -->
+        <th> You don't have any taco!! </th>
+    {% endif %}
+{% endblock %}

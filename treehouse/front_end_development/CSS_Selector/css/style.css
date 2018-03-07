@@ -1,0 +1,50 @@
+/* Pseudo-elements -------------------------------- */
+
+.intro::first-line {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.intro::first-letter {
+  float: left;
+  font-size: 80px;
+  color: white;
+  padding: 5px 10px;
+  background: #384047;
+  margin: 10px 10px 0 0;
+  border-radius: 5px;
+  line-height: 1;
+}
+
+.jpg::after {
+  content: url(../img/icn-picture.svg);
+  margin-right: 8px;
+}
+
+.zip::after {
+  content: url(../img/icn-zip.svg);
+  margin-right: 8px;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: coral;
+  margin: 0 10px;
+} 
+
+.d-loads a::after {
+  content: attr(href);
+  display: inline-block;
+  color: initial;
+  font-size: .65em;
+  margin-left: 5px;
+}
+
+.d-loads a {
+  border: solid 1px;
+}

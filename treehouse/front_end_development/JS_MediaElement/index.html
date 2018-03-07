@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Video and Audio</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <script src="js/jquery.js"></script>
+    <script src="js/mediaelement-and-player.min.js"></script>
+    <link href="css/mediaelementplayer.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <h1>HTML Video and Audio</h1>
+    
+    <div class="wrapper">
+      
+      <h2>Video Example</h2>
+      <div class="videoWrapper">
+          <video width="852" height="480">
+            <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4">
+            <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.ogg" type="video/ogg">
+            <track label="English" kind="subtitles" srclang="en" src="bridge-captions.vtt" default>
+          </video>
+      </div>
+      <div class="audioWrapper">
+          <h2>Audio Example</h2>
+
+          <audio>
+            <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge-audio.mp3" type="audio/mp3">
+          </audio>
+      </div>
+    </div>
+    <script>
+      $('video, audio').mediaelementplayer({
+        features: ['playpause', 'tracks', 'progress'],
+        startlanguage: 'en'
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
+

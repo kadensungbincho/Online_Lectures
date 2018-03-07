@@ -1,0 +1,179 @@
+/*************************
+Base Styles
+*************************/
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Helvetica, Helvetica Neue, Arial;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header-container {
+    border-bottom: 20px solid #599a68;
+}
+
+.footer-container,
+.main aside {
+    border-top: 20px solid #599a68;
+}
+
+.header-container,
+.footer-container,
+.main aside {
+    background: #6ab47b;
+}
+
+.title {
+    color: white;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav a {
+  display: block;
+  margin-bottom: 10px;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background: #599a68;
+}
+
+nav a:hover,
+nav a:visited {
+  color: white;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.main {
+  padding: 30px 0;
+}
+
+.main article h1 {
+  font-size: 2em;
+}
+
+.main aside {
+  color: white;
+  padding: 0px 5% 10px;
+}
+
+.footer-container footer {
+  color: white;
+  padding: 20px 0;
+}
+
+
+/*************************
+Media Queries
+*************************/
+
+@media only screen and (min-width: 480px) {
+
+  nav a {
+    float: left;
+    width: 30%;
+    margin: 0 0 0 5%;
+    padding: 25px 1%;
+    margin-bottom: 0;
+  }
+
+  nav li:first-child a {
+    margin-left: 0;
+  }
+
+  nav li:last-child a {
+    margin-right: 0;
+  }
+
+}
+
+@media only screen and (min-width: 768px),
+       only screen and (min-width: 700px) and (orientation: landscape) {
+
+  .title {
+    float: left;
+    font-size: 1.4em;
+  }
+
+  nav {
+    float: right;
+    width: 60%;
+  }
+
+  nav a {
+    padding: 15px 1%;
+  }
+
+  .main article {
+    float: left;
+    width: 57%;
+  }
+
+  .main aside {
+    float: right;
+    width: 38%;
+  }
+  
+}
+
+@media only screen and (min-width: 1140px) {
+
+  .wrapper {
+    width: 1026px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 2em;
+  }
+
+  nav a {
+    padding: 25px 1%;
+  }
+  
+}
+
+
+/*************************
+Clearfix
+*************************/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+

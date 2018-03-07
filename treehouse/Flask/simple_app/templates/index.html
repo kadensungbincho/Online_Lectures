@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %} Howdy! | {{ super() }}{% endblock %}
+
+{% block content %} 
+<h1> Hello from {{ name }}! </h1> 
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/scripts.js"></script>
+{% endblock %}

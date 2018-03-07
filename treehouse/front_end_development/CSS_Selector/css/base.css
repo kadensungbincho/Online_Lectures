@@ -1,0 +1,39 @@
+/* Base Styles -------------------------------- */
+
+body {
+	font-family: 'Nunito', sans-serif;
+	font-size: 1.1em;
+	line-height: 1.5;
+	color: #384047;
+	padding: 10px 0 80px;
+}
+div {
+	width: 52%;
+	margin: auto;
+}
+h1 {
+	margin-bottom: 36px;
+}
+p {
+	margin-bottom: 24px;
+  font-weight: 200;
+}
+ul {
+	font-size: 1.25rem;
+	list-style: none;
+	margin-top: 36px;
+	padding: 0;
+}
+li {
+	margin-bottom: 16px;
+}
+a {
+	color: #4183c4;
+}
+
+/* Substring Matching Attribute Selectors ---- */
+
+a[href^="http:"] {
+  color: #52bab3;
+  text-decoration: none;
+}

@@ -1,0 +1,74 @@
+/* Base Styles -------------------------------- */
+
+body {
+	font-family: 'Nunito', sans-serif;
+	line-height: 1.5;
+	color: #384047;
+	padding: 10px 0 80px;
+}
+div {
+	max-width: 610px;
+	margin: auto;
+}
+ul {
+	list-style: none;
+	padding: 0;
+}
+li {
+	margin-bottom: 14px;
+}
+a {
+	color: #4183c4;
+}
+
+/* Substring Matching Attribute Selectors ---- */
+
+a[href^="http://"] {
+  color: #52bab3;
+  text-decoration: none;
+}
+
+a[href$=".pdf"] {
+  background-image: url('../img/icn-pdf.svg');
+}
+
+a[href$=".jpg"] {
+  background-image: url('../img/icn-picture.svg');
+}
+
+a[href$=".zip"] {
+  background-image: url('../img/icn-zip.svg');
+}
+
+a[href*="downloads"] {
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  padding-left: 25px;
+ 
+}
+
+img[src*="thumb"] {
+  margin: 4px;
+  border: solid 2px;
+  width: 180px;
+  height: 140px;
+}
+
+img[src*="lake"] {
+  border-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
