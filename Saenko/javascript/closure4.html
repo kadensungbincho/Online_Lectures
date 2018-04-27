@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+                function factory_movie(title){
+                    return {
+                        get_title : function(){
+                            return title;
+                        },
+                        set_title : function(_title){
+                            title = _title
+                        }
+                    }
+                }
+                ghost = factory_movie('Ghost in the shell');
+                matrix = factory_movie('Matrix');
+                alert(ghost.get_title());
+                alert(matrix.get_title());
+                ghost.set_title('kadencho');
+
+                alert(ghost.get_title());
+                alert(matrix.get_title());
+        </script>
+    </body>
+</html>

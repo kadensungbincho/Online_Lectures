@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            var arr = [];
+            for (var i = 0; i < 5; i++){
+                arr[i] = function(id){
+                    return function(){
+                        return id;
+                    }
+                }(i);
+            }
+            for (var index in arr){
+                console.log(arr[index]());
+            }    
+        </script>
+    </body>
+</html>
