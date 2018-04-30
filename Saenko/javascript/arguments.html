@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            function sum(){
+                var _sum = 0;
+                for(var i = 0; i < arguments.legnth; i++){
+                    document.wrtie(i + ' : ' + arguments[i] + '<br />');
+                    _sum += arguments[i];
+                }
+                return _sum;
+            }    
+            document.wrtie('result : ' + sum(1, 2, 3, 4));
+        </script>
+    </body>
+</html>
