@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var bkfd2Password = require('pbkdf2-password');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var hasher = bkdf2Password();
+var hasher = bkfd2Password();
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -45,6 +45,26 @@ app.get('/welcome', function(req, res){
         `)
     }
 });
+passport.serializeUser(function(user, done) {
+    console.log('serialrizeUser', user);
+    done(null, user.username);
+});
+passport.deserializeUser(function(id, done) {
+    console.log('deserializeUser', id);
+    for(var i=0; i<users.length; i++) {
+        var user = users[i];
+        if(user.username === id){
+            done(null, user);
+        }
+    }
+});
+var users = [
+    {
+        username:'kadencho',
+        password:'111',
+        displayName:'kadensungbincho'
+    }
+];
 passport.use(new LocalStrategy(
     function(username, password, done){
         var uname = username;
@@ -55,6 +75,7 @@ passport.use(new LocalStrategy(
                 return hasher({password:pwd, salt:user.salt}, function(err, 
                 pass, salt, hash){
                     if(hash === user.password){
+                        console.log('LocalStrategy', user);
                         done(null, user);
                     } else {
                         done(null, false);
@@ -69,9 +90,12 @@ app.post('/auth/login',
     passport.authenticate(
         'local', 
         { 
-            successRedirect: '/',
+            successRedirect: '/welcome',
             failureRedirect: '/auth/login',
             failureFlash: false 
         }
     )
 );
+app.listen(3003, function(){
+    console.log('Connected 3003 port!!!');
+});
