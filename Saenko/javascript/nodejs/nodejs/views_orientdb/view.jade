@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+  body
+    h1 
+      a(href='/topic') server Side JavaScript
+    ul 
+      each topic in topics
+        li 
+          - rid = encodeURIComponent(topic['@rid'])
+          a(href='/topic/'+rid)= topic.title
+    aricle  
+      if topic
+        h2= topic.title
+        p= topic.description
+        div= 'by '+topic.author
+      else
+        h2 Welcome
+        | This is server side javascript tutorial.
+    div
+      a(href='/topic/add') add
