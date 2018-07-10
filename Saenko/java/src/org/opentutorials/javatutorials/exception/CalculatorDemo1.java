@@ -1,24 +1,35 @@
 package org.opentutorials.javatutorials.exception;
+class DivideException extends Exception{
+	public int left;
+	public int right;
+	DivideException(){
+		super();
+	}
+	DivideException(String message){
+		super(message);
+	}
+	DivideException(String message, int left, int right){
+		super(message);
+		this.left = left;
+		this.right = right;
+	}
+}
 class Calculator1{
 	int left, right;
 	public void setOprands(int left, int right) {
-		if(right == 0) {
-			throw new IllegalArgumentException("두번쨰 인자는 0을 허용하지 않습니다.");
-		}
 		this.left = left;
 		this.right = right;
 	}
 	public void divide() {
-		try {
-			System.out.println("계산결과");
-			System.out.println(this.left/this.right);
-			System.out.println(" 입니다.");
-		} catch(Exception e) {
-			System.out.println("\n\ne.getMessage()\n"+e.getMessage());
-			System.out.println("\n\ne.toString()\n"+e.toString());
-			System.out.println("\n\ne.printStackTrace()");
-			e.printStackTrace();
+		if(right == 0) {
+			try {
+				throw new DivideException("Can't divide with 0", this.left, this.right);
+			} catch (DivideException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
+		System.out.println(this.left/this.right);
 	}
 }
 public class CalculatorDemo1 {
