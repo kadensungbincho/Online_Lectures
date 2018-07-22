@@ -23,6 +23,9 @@ public class week3 {
 		for (int k = 0; k < goods.length; k++) {
 			System.out.println(goods[k]);
 		}
+		for (String e: goods) {
+			System.out.println(e);
+		}
 	}
 
 }
