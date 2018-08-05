@@ -22,10 +22,10 @@ public class week6 {
 
 	public static void main(String[] args) {
 		A a = new A();
-		// System.out.println(a.y()); (1)
-		// System.out.println(a.x()); (2)
-		// System.out.println(a.z()); (3)
-		// System.out.println(a.a()); (4)
+		System.out.println(a.y()); // (1)
+		// System.out.println(a.x()); // (2)
+		System.out.println(a.z()); // (3)
+		System.out.println(a.a()); // (4)
 
 	}
 
