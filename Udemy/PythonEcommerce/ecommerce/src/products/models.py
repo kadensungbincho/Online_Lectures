@@ -61,7 +61,6 @@ class ProductManager(models.Manager):
         return self.get_queryset().active().search(query)
         
 
-
 class Product(models.Model):
     title       = models.CharField(max_length=120)
     slug        = models.SlugField(blank=True, unique=True)
@@ -82,6 +81,10 @@ class Product(models.Model):
         return self.title
 
     def __unicode__(self):
+        return self.title
+
+    @property
+    def name(self):
         return self.title
 
 
