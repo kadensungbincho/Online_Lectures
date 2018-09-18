@@ -5,7 +5,7 @@ from django.db.models.signals import pre_save, post_save
 from django.urls import reverse
 from django.db.models import Q
 
-from .utils import unique_slug_generator
+from ecommerce.utils import unique_slug_generator
 
 
 def get_filename_ext(filepath):
