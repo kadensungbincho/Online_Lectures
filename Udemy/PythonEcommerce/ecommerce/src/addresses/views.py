@@ -21,7 +21,7 @@ def checkout_address_create_view(request):
         if billing_profile is not None:
             address_type = request.POST.get('address_type', 'shipping')
             instance.billing_proflile = billing_profile
-            instance.address_type = request.POST.get('address_type', 'shipping')
+            instance.address_type = address_type
             instance.save()
 
             request.session[address_type + "_address_id"] = instance.id

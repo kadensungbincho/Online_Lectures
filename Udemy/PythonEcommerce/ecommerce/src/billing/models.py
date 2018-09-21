@@ -9,7 +9,7 @@ User = settings.AUTH_USER_MODEL
 class BillingProfileManager(models.Manager):
     def new_or_get(self, request):
         user = request.user
-        guest_email_id = request.session.get('guest_email_id')
+        guest_email_id = request.session.get('guest_email_id', None)
         created = False
         obj = None
         if user.is_authenticated():
