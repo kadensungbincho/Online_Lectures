@@ -10,6 +10,7 @@ class BillingProfileManager(models.Manager):
     def new_or_get(self, request):
         user = request.user
         guest_email_id = request.session.get('guest_email_id', None)
+        print("we got guest email id", guest_email_id)
         created = False
         obj = None
         if user.is_authenticated():
@@ -26,7 +27,7 @@ class BillingProfileManager(models.Manager):
 
 class BillingProfile(models.Model):
     user        = models.OneToOneField(User, null=True, blank=True)
-    email       = models.EmailField()
+    email       = models.EmailField(unique=True)
     active      = models.BooleanField(default=True)
     update      = models.DateTimeField(auto_now=True)
     timestamp   = models.DateTimeField(auto_now_add=True)
