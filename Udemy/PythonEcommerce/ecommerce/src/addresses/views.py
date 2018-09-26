@@ -43,7 +43,7 @@ def checkout_address_reuse_view(request):
         next_ = request.GET.get('next')
         next_post = request.POST.get('next')
         redirect_path = next_ or next_post or None
-        if request.mothod == "POST":
+        if request.method == "POST":
             print(request.POST)
             shipping_address = request.POST.get('shipping_address', None)
             address_type = request.POST.get('address_type', 'shipping')

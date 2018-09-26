@@ -1,6 +1,6 @@
 {% if address_qs.exists %}
     
-        <form mothod='POST' action='{{ action_url }}'> {% csrf_token %}
+        <form method='POST' action='{{ action_url }}'> {% csrf_token %}
             {% if next_url %}
             <input type='hidden' name='next' value='{{ next_url }}' />
             {% endif %}
