@@ -9,6 +9,19 @@
 - datastorage 
   - mongodb : default database used by meteor, bundled inside meteor 
 
+- Structure
+  - Server 
+    - Node.js, mongodb(CRUD)
+  - Web Sockets between server and client(real-time)
+  - Client 
+    - Client-side JavaScript
+  - React : rendering, created by facebook, user interaction
+
+- Editors
+  - Atom
+  - VSCode
+  - Webstorm for premium
+
 - glue that takes all of these tools and makes them work seemlessly together so you can build your apps
 
 
