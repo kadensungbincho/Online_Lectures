@@ -12,18 +12,18 @@ export default class AddPlayer extends React.Component {
     if (playerName) {
         e.target.playerName.value = '';
         Players.insert({
-        name: playerName,
-        score: 0
-        })
+          name: playerName,
+          score: 0
+        });
     }
   }
 
   render() {
       return (
-        <div>
+        <div className="item">
             <form onSubmit={this.handleSubmit.bind(this)}>
             <input type="text" name="playerName" placeholder="Player name"/>
-            <button>Add player</button>
+            <button className="button">Add player</button>
             </form>
         </div>
       );
