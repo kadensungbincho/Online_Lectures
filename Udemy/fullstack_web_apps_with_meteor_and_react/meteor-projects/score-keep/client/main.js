@@ -5,7 +5,6 @@ import {Tracker} from 'meteor/tracker';
 
 import {Players} from './../imports/api/players';
 
-
 const renderPlayers = (players) => {
   return players.map((player) => (
     <p key={player._id}>
@@ -42,6 +41,7 @@ Meteor.startup(() => {
         <p>Hello {name}!</p>
         <p>This is my second p.</p>
         {renderPlayers(players)}
+        <AddPlayer/>
         <form onSubmit={handleSubmit}>
           <input type="text" name="playerName" placeholder="Player name"/>
           <button>Add player</button>
