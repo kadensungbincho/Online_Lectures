@@ -7,7 +7,7 @@ import Link from '../ui/Link';
 import Login from '../ui/Login';
 import Signup from '../ui/Signup';
 
-const history = createHistory();
+export const history = createHistory();
 
 export const routes = () => (
   <Router history={history}>
