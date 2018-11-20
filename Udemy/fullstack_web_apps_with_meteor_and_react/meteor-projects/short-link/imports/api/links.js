@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
+import SimpleSchema from 'simpl-schema';
 
 export const Links = new Mongo.Collection('links');
 
@@ -10,18 +11,22 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  greetUser(name) {
-    console.log('greetUser is running');
+  'links.insert'(url) {
+    if (!this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
 
-    if (!name) {
-      throw new Meteor.Error('invalid-arguments', 'Name is required');
-    }
-    return `Hello ${name}!`;
-  },
-  addNumbers(a, b) {
-    if (typeof(a) !== 'number' || typeof(b) !== 'number') {
-      throw new Meteor.Error('invalid-arguments', 'Should be number');
-    }
-    return a + b;
+    
+    new SimpleSchema({
+      url: {
+        type: String,
+        regEx: SimpleSchema.RegEx.Url
+      }
+    }).validate({ url });
+
+    Links.insert({
+      url,
+      userId: this.userId
+    });
   }
 });
