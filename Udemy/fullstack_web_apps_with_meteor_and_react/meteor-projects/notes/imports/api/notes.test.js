@@ -61,7 +61,7 @@ if (Meteor.isServer) {
       const note = Notes.findOne(noteOne._id);
       
       expect(note.updatedAt).toBeGreaterThan(0);
-      expect(note).toMatchObject({
+      expect(note).toInclude({
         title,
         body: noteOne.body
       });
@@ -90,7 +90,7 @@ if (Meteor.isServer) {
 
       const note = Notes.findOne(noteOne._id);
     
-      expect(note).toMatchObject(noteOne);
+      expect(note).toInclude(noteOne);
     });
 
     it('should not update note if unauthenticated', function () {
@@ -110,7 +110,7 @@ if (Meteor.isServer) {
       const notes = res.fetch();
 
       expect(notes.length).toBe(1);
-      expect(notes[0]).toEqual(noteOne);
+      expect(notes[0]).toInclude(noteOne);
     });
 
     it('should return zero notes for user that has none', function () {
