@@ -31,7 +31,8 @@ export const routes = () => (
     <Switch>
       <PublicRoute exact={true} path="/" component={Login} /> 
       <PublicRoute exact={true} path="/signup" component={Signup} /> 
-      <PrivateRoute path="/dashboard" component={Dashboard} /> 
+      <PrivateRoute path="/dashboard" component={Dashboard} />
+      <PrivateRoute path="/dashboard/:id" component={Dashboard} /> 
       <Route path="*" component={NotFound} /> 
     </Switch>
   </Router>

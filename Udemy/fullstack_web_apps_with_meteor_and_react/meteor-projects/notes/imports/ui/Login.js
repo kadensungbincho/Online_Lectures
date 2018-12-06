@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 
@@ -17,7 +17,7 @@ export class Login extends React.Component {
     let email = this.refs.email.value.trim();
     let password = this.refs.password.value.trim();
 
-  this.props.loginWithPassword({email}, {password}, (err) => {
+  this.props.loginWithPassword(email, password, (err) => {
     if (err) {
       this.setState({error: 'Unable to login. Check eamil and password.'});
     } else {

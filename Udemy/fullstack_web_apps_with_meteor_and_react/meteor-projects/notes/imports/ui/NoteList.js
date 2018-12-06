@@ -12,6 +12,7 @@ export const NoteList = (props) => {
   return (
     <div>
       <NoteListHeader/>
+      { props.notes.length === 0 ? <NoteListEmptyItem/> : undefined }
       {props.notes.map((note) => <NoteListItem key={note._id} note={note}/>)}
       NoteList { props.notes.length }
     </div>

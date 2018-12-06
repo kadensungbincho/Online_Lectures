@@ -36,8 +36,8 @@ if (Meteor.isClient) {
       wrapper.ref('password').value = password;
       wrapper.find('form').simulate('submit');
 
-      expect(spy.calls[0].arguments[0]).toEqual({ email });
-      expect(spy.calls[0].arguments[1]).toEqual({ password });  
+      expect(spy.calls[0].arguments[0]).toEqual( email );
+      expect(spy.calls[0].arguments[1]).toEqual( password );  
     });
 
     it('should set loginWithPassword callback errors', function () {
