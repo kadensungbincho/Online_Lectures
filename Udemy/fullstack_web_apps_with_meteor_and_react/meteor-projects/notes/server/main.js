@@ -6,5 +6,5 @@ import '../imports/api/notes';
 import '../imports/startup/simple-schema-configuration.js';
 
 Meteor.startup(() => {
-
+  
 });

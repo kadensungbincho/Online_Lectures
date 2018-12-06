@@ -4,26 +4,22 @@ import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 
 // NoteListHeader
-export class NoteListHeader extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  onClick(e) {
-    e.preventDefault();
-
-    this.props.meteorCall
-  };
-  render() {
-    return (
-      <div>
-        <button onClick={this.onClick.bind(this)}>Create Note</button>
-      </div>
-      )
-  }
+export const NoteListHeader = (props) => {
+  return (
+    <div>
+      <button onClick={() => {
+        props.meteorCall('notes.insert');
+      }}>Create Note</button>
+    </div>
+    );
 };
+
+NoteListHeader.propTypes = {
+  meteorCall: PropTypes.func.isRequired
+}
 
 export default createContainer (() => {
   return {
-    meteorCall: Meteor.Call
+    meteorCall: Meteor.call
   };
 }, NoteListHeader);
