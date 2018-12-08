@@ -3,11 +3,12 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "test": "meteor test --driver-package cultofcoders:mocha"
+    "test": "NODE_ENV=test meteor test --driver-package cultofcoders:mocha"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
     "history": "^4.7.2",
+    "jsdom": "^13.0.0",
     "meteor-node-stubs": "^0.4.1",
     "moment": "^2.22.2",
     "react": "^16.6.3",
