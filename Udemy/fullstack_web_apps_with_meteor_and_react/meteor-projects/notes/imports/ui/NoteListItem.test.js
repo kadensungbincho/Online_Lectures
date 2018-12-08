@@ -28,5 +28,13 @@ if (Meteor.isClient) {
 
       expect(wrapper.find('h5').text()).toBe('Untitled note');
     });
+
+    it('should call set on click', function () {
+      const wrapper = mount( <NoteListItem note={notes[0]} Session={Session} />);
+
+      wrapper.find('div').simulate('click');
+      
+      expect(Session.set).toHaveBeenCalledWith('selectedNoteId', notes[0]._id);
+    });
   });
 }

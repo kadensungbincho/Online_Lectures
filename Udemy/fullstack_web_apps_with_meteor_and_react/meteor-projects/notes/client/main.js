@@ -5,15 +5,10 @@ import { Session } from 'meteor/session';
 import { Router, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 
-import { routes, onAuthChange } from '../imports/routes/AppRouter';
+import { routes } from '../imports/routes/AppRouter';
 import '../imports/startup/simple-schema-configuration.js';
 
 export const history = createHistory();
-
-Tracker.autorun(() => {
-  const isAuthenticated = !!Meteor.userId();
-  onAuthChange(isAuthenticated);
-});
 
 Tracker.autorun(() => {
   const selectedNoteId = Session.get('selectedNoteId');
