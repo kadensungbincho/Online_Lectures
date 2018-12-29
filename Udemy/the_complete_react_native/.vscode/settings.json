@@ -1,0 +1,4 @@
+{
+  "flow.pathToFlow": "\"${workspaceRoot}/node_modules/react-native/flow\"",
+  "flow.runOnAllFiles": true
+}
