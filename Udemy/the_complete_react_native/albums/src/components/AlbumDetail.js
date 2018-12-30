@@ -1,13 +1,14 @@
 /* eslint camelcase: 0 */
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, Text, View, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
 
 const AlbumDetail = ({ album }) => {
   const {
-    artist, image, thumbnail_image, title,
+    artist, image, thumbnail_image, title, url,
   } = album;
   const {
     thumbnailStyle,
@@ -35,6 +36,11 @@ const AlbumDetail = ({ album }) => {
           style={imageStyle}
           source={{ uri: image }}
         />
+      </CardSection>
+      <CardSection>
+        <Button onPress={() => Linking.openURL(url)}>
+          Buy Now
+        </Button>
       </CardSection>
     </Card>
   );
@@ -72,6 +78,7 @@ AlbumDetail.propTypes = {
     artist: PropTypes.string,
     image: PropTypes.string,
     thumbnail_image: PropTypes.string,
+    url: PropTypes.string,
   }),
 };
 
