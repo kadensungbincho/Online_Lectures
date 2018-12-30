@@ -23,7 +23,7 @@ const instructions = Platform.select({
 });
 
 const App = () => (
-  <View>
+  <View style={{ flex: 1 }}>
     <Header headerText="Kaden's Albums" />
     <Text>{instructions}</Text>
     <AlbumList />
