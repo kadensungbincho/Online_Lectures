@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Image, View } from 'react-native';
 
-const CardSection = ({ children }) => (
-  <View style={styles.containerStyle}>
+const CardSection = ({ children, style }) => (
+  <View style={[styles.containerStyle, style]}>
     { children }
   </View>
 );
