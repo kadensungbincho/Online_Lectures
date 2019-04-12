@@ -23,5 +23,7 @@ class AppTest(TestCase):
             app.print_blogs()
             mocked_print.assert_called_with('- Test by Test Author (0 post)')
 
+    def test_ask_create_blog(self):
+
 
 
