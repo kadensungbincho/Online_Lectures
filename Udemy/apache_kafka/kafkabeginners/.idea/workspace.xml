@@ -2,23 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="515d1b91-5f01-4bd2-82d2-420b585e0a2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../190515.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../190515.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.ipynb_checkpoints/190515-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../.ipynb_checkpoints/190515-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-consumer-elasticsearch/kafka-consumer-elasticsearch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-consumer-elasticsearch/kafka-consumer-elasticsearch.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-consumer-elasticsearch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-consumer-elasticsearch/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-consumer-elasticsearch/src/main/java/com.udemy.apachekafka/tutorial3/ElasticSearchConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-consumer-elasticsearch/src/main/java/com.udemy.apachekafka/tutorial3/ElasticSearchConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ConsumerDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ConsumerDemoAssignSeek.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ConsumerDemoGroups.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ConsumerDemoWithThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ProducerDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ProducerDemoKeys.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ProducerDemoWithCallback.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/kafka-basics/target/" />
     <ignored path="$PROJECT_DIR$/kafka-producer-twitter/target/" />
     <ignored path="$PROJECT_DIR$/kafka-consumer-elasticsearch/target/" />
+    <ignored path="$PROJECT_DIR$/kafka-streams-filter-tweets/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,63 +29,55 @@
     <session id="-1920694342">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="17" />
-          <entry key="xml" value="7" />
+          <entry key="java" value="24" />
+          <entry key="xml" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="17" />
-          <entry key="XML" value="7" />
+          <entry key="JAVA" value="24" />
+          <entry key="XML" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="7643" />
-          <entry key="xml" value="30" />
+          <entry key="java" value="10068" />
+          <entry key="xml" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7643" />
-          <entry key="XML" value="30" />
+          <entry key="JAVA" value="10068" />
+          <entry key="XML" value="44" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/kafka-streams-filter-tweets/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+            <state relative-caret-position="585">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kafka-consumer-elasticsearch/src/main/java/com.udemy.apachekafka/tutorial3/ElasticSearchConsumer.java">
+        <entry file="file://$PROJECT_DIR$/kafka-streams-filter-tweets/src/main/java/com/kafkacourse/tutorial4/StreamsFilterTweets.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="22" column="57" lean-forward="true" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kafka-consumer-elasticsearch/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+            <state relative-caret-position="227">
+              <caret line="33" column="10" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -108,6 +97,8 @@
       <find>twitter_tweets</find>
       <find>createTwitterClient</find>
       <find>hose</find>
+      <find>indexRep</find>
+      <find>indexResponse</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -134,6 +125,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-consumer-elasticsearch/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-consumer-elasticsearch/src/main/java/com.udemy.apachekafka/tutorial3/ElasticSearchConsumer.java" />
+        <option value="$PROJECT_DIR$/kafka-streams-filter-tweets/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka-streams-filter-tweets/src/main/java/com/kafkacourse/tutorial4/StreamsFilterTweets.java" />
       </list>
     </option>
   </component>
@@ -142,6 +135,13 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -168,8 +168,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,20 +183,25 @@
             <path>
               <item name="kafkabeginners" type="b2602c69:ProjectViewProjectNode" />
               <item name="kafkabeginners" type="462c0819:PsiDirectoryNode" />
-              <item name="kafka-consumer-elasticsearch" type="462c0819:PsiDirectoryNode" />
+              <item name="kafka-streams-filter-tweets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kafkabeginners" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kafkabeginners" type="462c0819:PsiDirectoryNode" />
+              <item name="kafka-streams-filter-tweets" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kafkabeginners" type="b2602c69:ProjectViewProjectNode" />
               <item name="kafkabeginners" type="462c0819:PsiDirectoryNode" />
-              <item name="kafka-consumer-elasticsearch" type="462c0819:PsiDirectoryNode" />
+              <item name="kafka-streams-filter-tweets" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kafkabeginners" type="b2602c69:ProjectViewProjectNode" />
               <item name="kafkabeginners" type="462c0819:PsiDirectoryNode" />
-              <item name="kafka-consumer-elasticsearch" type="462c0819:PsiDirectoryNode" />
+              <item name="kafka-streams-filter-tweets" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -207,12 +210,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558179323873" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558881739993" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -242,7 +247,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TwitterProducerHighThoughput">
+  <component name="RunManager" selected="Application.ElasticSearchConsumer">
     <configuration name="ConsumerDemoAssignSeek" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.udemy.apachekafka.tutorial1.ConsumerDemoAssignSeek" />
       <module name="kafkabeginners" />
@@ -256,12 +261,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConsumerDemoWithThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.udemy.apachekafka.tutorial1.ConsumerDemoWithThread" />
-      <module name="kafkabeginners" />
+    <configuration name="ElasticSearchConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.udemy.apachekafka.tutorial3.ElasticSearchConsumer" />
+      <module name="kafka-consumer-elasticsearch" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.udemy.apachekafka.tutorial1.*" />
+          <option name="PATTERN" value="com.udemy.apachekafka.tutorial3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -309,19 +314,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ConsumerDemoWithThread" />
       <item itemvalue="Application.ConsumerDemoAssignSeek" />
       <item itemvalue="Application.TwitterProducer" />
       <item itemvalue="Application.TwitterProducerSafer" />
       <item itemvalue="Application.TwitterProducerHighThoughput" />
+      <item itemvalue="Application.ElasticSearchConsumer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ElasticSearchConsumer" />
         <item itemvalue="Application.TwitterProducerHighThoughput" />
         <item itemvalue="Application.TwitterProducerSafer" />
         <item itemvalue="Application.TwitterProducer" />
         <item itemvalue="Application.ConsumerDemoAssignSeek" />
-        <item itemvalue="Application.ConsumerDemoWithThread" />
       </list>
     </recent_temporary>
   </component>
@@ -335,30 +340,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558155256000</updated>
-      <workItem from="1558155260747" duration="15084000" />
+      <workItem from="1558155260747" duration="15203000" />
+      <workItem from="1558869789598" duration="6212000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15084000" />
+    <option name="totallyTimeSpent" value="21415000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="677" y="23" width="763" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19003932" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" weight="0.3298969" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3298969" />
@@ -366,16 +366,22 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Maven Projects" weight="0.32896462" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3298969" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32896462" />
+      <window_info anchor="right" id="SciView" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,55 +391,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ProducerDemoWithCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ProducerDemoKeys.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ConsumerDemoGroups.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ConsumerDemoWithThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1046">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ConsumerDemoAssignSeek.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ConsumerDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ProducerDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ProducerDemoWithCallback.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ProducerDemoKeys.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ConsumerDemoGroups.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ConsumerDemoWithThread.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ConsumerDemoAssignSeek.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ConsumerDemo.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial1/ProducerDemo.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/twitter/hbc-core/2.2.0/hbc-core-2.2.0.jar!/com/twitter/hbc/core/HttpHosts.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -441,40 +405,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial2/TwitterProducer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="98" column="35" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial2/TwitterProducerSafer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="125" column="29" selection-start-line="125" selection-start-column="29" selection-end-line="125" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial2/TwitterProducerHighThoughput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="21" column="37" selection-start-line="21" selection-end-line="21" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial2/TwitterProducer.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial2/TwitterProducerSafer.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/udemy/apachekafka/tutorial2/TwitterProducerHighThoughput.java" />
     <entry file="file://$PROJECT_DIR$/kafka-basics/src/main/java/apachekafka/tutorial1/ConsumerDemo.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-producer-twitter/src/main/java/apachekafka/tutorial1/ConsumerDemo.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-producer-twitter/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-producer-twitter/src/main/java/apachekafka/tutorial1/ConsumerDemo.java" />
     <entry file="file://$PROJECT_DIR$/kafka-basics/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -489,17 +426,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-consumer-elasticsearch/pom.xml">
+    <entry file="file://$PROJECT_DIR$/kafka-consumer-elasticsearch/src/main/java/com.udemy.apachekafka/tutorial3/ElasticSearchConsumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        <state relative-caret-position="185">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-consumer-elasticsearch/src/main/java/com.udemy.apachekafka/tutorial3/ElasticSearchConsumer.java">
+    <entry file="file://$PROJECT_DIR$/kafka-basics/src/main/java/apachekafka/tutorial1/ConsumerDemoGroups.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="22" column="57" lean-forward="true" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+        <state relative-caret-position="518">
+          <caret line="46" column="9" selection-start-line="39" selection-start-column="8" selection-end-line="46" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-basics/src/main/java/apachekafka/tutorial1/ConsumerDemoAssignSeek.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-basics/src/main/java/apachekafka/tutorial1/ProducerDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-producer-twitter/src/main/java/apachekafka/tutorial2/TwitterProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-basics/src/main/java/apachekafka/tutorial1/ProducerDemoKeys.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-producer-twitter/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-consumer-elasticsearch/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-streams-filter-tweets/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-streams-filter-tweets/src/main/java/com/kafkacourse/tutorial4/StreamsFilterTweets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="33" column="10" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
         </state>
       </provider>
     </entry>
