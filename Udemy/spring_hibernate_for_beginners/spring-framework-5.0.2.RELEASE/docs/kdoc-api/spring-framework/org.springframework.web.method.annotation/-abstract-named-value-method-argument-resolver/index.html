@@ -1,0 +1,165 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractNamedValueMethodArgumentResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.method.annotation</a>&nbsp;/&nbsp;<a href=".">AbstractNamedValueMethodArgumentResolver</a><br/>
+<br/>
+<h1>AbstractNamedValueMethodArgumentResolver</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractNamedValueMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.method.support/-handler-method-argument-resolver/index.html"><span class="identifier">HandlerMethodArgumentResolver</span></a></code>
+<p>Abstract base class for resolving method arguments from a named value. Request parameters, request headers, and path variables are examples of named values. Each may have a name, a required flag, and a default value. 
+<p>Subclasses define how to do the following: </p>
+<ul> <li>Obtain named value information for a method parameter </li>
+<li>Resolve names into argument values </li>
+<li>Handle missing argument values when argument values are required </li>
+<li>Optionally handle a resolved value </li>
+</ul>
+ 
+<p>A default value string can contain ${...} placeholders and Spring Expression Language #{...} expressions. For this to work a ConfigurableBeanFactory must be supplied to the class constructor. </p>
+<p>A WebDataBinder is created to apply type conversion to the resolved argument value if it doesn't match the method parameter type.</p>
+</p>
+<p><strong>Author</strong><br/>
+Arjen Poutsma</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AbstractNamedValueMethodArgumentResolver</span><span class="symbol">(</span><span class="symbol">)</span></code><code><span class="identifier">AbstractNamedValueMethodArgumentResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver$<init>(org.springframework.beans.factory.config.ConfigurableBeanFactory)/beanFactory">beanFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">ConfigurableBeanFactory</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="resolve-argument.html">resolveArgument</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">resolveArgument</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/mavContainer">mavContainer</span><span class="symbol">:</span>&nbsp;<span class="identifier">ModelAndViewContainer</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/webRequest">webRequest</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/binderFactory">binderFactory</span><span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.bind.support/-web-data-binder-factory/index.html"><span class="identifier">WebDataBinderFactory</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.method.support/-handler-method-argument-resolver/supports-parameter.html">supportsParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">supportsParameter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.support.HandlerMethodArgumentResolver$supportsParameter(org.springframework.core.MethodParameter)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether the given MethodParameter is supported by this resolver.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-abstract-cookie-value-method-argument-resolver/index.html">AbstractCookieValueMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractCookieValueMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractNamedValueMethodArgumentResolver</span></code>
+<p>A base abstract class to resolve method arguments annotated with <code>@CookieValue</code>. Subclasses extract the cookie value from the request. 
+<p>An <code>@CookieValue</code> is a named value that is resolved from a cookie. It has a required flag and a default value to fall back on when the cookie does not exist. </p>
+<p>A WebDataBinder may be invoked to apply type conversion to the resolved cookie value.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-expression-value-method-argument-resolver/index.html">ExpressionValueMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ExpressionValueMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractNamedValueMethodArgumentResolver</span></code>
+<p>Resolves method arguments annotated with <code>@Value</code>. 
+<p>An <code>@Value</code> does not have a name but gets resolved from the default value string, which may contain ${...} placeholder or Spring Expression Language #{...} expressions. </p>
+<p>A WebDataBinder may be invoked to apply type conversion to resolved argument value.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.servlet.mvc.method.annotation/-matrix-variable-method-argument-resolver/index.html">MatrixVariableMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MatrixVariableMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractNamedValueMethodArgumentResolver</span></code>
+<p>Resolves arguments annotated with MatrixVariable. 
+<p>If the method parameter is of type Map it will by resolved by MatrixVariableMapMethodArgumentResolver instead unless the annotation specifies a name in which case it is considered to be a single attribute of type map (vs multiple attributes collected in a map).</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.servlet.mvc.method.annotation/-path-variable-method-argument-resolver/index.html">PathVariableMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PathVariableMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractNamedValueMethodArgumentResolver</span><span class="symbol">, </span><span class="identifier">UriComponentsContributor</span></code>
+<p>Resolves method arguments annotated with an @PathVariable. 
+<p>An @PathVariable is a named value that gets resolved from a URI template variable. It is always required and does not have a default value to fall back on. See the base class org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver for more information on how named values are processed. </p>
+<p>If the method parameter type is Map, the name specified in the annotation is used to resolve the URI variable String value. The value is then converted to a Map via type conversion, assuming a suitable Converter or PropertyEditor has been registered. </p>
+<p>A WebDataBinder is invoked to apply type conversion to resolved path variable values that don't yet match the method parameter type.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.servlet.mvc.method.annotation/-request-attribute-method-argument-resolver/index.html">RequestAttributeMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RequestAttributeMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractNamedValueMethodArgumentResolver</span></code>
+<p>Resolves method arguments annotated with an @RequestAttribute.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-request-header-method-argument-resolver/index.html">RequestHeaderMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RequestHeaderMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractNamedValueMethodArgumentResolver</span></code>
+<p>Resolves method arguments annotated with <code>@RequestHeader</code> except for Map arguments. See RequestHeaderMapMethodArgumentResolver for details on Map arguments annotated with <code>@RequestHeader</code>. 
+<p>An <code>@RequestHeader</code> is a named value resolved from a request header. It has a required flag and a default value to fall back on when the request header does not exist. </p>
+<p>A WebDataBinder is invoked to apply type conversion to resolved request header values that don't yet match the method parameter type.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-request-param-method-argument-resolver/index.html">RequestParamMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RequestParamMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractNamedValueMethodArgumentResolver</span><span class="symbol">, </span><span class="identifier">UriComponentsContributor</span></code>
+<p>Resolves method arguments annotated with @RequestParam, arguments of type MultipartFile in conjunction with Spring's MultipartResolver abstraction, and arguments of type <code>javax.servlet.http.Part</code> in conjunction with Servlet 3.0 multipart requests. This resolver can also be created in default resolution mode in which simple types (int, long, etc.) not annotated with RequestParam are also treated as request parameters with the parameter name derived from the argument name. 
+<p>If the method parameter type is Map, the name specified in the annotation is used to resolve the request parameter String value. The value is then converted to a Map via type conversion assuming a suitable Converter or PropertyEditor has been registered. Or if a request parameter name is not specified the RequestParamMapMethodArgumentResolver is used instead to provide access to all request parameters in the form of a map. </p>
+<p>A WebDataBinder is invoked to apply type conversion to resolved request header values that don't yet match the method parameter type.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.servlet.mvc.method.annotation/-session-attribute-method-argument-resolver/index.html">SessionAttributeMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SessionAttributeMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractNamedValueMethodArgumentResolver</span></code>
+<p>Resolves method arguments annotated with an @SessionAttribute.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

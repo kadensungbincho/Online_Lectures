@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ServerWebExchangeArgumentResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.reactive.result.method.annotation</a>&nbsp;/&nbsp;<a href=".">ServerWebExchangeArgumentResolver</a><br/>
+<br/>
+<h1>ServerWebExchangeArgumentResolver</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ServerWebExchangeArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.reactive.result.method/-handler-method-argument-resolver-support/index.html"><span class="identifier">HandlerMethodArgumentResolverSupport</span></a><span class="symbol">, </span><span class="identifier">SyncHandlerMethodArgumentResolver</span></code>
+<p>Resolves ServerWebExchange-related method argument values of the following types: <ul> <li>ServerWebExchange </li>
+<li>ServerHttpRequest </li>
+<li>ServerHttpResponse </li>
+<li>HttpMethod </li>
+<li>Locale </li>
+<li>TimeZone </li>
+<li>ZoneId </li>
+<li>UriBuilder or UriComponentsBuilder -- for building URL's relative to the current request </li>
+</ul>
+ 
+<p>For the <code>WebSession</code> see WebSessionArgumentResolver and for the <code>Principal</code> see PrincipalArgumentResolver.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+5.0</p>
+<p><strong>See Also</strong><br/>
+WebSessionArgumentResolverPrincipalArgumentResolver</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ServerWebExchangeArgumentResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.ServerWebExchangeArgumentResolver$<init>(org.springframework.core.ReactiveAdapterRegistry)/adapterRegistry">adapterRegistry</span><span class="symbol">:</span>&nbsp;<a href="../../org.springframework.core/-reactive-adapter-registry/index.html"><span class="identifier">ReactiveAdapterRegistry</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="resolve-argument-value.html">resolveArgumentValue</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">resolveArgumentValue</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.ServerWebExchangeArgumentResolver$resolveArgumentValue(org.springframework.core.MethodParameter, org.springframework.web.reactive.BindingContext, org.springframework.web.server.ServerWebExchange)/methodParameter">methodParameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.ServerWebExchangeArgumentResolver$resolveArgumentValue(org.springframework.core.MethodParameter, org.springframework.web.reactive.BindingContext, org.springframework.web.server.ServerWebExchange)/context">context</span><span class="symbol">:</span>&nbsp;<span class="identifier">BindingContext</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.ServerWebExchangeArgumentResolver$resolveArgumentValue(org.springframework.core.MethodParameter, org.springframework.web.reactive.BindingContext, org.springframework.web.server.ServerWebExchange)/exchange">exchange</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerWebExchange</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="supports-parameter.html">supportsParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsParameter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.ServerWebExchangeArgumentResolver$supportsParameter(org.springframework.core.MethodParameter)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.reactive.result.method/-handler-method-argument-resolver-support/get-adapter-registry.html">getAdapterRegistry</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAdapterRegistry</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.springframework.core/-reactive-adapter-registry/index.html"><span class="identifier">ReactiveAdapterRegistry</span></a></code>
+<p>Return the configured ReactiveAdapterRegistry.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

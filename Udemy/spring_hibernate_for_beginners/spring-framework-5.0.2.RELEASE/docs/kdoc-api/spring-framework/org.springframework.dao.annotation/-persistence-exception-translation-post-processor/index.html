@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PersistenceExceptionTranslationPostProcessor - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.dao.annotation</a>&nbsp;/&nbsp;<a href=".">PersistenceExceptionTranslationPostProcessor</a><br/>
+<br/>
+<h1>PersistenceExceptionTranslationPostProcessor</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PersistenceExceptionTranslationPostProcessor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.aop.framework.autoproxy/-abstract-bean-factory-aware-advising-post-processor/index.html"><span class="identifier">AbstractBeanFactoryAwareAdvisingPostProcessor</span></a></code>
+<p>Bean post-processor that automatically applies persistence exception translation to any bean marked with Spring's @org.springframework.stereotype.Repository annotation, adding a corresponding PersistenceExceptionTranslationAdvisor to the exposed proxy (either an existing AOP proxy or a newly generated proxy that implements all of the target's interfaces). 
+<p>Translates native resource exceptions to Spring's org.springframework.dao.DataAccessException hierarchy. Autodetects beans that implement the org.springframework.dao.support.PersistenceExceptionTranslator interface, which are subsequently asked to translate candidate exceptions. </p>
+<p>All of Spring's applicable resource factories (e.g. org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean) implement the <code>PersistenceExceptionTranslator</code> interface out of the box. As a consequence, all that is usually needed to enable automatic exception translation is marking all affected beans (such as Repositories or DAOs) with the <code>@Repository</code> annotation, along with defining this post-processor as a bean in the application context.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rod Johnson</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<p><strong>See Also</strong><br/>
+PersistenceExceptionTranslationAdvisororg.springframework.stereotype.Repositoryorg.springframework.dao.DataAccessExceptionorg.springframework.dao.support.PersistenceExceptionTranslator</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">PersistenceExceptionTranslationPostProcessor</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Bean post-processor that automatically applies persistence exception translation to any bean marked with Spring's @org.springframework.stereotype.Repository annotation, adding a corresponding PersistenceExceptionTranslationAdvisor to the exposed proxy (either an existing AOP proxy or a newly generated proxy that implements all of the target's interfaces). 
+<p>Translates native resource exceptions to Spring's org.springframework.dao.DataAccessException hierarchy. Autodetects beans that implement the org.springframework.dao.support.PersistenceExceptionTranslator interface, which are subsequently asked to translate candidate exceptions. </p>
+<p>All of Spring's applicable resource factories (e.g. org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean) implement the <code>PersistenceExceptionTranslator</code> interface out of the box. As a consequence, all that is usually needed to enable automatic exception translation is marking all affected beans (such as Repositories or DAOs) with the <code>@Repository</code> annotation, along with defining this post-processor as a bean in the application context.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="set-bean-factory.html">setBeanFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBeanFactory</span><span class="symbol">(</span><span class="identifier" id="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor$setBeanFactory(org.springframework.beans.factory.BeanFactory)/beanFactory">beanFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">BeanFactory</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-repository-annotation-type.html">setRepositoryAnnotationType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRepositoryAnnotationType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor$setRepositoryAnnotationType(java.lang.Class((kotlin.Annotation)))/repositoryAnnotationType">repositoryAnnotationType</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><span class="identifier">Annotation</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the 'repository' annotation type. The default repository annotation type is the Repository annotation. 
+<p>This setter property exists so that developers can provide their own (non-Spring-specific) annotation type to indicate that a class has a repository role.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

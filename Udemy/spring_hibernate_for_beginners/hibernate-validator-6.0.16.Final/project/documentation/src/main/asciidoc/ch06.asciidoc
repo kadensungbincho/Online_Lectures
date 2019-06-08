@@ -1,0 +1,537 @@
+[[validator-customconstraints]]
+== Creating custom constraints
+
+The Bean Validation API defines a whole set of standard constraint annotations such as `@NotNull`,
+`@Size` etc. In cases where these built-in constraints are not sufficient, you can easily create
+custom constraints tailored to your specific validation requirements.
+
+[[validator-customconstraints-simple]]
+=== Creating a simple constraint
+
+To create a custom constraint, the following three steps are required:
+
+* Create a constraint annotation
+* Implement a validator
+* Define a default error message
+
+[[validator-customconstraints-constraintannotation]]
+==== The constraint annotation
+
+This section shows how to write a constraint annotation which can be used to ensure that a given
+string is either completely upper case or lower case. Later on, this constraint will be applied to
+the `licensePlate` field of the `Car` class from <<validator-gettingstarted>> to ensure that
+the field is always an upper-case string.
+
+The first thing needed is a way to express the two case modes. While you could use `String` constants,
+a better approach is using an enum for that purpose:
+
+.Enum `CaseMode` to express upper vs. lower case
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/CaseMode.java[]
+----
+====
+
+The next step is to define the actual constraint annotation. If you've never designed an annotation
+before, this may look a bit scary, but actually it's not that hard:
+
+[[example-defining-custom-constraint]]
+.Defining the `@CheckCase` constraint annotation
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/CheckCase.java[tags=include]
+----
+====
+
+An annotation type is defined using the `@interface` keyword. All attributes of an annotation type are
+declared in a method-like manner. The specification of the Bean Validation API demands, that any
+constraint annotation defines:
+
+* an attribute `message` that returns the default key for creating error messages in case the
+constraint is violated
+
+* an attribute `groups` that allows the specification of validation groups, to which this constraint
+belongs (see <<chapter-groups>>). This must default to an empty array of type Class<?>.
+
+* an attribute `payload` that can be used by clients of the Bean Validation API to assign custom
+payload objects to a constraint. This attribute is not used by the API itself. An example for a
+custom payload could be the definition of a severity:
++
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/payload/Severity.java[tags=include]
+----
+
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/payload/ContactDetails.java[tags=include]
+----
+====
++
+Now a client can after the validation of a `ContactDetails` instance access the severity of a
+constraint using `ConstraintViolation.getConstraintDescriptor().getPayload()` and adjust its behavior
+depending on the severity.
+
+Besides these three mandatory attributes there is another one, `value`, allowing for the required case
+mode to be specified. The name `value` is a special one, which can be omitted when using the
+annotation, if it is the only attribute specified, as e.g. in `@CheckCase(CaseMode.UPPER)`.
+
+In addition, the constraint annotation is decorated with a couple of meta annotations:
+
+* `@Target({ FIELD, METHOD, PARAMETER, ANNOTATION_TYPE, TYPE_USE})`: Defines the supported target
+element types for the constraint. `@CheckCase` may be used on fields (element type `FIELD`), JavaBeans properties
+as well as method return values (`METHOD`), method/constructor parameters (`PARAMETER`) and type argument of
+parameterized types (`TYPE_USE`). The element type `ANNOTATION_TYPE` allows for the creation of composed
+constraints (see <<section-constraint-composition>>) based on `@CheckCase`.
++
+When creating a class-level constraint (see <<validator-usingvalidator-classlevel>>), the element
+type `TYPE` would have to be used. Constraints targeting the return value of a constructor need to
+support the element type `CONSTRUCTOR`. Cross-parameter constraints (see
+<<section-cross-parameter-constraints>>) which are used to validate all the parameters of a method
+or constructor together, must support `METHOD` or `CONSTRUCTOR`, respectively.
+
+* `@Retention(RUNTIME)`: Specifies, that annotations of this type will be available at runtime by the
+means of reflection
+
+* `@Constraint(validatedBy = CheckCaseValidator.class)`: Marks the annotation type as constraint
+annotation and specifies the validator to be used to validate elements annotated with `@CheckCase`.
+If a constraint may be used on several data types, several validators may be specified, one for
+each data type.
+
+* `@Documented`: Says, that the use of `@CheckCase` will be contained in the JavaDoc of elements
+annotated with it
+
+* `@Repeatable(List.class)`: Indicates that the annotation can be repeated several times at the
+same place, usually with a different configuration. `List` is the containing annotation type.
+
+This containing annotation type named `List` is also shown in the example. It allows to specify several
+`@CheckCase` annotations on the same element, e.g. with different validation groups and messages.
+While another name could be used, the Bean Validation specification recommends to use the name
+`List` and make the annotation an inner annotation of the corresponding constraint type.
+
+[[section-constraint-validator]]
+==== The constraint validator
+
+Having defined the annotation, you need to create a constraint validator, which is able to validate
+elements with a `@CheckCase` annotation. To do so, implement the Bean Validation interface `ConstraintValidator`
+as shown below:
+
+[[example-constraint-validator]]
+.Implementing a constraint validator for the constraint `@CheckCase`
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/CheckCaseValidator.java[tags=include]
+----
+====
+
+The `ConstraintValidator` interface defines two type parameters which are set in the implementation.
+The first one specifies the annotation type to be validated (`CheckCase`), the second one the type of
+elements, which the validator can handle (`String`). In case a constraint supports several data types,
+a `ConstraintValidator` for each allowed type has to be implemented and registered at the constraint
+annotation as shown above.
+
+The implementation of the validator is straightforward. The `initialize()` method gives you access to
+the attribute values of the validated constraint and allows you to store them in a field of the
+validator as shown in the example.
+
+The `isValid()` method contains the actual validation logic. For `@CheckCase` this is the check whether
+a given string is either completely lower case or upper case, depending on the case mode retrieved
+in `initialize()`. Note that the Bean Validation specification recommends to consider null values as
+being valid. If `null` is not a valid value for an element, it should be annotated with `@NotNull`
+explicitly.
+
+===== The `ConstraintValidatorContext`
+
+<<example-constraint-validator>>
+relies on the default error message generation by just returning `true` or `false` from the `isValid()`
+method. Using the passed `ConstraintValidatorContext` object, it is possible to either add additional
+error messages or completely disable the default error message generation and solely define custom
+error messages. The `ConstraintValidatorContext` API is modeled as fluent interface and is best
+demonstrated with an example:
+
+[[example-constraint-validator-context]]
+.Using `ConstraintValidatorContext` to define custom error messages
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/constraintvalidatorcontext/CheckCaseValidator.java[tags=include]
+----
+====
+
+<<example-constraint-validator-context>>
+shows how you can disable the default error message generation and add a custom error message using
+a specified message template. In this example the use of the `ConstraintValidatorContext` results in
+the same error message as the default error message generation.
+
+[TIP]
+====
+It is important to add each configured constraint violation by calling `addConstraintViolation()`.
+Only after that the new constraint violation will be created.
+====
+
+[WARNING]
+====
+Note that the custom message template is passed directly to the Expression Language engine.
+
+Thus, you should be very careful when integrating user input in a custom message template as it will be interpreted
+by the Expression Language engine, which is usually not the behavior you expect and could allow malicious users to leak
+sensitive data.
+
+If you need to integrate user input, you should:
+
+ * either escape it by using the http://beanvalidation.org/2.0/spec/#validationapi-message-defaultmessageinterpolation[Bean Validation message interpolation escaping rules];
+ * or, even better, <<section-hibernateconstraintvalidatorcontext,pass it as message parameters or expression variables>> by unwrapping the context to `HibernateConstraintValidatorContext`.
+====
+
+Refer to <<section-custom-property-paths>> to learn how to use the `ConstraintValidatorContext` API to
+control the property path of constraint violations for class-level constraints.
+
+[[constraint-validator-hibernateconstraintvalidator]]
+===== The `HibernateConstraintValidator` extension
+
+Hibernate Validator provides an extension to the `ConstraintValidator` contract: `HibernateConstraintValidator`.
+
+The purpose of this extension is to provide more contextual information to the `initialize()` method
+as, in the current `ConstraintValidator` contract, only the annotation is passed as parameter.
+
+The `initialize()` method of `HibernateConstraintValidator` takes two parameters:
+
+ * The `ConstraintDescriptor` of the constraint at hand.
+   You can get access to the annotation using `ConstraintDescriptor#getAnnotation()`.
+ * The `HibernateConstraintValidatorInitializationContext` which provides useful helpers and contextual
+   information, such as the clock provider or the temporal validation tolerance.
+
+This extension is marked as incubating so it might be subject to change.
+The plan is to standardize it and to include it in Bean Validation in the future.
+
+The example below shows how to base your validators on `HibernateConstraintValidator`:
+
+[[example-constraint-validator-hibernateconstraintvalidator]]
+.Using the `HibernateConstraintValidator` contract
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/MyFutureValidator.java[tags=include]
+----
+====
+
+[WARNING]
+====
+You should only implement one of the `initialize()` methods. Be aware that both are called when initializing the validator.
+====
+
+[[constraint-validator-payload]]
+===== Passing a payload to the constraint validator
+
+From time to time, you might want to condition the constraint validator behavior on some external parameters.
+
+For instance, your zip code validator could vary depending on the locale of your application instance if you have one
+instance per country.
+Another requirement could be to have different behaviors on specific environments: the staging environment may not have
+access to some external production resources necessary for the correct functioning of a validator.
+
+The notion of constraint validator payload was introduced for all these use cases.
+It is an object passed from the `Validator` instance to each constraint validator via the `HibernateConstraintValidatorContext`.
+
+The example below shows how to set a constraint validator payload during the `ValidatorFactory` initialization.
+Unless you override this default value, all the ``Validator``s created by this `ValidatorFactory` will have this
+constraint validator payload value set.
+
+[[example-constraint-validator-payload-definition-validatorfactory]]
+.Defining a constraint validator payload during the `ValidatorFactory` initialization
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/constraintvalidatorpayload/ConstraintValidatorPayloadTest.java[tags=setConstraintValidatorPayloadDuringValidatorFactoryInitialization]
+----
+====
+
+Another option is to set the constraint validator payload per `Validator` using a context:
+
+[[example-constraint-validator-payload-definition-validatorcontext]]
+.Defining a constraint validator payload using a `Validator` context
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/constraintvalidatorpayload/ConstraintValidatorPayloadTest.java[tags=setConstraintValidatorPayloadInValidatorContext]
+----
+====
+
+Once you have set the constraint validator payload, it can be used in your constraint validators as shown in the example below:
+
+[[example-constraint-validator-payload-usage]]
+.Using the constraint validator payload in a constraint validator
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/constraintvalidatorpayload/ZipCodeValidator.java[tags=include]
+----
+====
+
+`HibernateConstraintValidatorContext#getConstraintValidatorPayload()` has a type parameter
+and returns the payload only if the payload is of the given type.
+
+[NOTE]
+====
+It is important to note that the constraint validator payload is different from the dynamic payload you can include in
+the constraint violation raised.
+
+The whole purpose of this constraint validator payload is to be used to condition the behavior of your constraint validators.
+It is not included in the constraint violations, unless a specific `ConstraintValidator` implementation passes on the
+payload to emitted constraint violations by using the <<section-dynamic-payload,constraint violation dynamic payload mechanism>>.
+====
+
+[[validator-customconstraints-errormessage]]
+==== The error message
+
+The last missing building block is an error message which should be used in case a `@CheckCase`
+constraint is violated. To define this, create a file _ValidationMessages.properties_ with the
+following contents (see also <<section-message-interpolation>>):
+
+.Defining a custom error message for the `CheckCase` constraint
+====
+----
+org.hibernate.validator.referenceguide.chapter06.CheckCase.message=Case mode must be {value}.
+----
+====
+
+If a validation error occurs, the validation runtime will use the default value, that you specified
+for the message attribute of the `@CheckCase` annotation to look up the error message in this resource
+bundle.
+
+[[validator-customconstraints-using]]
+==== Using the constraint
+
+You can now use the constraint in the `Car` class from the <<validator-gettingstarted>> chapter to
+specify that the `licensePlate` field should only contain upper-case strings:
+
+[[example-car-with-checkcase]]
+.Applying the `@CheckCase` constraint
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/Car.java[tags=include]
+----
+====
+
+Finally, <<example-using-checkcase>> demonstrates how validating a `Car` instance with an invalid
+license plate causes the `@CheckCase` constraint to be violated.
+
+[[example-using-checkcase]]
+.Validating objects with the `@CheckCase` constraint
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/CarTest.java[tags=testCheckCaseConstraint]
+----
+====
+
+[[section-class-level-constraints]]
+=== Class-level constraints
+
+As discussed earlier, constraints can also be applied on the class level to validate the state of an
+entire object. Class-level constraints are defined in the same way as are property constraints.
+<<example-implementing-classlevel-constraint>> shows constraint annotation and validator of the
+`@ValidPassengerCount` constraint you already saw in use in <<example-class-level>>.
+
+[[example-implementing-classlevel-constraint]]
+.Implementing a class-level constraint
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/classlevel/ValidPassengerCount.java[tags=include]
+----
+
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/classlevel/ValidPassengerCountValidator.java[tags=include]
+----
+====
+
+As the example demonstrates, you need to use the element type `TYPE` in the `@Target` annotation. This
+allows the constraint to be put on type definitions. The validator of the constraint in the example
+receives a `Car` in the `isValid()` method and can access the complete object state to decide whether
+the given instance is valid or not.
+
+[[section-custom-property-paths]]
+==== Custom property paths
+
+By default the constraint violation for a class-level constraint is reported on the level of the
+annotated type, e.g. `Car`.
+
+In some cases it is preferable though that the violation's property path refers to one of the
+involved properties. For instance you might want to report the `@ValidPassengerCount` constraint
+against the passengers property instead of the `Car` bean.
+
+<<example-custom-error>>
+shows how this can be done by using the constraint validator context passed to `isValid()` to build a
+custom constraint violation with a property node for the property passengers. Note that you also
+could add several property nodes, pointing to a sub-entity of the validated bean.
+
+[[example-custom-error]]
+.Adding a new `ConstraintViolation` with custom property path
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/custompath/ValidPassengerCountValidator.java[tags=include]
+----
+====
+
+[[section-cross-parameter-constraints]]
+=== Cross-parameter constraints
+
+Bean Validation distinguishes between two different kinds of constraints.
+
+Generic constraints (which have been discussed so far) apply to the annotated element, e.g. a type,
+field, container element, method parameter or return value etc.
+Cross-parameter constraints, in contrast, apply to the array of parameters of a method or constructor
+and can be used to express validation logic which depends on several parameter values.
+
+In order to define a cross-parameter constraint, its validator class must be annotated with
+`@SupportedValidationTarget(ValidationTarget.PARAMETERS)`. The type parameter `T` from the
+`ConstraintValidator` interface must resolve to either `Object` or `Object[]` in order to receive the
+array of method/constructor arguments in the `isValid()` method.
+
+The following example shows the definition of a cross-parameter constraint which can be used to
+check that two `Date` parameters of a method are in the correct order:
+
+.Cross-parameter constraint
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/crossparameter/ConsistentDateParameters.java[tags=include]
+----
+====
+
+The definition of a cross-parameter constraint isn't any different from defining a generic
+constraint, i.e. it must specify the members `message()`, `groups()` and `payload()` and be annotated with
+`@Constraint`. This meta annotation also specifies the corresponding validator, which is shown in
+<<example-cross-parameter-validator>>. Note that besides the element types `METHOD` and `CONSTRUCTOR`
+also `ANNOTATION_TYPE` is specified as target of the annotation, in order to enable the creation of
+composed constraints based on `@ConsistentDateParameters` (see
+<<section-constraint-composition>>).
+
+[NOTE]
+====
+Cross-parameter constraints are specified directly on the declaration of a method or constructor,
+which is also the case for return value constraints. In order to improve code readability, it is
+therefore recommended to choose constraint names - such as `@ConsistentDateParameters` - which make the
+constraint target apparent.
+====
+
+[[example-cross-parameter-validator]]
+.Generic and cross-parameter constraint
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/crossparameter/ConsistentDateParametersValidator.java[tags=include]
+----
+====
+
+As discussed above, the validation target `PARAMETERS` must be configured for a cross-parameter
+validator by using the `@SupportedValidationTarget` annotation. Since a cross-parameter constraint
+could be applied to any method or constructor, it is considered a best practice to check for the
+expected number and types of parameters in the validator implementation.
+
+As with generic constraints, `null` parameters should be considered valid and `@NotNull` on the
+individual parameters should be used to make sure that parameters are not `null`.
+
+[TIP]
+====
+Similar to class-level constraints, you can create custom constraint violations on single parameters
+instead of all parameters when validating a cross-parameter constraint. Just obtain a node builder
+from the `ConstraintValidatorContext` passed to `isValid()` and add a parameter node by calling
+`addParameterNode()`. In the example you could use this to create a constraint violation on the end
+date parameter of the validated method.
+====
+
+In rare situations a constraint is both, generic and cross-parameter. This is the case if a
+constraint has a validator class which is annotated with
+`@SupportedValidationTarget({ValidationTarget.PARAMETERS, ValidationTarget.ANNOTATED_ELEMENT})` or if
+it has a generic and a cross-parameter validator class.
+
+When declaring such a constraint on a method which has parameters and also a return value, the
+intended constraint target can't be determined. Constraints which are generic and cross-parameter at
+the same time must therefore define a member `validationAppliesTo()` which allows the constraint user
+to specify the constraint's target as shown in <<example-dual-cross-parameter-constraint>>.
+
+[[example-dual-cross-parameter-constraint]]
+.Generic and cross-parameter constraint
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/crossparameter/ScriptAssert.java[tags=include]
+----
+====
+
+The `@ScriptAssert` constraint has two validators (not shown), a generic and a cross-parameter one and
+thus defines the member `validationAppliesTo()`. The default value `IMPLICIT` allows to derive the
+target automatically in situations where this is possible (e.g. if the constraint is declared on a
+field or on a method which has parameters but no return value).
+
+If the target can not be determined implicitly, it must be set by the user to either `PARAMETERS` or
+`RETURN_VALUE` as shown in <<example-dual-cross-parameter-constraint-usage>>.
+
+[[example-dual-cross-parameter-constraint-usage]]
+.Specifying the target for a generic and cross-parameter constraint
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/crossparameter/ScriptAssertTest.java[tags=buildCar]
+----
+====
+
+[[section-constraint-composition]]
+=== Constraint composition
+
+Looking at the `licensePlate` field of the `Car` class in <<example-car-with-checkcase>>, you see three
+constraint annotations already. In more complex scenarios, where even more constraints could be applied
+to one element, this might easily become a bit confusing. Furthermore, if there was a `licensePlate`
+field in another class, you would have to copy all constraint declarations to the other class as
+well, violating the DRY principle.
+
+You can address this kind of problem by creating higher level constraints, composed from several
+basic constraints. <<example-composed-constraint>> shows a composed constraint annotation which
+comprises the constraints `@NotNull`, `@Size` and `@CheckCase`:
+
+[[example-composed-constraint]]
+.Creating a composing constraint `@ValidLicensePlate`
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/constraintcomposition/ValidLicensePlate.java[tags=include]
+----
+====
+
+To create a composed constraint, simply annotate the constraint declaration with its comprising
+constraints. If the composed constraint itself requires a validator, this validator is to be
+specified within the `@Constraint` annotation. For composed constraints which don't need an additional
+validator such as `@ValidLicensePlate`, just set `validatedBy()` to an empty array.
+
+Using the new composed constraint at the `licensePlate` field is fully equivalent to the previous
+version, where the three constraints were declared directly at the field itself:
+
+.Application of composing constraint `ValidLicensePlate`
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/constraintcomposition/Car.java[]
+----
+====
+
+The set of ``ConstraintViolation``s retrieved when validating a `Car` instance will contain an entry for
+each violated composing constraint of the `@ValidLicensePlate` constraint. If you rather prefer a
+single `ConstraintViolation` in case any of the composing constraints is violated, the
+`@ReportAsSingleViolation` meta constraint can be used as follows:
+
+.Using @ReportAsSingleViolation
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter06/constraintcomposition/reportassingle/ValidLicensePlate.java[tags=include]
+----
+====

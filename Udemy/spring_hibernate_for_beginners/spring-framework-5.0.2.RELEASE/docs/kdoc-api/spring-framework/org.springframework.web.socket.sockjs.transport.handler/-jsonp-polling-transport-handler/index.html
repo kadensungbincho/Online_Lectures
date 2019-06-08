@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JsonpPollingTransportHandler - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.sockjs.transport.handler</a>&nbsp;/&nbsp;<a href=".">JsonpPollingTransportHandler</a><br/>
+<br/>
+<h1>JsonpPollingTransportHandler</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JsonpPollingTransportHandler</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractHttpSendingTransportHandler</span></code>
+<p>A TransportHandler that sends messages via JSONP polling.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">JsonpPollingTransportHandler</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A TransportHandler that sends messages via JSONP polling.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="check-session-type.html">checkSessionType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">checkSessionType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.JsonpPollingTransportHandler$checkSessionType(org.springframework.web.socket.sockjs.transport.SockJsSession)/session">session</span><span class="symbol">:</span>&nbsp;<span class="identifier">SockJsSession</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="create-session.html">createSession</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">createSession</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.JsonpPollingTransportHandler$createSession(kotlin.String, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/sessionId">sessionId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.JsonpPollingTransportHandler$createSession(kotlin.String, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/handler">handler</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketHandler</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.JsonpPollingTransportHandler$createSession(kotlin.String, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/attributes">attributes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">PollingSockJsSession</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-transport-type.html">getTransportType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTransportType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TransportType</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="handle-request-internal.html">handleRequestInternal</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleRequestInternal</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.JsonpPollingTransportHandler$handleRequestInternal(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.sockjs.transport.session.AbstractHttpSockJsSession)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.JsonpPollingTransportHandler$handleRequestInternal(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.sockjs.transport.session.AbstractHttpSockJsSession)/response">response</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpResponse</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.JsonpPollingTransportHandler$handleRequestInternal(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.sockjs.transport.session.AbstractHttpSockJsSession)/sockJsSession">sockJsSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">AbstractHttpSockJsSession</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractTransactionalTestNGSpringContextTests.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.test.context.testng</a>&nbsp;/&nbsp;<a href="index.html">AbstractTransactionalTestNGSpringContextTests</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests$&lt;init&gt;()"></a>
+<code><span class="identifier">AbstractTransactionalTestNGSpringContextTests</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Abstract Transactional extension of AbstractTestNGSpringContextTests which adds convenience functionality for JDBC access. Expects a DataSource bean and a PlatformTransactionManager bean to be defined in the Spring ApplicationContext. 
+<p>This class exposes a JdbcTemplate and provides an easy way to <a href="#">count the number of rows in a table</a> (potentially <a href="#">with a WHERE clause</a>), <a href="#">delete from tables</a>, <a href="#">drop tables</a>, and <a href="#">execute SQL scripts</a> within a transaction. </p>
+<p>Concrete subclasses must fulfill the same requirements outlined in AbstractTestNGSpringContextTests. </p>
+<p>The following org.springframework.test.context.TestExecutionListener are configured by default: </p>
+<ul> <li>org.springframework.test.context.web.ServletTestExecutionListener </li>
+<li>org.springframework.test.context.support.DependencyInjectionTestExecutionListener </li>
+<li>org.springframework.test.context.support.DirtiesContextTestExecutionListener </li>
+<li>org.springframework.test.context.transaction.TransactionalTestExecutionListener </li>
+<li>org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener </li>
+</ul>
+</p>
+<p><strong>Author</strong><br/>
+Sam Brannen</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.5</p>
+<p><strong>See Also</strong><br/>
+AbstractTestNGSpringContextTestsorg.springframework.test.context.ContextConfigurationorg.springframework.test.context.TestExecutionListenersorg.springframework.test.context.transaction.TransactionalTestExecutionListenerorg.springframework.test.context.jdbc.SqlScriptsTestExecutionListenerorg.springframework.transaction.annotation.Transactionalorg.springframework.test.annotation.Commitorg.springframework.test.annotation.Rollbackorg.springframework.test.context.transaction.BeforeTransactionorg.springframework.test.context.transaction.AfterTransactionorg.springframework.test.jdbc.JdbcTestUtilsorg.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests</p>
+</BODY>
+</HTML>

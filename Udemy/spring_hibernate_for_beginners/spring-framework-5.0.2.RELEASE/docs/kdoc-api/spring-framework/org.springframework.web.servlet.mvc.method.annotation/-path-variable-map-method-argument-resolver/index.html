@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PathVariableMapMethodArgumentResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.method.annotation</a>&nbsp;/&nbsp;<a href=".">PathVariableMapMethodArgumentResolver</a><br/>
+<br/>
+<h1>PathVariableMapMethodArgumentResolver</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PathVariableMapMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.method.support/-handler-method-argument-resolver/index.html"><span class="identifier">HandlerMethodArgumentResolver</span></a></code>
+<p>Resolves Map method arguments annotated with an @PathVariable where the annotation does not specify a path variable name. The created Map contains all URI template name/value pairs.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+3.2</p>
+<p><strong>See Also</strong><br/>
+PathVariableMethodArgumentResolver</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">PathVariableMapMethodArgumentResolver</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Resolves Map method arguments annotated with an @PathVariable where the annotation does not specify a path variable name. The created Map contains all URI template name/value pairs.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="resolve-argument.html">resolveArgument</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">resolveArgument</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.PathVariableMapMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.PathVariableMapMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/mavContainer">mavContainer</span><span class="symbol">:</span>&nbsp;<span class="identifier">ModelAndViewContainer</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.PathVariableMapMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/webRequest">webRequest</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.PathVariableMapMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/binderFactory">binderFactory</span><span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.bind.support/-web-data-binder-factory/index.html"><span class="identifier">WebDataBinderFactory</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Return a Map with all URI template variables or an empty map.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="supports-parameter.html">supportsParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsParameter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.PathVariableMapMethodArgumentResolver$supportsParameter(org.springframework.core.MethodParameter)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

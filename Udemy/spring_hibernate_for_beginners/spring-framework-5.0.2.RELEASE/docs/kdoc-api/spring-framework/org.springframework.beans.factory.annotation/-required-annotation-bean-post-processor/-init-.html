@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RequiredAnnotationBeanPostProcessor.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.beans.factory.annotation</a>&nbsp;/&nbsp;<a href="index.html">RequiredAnnotationBeanPostProcessor</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor$&lt;init&gt;()"></a>
+<code><span class="identifier">RequiredAnnotationBeanPostProcessor</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>org.springframework.beans.factory.config.BeanPostProcessor implementation that enforces required JavaBean properties to have been configured. Required bean properties are detected through a Java 5 annotation: by default, Spring's Required annotation. 
+<p>The motivation for the existence of this BeanPostProcessor is to allow developers to annotate the setter properties of their own classes with an arbitrary JDK 1.5 annotation to indicate that the container must check for the configuration of a dependency injected value. This neatly pushes responsibility for such checking onto the container (where it arguably belongs), and obviates the need (<strong>in part</strong>) for a developer to code a method that simply checks that all required properties have actually been set. </p>
+<p>Please note that an 'init' method may still need to implemented (and may still be desirable), because all that this class does is enforce that a 'required' property has actually been configured with a value. It does <strong>not</strong> check anything else... In particular, it does not check that a configured value is not <code>null</code>. </p>
+<p>Note: A default RequiredAnnotationBeanPostProcessor will be registered by the "context:annotation-config" and "context:component-scan" XML tags. Remove or turn off the default annotation configuration there if you intend to specify a custom RequiredAnnotationBeanPostProcessor bean definition.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rob Harrop</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#setRequiredAnnotationType</a>Required</p>
+</BODY>
+</HTML>

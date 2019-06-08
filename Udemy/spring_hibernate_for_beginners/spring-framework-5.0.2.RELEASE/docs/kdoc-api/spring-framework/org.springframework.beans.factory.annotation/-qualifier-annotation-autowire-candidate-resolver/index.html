@@ -1,0 +1,130 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>QualifierAnnotationAutowireCandidateResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.beans.factory.annotation</a>&nbsp;/&nbsp;<a href=".">QualifierAnnotationAutowireCandidateResolver</a><br/>
+<br/>
+<h1>QualifierAnnotationAutowireCandidateResolver</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">QualifierAnnotationAutowireCandidateResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.beans.factory.support/-generic-type-aware-autowire-candidate-resolver/index.html"><span class="identifier">GenericTypeAwareAutowireCandidateResolver</span></a></code>
+<p>AutowireCandidateResolver implementation that matches bean definition qualifiers against Qualifier on the field or parameter to be autowired. Also supports suggested expression values through a Value annotation. 
+<p>Also supports JSR-330's javax.inject.Qualifier annotation, if available.</p>
+</p>
+<p><strong>Author</strong><br/>
+Mark Fisher</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Author</strong><br/>
+Stephane Nicoll</p>
+<p><strong>Since</strong><br/>
+2.5</p>
+<p><strong>See Also</strong><br/>
+AutowireCandidateQualifierQualifierValue</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">QualifierAnnotationAutowireCandidateResolver</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Create a new QualifierAnnotationAutowireCandidateResolver for Spring's standard Qualifier annotation. 
+<p>Also supports JSR-330's javax.inject.Qualifier annotation, if available.</p>
+</p>
+<code><span class="identifier">QualifierAnnotationAutowireCandidateResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.annotation.QualifierAnnotationAutowireCandidateResolver$<init>(java.lang.Class((kotlin.Annotation)))/qualifierType">qualifierType</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><span class="identifier">Annotation</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p>Create a new QualifierAnnotationAutowireCandidateResolver for the given qualifier annotation type.</p>
+<code><span class="identifier">QualifierAnnotationAutowireCandidateResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.annotation.QualifierAnnotationAutowireCandidateResolver$<init>(kotlin.collections.MutableSet((java.lang.Class((kotlin.Annotation)))))/qualifierTypes">qualifierTypes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">Class</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><span class="identifier">Annotation</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p>Create a new QualifierAnnotationAutowireCandidateResolver for the given qualifier annotation types.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-qualifier-type.html">addQualifierType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addQualifierType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.annotation.QualifierAnnotationAutowireCandidateResolver$addQualifierType(java.lang.Class((kotlin.Annotation)))/qualifierType">qualifierType</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><span class="identifier">Annotation</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Register the given type to be used as a qualifier when autowiring. 
+<p>This identifies qualifier annotations for direct use (on fields, method parameters and constructor parameters) as well as meta annotations that in turn identify actual qualifier annotations. </p>
+<p>This implementation only supports annotations as qualifier types. The default is Spring's Qualifier annotation which serves as a qualifier for direct use and also as a meta annotation.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-suggested-value.html">getSuggestedValue</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSuggestedValue</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.annotation.QualifierAnnotationAutowireCandidateResolver$getSuggestedValue(org.springframework.beans.factory.config.DependencyDescriptor)/descriptor">descriptor</span><span class="symbol">:</span>&nbsp;<span class="identifier">DependencyDescriptor</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Determine whether the given dependency declares a value annotation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-autowire-candidate.html">isAutowireCandidate</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isAutowireCandidate</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.annotation.QualifierAnnotationAutowireCandidateResolver$isAutowireCandidate(org.springframework.beans.factory.config.BeanDefinitionHolder, org.springframework.beans.factory.config.DependencyDescriptor)/bdHolder">bdHolder</span><span class="symbol">:</span>&nbsp;<span class="identifier">BeanDefinitionHolder</span><span class="symbol">, </span><span class="identifier" id="org.springframework.beans.factory.annotation.QualifierAnnotationAutowireCandidateResolver$isAutowireCandidate(org.springframework.beans.factory.config.BeanDefinitionHolder, org.springframework.beans.factory.config.DependencyDescriptor)/descriptor">descriptor</span><span class="symbol">:</span>&nbsp;<span class="identifier">DependencyDescriptor</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Determine whether the provided bean definition is an autowire candidate. 
+<p>To be considered a candidate the bean's <em>autowire-candidate</em> attribute must not have been set to 'false'. Also, if an annotation on the field or parameter to be autowired is recognized by this bean factory as a <em>qualifier</em>, the bean must 'match' against the annotation as well as any attributes it may contain. The bean definition must contain the same qualifier or match by meta attributes. A "value" attribute will fallback to match against the bean name or an alias if a qualifier or attribute does not match.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-required.html">isRequired</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isRequired</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.annotation.QualifierAnnotationAutowireCandidateResolver$isRequired(org.springframework.beans.factory.config.DependencyDescriptor)/descriptor">descriptor</span><span class="symbol">:</span>&nbsp;<span class="identifier">DependencyDescriptor</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Determine whether the given dependency declares an autowired annotation, checking its required flag.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-value-annotation-type.html">setValueAnnotationType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setValueAnnotationType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.annotation.QualifierAnnotationAutowireCandidateResolver$setValueAnnotationType(java.lang.Class((kotlin.Annotation)))/valueAnnotationType">valueAnnotationType</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><span class="identifier">Annotation</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the 'value' annotation type, to be used on fields, method parameters and constructor parameters. 
+<p>The default value annotation type is the Spring-provided Value annotation. </p>
+<p>This setter property exists so that developers can provide their own (non-Spring-specific) annotation type to indicate a default value expression for a specific argument.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.beans.factory.support/-generic-type-aware-autowire-candidate-resolver/set-bean-factory.html">setBeanFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBeanFactory</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.support.GenericTypeAwareAutowireCandidateResolver$setBeanFactory(org.springframework.beans.factory.BeanFactory)/beanFactory">beanFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">BeanFactory</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.context.annotation/-context-annotation-autowire-candidate-resolver/index.html">ContextAnnotationAutowireCandidateResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ContextAnnotationAutowireCandidateResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">QualifierAnnotationAutowireCandidateResolver</span></code>
+<p>Complete implementation of the org.springframework.beans.factory.support.AutowireCandidateResolver strategy interface, providing support for qualifier annotations as well as for lazy resolution driven by the Lazy annotation in the <code>context.annotation</code> package.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

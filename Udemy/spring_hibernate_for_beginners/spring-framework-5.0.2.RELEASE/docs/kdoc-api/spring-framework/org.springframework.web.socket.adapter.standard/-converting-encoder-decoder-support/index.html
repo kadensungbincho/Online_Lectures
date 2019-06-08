@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ConvertingEncoderDecoderSupport - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.adapter.standard</a>&nbsp;/&nbsp;<a href=".">ConvertingEncoderDecoderSupport</a><br/>
+<br/>
+<h1>ConvertingEncoderDecoderSupport</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ConvertingEncoderDecoderSupport</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">M</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Base class that can be used to implement a standard javax.websocket.Encoder and/or javax.websocket.Decoder. It provides encode and decode method implementations that delegate to a Spring ConversionService. 
+<p>By default, this class looks up a ConversionService registered in the <code><a href="#">active ApplicationContext</a></code> under the name <code>'webSocketConversionService'</code>. This works fine for both client and server endpoints, in a Servlet container environment. If not running in a Servlet container, subclasses will need to override the <code><a href="#">#getConversionService()</a></code> method to provide an alternative lookup strategy. </p>
+<p>Subclasses can extend this class and should also implement one or both of javax.websocket.Encoder and javax.websocket.Decoder. For convenience ConvertingEncoderDecoderSupport.BinaryEncoder, ConvertingEncoderDecoderSupport.BinaryDecoder, ConvertingEncoderDecoderSupport.TextEncoder and ConvertingEncoderDecoderSupport.TextDecoder subclasses are provided. </p>
+<p>Since JSR-356 only allows Encoder/Decoder to be registered by type, instances of this class are therefore managed by the WebSocket runtime, and do not need to be registered as Spring Beans. They can, however, by injected with Spring-managed dependencies via Autowired. </p>
+<p>Converters to convert between the <code><a href="#">type</a></code> and <code>String</code> or <code>ByteBuffer</code> should be registered.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - the type being converted to (for Encoder) or from (for Decoder)</p>
+<p><a name="&lt;M&gt;"></a>
+<code><M></code> - the WebSocket message type (String or ByteBuffer)</p>
+<p><strong>Author</strong><br/>
+Phillip Webb</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<p><strong>See Also</strong><br/>
+ConvertingEncoderDecoderSupport.BinaryEncoderConvertingEncoderDecoderSupport.BinaryDecoderConvertingEncoderDecoderSupport.TextEncoderConvertingEncoderDecoderSupport.TextDecoder</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ConvertingEncoderDecoderSupport</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Base class that can be used to implement a standard javax.websocket.Encoder and/or javax.websocket.Decoder. It provides encode and decode method implementations that delegate to a Spring ConversionService. 
+<p>By default, this class looks up a ConversionService registered in the <code><a href="#">active ApplicationContext</a></code> under the name <code>'webSocketConversionService'</code>. This works fine for both client and server endpoints, in a Servlet container environment. If not running in a Servlet container, subclasses will need to override the <code><a href="#">#getConversionService()</a></code> method to provide an alternative lookup strategy. </p>
+<p>Subclasses can extend this class and should also implement one or both of javax.websocket.Encoder and javax.websocket.Decoder. For convenience ConvertingEncoderDecoderSupport.BinaryEncoder, ConvertingEncoderDecoderSupport.BinaryDecoder, ConvertingEncoderDecoderSupport.TextEncoder and ConvertingEncoderDecoderSupport.TextDecoder subclasses are provided. </p>
+<p>Since JSR-356 only allows Encoder/Decoder to be registered by type, instances of this class are therefore managed by the WebSocket runtime, and do not need to be registered as Spring Beans. They can, however, by injected with Spring-managed dependencies via Autowired. </p>
+<p>Converters to convert between the <code><a href="#">type</a></code> and <code>String</code> or <code>ByteBuffer</code> should be registered.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="decode.html">decode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">decode</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.adapter.standard.ConvertingEncoderDecoderSupport$decode(org.springframework.web.socket.adapter.standard.ConvertingEncoderDecoderSupport.M)/message">message</span><span class="symbol">:</span>&nbsp;<span class="identifier">M</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="destroy.html">destroy</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">destroy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="encode.html">encode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">encode</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.adapter.standard.ConvertingEncoderDecoderSupport$encode(org.springframework.web.socket.adapter.standard.ConvertingEncoderDecoderSupport.T)/object">object</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">M</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="init.html">init</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">init</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.adapter.standard.ConvertingEncoderDecoderSupport$init(javax.websocket.EndpointConfig)/config">config</span><span class="symbol">:</span>&nbsp;<span class="identifier">EndpointConfig</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="will-decode.html">willDecode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">willDecode</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.adapter.standard.ConvertingEncoderDecoderSupport$willDecode(org.springframework.web.socket.adapter.standard.ConvertingEncoderDecoderSupport.M)/bytes">bytes</span><span class="symbol">:</span>&nbsp;<span class="identifier">M</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

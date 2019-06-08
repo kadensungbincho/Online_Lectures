@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HttpComponentsHttpInvokerRequestExecutor - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.remoting.httpinvoker</a>&nbsp;/&nbsp;<a href=".">HttpComponentsHttpInvokerRequestExecutor</a><br/>
+<br/>
+<h1>HttpComponentsHttpInvokerRequestExecutor</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HttpComponentsHttpInvokerRequestExecutor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractHttpInvokerRequestExecutor</span></code>
+<p>org.springframework.remoting.httpinvoker.HttpInvokerRequestExecutor implementation that uses <a href="#">Apache HttpComponents HttpClient</a> to execute POST requests. 
+<p>Allows to use a pre-configured org.apache.http.client.HttpClient instance, potentially with authentication, HTTP connection pooling, etc. Also designed for easy subclassing, providing specific template methods. </p>
+<p>As of Spring 4.1, this request executor requires Apache HttpComponents 4.3 or higher.</p>
+</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Author</strong><br/>
+Stephane Nicoll</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<p><strong>See Also</strong><br/>
+org.springframework.remoting.httpinvoker.SimpleHttpInvokerRequestExecutor</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">HttpComponentsHttpInvokerRequestExecutor</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Create a new instance of the HttpComponentsHttpInvokerRequestExecutor with a default HttpClient that uses a default <code>org.apache.http.impl.conn.PoolingClientConnectionManager</code>.</p>
+<code><span class="identifier">HttpComponentsHttpInvokerRequestExecutor</span><span class="symbol">(</span><span class="identifier" id="org.springframework.remoting.httpinvoker.HttpComponentsHttpInvokerRequestExecutor$<init>(org.apache.http.client.HttpClient)/httpClient">httpClient</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpClient</span><span class="symbol">)</span></code>
+<p>Create a new instance of the HttpComponentsClientHttpRequestFactory with the given HttpClient instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-http-client.html">getHttpClient</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getHttpClient</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HttpClient</span></code>
+<p>Return the HttpClient instance that this request executor uses.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-connect-timeout.html">setConnectTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConnectTimeout</span><span class="symbol">(</span><span class="identifier" id="org.springframework.remoting.httpinvoker.HttpComponentsHttpInvokerRequestExecutor$setConnectTimeout(kotlin.Int)/timeout">timeout</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the connection timeout for the underlying HttpClient. A timeout value of 0 specifies an infinite timeout. 
+<p>Additional properties can be configured by specifying a RequestConfig instance on a custom HttpClient.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-connection-request-timeout.html">setConnectionRequestTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConnectionRequestTimeout</span><span class="symbol">(</span><span class="identifier" id="org.springframework.remoting.httpinvoker.HttpComponentsHttpInvokerRequestExecutor$setConnectionRequestTimeout(kotlin.Int)/connectionRequestTimeout">connectionRequestTimeout</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the timeout in milliseconds used when requesting a connection from the connection manager using the underlying HttpClient. A timeout value of 0 specifies an infinite timeout. 
+<p>Additional properties can be configured by specifying a RequestConfig instance on a custom HttpClient.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-http-client.html">setHttpClient</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setHttpClient</span><span class="symbol">(</span><span class="identifier" id="org.springframework.remoting.httpinvoker.HttpComponentsHttpInvokerRequestExecutor$setHttpClient(org.apache.http.client.HttpClient)/httpClient">httpClient</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpClient</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the HttpClient instance to use for this request executor.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-read-timeout.html">setReadTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReadTimeout</span><span class="symbol">(</span><span class="identifier" id="org.springframework.remoting.httpinvoker.HttpComponentsHttpInvokerRequestExecutor$setReadTimeout(kotlin.Int)/timeout">timeout</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the socket read timeout for the underlying HttpClient. A timeout value of 0 specifies an infinite timeout. 
+<p>Additional properties can be configured by specifying a RequestConfig instance on a custom HttpClient.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

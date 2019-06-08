@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractTransactionalTestNGSpringContextTests - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.test.context.testng</a>&nbsp;/&nbsp;<a href=".">AbstractTransactionalTestNGSpringContextTests</a><br/>
+<br/>
+<h1>AbstractTransactionalTestNGSpringContextTests</h1>
+<code><span class="identifier">@TestExecutionListeners</span><span class="symbol">(</span>[TransactionalTestExecutionListener, SqlScriptsTestExecutionListener]<span class="symbol">)</span> <span class="identifier">@Transactional</span> <span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractTransactionalTestNGSpringContextTests</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-abstract-test-n-g-spring-context-tests/index.html"><span class="identifier">AbstractTestNGSpringContextTests</span></a></code>
+<p>Abstract Transactional extension of AbstractTestNGSpringContextTests which adds convenience functionality for JDBC access. Expects a DataSource bean and a PlatformTransactionManager bean to be defined in the Spring ApplicationContext. 
+<p>This class exposes a JdbcTemplate and provides an easy way to <a href="#">count the number of rows in a table</a> (potentially <a href="#">with a WHERE clause</a>), <a href="#">delete from tables</a>, <a href="#">drop tables</a>, and <a href="#">execute SQL scripts</a> within a transaction. </p>
+<p>Concrete subclasses must fulfill the same requirements outlined in AbstractTestNGSpringContextTests. </p>
+<p>The following org.springframework.test.context.TestExecutionListener are configured by default: </p>
+<ul> <li>org.springframework.test.context.web.ServletTestExecutionListener </li>
+<li>org.springframework.test.context.support.DependencyInjectionTestExecutionListener </li>
+<li>org.springframework.test.context.support.DirtiesContextTestExecutionListener </li>
+<li>org.springframework.test.context.transaction.TransactionalTestExecutionListener </li>
+<li>org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener </li>
+</ul>
+</p>
+<p><strong>Author</strong><br/>
+Sam Brannen</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.5</p>
+<p><strong>See Also</strong><br/>
+AbstractTestNGSpringContextTestsorg.springframework.test.context.ContextConfigurationorg.springframework.test.context.TestExecutionListenersorg.springframework.test.context.transaction.TransactionalTestExecutionListenerorg.springframework.test.context.jdbc.SqlScriptsTestExecutionListenerorg.springframework.transaction.annotation.Transactionalorg.springframework.test.annotation.Commitorg.springframework.test.annotation.Rollbackorg.springframework.test.context.transaction.BeforeTransactionorg.springframework.test.context.transaction.AfterTransactionorg.springframework.test.jdbc.JdbcTestUtilsorg.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AbstractTransactionalTestNGSpringContextTests</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Abstract Transactional extension of AbstractTestNGSpringContextTests which adds convenience functionality for JDBC access. Expects a DataSource bean and a PlatformTransactionManager bean to be defined in the Spring ApplicationContext. 
+<p>This class exposes a JdbcTemplate and provides an easy way to <a href="#">count the number of rows in a table</a> (potentially <a href="#">with a WHERE clause</a>), <a href="#">delete from tables</a>, <a href="#">drop tables</a>, and <a href="#">execute SQL scripts</a> within a transaction. </p>
+<p>Concrete subclasses must fulfill the same requirements outlined in AbstractTestNGSpringContextTests. </p>
+<p>The following org.springframework.test.context.TestExecutionListener are configured by default: </p>
+<ul> <li>org.springframework.test.context.web.ServletTestExecutionListener </li>
+<li>org.springframework.test.context.support.DependencyInjectionTestExecutionListener </li>
+<li>org.springframework.test.context.support.DirtiesContextTestExecutionListener </li>
+<li>org.springframework.test.context.transaction.TransactionalTestExecutionListener </li>
+<li>org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener </li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="set-data-source.html">setDataSource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDataSource</span><span class="symbol">(</span><span class="identifier" id="org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests$setDataSource(javax.sql.DataSource)/dataSource">dataSource</span><span class="symbol">:</span>&nbsp;<span class="identifier">DataSource</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the <code>DataSource</code>, typically provided via Dependency Injection. 
+<p>This method also instantiates the <code><a href="#">#jdbcTemplate</a></code> instance variable.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-sql-script-encoding.html">setSqlScriptEncoding</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSqlScriptEncoding</span><span class="symbol">(</span><span class="identifier" id="org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests$setSqlScriptEncoding(kotlin.String)/sqlScriptEncoding">sqlScriptEncoding</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specify the encoding for SQL scripts, if different from the platform encoding.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-abstract-test-n-g-spring-context-tests/run.html">run</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="org.springframework.test.context.testng.AbstractTestNGSpringContextTests$run(org.testng.IHookCallBack, org.testng.ITestResult)/callBack">callBack</span><span class="symbol">:</span>&nbsp;<span class="identifier">IHookCallBack</span><span class="symbol">, </span><span class="identifier" id="org.springframework.test.context.testng.AbstractTestNGSpringContextTests$run(org.testng.IHookCallBack, org.testng.ITestResult)/testResult">testResult</span><span class="symbol">:</span>&nbsp;<span class="identifier">ITestResult</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Delegates to the <a href="#">test</a> in the supplied <code>callback</code> to execute the actual test and then tracks the exception thrown during test execution, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-test-n-g-spring-context-tests/set-application-context.html">setApplicationContext</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">setApplicationContext</span><span class="symbol">(</span><span class="identifier" id="org.springframework.test.context.testng.AbstractTestNGSpringContextTests$setApplicationContext(org.springframework.context.ApplicationContext)/applicationContext">applicationContext</span><span class="symbol">:</span>&nbsp;<span class="identifier">ApplicationContext</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the ApplicationContext to be used by this test instance, provided via ApplicationContextAware semantics.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

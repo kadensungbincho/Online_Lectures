@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TransactionAttributeSourceEditor.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.transaction.interceptor</a>&nbsp;/&nbsp;<a href="index.html">TransactionAttributeSourceEditor</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.transaction.interceptor.TransactionAttributeSourceEditor$&lt;init&gt;()"></a>
+<code><span class="identifier">TransactionAttributeSourceEditor</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Property editor that converts a String into a TransactionAttributeSource. The transaction attribute string must be parseable by the TransactionAttributeEditor in this package. 
+<p>Strings are in property syntax, with the form: <code>FQCN.methodName=&amp;lt;transaction attribute string&amp;gt;</code> </p>
+<p>For example: <code>com.mycompany.mycode.MyClass.myMethod=PROPAGATION_MANDATORY,ISOLATION_DEFAULT</code> </p>
+<p><strong>NOTE:</strong> The specified class must be the one where the methods are defined; in case of implementing an interface, the interface class name. </p>
+<p>Note: Will register all overloaded methods for a given name. Does not support explicit registration of certain overloaded methods. Supports "xxx*" mappings, e.g. "notify*" for "notify" and "notifyAll".</p>
+</p>
+<p><strong>Author</strong><br/>
+Rod Johnson</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+26.04.2003</p>
+<p><strong>See Also</strong><br/>
+TransactionAttributeEditor</p>
+</BODY>
+</HTML>

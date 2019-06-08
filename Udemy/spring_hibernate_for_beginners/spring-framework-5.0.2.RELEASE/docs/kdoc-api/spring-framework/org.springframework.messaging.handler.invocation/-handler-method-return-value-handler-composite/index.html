@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HandlerMethodReturnValueHandlerComposite - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.messaging.handler.invocation</a>&nbsp;/&nbsp;<a href=".">HandlerMethodReturnValueHandlerComposite</a><br/>
+<br/>
+<h1>HandlerMethodReturnValueHandlerComposite</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HandlerMethodReturnValueHandlerComposite</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AsyncHandlerMethodReturnValueHandler</span></code>
+<p>A HandlerMethodReturnValueHandler that wraps and delegates to others.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">HandlerMethodReturnValueHandlerComposite</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A HandlerMethodReturnValueHandler that wraps and delegates to others.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-handler.html">addHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addHandler</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandlerComposite$addHandler(org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandler)/returnValueHandler">returnValueHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodReturnValueHandler</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HandlerMethodReturnValueHandlerComposite</span></code>
+<p>Add the given HandlerMethodReturnValueHandler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="add-handlers.html">addHandlers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addHandlers</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandlerComposite$addHandlers(kotlin.collections.MutableList((org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandler)))/handlers">handlers</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">HandlerMethodReturnValueHandler</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HandlerMethodReturnValueHandlerComposite</span></code>
+<p>Add the given HandlerMethodReturnValueHandlers.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="clear.html">clear</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">clear</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Clear the list of configured handlers.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-return-value-handlers.html">getReturnValueHandlers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getReturnValueHandlers</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HandlerMethodReturnValueHandler</span><span class="symbol">&gt;</span></code>
+<p>Return a read-only list with the configured handlers.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="handle-return-value.html">handleReturnValue</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleReturnValue</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandlerComposite$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.messaging.Message((kotlin.Any)))/returnValue">returnValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandlerComposite$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.messaging.Message((kotlin.Any)))/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandlerComposite$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.messaging.Message((kotlin.Any)))/message">message</span><span class="symbol">:</span>&nbsp;<span class="identifier">Message</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-async-return-value.html">isAsyncReturnValue</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isAsyncReturnValue</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandlerComposite$isAsyncReturnValue(kotlin.Any, org.springframework.core.MethodParameter)/returnValue">returnValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandlerComposite$isAsyncReturnValue(kotlin.Any, org.springframework.core.MethodParameter)/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="supports-return-type.html">supportsReturnType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsReturnType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandlerComposite$supportsReturnType(org.springframework.core.MethodParameter)/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="to-listenable-future.html">toListenableFuture</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toListenableFuture</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandlerComposite$toListenableFuture(kotlin.Any, org.springframework.core.MethodParameter)/returnValue">returnValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandlerComposite$toListenableFuture(kotlin.Any, org.springframework.core.MethodParameter)/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ListenableFuture</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

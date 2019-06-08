@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DelegatingWebSocketMessageBrokerConfiguration - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.config.annotation</a>&nbsp;/&nbsp;<a href=".">DelegatingWebSocketMessageBrokerConfiguration</a><br/>
+<br/>
+<h1>DelegatingWebSocketMessageBrokerConfiguration</h1>
+<code><span class="identifier">@Configuration</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DelegatingWebSocketMessageBrokerConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-web-socket-message-broker-configuration-support/index.html"><span class="identifier">WebSocketMessageBrokerConfigurationSupport</span></a></code>
+<p>A WebSocketMessageBrokerConfigurationSupport extension that detects beans of type WebSocketMessageBrokerConfigurer and delegates to all of them allowing callback style customization of the configuration provided in WebSocketMessageBrokerConfigurationSupport. 
+<p>This class is typically imported via EnableWebSocketMessageBroker.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">DelegatingWebSocketMessageBrokerConfiguration</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A WebSocketMessageBrokerConfigurationSupport extension that detects beans of type WebSocketMessageBrokerConfigurer and delegates to all of them allowing callback style customization of the configuration provided in WebSocketMessageBrokerConfigurationSupport. 
+<p>This class is typically imported via EnableWebSocketMessageBroker.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="set-configurers.html">setConfigurers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConfigurers</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.DelegatingWebSocketMessageBrokerConfiguration$setConfigurers(kotlin.collections.MutableList((org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer)))/configurers">configurers</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">WebSocketMessageBrokerConfigurer</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-web-socket-message-broker-configuration-support/stomp-web-socket-handler-mapping.html">stompWebSocketHandlerMapping</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">stompWebSocketHandlerMapping</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HandlerMapping</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-web-socket-message-broker-configuration-support/sub-protocol-web-socket-handler.html">subProtocolWebSocketHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">subProtocolWebSocketHandler</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">WebSocketHandler</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-web-socket-message-broker-configuration-support/web-socket-message-broker-stats.html">webSocketMessageBrokerStats</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">webSocketMessageBrokerStats</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">WebSocketMessageBrokerStats</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-web-socket-message-broker-configuration-support/web-socket-scope-configurer.html">webSocketScopeConfigurer</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="identifier">webSocketScopeConfigurer</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.springframework.beans.factory.config/-custom-scope-configurer/index.html"><span class="identifier">CustomScopeConfigurer</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

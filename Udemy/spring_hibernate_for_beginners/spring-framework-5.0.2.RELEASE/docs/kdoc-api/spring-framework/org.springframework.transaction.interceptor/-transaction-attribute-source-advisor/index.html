@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TransactionAttributeSourceAdvisor - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.transaction.interceptor</a>&nbsp;/&nbsp;<a href=".">TransactionAttributeSourceAdvisor</a><br/>
+<br/>
+<h1>TransactionAttributeSourceAdvisor</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TransactionAttributeSourceAdvisor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractPointcutAdvisor</span></code>
+<p>Advisor driven by a TransactionAttributeSource, used to include a TransactionInterceptor only for methods that are transactional. 
+<p>Because the AOP framework caches advice calculations, this is normally faster than just letting the TransactionInterceptor run and find out itself that it has no work to do.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rod Johnson</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>See Also</strong><br/>
+<a href="set-transaction-interceptor.html">#setTransactionInterceptor</a>TransactionProxyFactoryBean</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">TransactionAttributeSourceAdvisor</span><span class="symbol">(</span><span class="symbol">)</span></code><br/>
+<code><span class="identifier">TransactionAttributeSourceAdvisor</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.interceptor.TransactionAttributeSourceAdvisor$<init>(org.springframework.transaction.interceptor.TransactionInterceptor)/interceptor">interceptor</span><span class="symbol">:</span>&nbsp;<span class="identifier">TransactionInterceptor</span><span class="symbol">)</span></code>
+<p>Create a new TransactionAttributeSourceAdvisor.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-advice.html">getAdvice</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAdvice</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Advice</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-pointcut.html">getPointcut</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPointcut</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Pointcut</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-class-filter.html">setClassFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setClassFilter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.interceptor.TransactionAttributeSourceAdvisor$setClassFilter(org.springframework.aop.ClassFilter)/classFilter">classFilter</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClassFilter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the ClassFilter to use for this pointcut. Default is <code><a href="#">ClassFilter#TRUE</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-transaction-interceptor.html">setTransactionInterceptor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTransactionInterceptor</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.interceptor.TransactionAttributeSourceAdvisor$setTransactionInterceptor(org.springframework.transaction.interceptor.TransactionInterceptor)/interceptor">interceptor</span><span class="symbol">:</span>&nbsp;<span class="identifier">TransactionInterceptor</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the transaction interceptor to use for this advisor.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

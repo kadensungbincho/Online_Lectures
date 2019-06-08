@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MethodArgumentTypeMismatchException - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.method.annotation</a>&nbsp;/&nbsp;<a href=".">MethodArgumentTypeMismatchException</a><br/>
+<br/>
+<h1>MethodArgumentTypeMismatchException</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MethodArgumentTypeMismatchException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.beans/-type-mismatch-exception/index.html"><span class="identifier">TypeMismatchException</span></a></code>
+<p>A TypeMismatchException raised while resolving a controller method argument. Provides access to the target org.springframework.core.MethodParameter.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.2</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">MethodArgumentTypeMismatchException</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.annotation.MethodArgumentTypeMismatchException$<init>(kotlin.Any, java.lang.Class((kotlin.Any)), kotlin.String, org.springframework.core.MethodParameter, kotlin.Throwable)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.MethodArgumentTypeMismatchException$<init>(kotlin.Any, java.lang.Class((kotlin.Any)), kotlin.String, org.springframework.core.MethodParameter, kotlin.Throwable)/requiredType">requiredType</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.MethodArgumentTypeMismatchException$<init>(kotlin.Any, java.lang.Class((kotlin.Any)), kotlin.String, org.springframework.core.MethodParameter, kotlin.Throwable)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.MethodArgumentTypeMismatchException$<init>(kotlin.Any, java.lang.Class((kotlin.Any)), kotlin.String, org.springframework.core.MethodParameter, kotlin.Throwable)/param">param</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.MethodArgumentTypeMismatchException$<init>(kotlin.Any, java.lang.Class((kotlin.Any)), kotlin.String, org.springframework.core.MethodParameter, kotlin.Throwable)/cause">cause</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.beans/-type-mismatch-exception/-e-r-r-o-r_-c-o-d-e.html">ERROR_CODE</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">ERROR_CODE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Error code that a type mismatch error will be registered with.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Return the name of the method argument.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parameter.html">getParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getParameter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MethodParameter</span></code>
+<p>Return the target method parameter.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.beans/-type-mismatch-exception/get-error-code.html">getErrorCode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getErrorCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.beans/-type-mismatch-exception/get-required-type.html">getRequiredType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getRequiredType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code>
+<p>Return the required target type, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.beans/-type-mismatch-exception/get-value.html">getValue</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Return the offending value (may be <code>null</code>).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

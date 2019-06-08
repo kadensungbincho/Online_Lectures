@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResponseStatusExceptionResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.annotation</a>&nbsp;/&nbsp;<a href=".">ResponseStatusExceptionResolver</a><br/>
+<br/>
+<h1>ResponseStatusExceptionResolver</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ResponseStatusExceptionResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractHandlerExceptionResolver</span><span class="symbol">, </span><a href="../../org.springframework.context/-message-source-aware/index.html"><span class="identifier">MessageSourceAware</span></a></code>
+<p>A org.springframework.web.servlet.HandlerExceptionResolver that uses the ResponseStatus annotation to map exceptions to HTTP status codes. 
+<p>This exception resolver is enabled by default in the org.springframework.web.servlet.DispatcherServlet and the MVC Java config and the MVC namespace. </p>
+<p>As of 4.2 this resolver also looks recursively for <code>@ResponseStatus</code> present on cause exceptions, and as of 4.2.2 this resolver supports attribute overrides for <code>@ResponseStatus</code> in custom composed annotations. </p>
+<p>As of 5.0 this resolver also supports ResponseStatusException.</p>
+</p>
+<p><strong>Author</strong><br/>
+Arjen Poutsma</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Sam Brannen</p>
+<p><strong>Since</strong><br/>
+3.0</p>
+<p><strong>See Also</strong><br/>
+ResponseStatusResponseStatusException</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ResponseStatusExceptionResolver</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A org.springframework.web.servlet.HandlerExceptionResolver that uses the ResponseStatus annotation to map exceptions to HTTP status codes. 
+<p>This exception resolver is enabled by default in the org.springframework.web.servlet.DispatcherServlet and the MVC Java config and the MVC namespace. </p>
+<p>As of 4.2 this resolver also looks recursively for <code>@ResponseStatus</code> present on cause exceptions, and as of 4.2.2 this resolver supports attribute overrides for <code>@ResponseStatus</code> in custom composed annotations. </p>
+<p>As of 5.0 this resolver also supports ResponseStatusException.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="set-message-source.html">setMessageSource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMessageSource</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver$setMessageSource(org.springframework.context.MessageSource)/messageSource">messageSource</span><span class="symbol">:</span>&nbsp;<span class="identifier">MessageSource</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

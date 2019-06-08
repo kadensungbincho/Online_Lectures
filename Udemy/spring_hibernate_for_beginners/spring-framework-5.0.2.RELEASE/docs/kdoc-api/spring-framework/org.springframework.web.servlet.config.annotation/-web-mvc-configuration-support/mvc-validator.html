@@ -1,0 +1,15 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WebMvcConfigurationSupport.mvcValidator - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.config.annotation</a>&nbsp;/&nbsp;<a href="index.html">WebMvcConfigurationSupport</a>&nbsp;/&nbsp;<a href=".">mvcValidator</a><br/>
+<br/>
+<h1>mvcValidator</h1>
+<a name="org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport$mvcValidator()"></a>
+<code><span class="identifier">@Bean</span> <span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mvcValidator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Validator</span></code>
+<p>Return a global Validator instance for example for validating <code>@ModelAttribute</code> and <code>@RequestBody</code> method arguments. Delegates to <code><a href="#">#getValidator()</a></code> first and if that returns <code>null</code> checks the classpath for the presence of a JSR-303 implementations before creating a <code>OptionalValidatorFactoryBean</code>.If a JSR-303 implementation is not available, a no-op Validator is returned.</p>
+</BODY>
+</HTML>

@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HandlerMethodArgumentResolver.resolveArgument - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.messaging.handler.invocation</a>&nbsp;/&nbsp;<a href="index.html">HandlerMethodArgumentResolver</a>&nbsp;/&nbsp;<a href=".">resolveArgument</a><br/>
+<br/>
+<h1>resolveArgument</h1>
+<a name="org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.messaging.Message((kotlin.Any)))"></a>
+<code><span class="identifier">@Nullable</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolveArgument</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.messaging.Message((kotlin.Any)))/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.messaging.Message((kotlin.Any)))/message">message</span><span class="symbol">:</span>&nbsp;<span class="identifier">Message</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Resolves a method parameter into an argument value from a given message.</p>
+<h3>Parameters</h3>
+<p><a name="parameter"></a>
+<code>parameter</code> - the method parameter to resolve. This parameter must have previously been passed to <code><a href="supports-parameter.html">#supportsParameter(org.springframework.core.MethodParameter)</a></code> which must have returned <code>true</code>.</p>
+<p><a name="message"></a>
+<code>message</code> - the currently processed message</p>
+<h3>Exceptions</h3>
+<p><a name="Exception"></a>
+<code>Exception</code> - in case of errors with the preparation of argument values</p>
+<p><strong>Return</strong><br/>
+the resolved argument value, or <code>null</code></p>
+</BODY>
+</HTML>

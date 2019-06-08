@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AsyncHandlerMethodReturnValueHandler - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.method.support</a>&nbsp;/&nbsp;<a href=".">AsyncHandlerMethodReturnValueHandler</a><br/>
+<br/>
+<h1>AsyncHandlerMethodReturnValueHandler</h1>
+<code><span class="keyword">interface </span><span class="identifier">AsyncHandlerMethodReturnValueHandler</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodReturnValueHandler</span></code>
+<p>A return value handler that supports async types. Such return value types need to be handled with priority so the async value can be "unwrapped". 
+<p><strong>Note: </strong> implementing this contract is not required but it should be implemented when the handler needs to be prioritized ahead of others. For example custom (async) handlers, by default ordered after built-in handlers, should take precedence over <code>@ResponseBody</code> or <code>@ModelAttribute</code> handling, which should occur once the async value is ready. By contrast, built-in (async) handlers are already ordered ahead of sync handlers.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.2</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="is-async-return-value.html">isAsyncReturnValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isAsyncReturnValue</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.support.AsyncHandlerMethodReturnValueHandler$isAsyncReturnValue(kotlin.Any, org.springframework.core.MethodParameter)/returnValue">returnValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.support.AsyncHandlerMethodReturnValueHandler$isAsyncReturnValue(kotlin.Any, org.springframework.core.MethodParameter)/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether the given return value represents asynchronous computation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

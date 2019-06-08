@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LocaleContextMessageInterpolator - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.validation.beanvalidation</a>&nbsp;/&nbsp;<a href=".">LocaleContextMessageInterpolator</a><br/>
+<br/>
+<h1>LocaleContextMessageInterpolator</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">LocaleContextMessageInterpolator</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">MessageInterpolator</span></code>
+<p>Delegates to a target MessageInterpolator implementation but enforces Spring's managed Locale. Typically used to wrap the validation provider's default interpolator.</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+3.0</p>
+<p><strong>See Also</strong><br/>
+<a href="#">org.springframework.context.i18n.LocaleContextHolder#getLocale()</a></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">LocaleContextMessageInterpolator</span><span class="symbol">(</span><span class="identifier" id="org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator$<init>(javax.validation.MessageInterpolator)/targetInterpolator">targetInterpolator</span><span class="symbol">:</span>&nbsp;<span class="identifier">MessageInterpolator</span><span class="symbol">)</span></code>
+<p>Create a new LocaleContextMessageInterpolator, wrapping the given target interpolator.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="interpolate.html">interpolate</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">interpolate</span><span class="symbol">(</span><span class="identifier" id="org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator$interpolate(kotlin.String, javax.validation.MessageInterpolator.Context)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator$interpolate(kotlin.String, javax.validation.MessageInterpolator.Context)/context">context</span><span class="symbol">:</span>&nbsp;<span class="identifier">Context</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">interpolate</span><span class="symbol">(</span><span class="identifier" id="org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator$interpolate(kotlin.String, javax.validation.MessageInterpolator.Context, java.util.Locale)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator$interpolate(kotlin.String, javax.validation.MessageInterpolator.Context, java.util.Locale)/context">context</span><span class="symbol">:</span>&nbsp;<span class="identifier">Context</span><span class="symbol">, </span><span class="identifier" id="org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator$interpolate(kotlin.String, javax.validation.MessageInterpolator.Context, java.util.Locale)/locale">locale</span><span class="symbol">:</span>&nbsp;<span class="identifier">Locale</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

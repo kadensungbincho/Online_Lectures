@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AnnotationAsyncExecutionInterceptor - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.scheduling.annotation</a>&nbsp;/&nbsp;<a href=".">AnnotationAsyncExecutionInterceptor</a><br/>
+<br/>
+<h1>AnnotationAsyncExecutionInterceptor</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">AnnotationAsyncExecutionInterceptor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.aop.interceptor/-async-execution-interceptor/index.html"><span class="identifier">AsyncExecutionInterceptor</span></a></code>
+<p>Specialization of AsyncExecutionInterceptor that delegates method execution to an <code>Executor</code> based on the Async annotation. Specifically designed to support use of <code><a href="#">Async#value()</a></code> executor qualification mechanism introduced in Spring 3.1.2. Supports detecting qualifier metadata via <code>@Async</code> at the method or declaring class level. See <code><a href="#">#getExecutorQualifier(Method)</a></code> for details.</p>
+<p><strong>Author</strong><br/>
+Chris Beams</p>
+<p><strong>Author</strong><br/>
+Stephane Nicoll</p>
+<p><strong>Since</strong><br/>
+3.1.2</p>
+<p><strong>See Also</strong><br/>
+org.springframework.scheduling.annotation.Asyncorg.springframework.scheduling.annotation.AsyncAnnotationAdvisor</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AnnotationAsyncExecutionInterceptor</span><span class="symbol">(</span><span class="identifier" id="org.springframework.scheduling.annotation.AnnotationAsyncExecutionInterceptor$<init>(java.util.concurrent.Executor)/defaultExecutor">defaultExecutor</span><span class="symbol">:</span>&nbsp;<span class="identifier">Executor</span><span class="symbol">)</span></code>
+<p>Create a new <code>AnnotationAsyncExecutionInterceptor</code> with the given executor and a simple AsyncUncaughtExceptionHandler.</p>
+<code><span class="identifier">AnnotationAsyncExecutionInterceptor</span><span class="symbol">(</span><span class="identifier" id="org.springframework.scheduling.annotation.AnnotationAsyncExecutionInterceptor$<init>(java.util.concurrent.Executor, org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler)/defaultExecutor">defaultExecutor</span><span class="symbol">:</span>&nbsp;<span class="identifier">Executor</span><span class="symbol">, </span><span class="identifier" id="org.springframework.scheduling.annotation.AnnotationAsyncExecutionInterceptor$<init>(java.util.concurrent.Executor, org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler)/exceptionHandler">exceptionHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">AsyncUncaughtExceptionHandler</span><span class="symbol">)</span></code>
+<p>Create a new <code>AnnotationAsyncExecutionInterceptor</code> with the given executor.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.aop.interceptor/-async-execution-interceptor/get-order.html">getOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOrder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.aop.interceptor/-async-execution-interceptor/invoke.html">invoke</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">invoke</span><span class="symbol">(</span><span class="identifier" id="org.springframework.aop.interceptor.AsyncExecutionInterceptor$invoke(org.aopalliance.intercept.MethodInvocation)/invocation">invocation</span><span class="symbol">:</span>&nbsp;<a href="../../org.aopalliance.intercept/-method-invocation/index.html"><span class="identifier">MethodInvocation</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Intercept the given method invocation, submit the actual calling of the method to the correct task executor and return immediately to the caller.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

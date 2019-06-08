@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DefaultCacheAwareContextLoaderDelegate - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.test.context.cache</a>&nbsp;/&nbsp;<a href=".">DefaultCacheAwareContextLoaderDelegate</a><br/>
+<br/>
+<h1>DefaultCacheAwareContextLoaderDelegate</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DefaultCacheAwareContextLoaderDelegate</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CacheAwareContextLoaderDelegate</span></code>
+<p>Default implementation of the CacheAwareContextLoaderDelegate interface. 
+<p>To use a static <code>DefaultContextCache</code>, invoke the <code><a href="#">#DefaultCacheAwareContextLoaderDelegate()</a></code> constructor; otherwise, invoke the <code><a href="#">#DefaultCacheAwareContextLoaderDelegate(ContextCache)</a></code> and provide a custom ContextCache implementation.</p>
+</p>
+<p><strong>Author</strong><br/>
+Sam Brannen</p>
+<p><strong>Since</strong><br/>
+4.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">DefaultCacheAwareContextLoaderDelegate</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Construct a new <code>DefaultCacheAwareContextLoaderDelegate</code> using a static DefaultContextCache. 
+<p>This default cache is static so that each context can be cached and reused for all subsequent tests that declare the same unique context configuration within the same JVM process.</p>
+</p>
+<code><span class="identifier">DefaultCacheAwareContextLoaderDelegate</span><span class="symbol">(</span><span class="identifier" id="org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate$<init>(org.springframework.test.context.cache.ContextCache)/contextCache">contextCache</span><span class="symbol">:</span>&nbsp;<span class="identifier">ContextCache</span><span class="symbol">)</span></code>
+<p>Construct a new <code>DefaultCacheAwareContextLoaderDelegate</code> using the supplied ContextCache.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="close-context.html">closeContext</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">closeContext</span><span class="symbol">(</span><span class="identifier" id="org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate$closeContext(org.springframework.test.context.MergedContextConfiguration, org.springframework.test.annotation.DirtiesContext.HierarchyMode)/mergedContextConfiguration">mergedContextConfiguration</span><span class="symbol">:</span>&nbsp;<span class="identifier">MergedContextConfiguration</span><span class="symbol">, </span><span class="identifier" id="org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate$closeContext(org.springframework.test.context.MergedContextConfiguration, org.springframework.test.annotation.DirtiesContext.HierarchyMode)/hierarchyMode">hierarchyMode</span><span class="symbol">:</span>&nbsp;<span class="identifier">HierarchyMode</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="load-context.html">loadContext</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">loadContext</span><span class="symbol">(</span><span class="identifier" id="org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate$loadContext(org.springframework.test.context.MergedContextConfiguration)/mergedContextConfiguration">mergedContextConfiguration</span><span class="symbol">:</span>&nbsp;<span class="identifier">MergedContextConfiguration</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ApplicationContext</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

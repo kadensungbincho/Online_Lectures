@@ -1,0 +1,86 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractWebSocketMessageBrokerConfigurer - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.config.annotation</a>&nbsp;/&nbsp;<a href=".">AbstractWebSocketMessageBrokerConfigurer</a><br/>
+<br/>
+<h1>AbstractWebSocketMessageBrokerConfigurer</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractWebSocketMessageBrokerConfigurer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketMessageBrokerConfigurer</span></code>
+<p>A convenient abstract base class for WebSocketMessageBrokerConfigurer implementations providing empty method implementations for optional methods.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AbstractWebSocketMessageBrokerConfigurer</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A convenient abstract base class for WebSocketMessageBrokerConfigurer implementations providing empty method implementations for optional methods.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-argument-resolvers.html">addArgumentResolvers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addArgumentResolvers</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer$addArgumentResolvers(kotlin.collections.MutableList((org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver)))/argumentResolvers">argumentResolvers</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../../org.springframework.messaging.handler.invocation/-handler-method-argument-resolver/index.html"><span class="identifier">HandlerMethodArgumentResolver</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="add-return-value-handlers.html">addReturnValueHandlers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addReturnValueHandlers</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer$addReturnValueHandlers(kotlin.collections.MutableList((org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandler)))/returnValueHandlers">returnValueHandlers</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HandlerMethodReturnValueHandler</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="configure-client-inbound-channel.html">configureClientInboundChannel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">configureClientInboundChannel</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer$configureClientInboundChannel(org.springframework.messaging.simp.config.ChannelRegistration)/registration">registration</span><span class="symbol">:</span>&nbsp;<span class="identifier">ChannelRegistration</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="configure-client-outbound-channel.html">configureClientOutboundChannel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">configureClientOutboundChannel</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer$configureClientOutboundChannel(org.springframework.messaging.simp.config.ChannelRegistration)/registration">registration</span><span class="symbol">:</span>&nbsp;<span class="identifier">ChannelRegistration</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="configure-message-broker.html">configureMessageBroker</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">configureMessageBroker</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer$configureMessageBroker(org.springframework.messaging.simp.config.MessageBrokerRegistry)/registry">registry</span><span class="symbol">:</span>&nbsp;<a href="../../org.springframework.messaging.simp.config/-message-broker-registry/index.html"><span class="identifier">MessageBrokerRegistry</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="configure-message-converters.html">configureMessageConverters</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">configureMessageConverters</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer$configureMessageConverters(kotlin.collections.MutableList((org.springframework.messaging.converter.MessageConverter)))/messageConverters">messageConverters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">MessageConverter</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="configure-web-socket-transport.html">configureWebSocketTransport</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">configureWebSocketTransport</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer$configureWebSocketTransport(org.springframework.web.socket.config.annotation.WebSocketTransportRegistration)/registration">registration</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketTransportRegistration</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

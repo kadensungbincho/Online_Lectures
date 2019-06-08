@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WebSocketHandlerRegistration.setAllowedOrigins - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.config.annotation</a>&nbsp;/&nbsp;<a href="index.html">WebSocketHandlerRegistration</a>&nbsp;/&nbsp;<a href=".">setAllowedOrigins</a><br/>
+<br/>
+<h1>setAllowedOrigins</h1>
+<a name="org.springframework.web.socket.config.annotation.WebSocketHandlerRegistration$setAllowedOrigins(kotlin.Array((kotlin.String)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setAllowedOrigins</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.springframework.web.socket.config.annotation.WebSocketHandlerRegistration$setAllowedOrigins(kotlin.Array((kotlin.String)))/origins">origins</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">WebSocketHandlerRegistration</span></a></code>
+<p>Configure allowed <code>Origin</code> header values. This check is mostly designed for browser clients. There is nothing preventing other types of client to modify the <code>Origin</code> header value. 
+<p>When SockJS is enabled and origins are restricted, transport types that do not allow to check request origin (JSONP and Iframe based transports) are disabled. As a consequence, IE 6 to 9 are not supported when origins are restricted. </p>
+<p>Each provided allowed origin must start by "http://", "https://" or be "*" (means that all origins are allowed). By default, only same origin requests are allowed (empty list).</p>
+</p>
+<p><strong>Since</strong><br/>
+4.1.2</p>
+<p><strong>See Also</strong><br/>
+&lt;a href="https://tools.ietf.org/html/rfc6454"&gt;RFC 6454: The Web Origin Concept&lt;/a&gt;&lt;a href="https://github.com/sockjs/sockjs-client#supported-transports-by-browser-html-served-from-http-or-https"&gt;SockJS supported transports by browser&lt;/a&gt;</p>
+</BODY>
+</HTML>

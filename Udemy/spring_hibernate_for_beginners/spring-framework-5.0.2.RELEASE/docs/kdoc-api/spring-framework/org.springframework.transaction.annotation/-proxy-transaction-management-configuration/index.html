@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ProxyTransactionManagementConfiguration - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.transaction.annotation</a>&nbsp;/&nbsp;<a href=".">ProxyTransactionManagementConfiguration</a><br/>
+<br/>
+<h1>ProxyTransactionManagementConfiguration</h1>
+<code><span class="identifier">@Configuration</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ProxyTransactionManagementConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractTransactionManagementConfiguration</span></code>
+<p><code>@Configuration</code> class that registers the Spring infrastructure beans necessary to enable proxy-based annotation-driven transaction management.</p>
+<p><strong>Author</strong><br/>
+Chris Beams</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<p><strong>See Also</strong><br/>
+EnableTransactionManagementTransactionManagementConfigurationSelector</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ProxyTransactionManagementConfiguration</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p><code>@Configuration</code> class that registers the Spring infrastructure beans necessary to enable proxy-based annotation-driven transaction management.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="transaction-advisor.html">transactionAdvisor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">transactionAdvisor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BeanFactoryTransactionAttributeSourceAdvisor</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="transaction-attribute-source.html">transactionAttributeSource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">transactionAttributeSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TransactionAttributeSource</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="transaction-interceptor.html">transactionInterceptor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">transactionInterceptor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TransactionInterceptor</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

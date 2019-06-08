@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractStandardUpgradeStrategy - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.server.standard</a>&nbsp;/&nbsp;<a href=".">AbstractStandardUpgradeStrategy</a><br/>
+<br/>
+<h1>AbstractStandardUpgradeStrategy</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractStandardUpgradeStrategy</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">RequestUpgradeStrategy</span></code>
+<p>A base class for RequestUpgradeStrategy implementations that build on the standard WebSocket API for Java (JSR-356).</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AbstractStandardUpgradeStrategy</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A base class for RequestUpgradeStrategy implementations that build on the standard WebSocket API for Java (JSR-356).</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-supported-extensions.html">getSupportedExtensions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSupportedExtensions</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.server.standard.AbstractStandardUpgradeStrategy$getSupportedExtensions(org.springframework.http.server.ServerHttpRequest)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpRequest</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../../org.springframework.web.socket/-web-socket-extension/index.html"><span class="identifier">WebSocketExtension</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="upgrade.html">upgrade</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">upgrade</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.server.standard.AbstractStandardUpgradeStrategy$upgrade(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, kotlin.String, kotlin.collections.MutableList((org.springframework.web.socket.WebSocketExtension)), java.security.Principal, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.server.standard.AbstractStandardUpgradeStrategy$upgrade(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, kotlin.String, kotlin.collections.MutableList((org.springframework.web.socket.WebSocketExtension)), java.security.Principal, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/response">response</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpResponse</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.server.standard.AbstractStandardUpgradeStrategy$upgrade(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, kotlin.String, kotlin.collections.MutableList((org.springframework.web.socket.WebSocketExtension)), java.security.Principal, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/selectedProtocol">selectedProtocol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.server.standard.AbstractStandardUpgradeStrategy$upgrade(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, kotlin.String, kotlin.collections.MutableList((org.springframework.web.socket.WebSocketExtension)), java.security.Principal, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/selectedExtensions">selectedExtensions</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../../org.springframework.web.socket/-web-socket-extension/index.html"><span class="identifier">WebSocketExtension</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.server.standard.AbstractStandardUpgradeStrategy$upgrade(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, kotlin.String, kotlin.collections.MutableList((org.springframework.web.socket.WebSocketExtension)), java.security.Principal, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/user">user</span><span class="symbol">:</span>&nbsp;<span class="identifier">Principal</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.server.standard.AbstractStandardUpgradeStrategy$upgrade(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, kotlin.String, kotlin.collections.MutableList((org.springframework.web.socket.WebSocketExtension)), java.security.Principal, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/wsHandler">wsHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketHandler</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.server.standard.AbstractStandardUpgradeStrategy$upgrade(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, kotlin.String, kotlin.collections.MutableList((org.springframework.web.socket.WebSocketExtension)), java.security.Principal, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/attrs">attrs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-abstract-tyrus-request-upgrade-strategy/index.html">AbstractTyrusRequestUpgradeStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractTyrusRequestUpgradeStrategy</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractStandardUpgradeStrategy</span></code>
+<p>A base class for <code>RequestUpgradeStrategy</code> implementations on top of JSR-356 based servers which include Tyrus as their WebSocket engine. 
+<p>Works with Tyrus 1.11 (WebLogic 12.2.1) and Tyrus 1.12 (GlassFish 4.1.1).</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-tomcat-request-upgrade-strategy/index.html">TomcatRequestUpgradeStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TomcatRequestUpgradeStrategy</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractStandardUpgradeStrategy</span></code>
+<p>A WebSocket <code>RequestUpgradeStrategy</code> for Apache Tomcat. Compatible with all versions of Tomcat that support JSR-356, i.e. Tomcat 7.0.47+ and higher. 
+<p>To modify properties of the underlying javax.websocket.server.ServerContainer you can use ServletServerContainerFactoryBean in XML configuration or, when using Java configuration, access the container instance through the "javax.websocket.server.ServerContainer" ServletContext attribute.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-undertow-request-upgrade-strategy/index.html">UndertowRequestUpgradeStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UndertowRequestUpgradeStrategy</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractStandardUpgradeStrategy</span></code>
+<p>A WebSocket <code>RequestUpgradeStrategy</code> for WildFly and its underlying Undertow web server. Also compatible with embedded Undertow usage. 
+<p>Requires Undertow 1.3.5+ as of Spring Framework 5.0.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-web-sphere-request-upgrade-strategy/index.html">WebSphereRequestUpgradeStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WebSphereRequestUpgradeStrategy</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractStandardUpgradeStrategy</span></code>
+<p>WebSphere support for upgrading an HttpServletRequest during a WebSocket handshake. To modify properties of the underlying javax.websocket.server.ServerContainer you can use ServletServerContainerFactoryBean in XML configuration or, when using Java configuration, access the container instance through the "javax.websocket.server.ServerContainer" ServletContext attribute. 
+<p>Tested with WAS Liberty beta (August 2015) for the upcoming 8.5.5.7 release.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

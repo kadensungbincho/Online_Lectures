@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractBeanFactoryAwareAdvisingPostProcessor - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.aop.framework.autoproxy</a>&nbsp;/&nbsp;<a href=".">AbstractBeanFactoryAwareAdvisingPostProcessor</a><br/>
+<br/>
+<h1>AbstractBeanFactoryAwareAdvisingPostProcessor</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractBeanFactoryAwareAdvisingPostProcessor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.aop.framework/-abstract-advising-bean-post-processor/index.html"><span class="identifier">AbstractAdvisingBeanPostProcessor</span></a><span class="symbol">, </span><span class="identifier">BeanFactoryAware</span></code>
+<p>Extension of AbstractAutoProxyCreator which implements BeanFactoryAware, adds exposure of the original target class for each proxied bean (<code><a href="#">AutoProxyUtils#ORIGINAL_TARGET_CLASS_ATTRIBUTE</a></code>), and participates in an externally enforced target-class mode for any given bean (<code><a href="#">AutoProxyUtils#PRESERVE_TARGET_CLASS_ATTRIBUTE</a></code>). This post-processor is therefore aligned with AbstractAutoProxyCreator.</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+4.2.3</p>
+<p><strong>See Also</strong><br/>
+<a href="#">AutoProxyUtils#shouldProxyTargetClass</a><a href="#">AutoProxyUtils#determineTargetClass</a></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AbstractBeanFactoryAwareAdvisingPostProcessor</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Extension of AbstractAutoProxyCreator which implements BeanFactoryAware, adds exposure of the original target class for each proxied bean (<code><a href="#">AutoProxyUtils#ORIGINAL_TARGET_CLASS_ATTRIBUTE</a></code>), and participates in an externally enforced target-class mode for any given bean (<code><a href="#">AutoProxyUtils#PRESERVE_TARGET_CLASS_ATTRIBUTE</a></code>). This post-processor is therefore aligned with AbstractAutoProxyCreator.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="set-bean-factory.html">setBeanFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBeanFactory</span><span class="symbol">(</span><span class="identifier" id="org.springframework.aop.framework.autoproxy.AbstractBeanFactoryAwareAdvisingPostProcessor$setBeanFactory(org.springframework.beans.factory.BeanFactory)/beanFactory">beanFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">BeanFactory</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.aop.framework/-abstract-advising-bean-post-processor/post-process-after-initialization.html">postProcessAfterInitialization</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">postProcessAfterInitialization</span><span class="symbol">(</span><span class="identifier" id="org.springframework.aop.framework.AbstractAdvisingBeanPostProcessor$postProcessAfterInitialization(kotlin.Any, kotlin.String)/bean">bean</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.aop.framework.AbstractAdvisingBeanPostProcessor$postProcessAfterInitialization(kotlin.Any, kotlin.String)/beanName">beanName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.aop.framework/-abstract-advising-bean-post-processor/post-process-before-initialization.html">postProcessBeforeInitialization</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">postProcessBeforeInitialization</span><span class="symbol">(</span><span class="identifier" id="org.springframework.aop.framework.AbstractAdvisingBeanPostProcessor$postProcessBeforeInitialization(kotlin.Any, kotlin.String)/bean">bean</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.aop.framework.AbstractAdvisingBeanPostProcessor$postProcessBeforeInitialization(kotlin.Any, kotlin.String)/beanName">beanName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.aop.framework/-abstract-advising-bean-post-processor/set-before-existing-advisors.html">setBeforeExistingAdvisors</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBeforeExistingAdvisors</span><span class="symbol">(</span><span class="identifier" id="org.springframework.aop.framework.AbstractAdvisingBeanPostProcessor$setBeforeExistingAdvisors(kotlin.Boolean)/beforeExistingAdvisors">beforeExistingAdvisors</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set whether this post-processor's advisor is supposed to apply before existing advisors when encountering a pre-advised object. 
+<p>Default is "false", applying the advisor after existing advisors, i.e. as close as possible to the target method. Switch this to "true" in order for this post-processor's advisor to wrap existing advisors as well. </p>
+<p>Note: Check the concrete post-processor's javadoc whether it possibly changes this flag by default, depending on the nature of its advisor.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.validation.beanvalidation/-method-validation-post-processor/index.html">MethodValidationPostProcessor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MethodValidationPostProcessor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractBeanFactoryAwareAdvisingPostProcessor</span><span class="symbol">, </span><span class="identifier">InitializingBean</span></code>
+<p>A convenient BeanPostProcessor implementation that delegates to a JSR-303 provider for performing method-level validation on annotated methods. 
+<p>Applicable methods have JSR-303 constraint annotations on their parameters and/or on their return value (in the latter case specified at the method level, typically as inline annotation), e.g.: </p>
+<pre><code> public @NotNull Object myValidMethod(@NotNull String arg1, @Max(10) int arg2) </code></pre> 
+<p>Target classes with such annotated methods need to be annotated with Spring's Validated annotation at the type level, for their methods to be searched for inline constraint annotations. Validation groups can be specified through <code>@Validated</code> as well. By default, JSR-303 will validate against its default group only. </p>
+<p>As of Spring 5.0, this functionality requires a Bean Validation 1.1 provider.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.dao.annotation/-persistence-exception-translation-post-processor/index.html">PersistenceExceptionTranslationPostProcessor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PersistenceExceptionTranslationPostProcessor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractBeanFactoryAwareAdvisingPostProcessor</span></code>
+<p>Bean post-processor that automatically applies persistence exception translation to any bean marked with Spring's @org.springframework.stereotype.Repository annotation, adding a corresponding PersistenceExceptionTranslationAdvisor to the exposed proxy (either an existing AOP proxy or a newly generated proxy that implements all of the target's interfaces). 
+<p>Translates native resource exceptions to Spring's org.springframework.dao.DataAccessException hierarchy. Autodetects beans that implement the org.springframework.dao.support.PersistenceExceptionTranslator interface, which are subsequently asked to translate candidate exceptions. </p>
+<p>All of Spring's applicable resource factories (e.g. org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean) implement the <code>PersistenceExceptionTranslator</code> interface out of the box. As a consequence, all that is usually needed to enable automatic exception translation is marking all affected beans (such as Repositories or DAOs) with the <code>@Repository</code> annotation, along with defining this post-processor as a bean in the application context.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

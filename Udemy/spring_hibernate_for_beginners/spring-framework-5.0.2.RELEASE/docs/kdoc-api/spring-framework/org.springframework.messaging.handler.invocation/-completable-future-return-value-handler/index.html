@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CompletableFutureReturnValueHandler - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.messaging.handler.invocation</a>&nbsp;/&nbsp;<a href=".">CompletableFutureReturnValueHandler</a><br/>
+<br/>
+<h1>CompletableFutureReturnValueHandler</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CompletableFutureReturnValueHandler</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractAsyncReturnValueHandler</span></code>
+<p>Support for CompletableFuture (and as of 4.3.7 also CompletionStage) as a return value type.</p>
+<p><strong>Author</strong><br/>
+Sebastien Deleuze</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+4.2</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">CompletableFutureReturnValueHandler</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Support for CompletableFuture (and as of 4.3.7 also CompletionStage) as a return value type.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="supports-return-type.html">supportsReturnType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsReturnType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.CompletableFutureReturnValueHandler$supportsReturnType(org.springframework.core.MethodParameter)/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="to-listenable-future.html">toListenableFuture</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toListenableFuture</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.CompletableFutureReturnValueHandler$toListenableFuture(kotlin.Any, org.springframework.core.MethodParameter)/returnValue">returnValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.messaging.handler.invocation.CompletableFutureReturnValueHandler$toListenableFuture(kotlin.Any, org.springframework.core.MethodParameter)/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ListenableFuture</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

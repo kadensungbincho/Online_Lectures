@@ -1,0 +1,155 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResultSetWrappingSqlRowSetMetaData - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.jdbc.support.rowset</a>&nbsp;/&nbsp;<a href=".">ResultSetWrappingSqlRowSetMetaData</a><br/>
+<br/>
+<h1>ResultSetWrappingSqlRowSetMetaData</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ResultSetWrappingSqlRowSetMetaData</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SqlRowSetMetaData</span></code>
+<p>The default implementation of Spring's SqlRowSetMetaData interface, wrapping a java.sql.ResultSetMetaData instance, catching any SQLExceptions and translating them to a corresponding Spring InvalidResultSetAccessException. 
+<p>Used by ResultSetWrappingSqlRowSet.</p>
+</p>
+<p><strong>Author</strong><br/>
+Thomas Risberg</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+1.2</p>
+<p><strong>See Also</strong><br/>
+<a href="../-result-set-wrapping-sql-row-set/get-meta-data.html">ResultSetWrappingSqlRowSet#getMetaData()</a></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ResultSetWrappingSqlRowSetMetaData</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$<init>(java.sql.ResultSetMetaData)/resultSetMetaData">resultSetMetaData</span><span class="symbol">:</span>&nbsp;<span class="identifier">ResultSetMetaData</span><span class="symbol">)</span></code>
+<p>Create a new ResultSetWrappingSqlRowSetMetaData object for the given ResultSetMetaData instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-catalog-name.html">getCatalogName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getCatalogName</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$getCatalogName(kotlin.Int)/column">column</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-column-class-name.html">getColumnClassName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getColumnClassName</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$getColumnClassName(kotlin.Int)/column">column</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-column-count.html">getColumnCount</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getColumnCount</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-column-display-size.html">getColumnDisplaySize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getColumnDisplaySize</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$getColumnDisplaySize(kotlin.Int)/column">column</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-column-label.html">getColumnLabel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getColumnLabel</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$getColumnLabel(kotlin.Int)/column">column</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-column-name.html">getColumnName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getColumnName</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$getColumnName(kotlin.Int)/column">column</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-column-names.html">getColumnNames</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getColumnNames</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-column-type.html">getColumnType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getColumnType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$getColumnType(kotlin.Int)/column">column</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-column-type-name.html">getColumnTypeName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getColumnTypeName</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$getColumnTypeName(kotlin.Int)/column">column</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-precision.html">getPrecision</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPrecision</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$getPrecision(kotlin.Int)/column">column</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-scale.html">getScale</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getScale</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$getScale(kotlin.Int)/column">column</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-schema-name.html">getSchemaName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSchemaName</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$getSchemaName(kotlin.Int)/column">column</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-table-name.html">getTableName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTableName</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$getTableName(kotlin.Int)/column">column</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-case-sensitive.html">isCaseSensitive</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isCaseSensitive</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$isCaseSensitive(kotlin.Int)/column">column</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-currency.html">isCurrency</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isCurrency</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$isCurrency(kotlin.Int)/column">column</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-signed.html">isSigned</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isSigned</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSetMetaData$isSigned(kotlin.Int)/column">column</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

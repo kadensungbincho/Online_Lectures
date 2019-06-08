@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MethodArgumentNotValidException - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.messaging.handler.annotation.support</a>&nbsp;/&nbsp;<a href=".">MethodArgumentNotValidException</a><br/>
+<br/>
+<h1>MethodArgumentNotValidException</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MethodArgumentNotValidException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.messaging.handler.invocation/-method-argument-resolution-exception/index.html"><span class="identifier">MethodArgumentResolutionException</span></a></code>
+<p>Exception to be thrown when a method argument fails validation perhaps as a result of <code>@Valid</code> style validation, or perhaps because it is required.</p>
+<p><strong>Author</strong><br/>
+Brian Clozel</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">MethodArgumentNotValidException</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException$<init>(org.springframework.messaging.Message((kotlin.Any)), org.springframework.core.MethodParameter)/message">message</span><span class="symbol">:</span>&nbsp;<span class="identifier">Message</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException$<init>(org.springframework.messaging.Message((kotlin.Any)), org.springframework.core.MethodParameter)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span></code>
+<p>Create a new instance with the invalid <code>MethodParameter</code>.</p>
+<code><span class="identifier">MethodArgumentNotValidException</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException$<init>(org.springframework.messaging.Message((kotlin.Any)), org.springframework.core.MethodParameter, org.springframework.validation.BindingResult)/message">message</span><span class="symbol">:</span>&nbsp;<span class="identifier">Message</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException$<init>(org.springframework.messaging.Message((kotlin.Any)), org.springframework.core.MethodParameter, org.springframework.validation.BindingResult)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException$<init>(org.springframework.messaging.Message((kotlin.Any)), org.springframework.core.MethodParameter, org.springframework.validation.BindingResult)/bindingResult">bindingResult</span><span class="symbol">:</span>&nbsp;<span class="identifier">BindingResult</span><span class="symbol">)</span></code>
+<p>Create a new instance with the invalid <code>MethodParameter</code> and a org.springframework.validation.BindingResult.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-binding-result.html">getBindingResult</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getBindingResult</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BindingResult</span></code>
+<p>Return the BindingResult if the failure is validation-related, or <code>null</code> if none.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.messaging.handler.invocation/-method-argument-resolution-exception/get-method-parameter.html">getMethodParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getMethodParameter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MethodParameter</span></code>
+<p>Return the MethodParameter that was rejected.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

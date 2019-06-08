@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SockJsWebSocketHandler - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.sockjs.transport.handler</a>&nbsp;/&nbsp;<a href=".">SockJsWebSocketHandler</a><br/>
+<br/>
+<h1>SockJsWebSocketHandler</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SockJsWebSocketHandler</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.socket.handler/-text-web-socket-handler/index.html"><span class="identifier">TextWebSocketHandler</span></a><span class="symbol">, </span><span class="identifier">SubProtocolCapable</span></code>
+<p>An implementation of WebSocketHandler that adds SockJS messages frames, sends SockJS heartbeat messages, and delegates lifecycle events and messages to a target WebSocketHandler. 
+<p>Methods in this class allow exceptions from the wrapped WebSocketHandler to propagate. However, any exceptions resulting from SockJS message handling (e.g. while sending SockJS frames or heartbeat messages) are caught and treated as transport errors, i.e. routed to the <code><a href="#"> handleTransportError</a></code> method of the wrapped handler and the session closed.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">SockJsWebSocketHandler</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.SockJsWebSocketHandler$<init>(org.springframework.web.socket.sockjs.transport.SockJsServiceConfig, org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.sockjs.transport.session.WebSocketServerSockJsSession)/serviceConfig">serviceConfig</span><span class="symbol">:</span>&nbsp;<span class="identifier">SockJsServiceConfig</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.SockJsWebSocketHandler$<init>(org.springframework.web.socket.sockjs.transport.SockJsServiceConfig, org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.sockjs.transport.session.WebSocketServerSockJsSession)/webSocketHandler">webSocketHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketHandler</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.SockJsWebSocketHandler$<init>(org.springframework.web.socket.sockjs.transport.SockJsServiceConfig, org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.sockjs.transport.session.WebSocketServerSockJsSession)/sockJsSession">sockJsSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketServerSockJsSession</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="after-connection-closed.html">afterConnectionClosed</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">afterConnectionClosed</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.SockJsWebSocketHandler$afterConnectionClosed(org.springframework.web.socket.WebSocketSession, org.springframework.web.socket.CloseStatus)/wsSession">wsSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketSession</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.SockJsWebSocketHandler$afterConnectionClosed(org.springframework.web.socket.WebSocketSession, org.springframework.web.socket.CloseStatus)/status">status</span><span class="symbol">:</span>&nbsp;<span class="identifier">CloseStatus</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="after-connection-established.html">afterConnectionEstablished</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">afterConnectionEstablished</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.SockJsWebSocketHandler$afterConnectionEstablished(org.springframework.web.socket.WebSocketSession)/wsSession">wsSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketSession</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-sub-protocols.html">getSubProtocols</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSubProtocols</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="handle-text-message.html">handleTextMessage</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleTextMessage</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.SockJsWebSocketHandler$handleTextMessage(org.springframework.web.socket.WebSocketSession, org.springframework.web.socket.TextMessage)/wsSession">wsSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketSession</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.SockJsWebSocketHandler$handleTextMessage(org.springframework.web.socket.WebSocketSession, org.springframework.web.socket.TextMessage)/message">message</span><span class="symbol">:</span>&nbsp;<span class="identifier">TextMessage</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="handle-transport-error.html">handleTransportError</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleTransportError</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.SockJsWebSocketHandler$handleTransportError(org.springframework.web.socket.WebSocketSession, kotlin.Throwable)/webSocketSession">webSocketSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketSession</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.SockJsWebSocketHandler$handleTransportError(org.springframework.web.socket.WebSocketSession, kotlin.Throwable)/exception">exception</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

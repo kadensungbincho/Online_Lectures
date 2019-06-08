@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractInterceptorDrivenBeanDefinitionDecorator.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.aop.config</a>&nbsp;/&nbsp;<a href="index.html">AbstractInterceptorDrivenBeanDefinitionDecorator</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.aop.config.AbstractInterceptorDrivenBeanDefinitionDecorator$&lt;init&gt;()"></a>
+<code><span class="identifier">AbstractInterceptorDrivenBeanDefinitionDecorator</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Base implementation for org.springframework.beans.factory.xml.BeanDefinitionDecorator wishing to add an org.aopalliance.intercept.MethodInterceptor to the resulting bean. 
+<p>This base class controls the creation of the ProxyFactoryBean bean definition and wraps the original as an inner-bean definition for the <code>target</code> property of ProxyFactoryBean. </p>
+<p>Chaining is correctly handled, ensuring that only one ProxyFactoryBean definition is created. If a previous org.springframework.beans.factory.xml.BeanDefinitionDecorator already created the org.springframework.aop.framework.ProxyFactoryBean then the interceptor is simply added to the existing definition. </p>
+<p>Subclasses have only to create the <code>BeanDefinition</code> to the interceptor that they wish to add.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rob Harrop</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<p><strong>See Also</strong><br/>
+org.aopalliance.intercept.MethodInterceptor</p>
+</BODY>
+</HTML>

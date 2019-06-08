@@ -1,0 +1,150 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>InstantiationAwareBeanPostProcessorAdapter - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.beans.factory.config</a>&nbsp;/&nbsp;<a href=".">InstantiationAwareBeanPostProcessorAdapter</a><br/>
+<br/>
+<h1>InstantiationAwareBeanPostProcessorAdapter</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">InstantiationAwareBeanPostProcessorAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SmartInstantiationAwareBeanPostProcessor</span></code>
+<p>Adapter that implements all methods on SmartInstantiationAwareBeanPostProcessor as no-ops, which will not change normal processing of each bean instantiated by the container. Subclasses may override merely those methods that they are actually interested in. 
+<p>Note that this base class is only recommendable if you actually require InstantiationAwareBeanPostProcessor functionality. If all you need is plain BeanPostProcessor functionality, prefer a straight implementation of that (simpler) interface.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rod Johnson</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">InstantiationAwareBeanPostProcessorAdapter</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Adapter that implements all methods on SmartInstantiationAwareBeanPostProcessor as no-ops, which will not change normal processing of each bean instantiated by the container. Subclasses may override merely those methods that they are actually interested in. 
+<p>Note that this base class is only recommendable if you actually require InstantiationAwareBeanPostProcessor functionality. If all you need is plain BeanPostProcessor functionality, prefer a straight implementation of that (simpler) interface.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="determine-candidate-constructors.html">determineCandidateConstructors</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">determineCandidateConstructors</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$determineCandidateConstructors(java.lang.Class((kotlin.Any)), kotlin.String)/beanClass">beanClass</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$determineCandidateConstructors(java.lang.Class((kotlin.Any)), kotlin.String)/beanName">beanName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">Constructor</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-early-bean-reference.html">getEarlyBeanReference</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getEarlyBeanReference</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$getEarlyBeanReference(kotlin.Any, kotlin.String)/bean">bean</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$getEarlyBeanReference(kotlin.Any, kotlin.String)/beanName">beanName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="post-process-after-initialization.html">postProcessAfterInitialization</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">postProcessAfterInitialization</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$postProcessAfterInitialization(kotlin.Any, kotlin.String)/bean">bean</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$postProcessAfterInitialization(kotlin.Any, kotlin.String)/beanName">beanName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="post-process-after-instantiation.html">postProcessAfterInstantiation</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">postProcessAfterInstantiation</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$postProcessAfterInstantiation(kotlin.Any, kotlin.String)/bean">bean</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$postProcessAfterInstantiation(kotlin.Any, kotlin.String)/beanName">beanName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="post-process-before-initialization.html">postProcessBeforeInitialization</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">postProcessBeforeInitialization</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$postProcessBeforeInitialization(kotlin.Any, kotlin.String)/bean">bean</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$postProcessBeforeInitialization(kotlin.Any, kotlin.String)/beanName">beanName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="post-process-before-instantiation.html">postProcessBeforeInstantiation</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">postProcessBeforeInstantiation</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$postProcessBeforeInstantiation(java.lang.Class((kotlin.Any)), kotlin.String)/beanClass">beanClass</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$postProcessBeforeInstantiation(java.lang.Class((kotlin.Any)), kotlin.String)/beanName">beanName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="post-process-property-values.html">postProcessPropertyValues</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">postProcessPropertyValues</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$postProcessPropertyValues(org.springframework.beans.PropertyValues, kotlin.Array((java.beans.PropertyDescriptor)), kotlin.Any, kotlin.String)/pvs">pvs</span><span class="symbol">:</span>&nbsp;<span class="identifier">PropertyValues</span><span class="symbol">, </span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$postProcessPropertyValues(org.springframework.beans.PropertyValues, kotlin.Array((java.beans.PropertyDescriptor)), kotlin.Any, kotlin.String)/pds">pds</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">PropertyDescriptor</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$postProcessPropertyValues(org.springframework.beans.PropertyValues, kotlin.Array((java.beans.PropertyDescriptor)), kotlin.Any, kotlin.String)/bean">bean</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$postProcessPropertyValues(org.springframework.beans.PropertyValues, kotlin.Array((java.beans.PropertyDescriptor)), kotlin.Any, kotlin.String)/beanName">beanName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">PropertyValues</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="predict-bean-type.html">predictBeanType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">predictBeanType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$predictBeanType(java.lang.Class((kotlin.Any)), kotlin.String)/beanClass">beanClass</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter$predictBeanType(java.lang.Class((kotlin.Any)), kotlin.String)/beanName">beanName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.beans.factory.annotation/-autowired-annotation-bean-post-processor/index.html">AutowiredAnnotationBeanPostProcessor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">AutowiredAnnotationBeanPostProcessor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">InstantiationAwareBeanPostProcessorAdapter</span><span class="symbol">, </span><a href="../../org.springframework.beans.factory.support/-merged-bean-definition-post-processor/index.html"><span class="identifier">MergedBeanDefinitionPostProcessor</span></a><span class="symbol">, </span><span class="identifier">PriorityOrdered</span><span class="symbol">, </span><span class="identifier">BeanFactoryAware</span></code>
+<p>org.springframework.beans.factory.config.BeanPostProcessor implementation that autowires annotated fields, setter methods and arbitrary config methods. Such members to be injected are detected through a Java 5 annotation: by default, Spring's Autowired and Value annotations. 
+<p>Also supports JSR-330's javax.inject.Inject annotation, if available, as a direct alternative to Spring's own <code>@Autowired</code>. </p>
+<p>Only one constructor (at max) of any given bean class may carry this annotation with the 'required' parameter set to <code>true</code>, indicating <em>the</em> constructor to autowire when used as a Spring bean. If multiple <em>non-required</em> constructors carry the annotation, they will be considered as candidates for autowiring. The constructor with the greatest number of dependencies that can be satisfied by matching beans in the Spring container will be chosen. If none of the candidates can be satisfied, then a default constructor (if present) will be used. An annotated constructor does not have to be public. </p>
+<p>Fields are injected right after construction of a bean, before any config methods are invoked. Such a config field does not have to be public. </p>
+<p>Config methods may have an arbitrary name and any number of arguments; each of those arguments will be autowired with a matching bean in the Spring container. Bean property setter methods are effectively just a special case of such a general config method. Config methods do not have to be public. </p>
+<p>Note: A default AutowiredAnnotationBeanPostProcessor will be registered by the "context:annotation-config" and "context:component-scan" XML tags. Remove or turn off the default annotation configuration there if you intend to specify a custom AutowiredAnnotationBeanPostProcessor bean definition. </p>
+<p><strong>NOTE:</strong> Annotation injection will be performed <em>before</em> XML injection; thus the latter configuration will override the former for properties wired through both approaches. </p>
+<p>In addition to regular injection points as discussed above, this post-processor also handles Spring's Lookup annotation which identifies lookup methods to be replaced by the container at runtime. This is essentially a type-safe version of <code>getBean(Class, args)</code> and <code>getBean(String, args)</code>, See Lookup for details.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.beans.factory.annotation/-required-annotation-bean-post-processor/index.html">RequiredAnnotationBeanPostProcessor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RequiredAnnotationBeanPostProcessor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">InstantiationAwareBeanPostProcessorAdapter</span><span class="symbol">, </span><a href="../../org.springframework.beans.factory.support/-merged-bean-definition-post-processor/index.html"><span class="identifier">MergedBeanDefinitionPostProcessor</span></a><span class="symbol">, </span><span class="identifier">PriorityOrdered</span><span class="symbol">, </span><span class="identifier">BeanFactoryAware</span></code>
+<p>org.springframework.beans.factory.config.BeanPostProcessor implementation that enforces required JavaBean properties to have been configured. Required bean properties are detected through a Java 5 annotation: by default, Spring's Required annotation. 
+<p>The motivation for the existence of this BeanPostProcessor is to allow developers to annotate the setter properties of their own classes with an arbitrary JDK 1.5 annotation to indicate that the container must check for the configuration of a dependency injected value. This neatly pushes responsibility for such checking onto the container (where it arguably belongs), and obviates the need (<strong>in part</strong>) for a developer to code a method that simply checks that all required properties have actually been set. </p>
+<p>Please note that an 'init' method may still need to implemented (and may still be desirable), because all that this class does is enforce that a 'required' property has actually been configured with a value. It does <strong>not</strong> check anything else... In particular, it does not check that a configured value is not <code>null</code>. </p>
+<p>Note: A default RequiredAnnotationBeanPostProcessor will be registered by the "context:annotation-config" and "context:component-scan" XML tags. Remove or turn off the default annotation configuration there if you intend to specify a custom RequiredAnnotationBeanPostProcessor bean definition.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.scripting.support/-script-factory-post-processor/index.html">ScriptFactoryPostProcessor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ScriptFactoryPostProcessor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">InstantiationAwareBeanPostProcessorAdapter</span><span class="symbol">, </span><span class="identifier">BeanClassLoaderAware</span><span class="symbol">, </span><span class="identifier">BeanFactoryAware</span><span class="symbol">, </span><span class="identifier">ResourceLoaderAware</span><span class="symbol">, </span><span class="identifier">DisposableBean</span><span class="symbol">, </span><span class="identifier">Ordered</span></code>
+<p>org.springframework.beans.factory.config.BeanPostProcessor that handles org.springframework.scripting.ScriptFactory definitions, replacing each factory with the actual scripted Java object generated by it. 
+<p>This is similar to the org.springframework.beans.factory.FactoryBean mechanism, but is specifically tailored for scripts and not built into Spring's core container itself but rather implemented as an extension. </p>
+<p><strong>NOTE:</strong> The most important characteristic of this post-processor is that constructor arguments are applied to the org.springframework.scripting.ScriptFactory instance while bean property values are applied to the generated scripted object. Typically, constructor arguments include a script source locator and potentially script interfaces, while bean property values include references and config values to inject into the scripted object itself. </p>
+<p>The following ScriptFactoryPostProcessor will automatically be applied to the two org.springframework.scripting.ScriptFactory definitions below. At runtime, the actual scripted objects will be exposed for "bshMessenger" and "groovyMessenger", rather than the org.springframework.scripting.ScriptFactory instances. Both of those are supposed to be castable to the example's <code>Messenger</code> interfaces here. </p>
+<pre><code>&lt;bean class="org.springframework.scripting.support.ScriptFactoryPostProcessor"/&gt; &lt;bean id="bshMessenger" class="org.springframework.scripting.bsh.BshScriptFactory"&gt; &lt;constructor-arg value="classpath:mypackage/Messenger.bsh"/&gt; &lt;constructor-arg value="mypackage.Messenger"/&gt; &lt;property name="message" value="Hello World!"/&gt; &lt;/bean&gt; &lt;bean id="groovyMessenger" class="org.springframework.scripting.groovy.GroovyScriptFactory"&gt; &lt;constructor-arg value="classpath:mypackage/Messenger.groovy"/&gt; &lt;property name="message" value="Hello World!"/&gt; &lt;/bean&gt;</code></pre> 
+<p><strong>NOTE:</strong> Please note that the above excerpt from a Spring XML bean definition file uses just the &lt;bean/&gt;-style syntax (in an effort to illustrate using the ScriptFactoryPostProcessor itself). In reality, you would never create a &lt;bean/&gt; definition for a ScriptFactoryPostProcessor explicitly; rather you would import the tags from the <code>'lang'</code> namespace and simply create scripted beans using the tags in that namespace... as part of doing so, a ScriptFactoryPostProcessor will implicitly be created for you. </p>
+<p>The Spring reference documentation contains numerous examples of using tags in the <code>'lang'</code> namespace; by way of an example, find below a Groovy-backed bean defined using the <code>'lang:groovy'</code> tag. </p>
+<pre><code> &lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lang="http://www.springframework.org/schema/lang"&gt; &lt;!-- this is the bean definition for the Groovy-backed Messenger implementation --&gt; &lt;lang:groovy id="messenger" script-source="classpath:Messenger.groovy"&gt; &lt;lang:property name="message" value="I Can Do The Frug" /&gt; &lt;/lang:groovy&gt; &lt;!-- an otherwise normal bean that will be injected by the Groovy-backed Messenger --&gt; &lt;bean id="bookingService" class="x.y.DefaultBookingService"&gt; &lt;property name="messenger" ref="messenger" /&gt; &lt;/bean&gt; &lt;/beans&gt;</code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

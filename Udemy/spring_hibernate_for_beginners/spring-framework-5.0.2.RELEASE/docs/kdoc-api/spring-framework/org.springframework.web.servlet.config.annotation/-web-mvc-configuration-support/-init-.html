@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WebMvcConfigurationSupport.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.config.annotation</a>&nbsp;/&nbsp;<a href="index.html">WebMvcConfigurationSupport</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport$&lt;init&gt;()"></a>
+<code><span class="identifier">WebMvcConfigurationSupport</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>This is the main class providing the configuration behind the MVC Java config. It is typically imported by adding EnableWebMvc to an application Configuration class. An alternative more advanced option is to extend directly from this class and override methods as necessary, remembering to add Configuration to the subclass and Bean to overridden Bean methods. For more details see the javadoc of EnableWebMvc. 
+<p>This class registers the following HandlerMappings:</p>
+ <ul> <li>RequestMappingHandlerMapping ordered at 0 for mapping requests to annotated controller methods. </li>
+<li>HandlerMapping ordered at 1 to map URL paths directly to view names. </li>
+<li>BeanNameUrlHandlerMapping ordered at 2 to map URL paths to controller bean names. </li>
+<li>HandlerMapping ordered at <code>Integer.MAX_VALUE-1</code> to serve static resource requests. </li>
+<li>HandlerMapping ordered at <code>Integer.MAX_VALUE</code> to forward requests to the default servlet. </li>
+</ul>
+ 
+<p>Registers these HandlerAdapters: </p>
+<ul> <li>RequestMappingHandlerAdapter for processing requests with annotated controller methods. </li>
+<li>HttpRequestHandlerAdapter for processing requests with HttpRequestHandlers. </li>
+<li>SimpleControllerHandlerAdapter for processing requests with interface-based Controllers. </li>
+</ul>
+ 
+<p>Registers a HandlerExceptionResolverComposite with this chain of exception resolvers: </p>
+<ul> <li>ExceptionHandlerExceptionResolver for handling exceptions through @ExceptionHandler methods. </li>
+<li>ResponseStatusExceptionResolver for exceptions annotated with @ResponseStatus. </li>
+<li>DefaultHandlerExceptionResolver for resolving known Spring exception types </li>
+</ul>
+ 
+<p>Registers an AntPathMatcher and a UrlPathHelper to be used by: </p>
+<ul> <li>the RequestMappingHandlerMapping, </li>
+<li>the HandlerMapping for ViewControllers </li>
+<li>and the HandlerMapping for serving resources </li>
+</ul>
+ Note that those beans can be configured with a PathMatchConfigurer. 
+<p>Both the RequestMappingHandlerAdapter and the ExceptionHandlerExceptionResolver are configured with default instances of the following by default: </p>
+<ul> <li>a ContentNegotiationManager </li>
+<li>a DefaultFormattingConversionService </li>
+<li>a org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean if a JSR-303 implementation is available on the classpath </li>
+<li>a range of HttpMessageConverters depending on the third-party libraries available on the classpath. </li>
+</ul>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Brian Clozel</p>
+<p><strong>Author</strong><br/>
+Sebastien Deleuze</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<p><strong>See Also</strong><br/>
+EnableWebMvcWebMvcConfigurer</p>
+</BODY>
+</HTML>

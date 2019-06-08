@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ProtobufJsonFormatHttpMessageConverter - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.http.converter.protobuf</a>&nbsp;/&nbsp;<a href=".">ProtobufJsonFormatHttpMessageConverter</a><br/>
+<br/>
+<h1>ProtobufJsonFormatHttpMessageConverter</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ProtobufJsonFormatHttpMessageConverter</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ProtobufHttpMessageConverter</span></code>
+<p>Subclass of ProtobufHttpMessageConverter which enforces the use of Protobuf 3 and its official library <code>"com.google.protobuf:protobuf-java-util"</code> for JSON processing. 
+<p>Most importantly, this class allows for custom JSON parser and printer configurations through the JsonFormat utility. If no special parser or printer configuration is given, default variants will be used instead. </p>
+<p>Requires Protobuf 3.x and <code>"com.google.protobuf:protobuf-java-util"</code> 3.x, with 3.3 or higher recommended.</p>
+</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+5.0</p>
+<p><strong>See Also</strong><br/>
+<a href="#">JsonFormat#parser()</a><a href="#">JsonFormat#printer()</a><a href="#">#ProtobufJsonFormatHttpMessageConverter(JsonFormat.Parser, JsonFormat.Printer)</a></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ProtobufJsonFormatHttpMessageConverter</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Construct a new <code>ProtobufJsonFormatHttpMessageConverter</code> with default JsonFormat.Parser and JsonFormat.Printer configuration.</p>
+<code><span class="identifier">ProtobufJsonFormatHttpMessageConverter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.http.converter.protobuf.ProtobufJsonFormatHttpMessageConverter$<init>(com.google.protobuf.util.JsonFormat.Parser, com.google.protobuf.util.JsonFormat.Printer)/parser">parser</span><span class="symbol">:</span>&nbsp;<span class="identifier">Parser</span><span class="symbol">, </span><span class="identifier" id="org.springframework.http.converter.protobuf.ProtobufJsonFormatHttpMessageConverter$<init>(com.google.protobuf.util.JsonFormat.Parser, com.google.protobuf.util.JsonFormat.Printer)/printer">printer</span><span class="symbol">:</span>&nbsp;<span class="identifier">Printer</span><span class="symbol">)</span></code>
+<p>Construct a new <code>ProtobufJsonFormatHttpMessageConverter</code> with the given JsonFormat.Parser and JsonFormat.Printer configuration.</p>
+<code><span class="identifier">ProtobufJsonFormatHttpMessageConverter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.http.converter.protobuf.ProtobufJsonFormatHttpMessageConverter$<init>(com.google.protobuf.util.JsonFormat.Parser, com.google.protobuf.util.JsonFormat.Printer, org.springframework.http.converter.protobuf.ExtensionRegistryInitializer)/parser">parser</span><span class="symbol">:</span>&nbsp;<span class="identifier">Parser</span><span class="symbol">, </span><span class="identifier" id="org.springframework.http.converter.protobuf.ProtobufJsonFormatHttpMessageConverter$<init>(com.google.protobuf.util.JsonFormat.Parser, com.google.protobuf.util.JsonFormat.Printer, org.springframework.http.converter.protobuf.ExtensionRegistryInitializer)/printer">printer</span><span class="symbol">:</span>&nbsp;<span class="identifier">Printer</span><span class="symbol">, </span><span class="identifier" id="org.springframework.http.converter.protobuf.ProtobufJsonFormatHttpMessageConverter$<init>(com.google.protobuf.util.JsonFormat.Parser, com.google.protobuf.util.JsonFormat.Printer, org.springframework.http.converter.protobuf.ExtensionRegistryInitializer)/registryInitializer">registryInitializer</span><span class="symbol">:</span>&nbsp;<span class="identifier">ExtensionRegistryInitializer</span><span class="symbol">)</span></code>
+<p>Construct a new <code>ProtobufJsonFormatHttpMessageConverter</code> with the given JsonFormat.Parser and JsonFormat.Printer configuration, also accepting an initializer that allows the registration of message extensions</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

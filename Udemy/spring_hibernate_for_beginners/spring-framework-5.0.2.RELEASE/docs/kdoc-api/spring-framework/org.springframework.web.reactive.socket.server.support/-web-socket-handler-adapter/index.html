@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WebSocketHandlerAdapter - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.reactive.socket.server.support</a>&nbsp;/&nbsp;<a href=".">WebSocketHandlerAdapter</a><br/>
+<br/>
+<h1>WebSocketHandlerAdapter</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WebSocketHandlerAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.reactive/-handler-adapter/index.html"><span class="identifier">HandlerAdapter</span></a></code>
+<p>HandlerAdapter that allows using a WebSocketHandler with the generic DispatcherHandler mapping URLs directly to such handlers. Requests are handled by delegating to the configured WebSocketService which by default is HandshakeWebSocketService.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+5.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">WebSocketHandlerAdapter</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Default constructor that creates and uses a HandshakeWebSocketService.</p>
+<code><span class="identifier">WebSocketHandlerAdapter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.socket.server.support.WebSocketHandlerAdapter$<init>(org.springframework.web.reactive.socket.server.WebSocketService)/webSocketService">webSocketService</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketService</span><span class="symbol">)</span></code>
+<p>Alternative constructor with the WebSocketService to use.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-web-socket-service.html">getWebSocketService</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getWebSocketService</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">WebSocketService</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="handle.html">handle</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handle</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.socket.server.support.WebSocketHandlerAdapter$handle(org.springframework.web.server.ServerWebExchange, kotlin.Any)/exchange">exchange</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerWebExchange</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.reactive.socket.server.support.WebSocketHandlerAdapter$handle(org.springframework.web.server.ServerWebExchange, kotlin.Any)/handler">handler</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html"><span class="identifier">Mono</span></a><span class="symbol">&lt;</span><span class="identifier">HandlerResult</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="supports.html">supports</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supports</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.socket.server.support.WebSocketHandlerAdapter$supports(kotlin.Any)/handler">handler</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

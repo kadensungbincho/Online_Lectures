@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RequestParamMethodArgumentResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.method.annotation</a>&nbsp;/&nbsp;<a href=".">RequestParamMethodArgumentResolver</a><br/>
+<br/>
+<h1>RequestParamMethodArgumentResolver</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RequestParamMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-abstract-named-value-method-argument-resolver/index.html"><span class="identifier">AbstractNamedValueMethodArgumentResolver</span></a><span class="symbol">, </span><span class="identifier">UriComponentsContributor</span></code>
+<p>Resolves method arguments annotated with @RequestParam, arguments of type MultipartFile in conjunction with Spring's MultipartResolver abstraction, and arguments of type <code>javax.servlet.http.Part</code> in conjunction with Servlet 3.0 multipart requests. This resolver can also be created in default resolution mode in which simple types (int, long, etc.) not annotated with RequestParam are also treated as request parameters with the parameter name derived from the argument name. 
+<p>If the method parameter type is Map, the name specified in the annotation is used to resolve the request parameter String value. The value is then converted to a Map via type conversion assuming a suitable Converter or PropertyEditor has been registered. Or if a request parameter name is not specified the RequestParamMapMethodArgumentResolver is used instead to provide access to all request parameters in the form of a map. </p>
+<p>A WebDataBinder is invoked to apply type conversion to resolved request header values that don't yet match the method parameter type.</p>
+</p>
+<p><strong>Author</strong><br/>
+Arjen Poutsma</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Brian Clozel</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<p><strong>See Also</strong><br/>
+RequestParamMapMethodArgumentResolver</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">RequestParamMethodArgumentResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.annotation.RequestParamMethodArgumentResolver$<init>(kotlin.Boolean)/useDefaultResolution">useDefaultResolution</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span></code><br/>
+<code><span class="identifier">RequestParamMethodArgumentResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.annotation.RequestParamMethodArgumentResolver$<init>(org.springframework.beans.factory.config.ConfigurableBeanFactory, kotlin.Boolean)/beanFactory">beanFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">ConfigurableBeanFactory</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.RequestParamMethodArgumentResolver$<init>(org.springframework.beans.factory.config.ConfigurableBeanFactory, kotlin.Boolean)/useDefaultResolution">useDefaultResolution</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="contribute-method-argument.html">contributeMethodArgument</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">contributeMethodArgument</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.annotation.RequestParamMethodArgumentResolver$contributeMethodArgument(org.springframework.core.MethodParameter, kotlin.Any, org.springframework.web.util.UriComponentsBuilder, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), org.springframework.core.convert.ConversionService)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.RequestParamMethodArgumentResolver$contributeMethodArgument(org.springframework.core.MethodParameter, kotlin.Any, org.springframework.web.util.UriComponentsBuilder, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), org.springframework.core.convert.ConversionService)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.RequestParamMethodArgumentResolver$contributeMethodArgument(org.springframework.core.MethodParameter, kotlin.Any, org.springframework.web.util.UriComponentsBuilder, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), org.springframework.core.convert.ConversionService)/builder">builder</span><span class="symbol">:</span>&nbsp;<span class="identifier">UriComponentsBuilder</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.RequestParamMethodArgumentResolver$contributeMethodArgument(org.springframework.core.MethodParameter, kotlin.Any, org.springframework.web.util.UriComponentsBuilder, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), org.springframework.core.convert.ConversionService)/uriVariables">uriVariables</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.RequestParamMethodArgumentResolver$contributeMethodArgument(org.springframework.core.MethodParameter, kotlin.Any, org.springframework.web.util.UriComponentsBuilder, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), org.springframework.core.convert.ConversionService)/conversionService">conversionService</span><span class="symbol">:</span>&nbsp;<span class="identifier">ConversionService</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="supports-parameter.html">supportsParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsParameter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.annotation.RequestParamMethodArgumentResolver$supportsParameter(org.springframework.core.MethodParameter)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Supports the following: <ul> <li>@RequestParam-annotated method arguments. This excludes Map params where the annotation doesn't specify a name. See RequestParamMapMethodArgumentResolver instead for such params. </li>
+<li>Arguments of type MultipartFile unless annotated with @RequestPart. </li>
+<li>Arguments of type <code>javax.servlet.http.Part</code> unless annotated with @RequestPart. </li>
+<li>In default resolution mode, simple type arguments even if not with @RequestParam. </li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-abstract-named-value-method-argument-resolver/resolve-argument.html">resolveArgument</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">resolveArgument</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/mavContainer">mavContainer</span><span class="symbol">:</span>&nbsp;<span class="identifier">ModelAndViewContainer</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/webRequest">webRequest</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/binderFactory">binderFactory</span><span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.bind.support/-web-data-binder-factory/index.html"><span class="identifier">WebDataBinderFactory</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

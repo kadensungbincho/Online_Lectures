@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BeanFactoryMessageChannelDestinationResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.messaging.core</a>&nbsp;/&nbsp;<a href=".">BeanFactoryMessageChannelDestinationResolver</a><br/>
+<br/>
+<h1>BeanFactoryMessageChannelDestinationResolver</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BeanFactoryMessageChannelDestinationResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DestinationResolver</span><span class="symbol">&lt;</span><span class="identifier">MessageChannel</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">BeanFactoryAware</span></code>
+<p>An implementation of DestinationResolver that interprets a destination name as the bean name of a MessageChannel and looks up the bean in the configured BeanFactory.</p>
+<p><strong>Author</strong><br/>
+Mark Fisher</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">BeanFactoryMessageChannelDestinationResolver</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A default constructor that can be used when the resolver itself is configured as a Spring bean and will have the <code>BeanFactory</code> injected as a result of ing having implemented BeanFactoryAware.</p>
+<code><span class="identifier">BeanFactoryMessageChannelDestinationResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.core.BeanFactoryMessageChannelDestinationResolver$<init>(org.springframework.beans.factory.BeanFactory)/beanFactory">beanFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">BeanFactory</span><span class="symbol">)</span></code>
+<p>A constructor that accepts a BeanFactory useful if instantiating this resolver manually rather than having it defined as a Spring-managed bean.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="resolve-destination.html">resolveDestination</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">resolveDestination</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.core.BeanFactoryMessageChannelDestinationResolver$resolveDestination(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MessageChannel</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-bean-factory.html">setBeanFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBeanFactory</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.core.BeanFactoryMessageChannelDestinationResolver$setBeanFactory(org.springframework.beans.factory.BeanFactory)/beanFactory">beanFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">BeanFactory</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

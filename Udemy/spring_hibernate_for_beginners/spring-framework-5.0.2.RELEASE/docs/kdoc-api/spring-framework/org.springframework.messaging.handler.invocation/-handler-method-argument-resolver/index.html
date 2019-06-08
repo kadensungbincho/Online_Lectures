@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HandlerMethodArgumentResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.messaging.handler.invocation</a>&nbsp;/&nbsp;<a href=".">HandlerMethodArgumentResolver</a><br/>
+<br/>
+<h1>HandlerMethodArgumentResolver</h1>
+<code><span class="keyword">interface </span><span class="identifier">HandlerMethodArgumentResolver</span></code>
+<p>Strategy interface for resolving method parameters into argument values in the context of a given Message.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="resolve-argument.html">resolveArgument</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolveArgument</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.messaging.Message((kotlin.Any)))/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.messaging.Message((kotlin.Any)))/message">message</span><span class="symbol">:</span>&nbsp;<span class="identifier">Message</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Resolves a method parameter into an argument value from a given message.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="supports-parameter.html">supportsParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">supportsParameter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver$supportsParameter(org.springframework.core.MethodParameter)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether the given MethodParameter is supported by this resolver.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.messaging.handler.annotation.support/-abstract-named-value-method-argument-resolver/index.html">AbstractNamedValueMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractNamedValueMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolver</span></code>
+<p>Abstract base class for resolving method arguments from a named value. Message headers, and path variables are examples of named values. Each may have a name, a required flag, and a default value. 
+<p>Subclasses define how to do the following: </p>
+<ul> <li>Obtain named value information for a method parameter </li>
+<li>Resolve names into argument values </li>
+<li>Handle missing argument values when argument values are required </li>
+<li>Optionally handle a resolved value </li>
+</ul>
+ 
+<p>A default value string can contain ${...} placeholders and Spring Expression Language <code>#{...}</code> expressions. For this to work a ConfigurableBeanFactory must be supplied to the class constructor. </p>
+<p>A ConversionService may be used to apply type conversion to the resolved argument value if it doesn't match the method parameter type.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.messaging.handler.annotation.support/-headers-method-argument-resolver/index.html">HeadersMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HeadersMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolver</span></code>
+<p>Resolves the following method parameters: <ul> <li>Parameters assignable to Map annotated with Headers </li>
+<li>Parameters of type MessageHeaders </li>
+<li>Parameters assignable to MessageHeaderAccessor </li>
+</ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.messaging.handler.annotation.support/-message-method-argument-resolver/index.html">MessageMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MessageMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolver</span></code>
+<p><code>HandlerMethodArgumentResolver</code> for Message method arguments. Validates that the generic type of the payload matches to the message value or otherwise applies MessageConverter to convert to the expected payload type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.messaging.handler.annotation.support/-payload-argument-resolver/index.html">PayloadArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PayloadArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolver</span></code>
+<p>A resolver to extract and convert the payload of a message using a MessageConverter. It also validates the payload using a Validator if the argument is annotated with a Validation annotation. 
+<p>This HandlerMethodArgumentResolver should be ordered last as it supports all types and does not require the Payload annotation.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.messaging.simp.annotation.support/-principal-method-argument-resolver/index.html">PrincipalMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PrincipalMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolver</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AnnotationAwareAspectJAutoProxyCreator - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.aop.aspectj.annotation</a>&nbsp;/&nbsp;<a href=".">AnnotationAwareAspectJAutoProxyCreator</a><br/>
+<br/>
+<h1>AnnotationAwareAspectJAutoProxyCreator</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">AnnotationAwareAspectJAutoProxyCreator</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AspectJAwareAdvisorAutoProxyCreator</span></code>
+<p>AspectJAwareAdvisorAutoProxyCreator subclass that processes all AspectJ annotation aspects in the current application context, as well as Spring Advisors. 
+<p>Any AspectJ annotated classes will automatically be recognized, and their advice applied if Spring AOP's proxy-based model is capable of applying it. This covers method execution joinpoints. </p>
+<p>If the &lt;aop:include&gt; element is used, only @AspectJ beans with names matched by an include pattern will be considered as defining aspects to use for Spring auto-proxying. </p>
+<p>Processing of Spring Advisors follows the rules established in org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rod Johnson</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<p><strong>See Also</strong><br/>
+org.springframework.aop.aspectj.annotation.AspectJAdvisorFactory</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AnnotationAwareAspectJAutoProxyCreator</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>AspectJAwareAdvisorAutoProxyCreator subclass that processes all AspectJ annotation aspects in the current application context, as well as Spring Advisors. 
+<p>Any AspectJ annotated classes will automatically be recognized, and their advice applied if Spring AOP's proxy-based model is capable of applying it. This covers method execution joinpoints. </p>
+<p>If the &lt;aop:include&gt; element is used, only @AspectJ beans with names matched by an include pattern will be considered as defining aspects to use for Spring auto-proxying. </p>
+<p>Processing of Spring Advisors follows the rules established in org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="set-aspect-j-advisor-factory.html">setAspectJAdvisorFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAspectJAdvisorFactory</span><span class="symbol">(</span><span class="identifier" id="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator$setAspectJAdvisorFactory(org.springframework.aop.aspectj.annotation.AspectJAdvisorFactory)/aspectJAdvisorFactory">aspectJAdvisorFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">AspectJAdvisorFactory</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-include-patterns.html">setIncludePatterns</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIncludePatterns</span><span class="symbol">(</span><span class="identifier" id="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator$setIncludePatterns(kotlin.collections.MutableList((kotlin.String)))/patterns">patterns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set a list of regex patterns, matching eligible @AspectJ bean names. 
+<p>Default is to consider all @AspectJ beans as eligible.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

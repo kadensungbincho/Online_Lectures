@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MockMultipartHttpServletRequestBuilder - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.test.web.servlet.request</a>&nbsp;/&nbsp;<a href=".">MockMultipartHttpServletRequestBuilder</a><br/>
+<br/>
+<h1>MockMultipartHttpServletRequestBuilder</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MockMultipartHttpServletRequestBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">MockHttpServletRequestBuilder</span></code>
+<p>Default builder for MockMultipartHttpServletRequest.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Arjen Poutsma</p>
+<p><strong>Since</strong><br/>
+3.2</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="file.html">file</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.springframework.test.web.servlet.request.MockMultipartHttpServletRequestBuilder$file(kotlin.String, kotlin.ByteArray)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.test.web.servlet.request.MockMultipartHttpServletRequestBuilder$file(kotlin.String, kotlin.ByteArray)/content">content</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MockMultipartHttpServletRequestBuilder</span></code>
+<p>Create a new MockMultipartFile with the given content.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.springframework.test.web.servlet.request.MockMultipartHttpServletRequestBuilder$file(org.springframework.mock.web.MockMultipartFile)/file">file</span><span class="symbol">:</span>&nbsp;<span class="identifier">MockMultipartFile</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MockMultipartHttpServletRequestBuilder</span></code>
+<p>Add the given MockMultipartFile.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="merge.html">merge</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">merge</span><span class="symbol">(</span><span class="identifier" id="org.springframework.test.web.servlet.request.MockMultipartHttpServletRequestBuilder$merge(kotlin.Any)/parent">parent</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="part.html">part</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">part</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.springframework.test.web.servlet.request.MockMultipartHttpServletRequestBuilder$part(kotlin.Array((javax.servlet.http.Part)))/parts">parts</span><span class="symbol">:</span>&nbsp;<span class="identifier">Part</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MockMultipartHttpServletRequestBuilder</span></code>
+<p>Add Part components to the request.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

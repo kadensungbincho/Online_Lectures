@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HandlerMethodReturnValueHandlerComposite - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.method.support</a>&nbsp;/&nbsp;<a href=".">HandlerMethodReturnValueHandlerComposite</a><br/>
+<br/>
+<h1>HandlerMethodReturnValueHandlerComposite</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HandlerMethodReturnValueHandlerComposite</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodReturnValueHandler</span></code>
+<p>Handles method return values by delegating to a list of registered HandlerMethodReturnValueHandlers. Previously resolved return types are cached for faster lookups.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">HandlerMethodReturnValueHandlerComposite</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Handles method return values by delegating to a list of registered HandlerMethodReturnValueHandlers. Previously resolved return types are cached for faster lookups.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-handler.html">addHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addHandler</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite$addHandler(org.springframework.web.method.support.HandlerMethodReturnValueHandler)/handler">handler</span><span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodReturnValueHandler</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HandlerMethodReturnValueHandlerComposite</span></code>
+<p>Add the given HandlerMethodReturnValueHandler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="add-handlers.html">addHandlers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addHandlers</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite$addHandlers(kotlin.collections.MutableList((org.springframework.web.method.support.HandlerMethodReturnValueHandler)))/handlers">handlers</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">HandlerMethodReturnValueHandler</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HandlerMethodReturnValueHandlerComposite</span></code>
+<p>Add the given HandlerMethodReturnValueHandlers.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-handlers.html">getHandlers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getHandlers</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HandlerMethodReturnValueHandler</span><span class="symbol">&gt;</span></code>
+<p>Return a read-only list with the registered handlers, or an empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="handle-return-value.html">handleReturnValue</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleReturnValue</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/returnValue">returnValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/mavContainer">mavContainer</span><span class="symbol">:</span>&nbsp;<span class="identifier">ModelAndViewContainer</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/webRequest">webRequest</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Iterate over registered HandlerMethodReturnValueHandlers and invoke the one that supports it.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="supports-return-type.html">supportsReturnType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsReturnType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite$supportsReturnType(org.springframework.core.MethodParameter)/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether the given MethodParameter is supported by any registered HandlerMethodReturnValueHandler.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

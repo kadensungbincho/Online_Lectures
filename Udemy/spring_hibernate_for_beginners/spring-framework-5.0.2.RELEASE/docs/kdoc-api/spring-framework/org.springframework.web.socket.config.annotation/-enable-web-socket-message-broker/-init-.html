@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>EnableWebSocketMessageBroker.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.config.annotation</a>&nbsp;/&nbsp;<a href="index.html">EnableWebSocketMessageBroker</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker$&lt;init&gt;()"></a>
+<code><span class="identifier">EnableWebSocketMessageBroker</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Add this annotation to an <code>@Configuration</code> class to enable broker-backed messaging over WebSocket using a higher-level messaging sub-protocol. <pre><code> @Configuration @EnableWebSocketMessageBroker public class MyWebSocketConfig { } </code></pre> 
+<p>Customize the imported configuration by implementing the WebSocketMessageBrokerConfigurer interface or more likely extend the convenient base class AbstractWebSocketMessageBrokerConfigurer: </p>
+<pre><code> @Configuration @EnableWebSocketMessageBroker public class MyConfiguration extends AbstractWebSocketMessageBrokerConfigurer { @Override public void registerStompEndpoints(StompEndpointRegistry registry) { registry.addEndpoint("/portfolio").withSockJS(); } @Bean public void configureMessageBroker(MessageBrokerRegistry registry) { registry.enableStompBrokerRelay("/queue/", "/topic/"); registry.setApplicationDestinationPrefixes("/app/"); } } </code></pre></p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+</BODY>
+</HTML>

@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MethodMapTransactionAttributeSource - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.transaction.interceptor</a>&nbsp;/&nbsp;<a href=".">MethodMapTransactionAttributeSource</a><br/>
+<br/>
+<h1>MethodMapTransactionAttributeSource</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MethodMapTransactionAttributeSource</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TransactionAttributeSource</span><span class="symbol">, </span><span class="identifier">BeanClassLoaderAware</span><span class="symbol">, </span><span class="identifier">InitializingBean</span></code>
+<p>Simple TransactionAttributeSource implementation that allows attributes to be stored per method in a Map.</p>
+<p><strong>Author</strong><br/>
+Rod Johnson</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+24.04.2003</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#isMatch</a>NameMatchTransactionAttributeSource</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">MethodMapTransactionAttributeSource</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Simple TransactionAttributeSource implementation that allows attributes to be stored per method in a Map.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-transactional-method.html">addTransactionalMethod</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addTransactionalMethod</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.interceptor.MethodMapTransactionAttributeSource$addTransactionalMethod(kotlin.String, org.springframework.transaction.interceptor.TransactionAttribute)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.transaction.interceptor.MethodMapTransactionAttributeSource$addTransactionalMethod(kotlin.String, org.springframework.transaction.interceptor.TransactionAttribute)/attr">attr</span><span class="symbol">:</span>&nbsp;<span class="identifier">TransactionAttribute</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Add an attribute for a transactional method. 
+<p>Method names can end or start with "*" for matching multiple methods.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addTransactionalMethod</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.interceptor.MethodMapTransactionAttributeSource$addTransactionalMethod(java.lang.Class((kotlin.Any)), kotlin.String, org.springframework.transaction.interceptor.TransactionAttribute)/clazz">clazz</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.transaction.interceptor.MethodMapTransactionAttributeSource$addTransactionalMethod(java.lang.Class((kotlin.Any)), kotlin.String, org.springframework.transaction.interceptor.TransactionAttribute)/mappedName">mappedName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.transaction.interceptor.MethodMapTransactionAttributeSource$addTransactionalMethod(java.lang.Class((kotlin.Any)), kotlin.String, org.springframework.transaction.interceptor.TransactionAttribute)/attr">attr</span><span class="symbol">:</span>&nbsp;<span class="identifier">TransactionAttribute</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Add an attribute for a transactional method. Method names can end or start with "*" for matching multiple methods.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addTransactionalMethod</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.interceptor.MethodMapTransactionAttributeSource$addTransactionalMethod(java.lang.reflect.Method, org.springframework.transaction.interceptor.TransactionAttribute)/method">method</span><span class="symbol">:</span>&nbsp;<span class="identifier">Method</span><span class="symbol">, </span><span class="identifier" id="org.springframework.transaction.interceptor.MethodMapTransactionAttributeSource$addTransactionalMethod(java.lang.reflect.Method, org.springframework.transaction.interceptor.TransactionAttribute)/attr">attr</span><span class="symbol">:</span>&nbsp;<span class="identifier">TransactionAttribute</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Add an attribute for a transactional method.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="after-properties-set.html">afterPropertiesSet</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">afterPropertiesSet</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Eagerly initializes the specified <code><a href="#">"methodMap"</a></code>, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="equals.html">equals</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.interceptor.MethodMapTransactionAttributeSource$equals(kotlin.Any)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-transaction-attribute.html">getTransactionAttribute</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTransactionAttribute</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.interceptor.MethodMapTransactionAttributeSource$getTransactionAttribute(java.lang.reflect.Method, java.lang.Class((kotlin.Any)))/method">method</span><span class="symbol">:</span>&nbsp;<span class="identifier">Method</span><span class="symbol">, </span><span class="identifier" id="org.springframework.transaction.interceptor.MethodMapTransactionAttributeSource$getTransactionAttribute(java.lang.reflect.Method, java.lang.Class((kotlin.Any)))/targetClass">targetClass</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TransactionAttribute</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-bean-class-loader.html">setBeanClassLoader</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBeanClassLoader</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.interceptor.MethodMapTransactionAttributeSource$setBeanClassLoader(java.lang.ClassLoader)/beanClassLoader">beanClassLoader</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClassLoader</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-method-map.html">setMethodMap</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMethodMap</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.interceptor.MethodMapTransactionAttributeSource$setMethodMap(kotlin.collections.MutableMap((kotlin.String, org.springframework.transaction.interceptor.TransactionAttribute)))/methodMap">methodMap</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">TransactionAttribute</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set a name/attribute map, consisting of "FQCN.method" method names (e.g. "com.mycompany.mycode.MyClass.myMethod") and TransactionAttribute instances (or Strings to be converted to <code>TransactionAttribute</code> instances). 
+<p>Intended for configuration via setter injection, typically within a Spring bean factory. Relies on <code><a href="after-properties-set.html">#afterPropertiesSet()</a></code> being called afterwards.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

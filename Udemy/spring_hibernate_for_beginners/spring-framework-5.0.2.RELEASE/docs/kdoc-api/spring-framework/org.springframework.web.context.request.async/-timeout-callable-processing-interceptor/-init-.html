@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TimeoutCallableProcessingInterceptor.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.context.request.async</a>&nbsp;/&nbsp;<a href="index.html">TimeoutCallableProcessingInterceptor</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.web.context.request.async.TimeoutCallableProcessingInterceptor$&lt;init&gt;()"></a>
+<code><span class="identifier">TimeoutCallableProcessingInterceptor</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Sends a 503 (SERVICE_UNAVAILABLE) in case of a timeout if the response is not already committed. As of 4.2.8 this is done indirectly by setting the result to an AsyncRequestTimeoutException which is then handled by Spring MVC's default exception handling as a 503 error. 
+<p>Registered at the end, after all other interceptors and therefore invoked only if no other interceptor handles the timeout. </p>
+<p>Note that according to RFC 7231, a 503 without a 'Retry-After' header is interpreted as a 500 error and the client should not retry. Applications can install their own interceptor to handle a timeout and add a 'Retry-After' header if necessary.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+3.2</p>
+</BODY>
+</HTML>

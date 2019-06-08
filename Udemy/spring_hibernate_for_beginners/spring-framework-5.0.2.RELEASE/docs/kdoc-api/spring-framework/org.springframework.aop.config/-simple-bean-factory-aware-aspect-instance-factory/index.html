@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SimpleBeanFactoryAwareAspectInstanceFactory - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.aop.config</a>&nbsp;/&nbsp;<a href=".">SimpleBeanFactoryAwareAspectInstanceFactory</a><br/>
+<br/>
+<h1>SimpleBeanFactoryAwareAspectInstanceFactory</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SimpleBeanFactoryAwareAspectInstanceFactory</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AspectInstanceFactory</span><span class="symbol">, </span><span class="identifier">BeanFactoryAware</span></code>
+<p>Implementation of AspectInstanceFactory that locates the aspect from the org.springframework.beans.factory.BeanFactory using a configured bean name.</p>
+<p><strong>Author</strong><br/>
+Rob Harrop</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">SimpleBeanFactoryAwareAspectInstanceFactory</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Implementation of AspectInstanceFactory that locates the aspect from the org.springframework.beans.factory.BeanFactory using a configured bean name.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-aspect-class-loader.html">getAspectClassLoader</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAspectClassLoader</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ClassLoader</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-aspect-instance.html">getAspectInstance</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAspectInstance</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Look up the aspect bean from the BeanFactory and returns it.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-order.html">getOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOrder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-aspect-bean-name.html">setAspectBeanName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAspectBeanName</span><span class="symbol">(</span><span class="identifier" id="org.springframework.aop.config.SimpleBeanFactoryAwareAspectInstanceFactory$setAspectBeanName(kotlin.String)/aspectBeanName">aspectBeanName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the name of the aspect bean. This is the bean that is returned when calling <code><a href="get-aspect-instance.html">#getAspectInstance()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-bean-factory.html">setBeanFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBeanFactory</span><span class="symbol">(</span><span class="identifier" id="org.springframework.aop.config.SimpleBeanFactoryAwareAspectInstanceFactory$setBeanFactory(org.springframework.beans.factory.BeanFactory)/beanFactory">beanFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">BeanFactory</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

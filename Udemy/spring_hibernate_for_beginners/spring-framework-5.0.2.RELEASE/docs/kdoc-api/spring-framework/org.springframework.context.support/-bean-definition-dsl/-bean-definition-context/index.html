@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BeanDefinitionDsl.BeanDefinitionContext - spring-framework</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../../index.html">org.springframework.context.support</a>&nbsp;/&nbsp;<a href="../index.html">BeanDefinitionDsl</a>&nbsp;/&nbsp;<a href=".">BeanDefinitionContext</a><br/>
+<br/>
+<h1>BeanDefinitionContext</h1>
+<code><span class="keyword">inner</span> <span class="keyword">class </span><span class="identifier">BeanDefinitionContext</span></code>
+<p>Provide read access to some application context facilities.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">BeanDefinitionContext</span><span class="symbol">(</span><span class="identifier" id="org.springframework.context.support.BeanDefinitionDsl.BeanDefinitionContext$<init>(org.springframework.context.support.GenericApplicationContext)/context">context</span><span class="symbol">:</span>&nbsp;<span class="identifier">GenericApplicationContext</span><span class="symbol">)</span></code>
+<p>Create a new bean definition context.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="env.html">env</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">env</span><span class="symbol">: </span><span class="identifier">ConfigurableEnvironment</span></code>
+<p>Get the <a href="#">ConfigurableEnvironment</a> associated to the underlying <a href="../../-generic-application-context.html">GenericApplicationContext</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="ref.html">ref</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">ref</span><span class="symbol">(</span><span class="identifier" id="org.springframework.context.support.BeanDefinitionDsl.BeanDefinitionContext$ref(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Get a reference to the bean by type or type + name with the syntax
+<code>ref&lt;Foo&gt;()</code> or <code>ref&lt;Foo&gt;("foo")</code>. When leveraging Kotlin type inference
+it could be as short as <code>ref()</code> or <code>ref("foo")</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

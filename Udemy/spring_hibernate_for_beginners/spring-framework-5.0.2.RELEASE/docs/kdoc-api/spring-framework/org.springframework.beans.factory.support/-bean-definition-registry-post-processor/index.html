@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BeanDefinitionRegistryPostProcessor - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.beans.factory.support</a>&nbsp;/&nbsp;<a href=".">BeanDefinitionRegistryPostProcessor</a><br/>
+<br/>
+<h1>BeanDefinitionRegistryPostProcessor</h1>
+<code><span class="keyword">interface </span><span class="identifier">BeanDefinitionRegistryPostProcessor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BeanFactoryPostProcessor</span></code>
+<p>Extension to the standard BeanFactoryPostProcessor SPI, allowing for the registration of further bean definitions <em>before</em> regular BeanFactoryPostProcessor detection kicks in. In particular, BeanDefinitionRegistryPostProcessor may register further bean definitions which in turn define BeanFactoryPostProcessor instances.</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+3.0.1</p>
+<p><strong>See Also</strong><br/>
+org.springframework.context.annotation.ConfigurationClassPostProcessor</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="post-process-bean-definition-registry.html">postProcessBeanDefinitionRegistry</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">postProcessBeanDefinitionRegistry</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor$postProcessBeanDefinitionRegistry(org.springframework.beans.factory.support.BeanDefinitionRegistry)/registry">registry</span><span class="symbol">:</span>&nbsp;<span class="identifier">BeanDefinitionRegistry</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Modify the application context's internal bean definition registry after its standard initialization. All regular bean definitions will have been loaded, but no beans will have been instantiated yet. This allows for adding further bean definitions before the next post-processing phase kicks in.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.context.annotation/-configuration-class-post-processor/index.html">ConfigurationClassPostProcessor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ConfigurationClassPostProcessor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BeanDefinitionRegistryPostProcessor</span><span class="symbol">, </span><span class="identifier">PriorityOrdered</span><span class="symbol">, </span><span class="identifier">ResourceLoaderAware</span><span class="symbol">, </span><span class="identifier">BeanClassLoaderAware</span><span class="symbol">, </span><span class="identifier">EnvironmentAware</span></code>
+<p>BeanFactoryPostProcessor used for bootstrapping processing of Configuration classes. 
+<p>Registered by default when using <code>&lt;context:annotation-config/&gt;</code> or <code>&lt;context:component-scan/&gt;</code>. Otherwise, may be declared manually as with any other BeanFactoryPostProcessor. </p>
+<p>This post processor is <code><a href="#">Ordered#HIGHEST_PRECEDENCE</a></code> as it is important that any Bean methods declared in Configuration classes have their respective bean definitions registered before any other BeanFactoryPostProcessor executes.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RunAfterTestExecutionCallbacks - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.test.context.junit4.statements</a>&nbsp;/&nbsp;<a href=".">RunAfterTestExecutionCallbacks</a><br/>
+<br/>
+<h1>RunAfterTestExecutionCallbacks</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RunAfterTestExecutionCallbacks</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Statement</span></code>
+<p><code>RunAfterTestExecutionCallbacks</code> is a custom JUnit Statement which allows the <em>Spring TestContext Framework</em> to be plugged into the JUnit 4 execution chain by calling <code><a href="#"> afterTestExecution()</a></code> on the supplied TestContextManager. 
+<p><strong>NOTE:</strong> This class requires JUnit 4.9 or higher.</p>
+</p>
+<p><strong>Author</strong><br/>
+Sam Brannen</p>
+<p><strong>Since</strong><br/>
+5.0</p>
+<p><strong>See Also</strong><br/>
+<a href="evaluate.html">#evaluate()</a>RunBeforeTestExecutionCallbacks</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">RunAfterTestExecutionCallbacks</span><span class="symbol">(</span><span class="identifier" id="org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks$<init>(org.junit.runners.model.Statement, kotlin.Any, java.lang.reflect.Method, org.springframework.test.context.TestContextManager)/next">next</span><span class="symbol">:</span>&nbsp;<span class="identifier">Statement</span><span class="symbol">, </span><span class="identifier" id="org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks$<init>(org.junit.runners.model.Statement, kotlin.Any, java.lang.reflect.Method, org.springframework.test.context.TestContextManager)/testInstance">testInstance</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks$<init>(org.junit.runners.model.Statement, kotlin.Any, java.lang.reflect.Method, org.springframework.test.context.TestContextManager)/testMethod">testMethod</span><span class="symbol">:</span>&nbsp;<span class="identifier">Method</span><span class="symbol">, </span><span class="identifier" id="org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks$<init>(org.junit.runners.model.Statement, kotlin.Any, java.lang.reflect.Method, org.springframework.test.context.TestContextManager)/testContextManager">testContextManager</span><span class="symbol">:</span>&nbsp;<span class="identifier">TestContextManager</span><span class="symbol">)</span></code>
+<p>Construct a new <code>RunAfterTestExecutionCallbacks</code> statement.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="evaluate.html">evaluate</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">evaluate</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Evaluate the next Statement in the execution chain (typically an instance of RunBeforeTestExecutionCallbacks), catching any exceptions thrown, and then invoke <code><a href="#">TestContextManager#afterTestExecution</a></code> supplying the first caught exception (if any). 
+<p>If the invocation of <code>afterTestExecution()</code> throws an exception, that exception will also be tracked. Multiple exceptions will be combined into a MultipleFailureException.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

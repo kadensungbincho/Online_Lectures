@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MethodMapTransactionAttributeSource.setMethodMap - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.transaction.interceptor</a>&nbsp;/&nbsp;<a href="index.html">MethodMapTransactionAttributeSource</a>&nbsp;/&nbsp;<a href=".">setMethodMap</a><br/>
+<br/>
+<h1>setMethodMap</h1>
+<a name="org.springframework.transaction.interceptor.MethodMapTransactionAttributeSource$setMethodMap(kotlin.collections.MutableMap((kotlin.String, org.springframework.transaction.interceptor.TransactionAttribute)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMethodMap</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.interceptor.MethodMapTransactionAttributeSource$setMethodMap(kotlin.collections.MutableMap((kotlin.String, org.springframework.transaction.interceptor.TransactionAttribute)))/methodMap">methodMap</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">TransactionAttribute</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set a name/attribute map, consisting of "FQCN.method" method names (e.g. "com.mycompany.mycode.MyClass.myMethod") and TransactionAttribute instances (or Strings to be converted to <code>TransactionAttribute</code> instances). 
+<p>Intended for configuration via setter injection, typically within a Spring bean factory. Relies on <code><a href="after-properties-set.html">#afterPropertiesSet()</a></code> being called afterwards.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="methodMap"></a>
+<code>methodMap</code> - said Map from method name to attribute value</p>
+<p><strong>See Also</strong><br/>
+TransactionAttributeTransactionAttributeEditor</p>
+</BODY>
+</HTML>

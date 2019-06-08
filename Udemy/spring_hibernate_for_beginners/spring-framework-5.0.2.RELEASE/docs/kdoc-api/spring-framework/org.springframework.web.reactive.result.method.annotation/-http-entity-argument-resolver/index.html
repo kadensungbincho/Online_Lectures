@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HttpEntityArgumentResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.reactive.result.method.annotation</a>&nbsp;/&nbsp;<a href=".">HttpEntityArgumentResolver</a><br/>
+<br/>
+<h1>HttpEntityArgumentResolver</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HttpEntityArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractMessageReaderArgumentResolver</span></code>
+<p>Resolves method arguments of type HttpEntity or RequestEntity by reading the body of the request through a compatible <code>HttpMessageReader</code>.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+5.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">HttpEntityArgumentResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.HttpEntityArgumentResolver$<init>(kotlin.collections.MutableList((org.springframework.http.codec.HttpMessageReader((kotlin.Any)))), org.springframework.core.ReactiveAdapterRegistry)/readers">readers</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HttpMessageReader</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.HttpEntityArgumentResolver$<init>(kotlin.collections.MutableList((org.springframework.http.codec.HttpMessageReader((kotlin.Any)))), org.springframework.core.ReactiveAdapterRegistry)/registry">registry</span><span class="symbol">:</span>&nbsp;<a href="../../org.springframework.core/-reactive-adapter-registry/index.html"><span class="identifier">ReactiveAdapterRegistry</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="resolve-argument.html">resolveArgument</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">resolveArgument</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.HttpEntityArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.reactive.BindingContext, org.springframework.web.server.ServerWebExchange)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.HttpEntityArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.reactive.BindingContext, org.springframework.web.server.ServerWebExchange)/bindingContext">bindingContext</span><span class="symbol">:</span>&nbsp;<span class="identifier">BindingContext</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.HttpEntityArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.reactive.BindingContext, org.springframework.web.server.ServerWebExchange)/exchange">exchange</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerWebExchange</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html"><span class="identifier">Mono</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="supports-parameter.html">supportsParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsParameter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.HttpEntityArgumentResolver$supportsParameter(org.springframework.core.MethodParameter)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ViewNameMethodReturnValueHandler - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.method.annotation</a>&nbsp;/&nbsp;<a href=".">ViewNameMethodReturnValueHandler</a><br/>
+<br/>
+<h1>ViewNameMethodReturnValueHandler</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ViewNameMethodReturnValueHandler</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodReturnValueHandler</span></code>
+<p>Handles return values of types <code>void</code> and <code>String</code> interpreting them as view name reference. As of 4.2, it also handles general <code>CharSequence</code> types, e.g. <code>StringBuilder</code> or Groovy's <code>GString</code>, as view names. 
+<p>A <code>null</code> return value, either due to a <code>void</code> return type or as the actual return value is left as-is allowing the configured RequestToViewNameTranslator to select a view name by convention. </p>
+<p>A String return value can be interpreted in more than one ways depending on the presence of annotations like <code>@ModelAttribute</code> or <code>@ResponseBody</code>. Therefore this handler should be configured after the handlers that support these annotations.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ViewNameMethodReturnValueHandler</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Handles return values of types <code>void</code> and <code>String</code> interpreting them as view name reference. As of 4.2, it also handles general <code>CharSequence</code> types, e.g. <code>StringBuilder</code> or Groovy's <code>GString</code>, as view names. 
+<p>A <code>null</code> return value, either due to a <code>void</code> return type or as the actual return value is left as-is allowing the configured RequestToViewNameTranslator to select a view name by convention. </p>
+<p>A String return value can be interpreted in more than one ways depending on the presence of annotations like <code>@ModelAttribute</code> or <code>@ResponseBody</code>. Therefore this handler should be configured after the handlers that support these annotations.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-redirect-patterns.html">getRedirectPatterns</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getRedirectPatterns</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The configured redirect patterns, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="handle-return-value.html">handleReturnValue</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleReturnValue</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ViewNameMethodReturnValueHandler$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/returnValue">returnValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ViewNameMethodReturnValueHandler$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ViewNameMethodReturnValueHandler$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/mavContainer">mavContainer</span><span class="symbol">:</span>&nbsp;<span class="identifier">ModelAndViewContainer</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ViewNameMethodReturnValueHandler$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/webRequest">webRequest</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-redirect-patterns.html">setRedirectPatterns</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRedirectPatterns</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ViewNameMethodReturnValueHandler$setRedirectPatterns(kotlin.Array((kotlin.String)))/redirectPatterns">redirectPatterns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configure one more simple patterns (as described in <code><a href="#">PatternMatchUtils#simpleMatch</a></code>) to use in order to recognize custom redirect prefixes in addition to "redirect:". 
+<p>Note that simply configuring this property will not make a custom redirect prefix work. There must be a custom View that recognizes the prefix as well.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="supports-return-type.html">supportsReturnType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsReturnType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ViewNameMethodReturnValueHandler$supportsReturnType(org.springframework.core.MethodParameter)/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

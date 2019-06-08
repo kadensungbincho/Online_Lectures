@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AnnotationTransactionAttributeSource.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.transaction.annotation</a>&nbsp;/&nbsp;<a href="index.html">AnnotationTransactionAttributeSource</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource$&lt;init&gt;()"></a>
+<code><span class="identifier">AnnotationTransactionAttributeSource</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Create a default AnnotationTransactionAttributeSource, supporting public methods that carry the <code>Transactional</code> annotation or the EJB3 javax.ejb.TransactionAttribute annotation.</p>
+<a name="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource$&lt;init&gt;(kotlin.Boolean)"></a>
+<code><span class="identifier">AnnotationTransactionAttributeSource</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource$<init>(kotlin.Boolean)/publicMethodsOnly">publicMethodsOnly</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span></code>
+<p>Create a custom AnnotationTransactionAttributeSource, supporting public methods that carry the <code>Transactional</code> annotation or the EJB3 javax.ejb.TransactionAttribute annotation.</p>
+<h3>Parameters</h3>
+<p><a name="publicMethodsOnly"></a>
+<code>publicMethodsOnly</code> - whether to support public methods that carry the <code>Transactional</code> annotation only (typically for use with proxy-based AOP), or protected/private methods as well (typically used with AspectJ class weaving)</p>
+<a name="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource$&lt;init&gt;(org.springframework.transaction.annotation.TransactionAnnotationParser)"></a>
+<code><span class="identifier">AnnotationTransactionAttributeSource</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource$<init>(org.springframework.transaction.annotation.TransactionAnnotationParser)/annotationParser">annotationParser</span><span class="symbol">:</span>&nbsp;<span class="identifier">TransactionAnnotationParser</span><span class="symbol">)</span></code>
+<p>Create a custom AnnotationTransactionAttributeSource.</p>
+<h3>Parameters</h3>
+<p><a name="annotationParser"></a>
+<code>annotationParser</code> - the TransactionAnnotationParser to use</p>
+<a name="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource$&lt;init&gt;(kotlin.Array((org.springframework.transaction.annotation.TransactionAnnotationParser)))"></a>
+<code><span class="identifier">AnnotationTransactionAttributeSource</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource$<init>(kotlin.Array((org.springframework.transaction.annotation.TransactionAnnotationParser)))/annotationParsers">annotationParsers</span><span class="symbol">:</span>&nbsp;<span class="identifier">TransactionAnnotationParser</span><span class="symbol">)</span></code><br/>
+<a name="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource$&lt;init&gt;(kotlin.collections.MutableSet((org.springframework.transaction.annotation.TransactionAnnotationParser)))"></a>
+<code><span class="identifier">AnnotationTransactionAttributeSource</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource$<init>(kotlin.collections.MutableSet((org.springframework.transaction.annotation.TransactionAnnotationParser)))/annotationParsers">annotationParsers</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">TransactionAnnotationParser</span><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p>Create a custom AnnotationTransactionAttributeSource.</p>
+<h3>Parameters</h3>
+<p><a name="annotationParsers"></a>
+<code>annotationParsers</code> - the TransactionAnnotationParsers to use</p>
+</BODY>
+</HTML>

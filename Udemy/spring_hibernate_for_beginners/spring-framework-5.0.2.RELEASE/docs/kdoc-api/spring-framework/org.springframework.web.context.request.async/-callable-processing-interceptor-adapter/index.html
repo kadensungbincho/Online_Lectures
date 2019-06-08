@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CallableProcessingInterceptorAdapter - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.context.request.async</a>&nbsp;/&nbsp;<a href=".">CallableProcessingInterceptorAdapter</a><br/>
+<br/>
+<h1>CallableProcessingInterceptorAdapter</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">CallableProcessingInterceptorAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CallableProcessingInterceptor</span></code>
+<p>Abstract adapter class for the CallableProcessingInterceptor interface, for simplified implementation of individual methods.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Rob Winch</p>
+<p><strong>Since</strong><br/>
+3.2</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">CallableProcessingInterceptorAdapter</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Abstract adapter class for the CallableProcessingInterceptor interface, for simplified implementation of individual methods.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="after-completion.html">afterCompletion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">afterCompletion</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter$afterCompletion(org.springframework.web.context.request.NativeWebRequest, java.util.concurrent.Callable((org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter.afterCompletion.T)))/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter$afterCompletion(org.springframework.web.context.request.NativeWebRequest, java.util.concurrent.Callable((org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter.afterCompletion.T)))/task">task</span><span class="symbol">:</span>&nbsp;<span class="identifier">Callable</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="before-concurrent-handling.html">beforeConcurrentHandling</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">beforeConcurrentHandling</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter$beforeConcurrentHandling(org.springframework.web.context.request.NativeWebRequest, java.util.concurrent.Callable((org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter.beforeConcurrentHandling.T)))/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter$beforeConcurrentHandling(org.springframework.web.context.request.NativeWebRequest, java.util.concurrent.Callable((org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter.beforeConcurrentHandling.T)))/task">task</span><span class="symbol">:</span>&nbsp;<span class="identifier">Callable</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="handle-error.html">handleError</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">handleError</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter$handleError(org.springframework.web.context.request.NativeWebRequest, java.util.concurrent.Callable((org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter.handleError.T)), kotlin.Throwable)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter$handleError(org.springframework.web.context.request.NativeWebRequest, java.util.concurrent.Callable((org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter.handleError.T)), kotlin.Throwable)/task">task</span><span class="symbol">:</span>&nbsp;<span class="identifier">Callable</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter$handleError(org.springframework.web.context.request.NativeWebRequest, java.util.concurrent.Callable((org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter.handleError.T)), kotlin.Throwable)/t">t</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="handle-timeout.html">handleTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">handleTimeout</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter$handleTimeout(org.springframework.web.context.request.NativeWebRequest, java.util.concurrent.Callable((org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter.handleTimeout.T)))/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter$handleTimeout(org.springframework.web.context.request.NativeWebRequest, java.util.concurrent.Callable((org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter.handleTimeout.T)))/task">task</span><span class="symbol">:</span>&nbsp;<span class="identifier">Callable</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="post-process.html">postProcess</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">postProcess</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter$postProcess(org.springframework.web.context.request.NativeWebRequest, java.util.concurrent.Callable((org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter.postProcess.T)), kotlin.Any)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter$postProcess(org.springframework.web.context.request.NativeWebRequest, java.util.concurrent.Callable((org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter.postProcess.T)), kotlin.Any)/task">task</span><span class="symbol">:</span>&nbsp;<span class="identifier">Callable</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter$postProcess(org.springframework.web.context.request.NativeWebRequest, java.util.concurrent.Callable((org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter.postProcess.T)), kotlin.Any)/concurrentResult">concurrentResult</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="pre-process.html">preProcess</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">preProcess</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter$preProcess(org.springframework.web.context.request.NativeWebRequest, java.util.concurrent.Callable((org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter.preProcess.T)))/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter$preProcess(org.springframework.web.context.request.NativeWebRequest, java.util.concurrent.Callable((org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter.preProcess.T)))/task">task</span><span class="symbol">:</span>&nbsp;<span class="identifier">Callable</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

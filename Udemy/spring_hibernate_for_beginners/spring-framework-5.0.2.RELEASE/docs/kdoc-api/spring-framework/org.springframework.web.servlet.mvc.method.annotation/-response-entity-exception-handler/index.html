@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResponseEntityExceptionHandler - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.method.annotation</a>&nbsp;/&nbsp;<a href=".">ResponseEntityExceptionHandler</a><br/>
+<br/>
+<h1>ResponseEntityExceptionHandler</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ResponseEntityExceptionHandler</span></code>
+<p>A convenient base class for ControllerAdvice classes that wish to provide centralized exception handling across all <code>@RequestMapping</code> methods through <code>@ExceptionHandler</code> methods. 
+<p>This base class provides an <code>@ExceptionHandler</code> method for handling internal Spring MVC exceptions. This method returns a <code>ResponseEntity</code> for writing to the response with a HttpMessageConverter, in contrast to org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver which returns a org.springframework.web.servlet.ModelAndView. </p>
+<p>If there is no need to write error content to the response body, or when using view resolution (e.g., via <code>ContentNegotiatingViewResolver</code>), then <code>DefaultHandlerExceptionResolver</code> is good enough. </p>
+<p>Note that in order for an <code>@ControllerAdvice</code> sub-class to be detected, ExceptionHandlerExceptionResolver must be configured.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+3.2</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#handleException(Exception, WebRequest)</a>org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ResponseEntityExceptionHandler</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A convenient base class for ControllerAdvice classes that wish to provide centralized exception handling across all <code>@RequestMapping</code> methods through <code>@ExceptionHandler</code> methods. 
+<p>This base class provides an <code>@ExceptionHandler</code> method for handling internal Spring MVC exceptions. This method returns a <code>ResponseEntity</code> for writing to the response with a HttpMessageConverter, in contrast to org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver which returns a org.springframework.web.servlet.ModelAndView. </p>
+<p>If there is no need to write error content to the response body, or when using view resolution (e.g., via <code>ContentNegotiatingViewResolver</code>), then <code>DefaultHandlerExceptionResolver</code> is good enough. </p>
+<p>Note that in order for an <code>@ControllerAdvice</code> sub-class to be detected, ExceptionHandlerExceptionResolver must be configured.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-p-a-g-e_-n-o-t_-f-o-u-n-d_-l-o-g_-c-a-t-e-g-o-r-y.html">PAGE_NOT_FOUND_LOG_CATEGORY</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">PAGE_NOT_FOUND_LOG_CATEGORY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Log category to use when no mapped handler is found for a request.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="handle-exception.html">handleException</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">handleException</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler$handleException(java.lang.Exception, org.springframework.web.context.request.WebRequest)/ex">ex</span><span class="symbol">:</span>&nbsp;<span class="identifier">Exception</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler$handleException(java.lang.Exception, org.springframework.web.context.request.WebRequest)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebRequest</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResponseEntity</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Provides handling for standard Spring MVC exceptions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,107 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WebSocketTransportHandler - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.sockjs.transport.handler</a>&nbsp;/&nbsp;<a href=".">WebSocketTransportHandler</a><br/>
+<br/>
+<h1>WebSocketTransportHandler</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WebSocketTransportHandler</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractTransportHandler</span><span class="symbol">, </span><span class="identifier">SockJsSessionFactory</span><span class="symbol">, </span><span class="identifier">HandshakeHandler</span><span class="symbol">, </span><span class="identifier">Lifecycle</span><span class="symbol">, </span><span class="identifier">ServletContextAware</span></code>
+<p>WebSocket-based TransportHandler. Uses SockJsWebSocketHandler and WebSocketServerSockJsSession to add SockJS processing. 
+<p>Also implements HandshakeHandler to support raw WebSocket communication at SockJS URL "/websocket".</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">WebSocketTransportHandler</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.WebSocketTransportHandler$<init>(org.springframework.web.socket.server.HandshakeHandler)/handshakeHandler">handshakeHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">HandshakeHandler</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="check-session-type.html">checkSessionType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">checkSessionType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.WebSocketTransportHandler$checkSessionType(org.springframework.web.socket.sockjs.transport.SockJsSession)/session">session</span><span class="symbol">:</span>&nbsp;<span class="identifier">SockJsSession</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="create-session.html">createSession</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">createSession</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.WebSocketTransportHandler$createSession(kotlin.String, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.WebSocketTransportHandler$createSession(kotlin.String, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/handler">handler</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketHandler</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.WebSocketTransportHandler$createSession(kotlin.String, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/attrs">attrs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">AbstractSockJsSession</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="do-handshake.html">doHandshake</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">doHandshake</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.WebSocketTransportHandler$doHandshake(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.WebSocketTransportHandler$doHandshake(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/response">response</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpResponse</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.WebSocketTransportHandler$doHandshake(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/handler">handler</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketHandler</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.WebSocketTransportHandler$doHandshake(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/attributes">attributes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-handshake-handler.html">getHandshakeHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getHandshakeHandler</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HandshakeHandler</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-transport-type.html">getTransportType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTransportType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TransportType</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="handle-request.html">handleRequest</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleRequest</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.WebSocketTransportHandler$handleRequest(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.sockjs.transport.SockJsSession)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.WebSocketTransportHandler$handleRequest(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.sockjs.transport.SockJsSession)/response">response</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpResponse</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.WebSocketTransportHandler$handleRequest(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.sockjs.transport.SockJsSession)/wsHandler">wsHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketHandler</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.WebSocketTransportHandler$handleRequest(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.sockjs.transport.SockJsSession)/wsSession">wsSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">SockJsSession</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-running.html">isRunning</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isRunning</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-servlet-context.html">setServletContext</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setServletContext</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.WebSocketTransportHandler$setServletContext(javax.servlet.ServletContext)/servletContext">servletContext</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServletContext</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="start.html">start</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">start</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="stop.html">stop</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">stop</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

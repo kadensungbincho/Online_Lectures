@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>InitDestroyAnnotationBeanPostProcessor.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.beans.factory.annotation</a>&nbsp;/&nbsp;<a href="index.html">InitDestroyAnnotationBeanPostProcessor</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$&lt;init&gt;()"></a>
+<code><span class="identifier">InitDestroyAnnotationBeanPostProcessor</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>org.springframework.beans.factory.config.BeanPostProcessor implementation that invokes annotated init and destroy methods. Allows for an annotation alternative to Spring's org.springframework.beans.factory.InitializingBean and org.springframework.beans.factory.DisposableBean callback interfaces. 
+<p>The actual annotation types that this post-processor checks for can be configured through the <code><a href="#">"initAnnotationType"</a></code> and <code><a href="#">"destroyAnnotationType"</a></code> properties. Any custom annotation can be used, since there are no required annotation attributes. </p>
+<p>Init and destroy annotations may be applied to methods of any visibility: public, package-protected, protected, or private. Multiple such methods may be annotated, but it is recommended to only annotate one single init method and destroy method, respectively. </p>
+<p>Spring's org.springframework.context.annotation.CommonAnnotationBeanPostProcessor supports the JSR-250 javax.annotation.PostConstruct and javax.annotation.PreDestroy annotations out of the box, as init annotation and destroy annotation, respectively. Furthermore, it also supports the javax.annotation.Resource annotation for annotation-driven injection of named beans.</p>
+</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.5</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#setInitAnnotationType</a><a href="#">#setDestroyAnnotationType</a></p>
+</BODY>
+</HTML>

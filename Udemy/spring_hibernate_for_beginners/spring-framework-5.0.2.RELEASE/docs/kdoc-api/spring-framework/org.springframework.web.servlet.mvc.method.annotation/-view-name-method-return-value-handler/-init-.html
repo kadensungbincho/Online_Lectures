@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ViewNameMethodReturnValueHandler.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.method.annotation</a>&nbsp;/&nbsp;<a href="index.html">ViewNameMethodReturnValueHandler</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.web.servlet.mvc.method.annotation.ViewNameMethodReturnValueHandler$&lt;init&gt;()"></a>
+<code><span class="identifier">ViewNameMethodReturnValueHandler</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Handles return values of types <code>void</code> and <code>String</code> interpreting them as view name reference. As of 4.2, it also handles general <code>CharSequence</code> types, e.g. <code>StringBuilder</code> or Groovy's <code>GString</code>, as view names. 
+<p>A <code>null</code> return value, either due to a <code>void</code> return type or as the actual return value is left as-is allowing the configured RequestToViewNameTranslator to select a view name by convention. </p>
+<p>A String return value can be interpreted in more than one ways depending on the presence of annotations like <code>@ModelAttribute</code> or <code>@ResponseBody</code>. Therefore this handler should be configured after the handlers that support these annotations.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+</BODY>
+</HTML>

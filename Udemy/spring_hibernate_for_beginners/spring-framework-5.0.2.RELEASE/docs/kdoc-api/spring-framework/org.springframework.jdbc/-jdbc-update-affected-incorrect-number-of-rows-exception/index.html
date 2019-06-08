@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JdbcUpdateAffectedIncorrectNumberOfRowsException - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.jdbc</a>&nbsp;/&nbsp;<a href=".">JdbcUpdateAffectedIncorrectNumberOfRowsException</a><br/>
+<br/>
+<h1>JdbcUpdateAffectedIncorrectNumberOfRowsException</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JdbcUpdateAffectedIncorrectNumberOfRowsException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">IncorrectUpdateSemanticsDataAccessException</span></code>
+<p>Exception thrown when a JDBC update affects an unexpected number of rows. Typically we expect an update to affect a single row, meaning it's an error if it affects multiple rows.</p>
+<p><strong>Author</strong><br/>
+Rod Johnson</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">JdbcUpdateAffectedIncorrectNumberOfRowsException</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.JdbcUpdateAffectedIncorrectNumberOfRowsException$<init>(kotlin.String, kotlin.Int, kotlin.Int)/sql">sql</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.jdbc.JdbcUpdateAffectedIncorrectNumberOfRowsException$<init>(kotlin.String, kotlin.Int, kotlin.Int)/expected">expected</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.jdbc.JdbcUpdateAffectedIncorrectNumberOfRowsException$<init>(kotlin.String, kotlin.Int, kotlin.Int)/actual">actual</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span></code>
+<p>Constructor for JdbcUpdateAffectedIncorrectNumberOfRowsException.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-actual-rows-affected.html">getActualRowsAffected</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getActualRowsAffected</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Return the number of rows that have actually been affected.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-expected-rows-affected.html">getExpectedRowsAffected</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExpectedRowsAffected</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Return the number of rows that should have been affected.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="was-data-updated.html">wasDataUpdated</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">wasDataUpdated</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

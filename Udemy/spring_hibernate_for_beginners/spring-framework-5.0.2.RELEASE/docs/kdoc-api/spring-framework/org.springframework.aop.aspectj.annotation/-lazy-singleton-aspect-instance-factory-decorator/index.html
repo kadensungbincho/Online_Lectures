@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LazySingletonAspectInstanceFactoryDecorator - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.aop.aspectj.annotation</a>&nbsp;/&nbsp;<a href=".">LazySingletonAspectInstanceFactoryDecorator</a><br/>
+<br/>
+<h1>LazySingletonAspectInstanceFactoryDecorator</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">LazySingletonAspectInstanceFactoryDecorator</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">MetadataAwareAspectInstanceFactory</span><span class="symbol">, </span><span class="identifier">Serializable</span></code>
+<p>Decorator to cause a MetadataAwareAspectInstanceFactory to instantiate only once.</p>
+<p><strong>Author</strong><br/>
+Rod Johnson</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">LazySingletonAspectInstanceFactoryDecorator</span><span class="symbol">(</span><span class="identifier" id="org.springframework.aop.aspectj.annotation.LazySingletonAspectInstanceFactoryDecorator$<init>(org.springframework.aop.aspectj.annotation.MetadataAwareAspectInstanceFactory)/maaif">maaif</span><span class="symbol">:</span>&nbsp;<span class="identifier">MetadataAwareAspectInstanceFactory</span><span class="symbol">)</span></code>
+<p>Create a new lazily initializing decorator for the given AspectInstanceFactory.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-aspect-class-loader.html">getAspectClassLoader</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAspectClassLoader</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ClassLoader</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-aspect-creation-mutex.html">getAspectCreationMutex</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAspectCreationMutex</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-aspect-instance.html">getAspectInstance</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAspectInstance</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-aspect-metadata.html">getAspectMetadata</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAspectMetadata</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-aspect-metadata/index.html"><span class="identifier">AspectMetadata</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-order.html">getOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOrder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-materialized.html">isMaterialized</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isMaterialized</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

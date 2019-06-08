@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ServletRequestDataBinderFactory - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.method.annotation</a>&nbsp;/&nbsp;<a href=".">ServletRequestDataBinderFactory</a><br/>
+<br/>
+<h1>ServletRequestDataBinderFactory</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ServletRequestDataBinderFactory</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.method.annotation/-init-binder-data-binder-factory/index.html"><span class="identifier">InitBinderDataBinderFactory</span></a></code>
+<p>Creates a <code>ServletRequestDataBinder</code>.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ServletRequestDataBinderFactory</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ServletRequestDataBinderFactory$<init>(kotlin.collections.MutableList((org.springframework.web.method.support.InvocableHandlerMethod)), org.springframework.web.bind.support.WebBindingInitializer)/binderMethods">binderMethods</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../../org.springframework.web.method.support/-invocable-handler-method/index.html"><span class="identifier">InvocableHandlerMethod</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ServletRequestDataBinderFactory$<init>(kotlin.collections.MutableList((org.springframework.web.method.support.InvocableHandlerMethod)), org.springframework.web.bind.support.WebBindingInitializer)/initializer">initializer</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebBindingInitializer</span><span class="symbol">)</span></code>
+<p>Create a new instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.method.annotation/-init-binder-data-binder-factory/init-binder.html">initBinder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">initBinder</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.method.annotation.InitBinderDataBinderFactory$initBinder(org.springframework.web.bind.WebDataBinder, org.springframework.web.context.request.NativeWebRequest)/binder">binder</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebDataBinder</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.method.annotation.InitBinderDataBinderFactory$initBinder(org.springframework.web.bind.WebDataBinder, org.springframework.web.context.request.NativeWebRequest)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Initialize a WebDataBinder with <code>@InitBinder</code> methods. If the <code>@InitBinder</code> annotation specifies attributes names, it is invoked only if the names include the target object name.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

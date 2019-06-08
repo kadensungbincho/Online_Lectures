@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WebSocketContainerFactoryBean - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.client.standard</a>&nbsp;/&nbsp;<a href=".">WebSocketContainerFactoryBean</a><br/>
+<br/>
+<h1>WebSocketContainerFactoryBean</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WebSocketContainerFactoryBean</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FactoryBean</span><span class="symbol">&lt;</span><span class="identifier">WebSocketContainer</span><span class="symbol">&gt;</span></code>
+<p>A FactoryBean for creating and configuring a javax.websocket.WebSocketContainer through Spring XML configuration. In Java configuration, ignore this class and use <code>ContainerProvider.getWebSocketContainer()</code> instead.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">WebSocketContainerFactoryBean</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A FactoryBean for creating and configuring a javax.websocket.WebSocketContainer through Spring XML configuration. In Java configuration, ignore this class and use <code>ContainerProvider.getWebSocketContainer()</code> instead.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-async-send-timeout.html">getAsyncSendTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAsyncSendTimeout</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-binary-message-buffer-size.html">getMaxBinaryMessageBufferSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxBinaryMessageBufferSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-session-idle-timeout.html">getMaxSessionIdleTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxSessionIdleTimeout</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-text-message-buffer-size.html">getMaxTextMessageBufferSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxTextMessageBufferSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-object.html">getObject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getObject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">WebSocketContainer</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-object-type.html">getObjectType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getObjectType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-singleton.html">isSingleton</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isSingleton</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-async-send-timeout.html">setAsyncSendTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAsyncSendTimeout</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.client.standard.WebSocketContainerFactoryBean$setAsyncSendTimeout(kotlin.Long)/timeoutInMillis">timeoutInMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-binary-message-buffer-size.html">setMaxBinaryMessageBufferSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxBinaryMessageBufferSize</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.client.standard.WebSocketContainerFactoryBean$setMaxBinaryMessageBufferSize(kotlin.Int)/bufferSize">bufferSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-session-idle-timeout.html">setMaxSessionIdleTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxSessionIdleTimeout</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.client.standard.WebSocketContainerFactoryBean$setMaxSessionIdleTimeout(kotlin.Long)/timeoutInMillis">timeoutInMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-text-message-buffer-size.html">setMaxTextMessageBufferSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxTextMessageBufferSize</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.client.standard.WebSocketContainerFactoryBean$setMaxTextMessageBufferSize(kotlin.Int)/bufferSize">bufferSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

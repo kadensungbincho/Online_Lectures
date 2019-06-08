@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ServletServerContainerFactoryBean.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.server.standard</a>&nbsp;/&nbsp;<a href="index.html">ServletServerContainerFactoryBean</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.web.socket.server.standard.ServletServerContainerFactoryBean$&lt;init&gt;()"></a>
+<code><span class="identifier">ServletServerContainerFactoryBean</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A FactoryBean for configuring javax.websocket.server.ServerContainer. Since there is usually only one <code>ServerContainer</code> instance accessible under a well-known <code>javax.servlet.ServletContext</code> attribute, simply declaring this FactoryBean and using its setters allows for configuring the <code>ServerContainer</code> through Spring configuration. 
+<p>This is useful even if the <code>ServerContainer</code> is not injected into any other bean within the Spring application context. For example, an application can configure a org.springframework.web.socket.server.support.DefaultHandshakeHandler, a org.springframework.web.socket.sockjs.SockJsService, or ServerEndpointExporter, and separately declare this FactoryBean in order to customize the properties of the (one and only) <code>ServerContainer</code> instance.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Sam Brannen</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+</BODY>
+</HTML>

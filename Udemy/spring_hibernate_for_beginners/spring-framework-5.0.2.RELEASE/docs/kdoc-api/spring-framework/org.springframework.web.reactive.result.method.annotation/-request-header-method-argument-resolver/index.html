@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RequestHeaderMethodArgumentResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.reactive.result.method.annotation</a>&nbsp;/&nbsp;<a href=".">RequestHeaderMethodArgumentResolver</a><br/>
+<br/>
+<h1>RequestHeaderMethodArgumentResolver</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RequestHeaderMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractNamedValueSyncArgumentResolver</span></code>
+<p>Resolves method arguments annotated with <code>@RequestHeader</code> except for Map arguments. See RequestHeaderMapMethodArgumentResolver for details on Map arguments annotated with <code>@RequestHeader</code>. 
+<p>An <code>@RequestHeader</code> is a named value resolved from a request header. It has a required flag and a default value to fall back on when the request header does not exist. </p>
+<p>A ConversionService is invoked to apply type conversion to resolved request header values that don't yet match the method parameter type.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+5.0</p>
+<p><strong>See Also</strong><br/>
+RequestHeaderMapMethodArgumentResolver</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">RequestHeaderMethodArgumentResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.RequestHeaderMethodArgumentResolver$<init>(org.springframework.beans.factory.config.ConfigurableBeanFactory, org.springframework.core.ReactiveAdapterRegistry)/factory">factory</span><span class="symbol">:</span>&nbsp;<span class="identifier">ConfigurableBeanFactory</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.RequestHeaderMethodArgumentResolver$<init>(org.springframework.beans.factory.config.ConfigurableBeanFactory, org.springframework.core.ReactiveAdapterRegistry)/registry">registry</span><span class="symbol">:</span>&nbsp;<a href="../../org.springframework.core/-reactive-adapter-registry/index.html"><span class="identifier">ReactiveAdapterRegistry</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="supports-parameter.html">supportsParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsParameter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.RequestHeaderMethodArgumentResolver$supportsParameter(org.springframework.core.MethodParameter)/param">param</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

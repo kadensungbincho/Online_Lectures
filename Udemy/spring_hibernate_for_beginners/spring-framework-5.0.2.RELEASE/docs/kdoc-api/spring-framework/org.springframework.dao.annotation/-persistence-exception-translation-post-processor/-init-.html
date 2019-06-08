@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PersistenceExceptionTranslationPostProcessor.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.dao.annotation</a>&nbsp;/&nbsp;<a href="index.html">PersistenceExceptionTranslationPostProcessor</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor$&lt;init&gt;()"></a>
+<code><span class="identifier">PersistenceExceptionTranslationPostProcessor</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Bean post-processor that automatically applies persistence exception translation to any bean marked with Spring's @org.springframework.stereotype.Repository annotation, adding a corresponding PersistenceExceptionTranslationAdvisor to the exposed proxy (either an existing AOP proxy or a newly generated proxy that implements all of the target's interfaces). 
+<p>Translates native resource exceptions to Spring's org.springframework.dao.DataAccessException hierarchy. Autodetects beans that implement the org.springframework.dao.support.PersistenceExceptionTranslator interface, which are subsequently asked to translate candidate exceptions. </p>
+<p>All of Spring's applicable resource factories (e.g. org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean) implement the <code>PersistenceExceptionTranslator</code> interface out of the box. As a consequence, all that is usually needed to enable automatic exception translation is marking all affected beans (such as Repositories or DAOs) with the <code>@Repository</code> annotation, along with defining this post-processor as a bean in the application context.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rod Johnson</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<p><strong>See Also</strong><br/>
+PersistenceExceptionTranslationAdvisororg.springframework.stereotype.Repositoryorg.springframework.dao.DataAccessExceptionorg.springframework.dao.support.PersistenceExceptionTranslator</p>
+</BODY>
+</HTML>

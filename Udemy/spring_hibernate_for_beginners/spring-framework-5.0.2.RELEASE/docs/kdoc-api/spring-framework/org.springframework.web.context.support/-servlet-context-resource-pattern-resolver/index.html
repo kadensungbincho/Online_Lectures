@@ -1,0 +1,86 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ServletContextResourcePatternResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.context.support</a>&nbsp;/&nbsp;<a href=".">ServletContextResourcePatternResolver</a><br/>
+<br/>
+<h1>ServletContextResourcePatternResolver</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ServletContextResourcePatternResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.core.io.support/-path-matching-resource-pattern-resolver/index.html"><span class="identifier">PathMatchingResourcePatternResolver</span></a></code>
+<p>ServletContext-aware subclass of PathMatchingResourcePatternResolver, able to find matching resources below the web application root directory via <code><a href="#">ServletContext#getResourcePaths</a></code>. Falls back to the superclass' file system checking for other resources.</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+1.1.2</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ServletContextResourcePatternResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.support.ServletContextResourcePatternResolver$<init>(javax.servlet.ServletContext)/servletContext">servletContext</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServletContext</span><span class="symbol">)</span></code><br/>
+<code><span class="identifier">ServletContextResourcePatternResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.support.ServletContextResourcePatternResolver$<init>(org.springframework.core.io.ResourceLoader)/resourceLoader">resourceLoader</span><span class="symbol">:</span>&nbsp;<span class="identifier">ResourceLoader</span><span class="symbol">)</span></code>
+<p>Create a new ServletContextResourcePatternResolver.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.core.io.support/-path-matching-resource-pattern-resolver/get-class-loader.html">getClassLoader</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getClassLoader</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ClassLoader</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.core.io.support/-path-matching-resource-pattern-resolver/get-path-matcher.html">getPathMatcher</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPathMatcher</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">PathMatcher</span></code>
+<p>Return the PathMatcher that this resource pattern resolver uses.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.core.io.support/-path-matching-resource-pattern-resolver/get-resource.html">getResource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getResource</span><span class="symbol">(</span><span class="identifier" id="org.springframework.core.io.support.PathMatchingResourcePatternResolver$getResource(kotlin.String)/location">location</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Resource</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.core.io.support/-path-matching-resource-pattern-resolver/get-resource-loader.html">getResourceLoader</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getResourceLoader</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResourceLoader</span></code>
+<p>Return the ResourceLoader that this pattern resolver works with.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.core.io.support/-path-matching-resource-pattern-resolver/get-resources.html">getResources</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getResources</span><span class="symbol">(</span><span class="identifier" id="org.springframework.core.io.support.PathMatchingResourcePatternResolver$getResources(kotlin.String)/locationPattern">locationPattern</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">Resource</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.core.io.support/-path-matching-resource-pattern-resolver/set-path-matcher.html">setPathMatcher</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPathMatcher</span><span class="symbol">(</span><span class="identifier" id="org.springframework.core.io.support.PathMatchingResourcePatternResolver$setPathMatcher(org.springframework.util.PathMatcher)/pathMatcher">pathMatcher</span><span class="symbol">:</span>&nbsp;<span class="identifier">PathMatcher</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the PathMatcher implementation to use for this resource pattern resolver. Default is AntPathMatcher.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

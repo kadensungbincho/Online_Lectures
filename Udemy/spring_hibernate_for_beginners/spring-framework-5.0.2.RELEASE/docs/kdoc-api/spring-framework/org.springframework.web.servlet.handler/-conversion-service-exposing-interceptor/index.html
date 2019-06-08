@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ConversionServiceExposingInterceptor - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.handler</a>&nbsp;/&nbsp;<a href=".">ConversionServiceExposingInterceptor</a><br/>
+<br/>
+<h1>ConversionServiceExposingInterceptor</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ConversionServiceExposingInterceptor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerInterceptorAdapter</span></code>
+<p>Interceptor that places the configured ConversionService in request scope so it's available during request processing. The request attribute name is "org.springframework.core.convert.ConversionService", the value of <code>ConversionService.class.getName()</code>. 
+<p>Mainly for use within JSP tags such as the spring:eval tag.</p>
+</p>
+<p><strong>Author</strong><br/>
+Keith Donald</p>
+<p><strong>Since</strong><br/>
+3.0.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ConversionServiceExposingInterceptor</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.handler.ConversionServiceExposingInterceptor$<init>(org.springframework.core.convert.ConversionService)/conversionService">conversionService</span><span class="symbol">:</span>&nbsp;<span class="identifier">ConversionService</span><span class="symbol">)</span></code>
+<p>Creates a new ConversionServiceExposingInterceptor.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="pre-handle.html">preHandle</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">preHandle</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.handler.ConversionServiceExposingInterceptor$preHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.handler.ConversionServiceExposingInterceptor$preHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any)/response">response</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletResponse</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.handler.ConversionServiceExposingInterceptor$preHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any)/handler">handler</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

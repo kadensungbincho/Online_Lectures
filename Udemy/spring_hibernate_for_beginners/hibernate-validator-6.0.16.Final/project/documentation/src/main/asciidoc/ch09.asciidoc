@@ -1,0 +1,562 @@
+[[chapter-bootstrapping]]
+== Bootstrapping
+
+In <<section-obtaining-validator>>, you already saw one way of creating a `Validator` instance - via
+`Validation#buildDefaultValidatorFactory()`. In this chapter, you will learn how to use the other
+methods in `javax.validation.Validation` in order to bootstrap specifically configured validators.
+
+[[section-retrieving-validator-factory-validator]]
+=== Retrieving `ValidatorFactory` and `Validator`
+
+You obtain a `Validator` by retrieving a `ValidatorFactory` via one of the static methods on
+`javax.validation.Validation` and calling `getValidator()` on the factory instance.
+
+<<example-build-default-validator-factory>> shows how to obtain a validator from the default
+validator factory:
+
+[[example-build-default-validator-factory]]
+.Bootstrapping default `ValidatorFactory` and `Validator`
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=buildDefaultValidatorFactory]
+----
+====
+
+[TIP]
+====
+The generated `ValidatorFactory` and `Validator` instances are thread-safe and can be cached. As
+Hibernate Validator uses the factory as context for caching constraint metadata it is recommended to
+work with one factory instance within an application.
+====
+
+Bean Validation supports working with several providers such as Hibernate Validator within one
+application. If more than one provider is present on the classpath, it is not guaranteed which one
+is chosen when creating a factory via `buildDefaultValidatorFactory()`.
+
+In this case, you can explicitly specify the provider to use via `Validation#byProvider()`, passing the
+provider's `ValidationProvider` class as shown in <<example-using-specific-provider>>.
+
+[[example-using-specific-provider]]
+.Bootstrapping `ValidatorFactory` and `Validator` using a specific provider
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=byProvider]
+----
+====
+
+Note that the configuration object returned by `configure()` allows to specifically customize the
+factory before calling `buildValidatorFactory()`. The available options are discussed later in this
+chapter.
+
+Similarly you can retrieve the default validator factory for configuration which is demonstrated in
+<<example-configuring-default-provider>>.
+
+[[example-configuring-default-provider]]
+.Retrieving the default `ValidatorFactory` for configuration
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=byDefaultProvider]
+----
+====
+
+[NOTE]
+====
+If a `ValidatorFactory` instance is no longer in use, it should be disposed by calling
+`ValidatorFactory#close()`. This will free any resources possibly allocated by the factory.
+====
+
+[[section-validation-provider-resolver]]
+==== `ValidationProviderResolver`
+
+By default, available Bean Validation providers are discovered using the
+{javaTechnotesBaseUrl}/guides/jar/jar.html#Service_Provider[Java
+Service Provider] mechanism.
+
+For that purpose, each provider includes the file _META-
+INF/services/javax.validation.spi.ValidationProvider_, containing the fully qualified classname of
+its `ValidationProvider` implementation. In the case of Hibernate Validator, this is
+`org.hibernate.validator.HibernateValidator`.
+
+Depending on your environment and its classloading specifics, provider discovery via the Java's
+service loader mechanism might not work. In this case, you can plug in a custom
+`ValidationProviderResolver` implementation which performs the provider retrieval. An example is OSGi,
+where you could implement a provider resolver which uses OSGi services for provider discovery.
+
+To use a custom provider resolver, pass it via `providerResolver()` as shown in
+<<example-using-custom-validation-provider-resolver>>.
+
+[[example-using-custom-validation-provider-resolver]]
+.Using a custom `ValidationProviderResolver`
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/OsgiServiceDiscoverer.java[tags=include]
+----
+
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=providerResolver]
+----
+====
+
+[[section-configuring-validator-factory]]
+=== Configuring a `ValidatorFactory`
+
+By default, validator factories retrieved from `Validation` and any validators they create are
+configured as per the XML descriptor _META-INF/validation.xml_ (see <<chapter-xml-configuration>>),
+if present.
+
+If you want to disable the XML based configuration, you can do so by invoking
+`Configuration#ignoreXmlConfiguration()`.
+
+The different values of the XML configuration can be accessed via
+`Configuration#getBootstrapConfiguration()`. This can for instance be helpful if you want to integrate
+Bean Validation into a managed environment and want to create managed instances of the objects
+configured via XML.
+
+Using the fluent configuration API, you can override one or more of the settings when bootstrapping
+the factory. The following sections show how to make use of the different options. Note that the
+`Configuration` class exposes the default implementations of the different extension points which can
+be useful if you want to use these as delegates for your custom implementations.
+
+[[section-validator-factory-message-interpolator]]
+==== `MessageInterpolator`
+
+Message interpolators are used by the validation engine to create user readable error messages from
+constraint message descriptors.
+
+In case the default message interpolation algorithm described in <<chapter-message-interpolation>>
+is not sufficient for your needs, you can pass in your own implementation of the `MessageInterpolator`
+interface via `Configuration#messageInterpolator()` as shown in
+<<example-using-custom-message-interpolator>>.
+
+[[example-using-custom-message-interpolator]]
+.Using a custom `MessageInterpolator`
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/MyMessageInterpolator.java[tags=include]
+----
+
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=messageInterpolator]
+----
+====
+
+[[section-validator-factory-traversable-resolver]]
+==== `TraversableResolver`
+
+In some cases the validation engine should not access the state of a bean property.
+The most obvious example for that is a lazily loaded property or association of a JPA entity.
+Validating this lazy property or association would mean that its state would have to be accessed,
+triggering a load from the database.
+
+Which properties can be accessed and which ones not is controlled by querying the
+`TraversableResolver` interface. <<example-using-custom-traversable-resolver>> shows how to use a
+custom traversable resolver implementation.
+
+[[example-using-custom-traversable-resolver]]
+.Using a custom `TraversableResolver`
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/MyTraversableResolver.java[tags=include]
+----
+
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=traversableResolver]
+----
+====
+
+If no specific traversable resolver has been configured, the default behavior is to consider all properties as reachable and cascadable.
+When using Hibernate Validator together with a JPA 2 provider such as Hibernate ORM, only those properties will be considered reachable
+which already have been loaded by the persistence provider and all properties will be considered cascadable.
+
+By default, the traversable resolver calls are cached per validation call.
+This is especially important in a JPA environment where calling `isReachable()` has a significant cost.
+
+This caching adds some overhead.
+In the case your custom traversable resolver is very fast, it might be better to consider turning off the cache.
+
+You can disable the cache either via the XML configuration:
+
+[[example-disabling-traversable-resolver-result-cache-xml-configuration]]
+.Disabling the `TraversableResolver` result cache via the XML configuration
+====
+[source, XML, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/validation-DisableTraversableResolverResultCache.xml[]
+----
+====
+
+or via the programmatic API:
+
+[[example-disabling-traversable-resolver-result-cache-programmatic-api]]
+.Disabling the `TraversableResolver` result cache via the programmatic API
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=traversableResolverDisableCache]
+----
+====
+
+==== `ConstraintValidatorFactory`
+
+`ConstraintValidatorFactory` is the extension point for customizing how constraint validators are
+instantiated and released.
+
+The default `ConstraintValidatorFactory` provided by Hibernate Validator requires a public no-arg
+constructor to instantiate `ConstraintValidator` instances (see <<section-constraint-validator>>).
+Using a custom `ConstraintValidatorFactory` offers for example the possibility to use dependency
+injection in constraint validator implementations.
+
+To configure a custom constraint validator factory call `Configuration#constraintValidatorFactory()`
+(see <<example-using-custom-constraint-validator-factory>>.
+
+[[example-using-custom-constraint-validator-factory]]
+.Using a custom `ConstraintValidatorFactory`
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/MyConstraintValidatorFactory.java[tags=include]
+----
+
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=constraintValidatorFactory]
+----
+====
+
+[WARNING]
+====
+Any constraint implementations relying on `ConstraintValidatorFactory` behaviors specific to an
+implementation (dependency injection, no no-arg constructor and so on) are not considered portable.
+====
+
+[NOTE]
+====
+`ConstraintValidatorFactory` implementations should not cache validator instances as the state of each
+instance can be altered in the `initialize()` method.
+====
+
+[[section-parameter-name-provider]]
+==== `ParameterNameProvider`
+
+In case a method or constructor parameter constraint is violated, the `ParameterNameProvider`
+interface is used to retrieve the parameter name and make it available to the user via the
+property path of the constraint violation.
+
+The default implementation returns parameter names as obtained through the Java reflection API.
+If you compile your sources using the `-parameters` compiler flag, the actual parameter names as
+in the source code will be returned. Otherwise synthetic names in the form of `arg0`, `arg1` etc.
+will be used.
+
+To use a custom parameter name provider either pass an instance of
+the provider during bootstrapping as shown in <<example-using-custom-parameter-name-provider>>,
+or specify the fully qualified class name of the provider as value for
+the `<parameter-name-provider>` element in the _META-INF/validation.xml_ file
+(see <<section-configuration-validation-xml>>). This is demonstrated in
+<<example-using-custom-parameter-name-provider>>.
+
+[[example-using-custom-parameter-name-provider]]
+.Using a custom `ParameterNameProvider`
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/MyParameterNameProvider.java[tags=include]
+----
+
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=parameterNameProvider]
+----
+====
+
+
+[TIP]
+====
+Hibernate Validator comes with a custom `ParameterNameProvider` implementation based on the
+link:https://github.com/paul-hammant/paranamer/[ParaNamer] library which provides several ways
+for obtaining parameter names at runtime. Refer to <<section-paranamer-parameternameprovider>>
+to learn more about this specific implementation.
+====
+
+[[section-clock-provider]]
+==== `ClockProvider` and temporal validation tolerance
+
+For time related validation (`@Past` and `@Future` constraints for instance), it might be useful to define what is
+considered `now`.
+
+This is especially important when you want to test your constraints in a reliable manner.
+
+The reference time is defined by the `ClockProvider` contract. The responsibility of the `ClockProvider` is to
+provide a `java.time.Clock` defining `now` for time related validators.
+
+[[example-using-custom-clock-provider]]
+.Using a custom `ClockProvider`
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/FixedClockProvider.java[tags=include]
+----
+
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=clockProvider]
+----
+====
+
+Alternatively, you can specify the fully-qualified classname of a `ClockProvider` implementation using the
+`<clock-provider>` element when configuring the default validator factory via _META-INF/validation.xml_
+(see <<chapter-xml-configuration>>).
+
+[NOTE]
+====
+When validating `@Future` and `@Past` constraints, you might want to obtain the current time.
+
+You can obtain the `ClockProvider` in your validators by calling the
+`ConstraintValidatorContext#getClockProvider()` method.
+
+For instance, this might be useful if you want to replace the default message of the `@Future`
+constraint with a more explicit one.
+====
+
+When dealing with distributed architectures, you might need some tolerance when applying temporal constraints
+such as `@Past` or `@Future`.
+
+You can set a temporal validation tolerance by bootstrapping your `ValidatorFactory` as below:
+
+[[example-using-temporal-validation-tolerance]]
+.Using temporal validation tolerance
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=temporalValidationTolerance]
+----
+====
+
+Alternatively, you can define it in the XML configuration by setting the `hibernate.validator.temporal_validation_tolerance` property
+in your _META-INF/validation.xml_.
+
+The value of this property must be a `long` defining the tolerance in milliseconds.
+
+[NOTE]
+====
+When implementing your own temporal constraints, you might need to have access to the temporal validation tolerance.
+
+It can be obtained by calling the `HibernateConstraintValidatorInitializationContext#getTemporalValidationTolerance()` method.
+
+Note that to get access to this context at initialization, your constraint validator has to implement
+the `HibernateConstraintValidator` contract (see <<constraint-validator-hibernateconstraintvalidator>>).
+This contract is currently marked as incubating: it might be subject to change in the future.
+====
+
+[[section-bootstrapping-valueextractors]]
+==== Registering ``ValueExtractor``s
+
+As mentioned in <<chapter-valueextraction>>, additional value extractors can be registered during bootstrapping
+(see <<section-valueextraction-registeringvalueextractor>> for the other ways to register a value extractor).
+
+<<example-registering-value-extractor>> shows how we would register the value extractors we previously created
+to extract the keys and the values of Guava's `Multimap`.
+
+[[example-registering-value-extractor]]
+.Registering additional value extractors
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=valueExtractor]
+----
+====
+
+==== Adding mapping streams
+
+As discussed earlier, you can configure the constraints applied to your Java beans using XML based
+constraint mappings.
+
+Besides the mapping files specified in _META-INF/validation.xml_, you can add further mappings via
+`Configuration#addMapping()` (see <<example-adding-mapping-streams>>). Note that the passed input
+stream(s) must adhere to the XML schema for constraint mappings presented in
+<<section-mapping-xml-constraints>>.
+
+[[example-adding-mapping-streams]]
+.Adding constraint mapping streams
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=addMapping]
+----
+====
+
+You should close any passed input stream after the validator factory has been created.
+
+[[section-provider-specific-settings]]
+==== Provider-specific settings
+
+Via the configuration object returned by `Validation#byProvider()`, provider specific options can be
+configured.
+
+In the case of Hibernate Validator, this e.g. allows you to enable the fail fast mode and pass one or
+more programmatic constraint mappings as demonstrated in
+<<example-hibernate-validator-specific-options>>.
+
+[[example-hibernate-validator-specific-options]]
+.Setting Hibernate Validator specific options
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=providerSpecificOptions]
+----
+====
+
+Alternatively, provider-specific options can be passed via `Configuration#addProperty()`. Hibernate
+Validator supports enabling the fail fast mode that way, too:
+
+[[example-hibernate-validator-specific-option-via-addproperty]]
+.Enabling a Hibernate Validator specific option via `addProperty()`
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=providerSpecificOptionViaAddProperty]
+----
+====
+
+Refer to <<section-fail-fast>> and <<section-programmatic-api>> to learn more about the fail fast
+mode and the constraint declaration API.
+
+[[section-script-evaluator-factory]]
+==== Configuring the `ScriptEvaluatorFactory`
+
+For constraints like `@ScriptAssert` and `@ParameterScriptAssert`, it might be useful to configure
+how the script engines are initialized and how the script evaluators are built.
+This can be done by setting a custom implementation of `ScriptEvaluatorFactory`.
+
+In particular, this is important for modular environments (e.g. OSGi), where user might face issues
+with modular class loading and https://www.jcp.org/en/jsr/detail?id=223[JSR 223].
+It also allows to use any custom script engine, not necessarily based on the
+https://www.jcp.org/en/jsr/detail?id=223[JSR 223] (e.g. Spring Expression Language).
+
+===== XML configuration
+
+To specify the `ScriptEvaluatorFactory` via XML, you need to define the `hibernate.validator.script_evaluator_factory`
+property.
+
+[[example-script-evaluator-factory-xml]]
+.Defining the `ScriptEvaluatorFactory` via XML
+====
+[source, XML, indent=0]
+----
+include::{resourcesdir}/org/hibernate/validator/referenceguide/chapter09/script-evaluator-factory-validation.xml[]
+----
+====
+
+In this case, the specified `ScriptEvaluatorFactory` must have a no-arg constructor.
+
+===== Programmatic configuration
+
+To configure it programmatically, you need to pass an instance of `ScriptEvaluatorFactory` to the `ValidatorFactory`.
+This gives more flexibility in the configuration of the `ScriptEvaluatorFactory`. <<example-script-evaluator-factory-programmatically>>
+shows how this can be done.
+
+[[example-script-evaluator-factory-programmatically]]
+.Defining the `ScriptEvaluatorFactory` programmatically
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=scriptEvaluatorFactoryProgrammatically]
+----
+====
+
+===== Custom `ScriptEvaluatorFactory` implementation examples
+
+This section shows a couple of custom `ScriptEvaluatorFactory` implementations that can be used
+in modular environments as well as one using the https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions[Spring Expression Language]
+for writing constraint scripts.
+
+Problems with modular environments and https://www.jcp.org/en/jsr/detail?id=223[JSR 223] come from the class loading.
+The class loader where the script engine is available might be different from the one of Hibernate Validator.
+Thus the script engine wouldn't be found using the default strategy.
+
+To solve this issue, the `MultiClassLoaderScriptEvaluatorFactory` class below can be introduced:
+
+====
+[source, JAVA, indent=0]
+----
+include::{osgi-integrationtest-sourcedir}/org/hibernate/validator/osgi/scripting/MultiClassLoaderScriptEvaluatorFactory.java[]
+----
+====
+
+and then declared with:
+
+====
+[source, JAVA, indent=0]
+----
+include::{osgi-integrationtest-sourcedir}/org/hibernate/validator/osgi/integrationtest/OsgiIntegrationTest.java[tags=scriptEvaluatorFactoryMultiClassLoaderScriptEvaluatorFactory]
+----
+====
+
+This way, it is possible to pass multiple `ClassLoader` instances: typically the class loaders of the wanted ``ScriptEngine``s.
+
+An alternative approach for OSGi environments can be to use the `OsgiScriptEvaluatorFactory` defined below:
+
+====
+[source, JAVA, indent=0]
+----
+include::{osgi-integrationtest-sourcedir}/org/hibernate/validator/osgi/scripting/OsgiScriptEvaluatorFactory.java[]
+----
+====
+
+and then declared with:
+
+====
+[source, JAVA, indent=0]
+----
+include::{osgi-integrationtest-sourcedir}/org/hibernate/validator/osgi/integrationtest/OsgiIntegrationTest.java[tags=scriptEvaluatorFactoryOsgiScriptEvaluatorFactory]
+----
+====
+
+It is designed specifically for OSGi environments and allows you to pass the `BundleContext` which will be used to search
+for `ScriptEngineFactory` as a parameter.
+
+As already mentioned, you can also use script engines that are not based on https://www.jcp.org/en/jsr/detail?id=223[JSR 223].
+
+For instance, to use the https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions[Spring Expression Language],
+you can define a `SpringELScriptEvaluatorFactory` as:
+
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/SpringELScriptEvaluatorFactory.java[tags=include]
+----
+====
+
+This factory allows to use Spring Expression Language in `ScriptAssert` and `ParameterScriptAssert`
+constraints:
+
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/CustomScriptEvaluatorFactoryForSpringELTest.java[tags=include]
+----
+====
+
+[[section-configuring-validator]]
+=== Configuring a Validator
+
+When working with a configured validator factory it can occasionally be required to apply a
+different configuration to a single `Validator` instance. <<example-using-context>> shows how this can
+be achieved by calling `ValidatorFactory#usingContext()`.
+
+[[example-using-context]]
+.Configuring a `Validator` instance via `usingContext()`
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter09/BootstrappingTest.java[tags=usingContext]
+----
+====

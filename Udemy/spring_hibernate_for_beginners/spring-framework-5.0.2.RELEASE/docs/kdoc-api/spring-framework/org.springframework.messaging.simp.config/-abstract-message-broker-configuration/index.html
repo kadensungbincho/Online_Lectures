@@ -1,0 +1,194 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractMessageBrokerConfiguration - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.messaging.simp.config</a>&nbsp;/&nbsp;<a href=".">AbstractMessageBrokerConfiguration</a><br/>
+<br/>
+<h1>AbstractMessageBrokerConfiguration</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractMessageBrokerConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ApplicationContextAware</span></code>
+<p>Provides essential configuration for handling messages with simple messaging protocols such as STOMP. 
+<p><code><a href="client-inbound-channel.html">#clientInboundChannel()</a></code> and <code><a href="client-outbound-channel.html">#clientOutboundChannel()</a></code> deliver messages to and from remote clients to several message handlers such as </p>
+<ul> <li><code><a href="simp-annotation-method-message-handler.html">#simpAnnotationMethodMessageHandler()</a></code></li>
+ <li><code><a href="simple-broker-message-handler.html">#simpleBrokerMessageHandler()</a></code></li>
+ <li><code><a href="stomp-broker-relay-message-handler.html">#stompBrokerRelayMessageHandler()</a></code></li>
+ <li><code><a href="user-destination-message-handler.html">#userDestinationMessageHandler()</a></code></li>
+ </ul>
+ while <code><a href="broker-channel.html">#brokerChannel()</a></code> delivers messages from within the application to the the respective message handlers. <code><a href="broker-messaging-template.html">#brokerMessagingTemplate()</a></code> can be injected into any application component to send messages. 
+<p>Subclasses are responsible for the part of the configuration that feed messages to and from the client inbound/outbound channels (e.g. STOMP over WebSocket).</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Brian Clozel</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="broker-channel.html">brokerChannel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">brokerChannel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">AbstractSubscribableChannel</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="broker-channel-executor.html">brokerChannelExecutor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">brokerChannelExecutor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ThreadPoolTaskExecutor</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="broker-message-converter.html">brokerMessageConverter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">brokerMessageConverter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompositeMessageConverter</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="broker-messaging-template.html">brokerMessagingTemplate</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">brokerMessagingTemplate</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SimpMessagingTemplate</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="client-inbound-channel.html">clientInboundChannel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">clientInboundChannel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">AbstractSubscribableChannel</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="client-inbound-channel-executor.html">clientInboundChannelExecutor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">clientInboundChannelExecutor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ThreadPoolTaskExecutor</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="client-outbound-channel.html">clientOutboundChannel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">clientOutboundChannel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">AbstractSubscribableChannel</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="client-outbound-channel-executor.html">clientOutboundChannelExecutor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">clientOutboundChannelExecutor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ThreadPoolTaskExecutor</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-application-context.html">getApplicationContext</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getApplicationContext</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ApplicationContext</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path-matcher.html">getPathMatcher</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getPathMatcher</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">PathMatcher</span></code>
+<p>Provide access to the configured PatchMatcher for access from other configuration classes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-validator.html">getValidator</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getValidator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Validator</span></code>
+<p>Override this method to provide a custom Validator.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="message-broker-task-scheduler.html">messageBrokerTaskScheduler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">messageBrokerTaskScheduler</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.springframework.scheduling.concurrent/-thread-pool-task-scheduler/index.html"><span class="identifier">ThreadPoolTaskScheduler</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-application-context.html">setApplicationContext</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setApplicationContext</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.simp.config.AbstractMessageBrokerConfiguration$setApplicationContext(org.springframework.context.ApplicationContext)/applicationContext">applicationContext</span><span class="symbol">:</span>&nbsp;<span class="identifier">ApplicationContext</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="simp-annotation-method-message-handler.html">simpAnnotationMethodMessageHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">simpAnnotationMethodMessageHandler</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SimpAnnotationMethodMessageHandler</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="simple-broker-message-handler.html">simpleBrokerMessageHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">simpleBrokerMessageHandler</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">AbstractBrokerMessageHandler</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="stomp-broker-relay-message-handler.html">stompBrokerRelayMessageHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">stompBrokerRelayMessageHandler</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">AbstractBrokerMessageHandler</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="user-destination-message-handler.html">userDestinationMessageHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">userDestinationMessageHandler</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">UserDestinationMessageHandler</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="user-destination-resolver.html">userDestinationResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">userDestinationResolver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">UserDestinationResolver</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="user-registry.html">userRegistry</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">userRegistry</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SimpUserRegistry</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="user-registry-message-handler.html">userRegistryMessageHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">userRegistryMessageHandler</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MessageHandler</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.socket.config.annotation/-web-socket-message-broker-configuration-support/index.html">WebSocketMessageBrokerConfigurationSupport</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">WebSocketMessageBrokerConfigurationSupport</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractMessageBrokerConfiguration</span></code>
+<p>Extends AbstractMessageBrokerConfiguration and adds configuration for receiving and responding to STOMP messages from WebSocket clients. 
+<p>Typically used in conjunction with EnableWebSocketMessageBroker but can also be extended directly.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

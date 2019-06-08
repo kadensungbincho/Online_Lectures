@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HttpSessionHandshakeInterceptor - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.server.support</a>&nbsp;/&nbsp;<a href=".">HttpSessionHandshakeInterceptor</a><br/>
+<br/>
+<h1>HttpSessionHandshakeInterceptor</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HttpSessionHandshakeInterceptor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandshakeInterceptor</span></code>
+<p>An interceptor to copy information from the HTTP session to the "handshake attributes" map to made available via<code><a href="#">WebSocketSession#getAttributes()</a></code>. 
+<p>Copies a subset or all HTTP session attributes and/or the HTTP session id under the key <code><a href="-h-t-t-p_-s-e-s-s-i-o-n_-i-d_-a-t-t-r_-n-a-m-e.html">#HTTP_SESSION_ID_ATTR_NAME</a></code>.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">HttpSessionHandshakeInterceptor</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Default constructor for copying all HTTP session attributes and the HTTP session id.</p>
+<code><span class="identifier">HttpSessionHandshakeInterceptor</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor$<init>(kotlin.collections.MutableCollection((kotlin.String)))/attributeNames">attributeNames</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p>Constructor for copying specific HTTP session attributes and the HTTP session id.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-h-t-t-p_-s-e-s-s-i-o-n_-i-d_-a-t-t-r_-n-a-m-e.html">HTTP_SESSION_ID_ATTR_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">HTTP_SESSION_ID_ATTR_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the attribute under which the HTTP session id is exposed when <code><a href="set-copy-http-session-id.html">copyHttpSessionId</a></code> is "true".</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="after-handshake.html">afterHandshake</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">afterHandshake</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor$afterHandshake(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, java.lang.Exception)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor$afterHandshake(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, java.lang.Exception)/response">response</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpResponse</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor$afterHandshake(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, java.lang.Exception)/wsHandler">wsHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketHandler</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor$afterHandshake(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, java.lang.Exception)/ex">ex</span><span class="symbol">:</span>&nbsp;<span class="identifier">Exception</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="before-handshake.html">beforeHandshake</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">beforeHandshake</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor$beforeHandshake(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor$beforeHandshake(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/response">response</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpResponse</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor$beforeHandshake(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/wsHandler">wsHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketHandler</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor$beforeHandshake(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/attributes">attributes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-attribute-names.html">getAttributeNames</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAttributeNames</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Return the configured attribute names to copy (read-only).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-copy-all-attributes.html">isCopyAllAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isCopyAllAttributes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether to copy all HTTP session attributes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-copy-http-session-id.html">isCopyHttpSessionId</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isCopyHttpSessionId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether to copy the HTTP session id to the handshake attributes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-create-session.html">isCreateSession</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isCreateSession</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether the HTTP session is allowed to be created.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-copy-all-attributes.html">setCopyAllAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setCopyAllAttributes</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor$setCopyAllAttributes(kotlin.Boolean)/copyAllAttributes">copyAllAttributes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether to copy all attributes from the HTTP session. If set to "true", any explicitly configured attribute names are ignored. 
+<p>By default this is set to either "true" or "false" depending on which constructor was used (default or with attribute names respectively).</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-copy-http-session-id.html">setCopyHttpSessionId</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setCopyHttpSessionId</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor$setCopyHttpSessionId(kotlin.Boolean)/copyHttpSessionId">copyHttpSessionId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether the HTTP session id should be copied to the handshake attributes under the key <code><a href="-h-t-t-p_-s-e-s-s-i-o-n_-i-d_-a-t-t-r_-n-a-m-e.html">#HTTP_SESSION_ID_ATTR_NAME</a></code>. 
+<p>By default this is "true".</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-create-session.html">setCreateSession</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setCreateSession</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor$setCreateSession(kotlin.Boolean)/createSession">createSession</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether to allow the HTTP session to be created while accessing it. 
+<p>By default set to <code>false</code>.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

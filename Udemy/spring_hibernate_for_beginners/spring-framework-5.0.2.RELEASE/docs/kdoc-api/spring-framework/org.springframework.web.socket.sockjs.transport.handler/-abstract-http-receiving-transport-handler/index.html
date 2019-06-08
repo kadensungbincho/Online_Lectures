@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractHttpReceivingTransportHandler - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.sockjs.transport.handler</a>&nbsp;/&nbsp;<a href=".">AbstractHttpReceivingTransportHandler</a><br/>
+<br/>
+<h1>AbstractHttpReceivingTransportHandler</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractHttpReceivingTransportHandler</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractTransportHandler</span></code>
+<p>Base class for HTTP transport handlers that receive messages via HTTP POST.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AbstractHttpReceivingTransportHandler</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Base class for HTTP transport handlers that receive messages via HTTP POST.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="check-session-type.html">checkSessionType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">checkSessionType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.AbstractHttpReceivingTransportHandler$checkSessionType(org.springframework.web.socket.sockjs.transport.SockJsSession)/session">session</span><span class="symbol">:</span>&nbsp;<span class="identifier">SockJsSession</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="handle-request.html">handleRequest</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">handleRequest</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.AbstractHttpReceivingTransportHandler$handleRequest(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.sockjs.transport.SockJsSession)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.AbstractHttpReceivingTransportHandler$handleRequest(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.sockjs.transport.SockJsSession)/response">response</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpResponse</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.AbstractHttpReceivingTransportHandler$handleRequest(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.sockjs.transport.SockJsSession)/wsHandler">wsHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketHandler</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.sockjs.transport.handler.AbstractHttpReceivingTransportHandler$handleRequest(org.springframework.http.server.ServerHttpRequest, org.springframework.http.server.ServerHttpResponse, org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.sockjs.transport.SockJsSession)/wsSession">wsSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">SockJsSession</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-jsonp-receiving-transport-handler/index.html">JsonpReceivingTransportHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JsonpReceivingTransportHandler</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractHttpReceivingTransportHandler</span></code>
+<p>A TransportHandler that receives messages over HTTP.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-xhr-receiving-transport-handler/index.html">XhrReceivingTransportHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">XhrReceivingTransportHandler</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractHttpReceivingTransportHandler</span></code>
+<p>A TransportHandler that receives messages over HTTP.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractInterruptibleBatchPreparedStatementSetter - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.jdbc.core.support</a>&nbsp;/&nbsp;<a href=".">AbstractInterruptibleBatchPreparedStatementSetter</a><br/>
+<br/>
+<h1>AbstractInterruptibleBatchPreparedStatementSetter</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractInterruptibleBatchPreparedStatementSetter</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">InterruptibleBatchPreparedStatementSetter</span></code>
+<p>Abstract implementation of the InterruptibleBatchPreparedStatementSetter interface, combining the check for available values and setting of those into a single callback method <code><a href="#">#setValuesIfAvailable</a></code>.</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#setValuesIfAvailable</a></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AbstractInterruptibleBatchPreparedStatementSetter</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Abstract implementation of the InterruptibleBatchPreparedStatementSetter interface, combining the check for available values and setting of those into a single callback method <code><a href="#">#setValuesIfAvailable</a></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-batch-size.html">getBatchSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getBatchSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>This implementation returns <code>Integer.MAX_VALUE</code>. Can be overridden in subclasses to lower the maximum batch size.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-batch-exhausted.html">isBatchExhausted</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">isBatchExhausted</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.core.support.AbstractInterruptibleBatchPreparedStatementSetter$isBatchExhausted(kotlin.Int)/i">i</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>This implementation return this instance's current exhaustion flag.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-values.html">setValues</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">setValues</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.core.support.AbstractInterruptibleBatchPreparedStatementSetter$setValues(java.sql.PreparedStatement, kotlin.Int)/ps">ps</span><span class="symbol">:</span>&nbsp;<span class="identifier">PreparedStatement</span><span class="symbol">, </span><span class="identifier" id="org.springframework.jdbc.core.support.AbstractInterruptibleBatchPreparedStatementSetter$setValues(java.sql.PreparedStatement, kotlin.Int)/i">i</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>This implementation calls <code><a href="#">#setValuesIfAvailable</a></code> and sets this instance's exhaustion flag accordingly.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

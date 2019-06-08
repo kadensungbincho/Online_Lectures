@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WebRequestHandlerInterceptorAdapter - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.handler</a>&nbsp;/&nbsp;<a href=".">WebRequestHandlerInterceptorAdapter</a><br/>
+<br/>
+<h1>WebRequestHandlerInterceptorAdapter</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WebRequestHandlerInterceptorAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.servlet/-async-handler-interceptor/index.html"><span class="identifier">AsyncHandlerInterceptor</span></a></code>
+<p>Adapter that implements the Servlet HandlerInterceptor interface and wraps an underlying WebRequestInterceptor.</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<p><strong>See Also</strong><br/>
+org.springframework.web.context.request.WebRequestInterceptororg.springframework.web.servlet.HandlerInterceptor</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">WebRequestHandlerInterceptorAdapter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$<init>(org.springframework.web.context.request.WebRequestInterceptor)/requestInterceptor">requestInterceptor</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebRequestInterceptor</span><span class="symbol">)</span></code>
+<p>Create a new WebRequestHandlerInterceptorAdapter for the given WebRequestInterceptor.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="after-completion.html">afterCompletion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">afterCompletion</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$afterCompletion(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any, java.lang.Exception)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$afterCompletion(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any, java.lang.Exception)/response">response</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletResponse</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$afterCompletion(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any, java.lang.Exception)/handler">handler</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$afterCompletion(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any, java.lang.Exception)/ex">ex</span><span class="symbol">:</span>&nbsp;<span class="identifier">Exception</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="after-concurrent-handling-started.html">afterConcurrentHandlingStarted</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">afterConcurrentHandlingStarted</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$afterConcurrentHandlingStarted(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$afterConcurrentHandlingStarted(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any)/response">response</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletResponse</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$afterConcurrentHandlingStarted(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any)/handler">handler</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="post-handle.html">postHandle</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">postHandle</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$postHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any, org.springframework.web.servlet.ModelAndView)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$postHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any, org.springframework.web.servlet.ModelAndView)/response">response</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletResponse</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$postHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any, org.springframework.web.servlet.ModelAndView)/handler">handler</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$postHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any, org.springframework.web.servlet.ModelAndView)/modelAndView">modelAndView</span><span class="symbol">:</span>&nbsp;<span class="identifier">ModelAndView</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="pre-handle.html">preHandle</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">preHandle</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$preHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$preHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any)/response">response</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletResponse</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter$preHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any)/handler">handler</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

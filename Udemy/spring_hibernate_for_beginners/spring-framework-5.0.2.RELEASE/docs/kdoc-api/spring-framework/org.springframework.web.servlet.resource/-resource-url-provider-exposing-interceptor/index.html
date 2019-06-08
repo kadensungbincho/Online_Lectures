@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResourceUrlProviderExposingInterceptor - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.resource</a>&nbsp;/&nbsp;<a href=".">ResourceUrlProviderExposingInterceptor</a><br/>
+<br/>
+<h1>ResourceUrlProviderExposingInterceptor</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ResourceUrlProviderExposingInterceptor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerInterceptorAdapter</span></code>
+<p>An interceptor that exposes the ResourceUrlProvider instance it is configured with as a request attribute.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ResourceUrlProviderExposingInterceptor</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.resource.ResourceUrlProviderExposingInterceptor$<init>(org.springframework.web.servlet.resource.ResourceUrlProvider)/resourceUrlProvider">resourceUrlProvider</span><span class="symbol">:</span>&nbsp;<span class="identifier">ResourceUrlProvider</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-r-e-s-o-u-r-c-e_-u-r-l_-p-r-o-v-i-d-e-r_-a-t-t-r.html">RESOURCE_URL_PROVIDER_ATTR</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">RESOURCE_URL_PROVIDER_ATTR</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Name of the request attribute that holds the ResourceUrlProvider.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="pre-handle.html">preHandle</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">preHandle</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.resource.ResourceUrlProviderExposingInterceptor$preHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.resource.ResourceUrlProviderExposingInterceptor$preHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any)/response">response</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletResponse</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.resource.ResourceUrlProviderExposingInterceptor$preHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, kotlin.Any)/handler">handler</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,44 @@
+= Hibernate Validator {hvVersion} - JSR 380 Reference Implementation: Reference Guide
+Hardy Ferentschik; Gunnar Morling; Guillaume Smet
+:doctype: book
+:revdate: {docdate}
+:sectanchors:
+:xrefstyle: full
+:anchor:
+:toc: left
+:toclevels: 3
+:sectnumlevels: 5
+:docinfodir: {docinfodir}
+:docinfo:
+:title-logo-image: image:hibernate_logo_a.png[align=left,pdfwidth=33%]
+
+include::pr01.asciidoc[]
+
+:numbered:
+include::ch01.asciidoc[]
+
+include::ch02.asciidoc[]
+
+include::ch03.asciidoc[]
+
+include::ch04.asciidoc[]
+
+include::ch05.asciidoc[]
+
+include::ch06.asciidoc[]
+
+include::ch07.asciidoc[]
+
+include::ch08.asciidoc[]
+
+include::ch09.asciidoc[]
+
+include::ch10.asciidoc[]
+
+include::ch11.asciidoc[]
+
+include::ch12.asciidoc[]
+
+include::ch13.asciidoc[]
+
+include::ch14.asciidoc[]

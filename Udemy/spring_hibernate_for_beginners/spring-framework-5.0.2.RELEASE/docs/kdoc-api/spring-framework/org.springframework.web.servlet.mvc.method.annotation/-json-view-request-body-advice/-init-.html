@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JsonViewRequestBodyAdvice.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.method.annotation</a>&nbsp;/&nbsp;<a href="index.html">JsonViewRequestBodyAdvice</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.web.servlet.mvc.method.annotation.JsonViewRequestBodyAdvice$&lt;init&gt;()"></a>
+<code><span class="identifier">JsonViewRequestBodyAdvice</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A RequestBodyAdvice implementation that adds support for Jackson's <code>@JsonView</code> annotation declared on a Spring MVC <code>@HttpEntity</code> or <code>@RequestBody</code> method parameter. 
+<p>The deserialization view specified in the annotation will be passed in to the org.springframework.http.converter.json.MappingJackson2HttpMessageConverter which will then use it to deserialize the request body with. </p>
+<p>Note that despite <code>@JsonView</code> allowing for more than one class to be specified, the use for a request body advice is only supported with exactly one class argument. Consider the use of a composite interface.</p>
+</p>
+<p><strong>Author</strong><br/>
+Sebastien Deleuze</p>
+<p><strong>Since</strong><br/>
+4.2</p>
+<p><strong>See Also</strong><br/>
+com.fasterxml.jackson.annotation.JsonView<a href="#">com.fasterxml.jackson.databind.ObjectMapper#readerWithView(Class)</a></p>
+</BODY>
+</HTML>

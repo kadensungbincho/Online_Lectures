@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractNamedValueMethodArgumentResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.messaging.handler.annotation.support</a>&nbsp;/&nbsp;<a href=".">AbstractNamedValueMethodArgumentResolver</a><br/>
+<br/>
+<h1>AbstractNamedValueMethodArgumentResolver</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractNamedValueMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.messaging.handler.invocation/-handler-method-argument-resolver/index.html"><span class="identifier">HandlerMethodArgumentResolver</span></a></code>
+<p>Abstract base class for resolving method arguments from a named value. Message headers, and path variables are examples of named values. Each may have a name, a required flag, and a default value. 
+<p>Subclasses define how to do the following: </p>
+<ul> <li>Obtain named value information for a method parameter </li>
+<li>Resolve names into argument values </li>
+<li>Handle missing argument values when argument values are required </li>
+<li>Optionally handle a resolved value </li>
+</ul>
+ 
+<p>A default value string can contain ${...} placeholders and Spring Expression Language <code>#{...}</code> expressions. For this to work a ConfigurableBeanFactory must be supplied to the class constructor. </p>
+<p>A ConversionService may be used to apply type conversion to the resolved argument value if it doesn't match the method parameter type.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="resolve-argument.html">resolveArgument</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">resolveArgument</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.annotation.support.AbstractNamedValueMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.messaging.Message((kotlin.Any)))/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.messaging.handler.annotation.support.AbstractNamedValueMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.messaging.Message((kotlin.Any)))/message">message</span><span class="symbol">:</span>&nbsp;<span class="identifier">Message</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.messaging.handler.invocation/-handler-method-argument-resolver/supports-parameter.html">supportsParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">supportsParameter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver$supportsParameter(org.springframework.core.MethodParameter)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether the given MethodParameter is supported by this resolver.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-destination-variable-method-argument-resolver/index.html">DestinationVariableMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DestinationVariableMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractNamedValueMethodArgumentResolver</span></code>
+<p>Resolves method parameters annotated with org.springframework.messaging.handler.annotation.DestinationVariable.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-header-method-argument-resolver/index.html">HeaderMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HeaderMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractNamedValueMethodArgumentResolver</span></code>
+<p>Resolves method parameters annotated with Header.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

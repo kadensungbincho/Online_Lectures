@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PathVariableMethodArgumentResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.reactive.result.method.annotation</a>&nbsp;/&nbsp;<a href=".">PathVariableMethodArgumentResolver</a><br/>
+<br/>
+<h1>PathVariableMethodArgumentResolver</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PathVariableMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractNamedValueSyncArgumentResolver</span></code>
+<p>Resolves method arguments annotated with @PathVariable. 
+<p>An @PathVariable is a named value that gets resolved from a URI template variable. It is always required and does not have a default value to fall back on. See the base class org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver for more information on how named values are processed. </p>
+<p>If the method parameter type is Map, the name specified in the annotation is used to resolve the URI variable String value. The value is then converted to a Map via type conversion, assuming a suitable Converter.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+5.0</p>
+<p><strong>See Also</strong><br/>
+PathVariableMapMethodArgumentResolver</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">PathVariableMethodArgumentResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.PathVariableMethodArgumentResolver$<init>(org.springframework.beans.factory.config.ConfigurableBeanFactory, org.springframework.core.ReactiveAdapterRegistry)/factory">factory</span><span class="symbol">:</span>&nbsp;<span class="identifier">ConfigurableBeanFactory</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.PathVariableMethodArgumentResolver$<init>(org.springframework.beans.factory.config.ConfigurableBeanFactory, org.springframework.core.ReactiveAdapterRegistry)/registry">registry</span><span class="symbol">:</span>&nbsp;<a href="../../org.springframework.core/-reactive-adapter-registry/index.html"><span class="identifier">ReactiveAdapterRegistry</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="supports-parameter.html">supportsParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsParameter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.result.method.annotation.PathVariableMethodArgumentResolver$supportsParameter(org.springframework.core.MethodParameter)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

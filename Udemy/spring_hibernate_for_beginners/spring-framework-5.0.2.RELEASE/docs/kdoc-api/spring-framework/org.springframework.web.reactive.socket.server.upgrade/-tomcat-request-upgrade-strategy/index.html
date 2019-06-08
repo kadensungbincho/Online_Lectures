@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TomcatRequestUpgradeStrategy - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.reactive.socket.server.upgrade</a>&nbsp;/&nbsp;<a href=".">TomcatRequestUpgradeStrategy</a><br/>
+<br/>
+<h1>TomcatRequestUpgradeStrategy</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TomcatRequestUpgradeStrategy</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">RequestUpgradeStrategy</span></code>
+<p>A RequestUpgradeStrategy for use with Tomcat.</p>
+<p><strong>Author</strong><br/>
+Violeta Georgieva</p>
+<p><strong>Since</strong><br/>
+5.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">TomcatRequestUpgradeStrategy</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A RequestUpgradeStrategy for use with Tomcat.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-async-send-timeout.html">getAsyncSendTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAsyncSendTimeout</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-binary-message-buffer-size.html">getMaxBinaryMessageBufferSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxBinaryMessageBufferSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-session-idle-timeout.html">getMaxSessionIdleTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxSessionIdleTimeout</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-text-message-buffer-size.html">getMaxTextMessageBufferSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxTextMessageBufferSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-async-send-timeout.html">setAsyncSendTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAsyncSendTimeout</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.socket.server.upgrade.TomcatRequestUpgradeStrategy$setAsyncSendTimeout(kotlin.Long)/timeoutInMillis">timeoutInMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Exposes the underlying config option on <code><a href="#">javax.websocket.server.ServerContainer#setAsyncSendTimeout(long)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-binary-message-buffer-size.html">setMaxBinaryMessageBufferSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxBinaryMessageBufferSize</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.socket.server.upgrade.TomcatRequestUpgradeStrategy$setMaxBinaryMessageBufferSize(kotlin.Int)/bufferSize">bufferSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Exposes the underlying config option on <code><a href="#">javax.websocket.server.ServerContainer#setDefaultMaxBinaryMessageBufferSize(int)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-session-idle-timeout.html">setMaxSessionIdleTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxSessionIdleTimeout</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.socket.server.upgrade.TomcatRequestUpgradeStrategy$setMaxSessionIdleTimeout(kotlin.Long)/timeoutInMillis">timeoutInMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Exposes the underlying config option on <code><a href="#">javax.websocket.server.ServerContainer#setDefaultMaxSessionIdleTimeout(long)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-text-message-buffer-size.html">setMaxTextMessageBufferSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxTextMessageBufferSize</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.socket.server.upgrade.TomcatRequestUpgradeStrategy$setMaxTextMessageBufferSize(kotlin.Int)/bufferSize">bufferSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Exposes the underlying config option on <code><a href="#">javax.websocket.server.ServerContainer#setDefaultMaxTextMessageBufferSize(int)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="upgrade.html">upgrade</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">upgrade</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.socket.server.upgrade.TomcatRequestUpgradeStrategy$upgrade(org.springframework.web.server.ServerWebExchange, org.springframework.web.reactive.socket.WebSocketHandler, kotlin.String)/exchange">exchange</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerWebExchange</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.reactive.socket.server.upgrade.TomcatRequestUpgradeStrategy$upgrade(org.springframework.web.server.ServerWebExchange, org.springframework.web.reactive.socket.WebSocketHandler, kotlin.String)/handler">handler</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketHandler</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.reactive.socket.server.upgrade.TomcatRequestUpgradeStrategy$upgrade(org.springframework.web.server.ServerWebExchange, org.springframework.web.reactive.socket.WebSocketHandler, kotlin.String)/subProtocol">subProtocol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html"><span class="identifier">Mono</span></a><span class="symbol">&lt;</span><span class="identifier">Void</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AnnotationConfigWebApplicationContext - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.context.support</a>&nbsp;/&nbsp;<a href=".">AnnotationConfigWebApplicationContext</a><br/>
+<br/>
+<h1>AnnotationConfigWebApplicationContext</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">AnnotationConfigWebApplicationContext</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractRefreshableWebApplicationContext</span><span class="symbol">, </span><span class="identifier">AnnotationConfigRegistry</span></code>
+<p>org.springframework.web.context.WebApplicationContext implementation which accepts annotated classes as input - in particular org.springframework.context.annotation.Configuration-annotated classes, but also plain org.springframework.stereotype.Component classes and JSR-330 compliant classes using <code>javax.inject</code> annotations. Allows for registering classes one by one (specifying class names as config location) as well as for classpath scanning (specifying base packages as config location). 
+<p>This is essentially the equivalent of org.springframework.context.annotation.AnnotationConfigApplicationContext for a web environment. </p>
+<p>To make use of this application context, the <a href="#">"contextClass"</a> context-param for ContextLoader and/or "contextClass" init-param for FrameworkServlet must be set to the fully-qualified name of this class. </p>
+<p>As of Spring 3.1, this class may also be directly instantiated and injected into Spring's <code>DispatcherServlet</code> or <code>ContextLoaderListener</code> when using the new org.springframework.web.WebApplicationInitializer code-based alternative to <code>web.xml</code>. See its Javadoc for details and usage examples. </p>
+<p>Unlike XmlWebApplicationContext, no default configuration class locations are assumed. Rather, it is a requirement to set the <a href="#">"contextConfigLocation"</a> context-param for ContextLoader and/or "contextConfigLocation" init-param for FrameworkServlet. The param-value may contain both fully-qualified class names and base packages to scan for components. See <code><a href="#">#loadBeanDefinitions</a></code> for exact details on how these locations are processed. </p>
+<p>As an alternative to setting the "contextConfigLocation" parameter, users may implement an org.springframework.context.ApplicationContextInitializer and set the <a href="#">"contextInitializerClasses"</a> context-param / init-param. In such cases, users should favor the <code><a href="#">#refresh()</a></code> and <code><a href="#">#scan(String...)</a></code> methods over the <code><a href="#">#setConfigLocation(String)</a></code> method, which is primarily for use by <code>ContextLoader</code>. </p>
+<p>Note: In case of multiple <code>@Configuration</code> classes, later <code>@Bean</code> definitions will override ones defined in earlier loaded files. This can be leveraged to deliberately override certain bean definitions via an extra Configuration class.</p>
+</p>
+<p><strong>Author</strong><br/>
+Chris Beams</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+3.0</p>
+<p><strong>See Also</strong><br/>
+org.springframework.context.annotation.AnnotationConfigApplicationContext</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AnnotationConfigWebApplicationContext</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>org.springframework.web.context.WebApplicationContext implementation which accepts annotated classes as input - in particular org.springframework.context.annotation.Configuration-annotated classes, but also plain org.springframework.stereotype.Component classes and JSR-330 compliant classes using <code>javax.inject</code> annotations. Allows for registering classes one by one (specifying class names as config location) as well as for classpath scanning (specifying base packages as config location). 
+<p>This is essentially the equivalent of org.springframework.context.annotation.AnnotationConfigApplicationContext for a web environment. </p>
+<p>To make use of this application context, the <a href="#">"contextClass"</a> context-param for ContextLoader and/or "contextClass" init-param for FrameworkServlet must be set to the fully-qualified name of this class. </p>
+<p>As of Spring 3.1, this class may also be directly instantiated and injected into Spring's <code>DispatcherServlet</code> or <code>ContextLoaderListener</code> when using the new org.springframework.web.WebApplicationInitializer code-based alternative to <code>web.xml</code>. See its Javadoc for details and usage examples. </p>
+<p>Unlike XmlWebApplicationContext, no default configuration class locations are assumed. Rather, it is a requirement to set the <a href="#">"contextConfigLocation"</a> context-param for ContextLoader and/or "contextConfigLocation" init-param for FrameworkServlet. The param-value may contain both fully-qualified class names and base packages to scan for components. See <code><a href="#">#loadBeanDefinitions</a></code> for exact details on how these locations are processed. </p>
+<p>As an alternative to setting the "contextConfigLocation" parameter, users may implement an org.springframework.context.ApplicationContextInitializer and set the <a href="#">"contextInitializerClasses"</a> context-param / init-param. In such cases, users should favor the <code><a href="#">#refresh()</a></code> and <code><a href="#">#scan(String...)</a></code> methods over the <code><a href="#">#setConfigLocation(String)</a></code> method, which is primarily for use by <code>ContextLoader</code>. </p>
+<p>Note: In case of multiple <code>@Configuration</code> classes, later <code>@Bean</code> definitions will override ones defined in earlier loaded files. This can be leveraged to deliberately override certain bean definitions via an extra Configuration class.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="register.html">register</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">register</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.springframework.web.context.support.AnnotationConfigWebApplicationContext$register(kotlin.Array((java.lang.Class((kotlin.Any)))))/annotatedClasses">annotatedClasses</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Register one or more annotated classes to be processed. 
+<p>Note that <code><a href="#">#refresh()</a></code> must be called in order for the context to fully process the new classes.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="scan.html">scan</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">scan</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.springframework.web.context.support.AnnotationConfigWebApplicationContext$scan(kotlin.Array((kotlin.String)))/basePackages">basePackages</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Perform a scan within the specified base packages. 
+<p>Note that <code><a href="#">#refresh()</a></code> must be called in order for the context to fully process the new classes.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-bean-name-generator.html">setBeanNameGenerator</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBeanNameGenerator</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.support.AnnotationConfigWebApplicationContext$setBeanNameGenerator(org.springframework.beans.factory.support.BeanNameGenerator)/beanNameGenerator">beanNameGenerator</span><span class="symbol">:</span>&nbsp;<span class="identifier">BeanNameGenerator</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set a custom BeanNameGenerator for use with AnnotatedBeanDefinitionReader and/or ClassPathBeanDefinitionScanner. 
+<p>Default is org.springframework.context.annotation.AnnotationBeanNameGenerator.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-scope-metadata-resolver.html">setScopeMetadataResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setScopeMetadataResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.support.AnnotationConfigWebApplicationContext$setScopeMetadataResolver(org.springframework.context.annotation.ScopeMetadataResolver)/scopeMetadataResolver">scopeMetadataResolver</span><span class="symbol">:</span>&nbsp;<span class="identifier">ScopeMetadataResolver</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set a custom ScopeMetadataResolver for use with AnnotatedBeanDefinitionReader and/or ClassPathBeanDefinitionScanner. 
+<p>Default is an org.springframework.context.annotation.AnnotationScopeMetadataResolver.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

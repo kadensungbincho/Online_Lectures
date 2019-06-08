@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ModelAndViewMethodReturnValueHandler.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.method.annotation</a>&nbsp;/&nbsp;<a href="index.html">ModelAndViewMethodReturnValueHandler</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.web.servlet.mvc.method.annotation.ModelAndViewMethodReturnValueHandler$&lt;init&gt;()"></a>
+<code><span class="identifier">ModelAndViewMethodReturnValueHandler</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Handles return values of type ModelAndView copying view and model information to the ModelAndViewContainer. 
+<p>If the return value is <code>null</code>, the <code><a href="#">ModelAndViewContainer#setRequestHandled(boolean)</a></code> flag is set to <code>true</code> to indicate the request was handled directly. </p>
+<p>A ModelAndView return type has a set purpose. Therefore this handler should be configured ahead of handlers that support any return value type annotated with <code>@ModelAttribute</code> or <code>@ResponseBody</code> to ensure they don't take over.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+</BODY>
+</HTML>

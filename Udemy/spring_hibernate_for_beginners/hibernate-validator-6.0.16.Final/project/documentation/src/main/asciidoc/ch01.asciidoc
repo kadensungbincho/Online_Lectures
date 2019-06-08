@@ -1,0 +1,294 @@
+[[validator-gettingstarted]]
+== Getting started
+
+This chapter will show you how to get started with Hibernate Validator, the reference implementation (RI) of Bean Validation. For the following quick-start you need:
+
+* A JDK 8
+* http://maven.apache.org/[Apache Maven]
+* An Internet connection (Maven has to download all required libraries)
+
+[[validator-gettingstarted-createproject]]
+=== Project set up
+
+In order to use Hibernate Validator within a Maven project, simply add the following dependency to
+your __pom.xml__:
+
+.Hibernate Validator Maven dependency
+====
+[source, XML]
+[subs="verbatim,attributes"]
+----
+<dependency>
+    <groupId>org.hibernate.validator</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>{hvVersion}</version>
+</dependency>
+----
+====
+
+This transitively pulls in the dependency to the Bean Validation API
+(`javax.validation:validation-api:{bvVersion}`).
+
+[[validator-gettingstarted-uel]]
+==== Unified EL
+
+Hibernate Validator requires an implementation of the Unified Expression Language
+(http://jcp.org/en/jsr/detail?id=341[JSR 341]) for evaluating dynamic expressions in constraint
+violation messages (see <<section-message-interpolation>>). When your application runs in a Java EE
+container such as JBoss AS, an EL implementation is already provided by the container. In a Java SE
+environment, however, you have to add an implementation as dependency to your POM file. For instance
+you can add the following dependency to use the JSR 341 https://javaee.github.io/uel-ri/[reference
+implementation]:
+
+.Maven dependencies for Unified EL reference implementation
+====
+[source, XML]
+[subs="verbatim,attributes"]
+----
+<dependency>
+    <groupId>org.glassfish</groupId>
+    <artifactId>javax.el</artifactId>
+    <version>{javaxElVersion}</version>
+</dependency>
+----
+====
+
+[TIP]
+====
+For environments where one cannot provide a EL implementation Hibernate Validator is offering a
+<<non-el-message-interpolator>>. However, the use of this interpolator
+is not Bean Validation specification compliant.
+====
+
+[[section-getting-started-cdi]]
+==== CDI
+
+Bean Validation defines integration points with CDI (Contexts and Dependency Injection for Java ^TM^
+EE, http://jcp.org/en/jsr/detail?id=346[JSR 346]). If your application runs in an
+environment which does not provide this integration out of the box, you may use the Hibernate
+Validator CDI portable extension by adding the following Maven dependency to your POM:
+
+.Hibernate Validator CDI portable extension Maven dependency
+====
+[source, XML]
+[subs="verbatim,attributes"]
+----
+<dependency>
+    <groupId>org.hibernate.validator</groupId>
+    <artifactId>hibernate-validator-cdi</artifactId>
+    <version>{hvVersion}</version>
+</dependency>
+----
+====
+
+Note that adding this dependency is usually not required for applications running on a Java EE
+application server. You can learn more about the integration of Bean Validation and CDI in
+<<section-integration-with-cdi>>.
+
+[[section-getting-started-security-manager]]
+==== Running with a security manager
+
+Hibernate Validator supports running with a {javaTechnotesBaseUrl}/guides/security/index.html[security manager] being enabled.
+To do so, you must assign several permissions to the code bases of Hibernate Validator, the Bean Validation API, Classmate and JBoss Logging and also to the code base calling Bean Validation.
+The following shows how to do this via a {javaTechnotesBaseUrl}/guides/security/PolicyFiles.html[policy file] as processed by the Java default policy implementation:
+
+.Policy file for using Hibernate Validator with a security manager
+====
+[source, XML]
+[subs="verbatim,attributes"]
+----
+grant codeBase "file:path/to/hibernate-validator-{hvVersion}.jar" {
+    permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+    permission java.lang.RuntimePermission "accessDeclaredMembers";
+    permission java.lang.RuntimePermission "setContextClassLoader";
+
+    permission org.hibernate.validator.HibernateValidatorPermission "accessPrivateMembers";
+
+    // Only needed when working with XML descriptors (validation.xml or XML constraint mappings)
+    permission java.util.PropertyPermission "mapAnyUriToUri", "read";
+};
+
+grant codeBase "file:path/to/validation-api-{bvVersion}.jar" {
+    permission java.io.FilePermission "path/to/hibernate-validator-{hvVersion}.jar", "read";
+};
+
+grant codeBase "file:path/to/jboss-logging-{jbossLoggingVersion}.jar" {
+    permission java.util.PropertyPermission "org.jboss.logging.provider", "read";
+    permission java.util.PropertyPermission "org.jboss.logging.locale", "read";
+};
+
+grant codeBase "file:path/to/classmate-{classmateVersion}.jar" {
+    permission java.lang.RuntimePermission "accessDeclaredMembers";
+};
+
+grant codeBase "file:path/to/validation-caller-x.y.z.jar" {
+    permission org.hibernate.validator.HibernateValidatorPermission "accessPrivateMembers";
+};
+----
+====
+
+==== Updating Hibernate Validator in WildFly
+
+The http://wildfly.org/[WildFly application server] contains Hibernate Validator out of the box.
+In order to update the server modules for Bean Validation API and Hibernate Validator to the latest and greatest, the patch mechanism of WildFly can be used.
+
+You can download the patch file from http://sourceforge.net/projects/hibernate/files/hibernate-validator[SourceForge] or from Maven Central using the following dependency:
+
+.Maven dependency for WildFly {wildflyVersion} patch file
+====
+[source, XML]
+[subs="verbatim,attributes"]
+----
+<dependency>
+    <groupId>org.hibernate.validator</groupId>
+    <artifactId>hibernate-validator-modules</artifactId>
+    <version>{hvVersion}</version>
+    <classifier>wildfly-{wildflyVersion}-patch</classifier>
+    <type>zip</type>
+</dependency>
+----
+====
+
+We also provide a patch for WildFly {wildflySecondaryVersion}:
+
+.Maven dependency for WildFly {wildflySecondaryVersion} patch file
+====
+[source, XML]
+[subs="verbatim,attributes"]
+----
+<dependency>
+    <groupId>org.hibernate.validator</groupId>
+    <artifactId>hibernate-validator-modules</artifactId>
+    <version>{hvVersion}</version>
+    <classifier>wildfly-{wildflySecondaryVersion}-patch</classifier>
+    <type>zip</type>
+</dependency>
+----
+====
+
+Having downloaded the patch file, you can apply it to WildFly by running this command:
+
+.Applying the WildFly patch
+====
+[source]
+[subs="verbatim,attributes"]
+----
+$JBOSS_HOME/bin/jboss-cli.sh patch apply hibernate-validator-modules-{hvVersion}-wildfly-{wildflyVersion}-patch.zip
+----
+====
+
+In case you want to undo the patch and go back to the version of Hibernate Validator originally coming with the server, run the following command:
+
+.Rolling back the WildFly patch
+====
+[source]
+[subs="verbatim,attributes"]
+----
+$JBOSS_HOME/bin/jboss-cli.sh patch rollback --reset-configuration=true
+----
+====
+
+You can learn more about the WildFly patching infrastructure in general https://developer.jboss.org/wiki/SingleInstallationPatching/[here] and http://www.mastertheboss.com/jboss-server/jboss-configuration/managing-wildfly-and-eap-patches[here].
+
+[[validator-gettingstarted-java9]]
+==== Running on Java 9
+
+As of Hibernate Validator {hvVersion}, support for Java 9 and the Java Platform Module System (JPMS) is experimental.
+There are no JPMS module descriptors provided yet, but Hibernate Validator is usable as automatic modules.
+
+These are the module names as declared using the `Automatic-Module-Name` header:
+
+* Bean Validation API: `java.validation`
+* Hibernate Validator core: `org.hibernate.validator`
+* Hibernate Validator CDI extension: `org.hibernate.validator.cdi`
+* Hibernate Validator test utilities: `org.hibernate.validator.testutils`
+* Hibernate Validator annotation processor: `org.hibernate.validator.annotationprocessor`
+
+These module names are preliminary and may be changed when providing real module descriptors in a future release.
+
+[WARNING]
+====
+When using Hibernate Validator with CDI, be careful to not enable the `java.xml.ws.annotation` module of the JDK.
+This module contains a subset of the JSR 250 API ("Commons Annotations"), but some annotations such as `javax.annotation.Priority` are missing.
+This causes the method validation interceptor of Hibernate Validator to not be registered, i.e. method validation won't work.
+
+Instead, add the full JSR 250 API to the unnamed module (i.e. the classpath), e.g. by pulling in the _javax.annotation:javax.annotation-api_ dependency
+(there already is a transitive dependency to the JSR 250 API when depending on _org.hibernate.validator:hibernate-validator-cdi_).
+
+If you need to enable the `java.xml.ws.annotation` module for some reason, you should patch it with the contents of the full API
+by appending `--patch-module java.xml.ws.annotation=/path/to/complete-jsr250-api.jar` to your _java_ invocation.
+====
+
+[[validator-gettingstarted-createmodel]]
+=== Applying constraints
+
+Let's dive directly into an example to see how to apply constraints.
+
+[[example-class-car]]
+.Class Car annotated with constraints
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter01/Car.java[]
+----
+====
+
+The `@NotNull`, `@Size` and `@Min` annotations are used to declare the constraints which should be applied
+to the fields of a Car instance:
+
+
+*  `manufacturer` must never be `null`
+*  `licensePlate` must never be `null` and must be between 2 and 14 characters long
+*  `seatCount` must be at least 2
+
+[TIP]
+====
+You can find the complete source code of all examples used in this reference guide in the Hibernate
+Validator
+https://github.com/hibernate/hibernate-validator/tree/master/documentation/src/test[source repository]
+on GitHub.
+====
+
+=== Validating constraints
+
+To perform a validation of these constraints, you use a `Validator` instance. Let's have a look at a
+unit test for `Car`:
+
+.Class CarTest showing validation examples
+====
+[source, JAVA, indent=0]
+----
+include::{sourcedir}/org/hibernate/validator/referenceguide/chapter01/CarTest.java[]
+----
+====
+
+In the `setUp()` method a `Validator` object is retrieved from the `ValidatorFactory`. A `Validator`
+instance is thread-safe and may be reused multiple times. It thus can safely be stored in a static
+field and be used in the test methods to validate the different `Car` instances.
+
+The `validate()` method returns a set of `ConstraintViolation` instances, which you can iterate over in
+order to see which validation errors occurred. The first three test methods show some expected
+constraint violations:
+
+
+* The `@NotNull` constraint on `manufacturer` is violated in `manufacturerIsNull()`
+* The `@Size` constraint on `licensePlate` is violated in `licensePlateTooShort()`
+* The `@Min` constraint on `seatCount` is violated in `seatCountTooLow()`
+
+If the object validates successfully, `validate()` returns an empty set as you can see in `carIsValid()`.
+
+Note that only classes from the package `javax.validation` are used. These are provided from the Bean
+Validation API. No classes from Hibernate Validator are directly referenced, resulting in portable
+code.
+
+[[validator-gettingstarted-whatsnext]]
+=== Where to go next?
+
+That concludes the 5 minutes tour through the world of Hibernate Validator and Bean Validation.
+Continue exploring the code examples or look at further examples referenced in
+<<validator-further-reading>>.
+
+To learn more about the validation of beans and properties, just continue reading
+<<chapter-bean-constraints>>. If you are interested in using Bean Validation for the validation of
+method pre- and postcondition refer to <<chapter-method-constraints>>. In case your application has
+specific validation requirements have a look at <<validator-customconstraints>>.

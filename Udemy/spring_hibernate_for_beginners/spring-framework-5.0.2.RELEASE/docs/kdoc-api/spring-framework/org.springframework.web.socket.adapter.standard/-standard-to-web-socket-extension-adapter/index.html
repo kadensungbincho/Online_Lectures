@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>StandardToWebSocketExtensionAdapter - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.adapter.standard</a>&nbsp;/&nbsp;<a href=".">StandardToWebSocketExtensionAdapter</a><br/>
+<br/>
+<h1>StandardToWebSocketExtensionAdapter</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">StandardToWebSocketExtensionAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.socket/-web-socket-extension/index.html"><span class="identifier">WebSocketExtension</span></a></code>
+<p>A sub-class of org.springframework.web.socket.WebSocketExtension that can be constructed from an javax.websocket.Extension.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">StandardToWebSocketExtensionAdapter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.adapter.standard.StandardToWebSocketExtensionAdapter$<init>(javax.websocket.Extension)/extension">extension</span><span class="symbol">:</span>&nbsp;<span class="identifier">Extension</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.socket/-web-socket-extension/equals.html">equals</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.WebSocketExtension$equals(kotlin.Any)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.socket/-web-socket-extension/get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Return the name of the extension (never <code>null) or empty</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.socket/-web-socket-extension/get-parameters.html">getParameters</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getParameters</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Return the parameters of the extension (never <code>null</code>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.socket/-web-socket-extension/hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.socket/-web-socket-extension/parse-extensions.html">parseExtensions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="identifier">parseExtensions</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.WebSocketExtension$parseExtensions(kotlin.String)/extensions">extensions</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../../org.springframework.web.socket/-web-socket-extension/index.html"><span class="identifier">WebSocketExtension</span></a><span class="symbol">&gt;</span></code>
+<p>Parse the given, comma-separated string into a list of <code>WebSocketExtension</code> objects. 
+<p>This method can be used to parse a "Sec-WebSocket-Extension" header.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.socket/-web-socket-extension/to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

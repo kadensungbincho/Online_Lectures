@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BeanDefinitionRegistryPostProcessor.postProcessBeanDefinitionRegistry - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.beans.factory.support</a>&nbsp;/&nbsp;<a href="index.html">BeanDefinitionRegistryPostProcessor</a>&nbsp;/&nbsp;<a href=".">postProcessBeanDefinitionRegistry</a><br/>
+<br/>
+<h1>postProcessBeanDefinitionRegistry</h1>
+<a name="org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor$postProcessBeanDefinitionRegistry(org.springframework.beans.factory.support.BeanDefinitionRegistry)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">postProcessBeanDefinitionRegistry</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor$postProcessBeanDefinitionRegistry(org.springframework.beans.factory.support.BeanDefinitionRegistry)/registry">registry</span><span class="symbol">:</span>&nbsp;<span class="identifier">BeanDefinitionRegistry</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Modify the application context's internal bean definition registry after its standard initialization. All regular bean definitions will have been loaded, but no beans will have been instantiated yet. This allows for adding further bean definitions before the next post-processing phase kicks in.</p>
+<h3>Parameters</h3>
+<p><a name="registry"></a>
+<code>registry</code> - the bean definition registry used by the application context</p>
+<h3>Exceptions</h3>
+<p><a name="org.springframework.beans.BeansException"></a>
+<code>org.springframework.beans.BeansException</code> - in case of errors</p>
+</BODY>
+</HTML>

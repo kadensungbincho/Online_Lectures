@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DeferredResultProcessingInterceptorAdapter - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.context.request.async</a>&nbsp;/&nbsp;<a href=".">DeferredResultProcessingInterceptorAdapter</a><br/>
+<br/>
+<h1>DeferredResultProcessingInterceptorAdapter</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">DeferredResultProcessingInterceptorAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DeferredResultProcessingInterceptor</span></code>
+<p>Abstract adapter class for the DeferredResultProcessingInterceptor interface for simplified implementation of individual methods.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Rob Winch</p>
+<p><strong>Since</strong><br/>
+3.2</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">DeferredResultProcessingInterceptorAdapter</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Abstract adapter class for the DeferredResultProcessingInterceptor interface for simplified implementation of individual methods.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="after-completion.html">afterCompletion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">afterCompletion</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter$afterCompletion(org.springframework.web.context.request.NativeWebRequest, org.springframework.web.context.request.async.DeferredResult((org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter.afterCompletion.T)))/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter$afterCompletion(org.springframework.web.context.request.NativeWebRequest, org.springframework.web.context.request.async.DeferredResult((org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter.afterCompletion.T)))/deferredResult">deferredResult</span><span class="symbol">:</span>&nbsp;<span class="identifier">DeferredResult</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>This implementation is empty.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="before-concurrent-handling.html">beforeConcurrentHandling</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">beforeConcurrentHandling</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter$beforeConcurrentHandling(org.springframework.web.context.request.NativeWebRequest, org.springframework.web.context.request.async.DeferredResult((org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter.beforeConcurrentHandling.T)))/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter$beforeConcurrentHandling(org.springframework.web.context.request.NativeWebRequest, org.springframework.web.context.request.async.DeferredResult((org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter.beforeConcurrentHandling.T)))/deferredResult">deferredResult</span><span class="symbol">:</span>&nbsp;<span class="identifier">DeferredResult</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>This implementation is empty.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="handle-error.html">handleError</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">handleError</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter$handleError(org.springframework.web.context.request.NativeWebRequest, org.springframework.web.context.request.async.DeferredResult((org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter.handleError.T)), kotlin.Throwable)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter$handleError(org.springframework.web.context.request.NativeWebRequest, org.springframework.web.context.request.async.DeferredResult((org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter.handleError.T)), kotlin.Throwable)/deferredResult">deferredResult</span><span class="symbol">:</span>&nbsp;<span class="identifier">DeferredResult</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter$handleError(org.springframework.web.context.request.NativeWebRequest, org.springframework.web.context.request.async.DeferredResult((org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter.handleError.T)), kotlin.Throwable)/t">t</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>This implementation returns <code>true</code> by default allowing other interceptors to be given a chance to handle the error.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="handle-timeout.html">handleTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">handleTimeout</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter$handleTimeout(org.springframework.web.context.request.NativeWebRequest, org.springframework.web.context.request.async.DeferredResult((org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter.handleTimeout.T)))/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter$handleTimeout(org.springframework.web.context.request.NativeWebRequest, org.springframework.web.context.request.async.DeferredResult((org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter.handleTimeout.T)))/deferredResult">deferredResult</span><span class="symbol">:</span>&nbsp;<span class="identifier">DeferredResult</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>This implementation returns <code>true</code> by default allowing other interceptors to be given a chance to handle the timeout.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="post-process.html">postProcess</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">postProcess</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter$postProcess(org.springframework.web.context.request.NativeWebRequest, org.springframework.web.context.request.async.DeferredResult((org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter.postProcess.T)), kotlin.Any)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter$postProcess(org.springframework.web.context.request.NativeWebRequest, org.springframework.web.context.request.async.DeferredResult((org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter.postProcess.T)), kotlin.Any)/deferredResult">deferredResult</span><span class="symbol">:</span>&nbsp;<span class="identifier">DeferredResult</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter$postProcess(org.springframework.web.context.request.NativeWebRequest, org.springframework.web.context.request.async.DeferredResult((org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter.postProcess.T)), kotlin.Any)/concurrentResult">concurrentResult</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>This implementation is empty.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="pre-process.html">preProcess</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">preProcess</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter$preProcess(org.springframework.web.context.request.NativeWebRequest, org.springframework.web.context.request.async.DeferredResult((org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter.preProcess.T)))/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter$preProcess(org.springframework.web.context.request.NativeWebRequest, org.springframework.web.context.request.async.DeferredResult((org.springframework.web.context.request.async.DeferredResultProcessingInterceptorAdapter.preProcess.T)))/deferredResult">deferredResult</span><span class="symbol">:</span>&nbsp;<span class="identifier">DeferredResult</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>This implementation is empty.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

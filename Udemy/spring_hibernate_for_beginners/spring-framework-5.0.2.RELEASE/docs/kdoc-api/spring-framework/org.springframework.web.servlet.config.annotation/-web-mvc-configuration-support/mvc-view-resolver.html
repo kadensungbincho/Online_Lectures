@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WebMvcConfigurationSupport.mvcViewResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.config.annotation</a>&nbsp;/&nbsp;<a href="index.html">WebMvcConfigurationSupport</a>&nbsp;/&nbsp;<a href=".">mvcViewResolver</a><br/>
+<br/>
+<h1>mvcViewResolver</h1>
+<a name="org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport$mvcViewResolver()"></a>
+<code><span class="identifier">@Bean</span> <span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mvcViewResolver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ViewResolver</span></code>
+<p>Register a ViewResolverComposite that contains a chain of view resolvers to use for view resolution. By default this resolver is ordered at 0 unless content negotiation view resolution is used in which case the order is raised to <code><a href="#"> Ordered.HIGHEST_PRECEDENCE</a></code>. 
+<p>If no other resolvers are configured, <code><a href="#">ViewResolverComposite#resolveViewName(String, Locale)</a></code> returns null in order to allow other potential ViewResolver beans to resolve views.</p>
+</p>
+<p><strong>Since</strong><br/>
+4.1</p>
+</BODY>
+</HTML>

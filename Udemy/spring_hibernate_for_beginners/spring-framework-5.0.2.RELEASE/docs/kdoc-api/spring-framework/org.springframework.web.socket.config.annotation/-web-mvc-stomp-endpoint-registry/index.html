@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WebMvcStompEndpointRegistry - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.config.annotation</a>&nbsp;/&nbsp;<a href=".">WebMvcStompEndpointRegistry</a><br/>
+<br/>
+<h1>WebMvcStompEndpointRegistry</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WebMvcStompEndpointRegistry</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">StompEndpointRegistry</span></code>
+<p>A registry for STOMP over WebSocket endpoints that maps the endpoints with a org.springframework.web.servlet.HandlerMapping for use in Spring MVC.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Artem Bilan</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">WebMvcStompEndpointRegistry</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.WebMvcStompEndpointRegistry$<init>(org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.config.annotation.WebSocketTransportRegistration, org.springframework.scheduling.TaskScheduler)/webSocketHandler">webSocketHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketHandler</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.config.annotation.WebMvcStompEndpointRegistry$<init>(org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.config.annotation.WebSocketTransportRegistration, org.springframework.scheduling.TaskScheduler)/transportRegistration">transportRegistration</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketTransportRegistration</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.config.annotation.WebMvcStompEndpointRegistry$<init>(org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.config.annotation.WebSocketTransportRegistration, org.springframework.scheduling.TaskScheduler)/defaultSockJsTaskScheduler">defaultSockJsTaskScheduler</span><span class="symbol">:</span>&nbsp;<span class="identifier">TaskScheduler</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-endpoint.html">addEndpoint</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addEndpoint</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.springframework.web.socket.config.annotation.WebMvcStompEndpointRegistry$addEndpoint(kotlin.Array((kotlin.String)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">StompWebSocketEndpointRegistration</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-handler-mapping.html">getHandlerMapping</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getHandlerMapping</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">AbstractHandlerMapping</span></code>
+<p>Return a handler mapping with the mapped ViewControllers.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-error-handler.html">setErrorHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setErrorHandler</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.WebMvcStompEndpointRegistry$setErrorHandler(org.springframework.web.socket.messaging.StompSubProtocolErrorHandler)/errorHandler">errorHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">StompSubProtocolErrorHandler</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">WebMvcStompEndpointRegistry</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-order.html">setOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOrder</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.WebMvcStompEndpointRegistry$setOrder(kotlin.Int)/order">order</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the order for the resulting org.springframework.web.servlet.HandlerMapping relative to other handler mappings configured in Spring MVC. 
+<p>The default value is 1.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-url-path-helper.html">setUrlPathHelper</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setUrlPathHelper</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.WebMvcStompEndpointRegistry$setUrlPathHelper(org.springframework.web.util.UrlPathHelper)/urlPathHelper">urlPathHelper</span><span class="symbol">:</span>&nbsp;<span class="identifier">UrlPathHelper</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the UrlPathHelper to configure on the <code>HandlerMapping</code> used to map handshake requests.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

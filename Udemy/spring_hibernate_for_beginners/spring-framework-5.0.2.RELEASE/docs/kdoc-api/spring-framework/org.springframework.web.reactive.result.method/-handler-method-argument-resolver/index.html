@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HandlerMethodArgumentResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.reactive.result.method</a>&nbsp;/&nbsp;<a href=".">HandlerMethodArgumentResolver</a><br/>
+<br/>
+<h1>HandlerMethodArgumentResolver</h1>
+<code><span class="keyword">interface </span><span class="identifier">HandlerMethodArgumentResolver</span></code>
+<p>Strategy to resolve the argument value for a method parameter in the context of the current HTTP request.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+5.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="resolve-argument.html">resolveArgument</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolveArgument</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.result.method.HandlerMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.reactive.BindingContext, org.springframework.web.server.ServerWebExchange)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.reactive.result.method.HandlerMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.reactive.BindingContext, org.springframework.web.server.ServerWebExchange)/bindingContext">bindingContext</span><span class="symbol">:</span>&nbsp;<span class="identifier">BindingContext</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.reactive.result.method.HandlerMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.reactive.BindingContext, org.springframework.web.server.ServerWebExchange)/exchange">exchange</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerWebExchange</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html"><span class="identifier">Mono</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Resolve the value for the method parameter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="supports-parameter.html">supportsParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">supportsParameter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.result.method.HandlerMethodArgumentResolver$supportsParameter(org.springframework.core.MethodParameter)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether this resolver supports the given method parameter.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-handler-method-argument-resolver-support/index.html">HandlerMethodArgumentResolverSupport</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">HandlerMethodArgumentResolverSupport</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolver</span></code>
+<p>Base class for HandlerMethodArgumentResolver implementations with access to a <code>ReactiveAdapterRegistry</code> and methods to check for method parameter support.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

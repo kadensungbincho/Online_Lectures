@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractWebSocketHandlerRegistration - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.config.annotation</a>&nbsp;/&nbsp;<a href=".">AbstractWebSocketHandlerRegistration</a><br/>
+<br/>
+<h1>AbstractWebSocketHandlerRegistration</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractWebSocketHandlerRegistration</span><span class="symbol">&lt;</span><span class="identifier">M</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-web-socket-handler-registration/index.html"><span class="identifier">WebSocketHandlerRegistration</span></a></code>
+<p>Base class for WebSocketHandlerRegistrations that gathers all the configuration options but allows sub-classes to put together the actual HTTP request mappings.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Sebastien Deleuze</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AbstractWebSocketHandlerRegistration</span><span class="symbol">(</span><span class="symbol">)</span></code><code><span class="identifier">AbstractWebSocketHandlerRegistration</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.AbstractWebSocketHandlerRegistration$<init>(org.springframework.scheduling.TaskScheduler)/defaultTaskScheduler">defaultTaskScheduler</span><span class="symbol">:</span>&nbsp;<span class="identifier">TaskScheduler</span><span class="symbol">)</span></code>
+<p>Deprecated constructor with a TaskScheduler.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-handler.html">addHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addHandler</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.AbstractWebSocketHandlerRegistration$addHandler(org.springframework.web.socket.WebSocketHandler, kotlin.Array((kotlin.String)))/handler">handler</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketHandler</span><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.springframework.web.socket.config.annotation.AbstractWebSocketHandlerRegistration$addHandler(org.springframework.web.socket.WebSocketHandler, kotlin.Array((kotlin.String)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-web-socket-handler-registration/index.html"><span class="identifier">WebSocketHandlerRegistration</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="add-interceptors.html">addInterceptors</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addInterceptors</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.springframework.web.socket.config.annotation.AbstractWebSocketHandlerRegistration$addInterceptors(kotlin.Array((org.springframework.web.socket.server.HandshakeInterceptor)))/interceptors">interceptors</span><span class="symbol">:</span>&nbsp;<span class="identifier">HandshakeInterceptor</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-web-socket-handler-registration/index.html"><span class="identifier">WebSocketHandlerRegistration</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-allowed-origins.html">setAllowedOrigins</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAllowedOrigins</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.springframework.web.socket.config.annotation.AbstractWebSocketHandlerRegistration$setAllowedOrigins(kotlin.Array((kotlin.String)))/allowedOrigins">allowedOrigins</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-web-socket-handler-registration/index.html"><span class="identifier">WebSocketHandlerRegistration</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-handshake-handler.html">setHandshakeHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setHandshakeHandler</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.config.annotation.AbstractWebSocketHandlerRegistration$setHandshakeHandler(org.springframework.web.socket.server.HandshakeHandler)/handshakeHandler">handshakeHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">HandshakeHandler</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-web-socket-handler-registration/index.html"><span class="identifier">WebSocketHandlerRegistration</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="with-sock-j-s.html">withSockJS</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">withSockJS</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-sock-js-service-registration/index.html"><span class="identifier">SockJsServiceRegistration</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

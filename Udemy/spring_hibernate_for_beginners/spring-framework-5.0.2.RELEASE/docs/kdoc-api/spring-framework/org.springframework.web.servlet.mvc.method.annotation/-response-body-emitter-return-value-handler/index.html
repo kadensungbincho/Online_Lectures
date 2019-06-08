@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResponseBodyEmitterReturnValueHandler - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.method.annotation</a>&nbsp;/&nbsp;<a href=".">ResponseBodyEmitterReturnValueHandler</a><br/>
+<br/>
+<h1>ResponseBodyEmitterReturnValueHandler</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ResponseBodyEmitterReturnValueHandler</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodReturnValueHandler</span></code>
+<p>Handler for return values of type ResponseBodyEmitter and sub-classes such as SseEmitter including the same types wrapped with ResponseEntity. 
+<p>As of 5.0 also supports reactive return value types for any reactive library with registered adapters in ReactiveAdapterRegistry.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.2</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ResponseBodyEmitterReturnValueHandler</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))))/messageConverters">messageConverters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HttpMessageConverter</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p>Simple constructor with reactive type support based on a default instance of ReactiveAdapterRegistry, org.springframework.core.task.SyncTaskExecutor, and ContentNegotiationManager with an Accept header strategy.</p>
+<code><span class="identifier">ResponseBodyEmitterReturnValueHandler</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))), org.springframework.core.ReactiveAdapterRegistry, org.springframework.core.task.TaskExecutor, org.springframework.web.accept.ContentNegotiationManager)/messageConverters">messageConverters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HttpMessageConverter</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))), org.springframework.core.ReactiveAdapterRegistry, org.springframework.core.task.TaskExecutor, org.springframework.web.accept.ContentNegotiationManager)/reactiveRegistry">reactiveRegistry</span><span class="symbol">:</span>&nbsp;<a href="../../org.springframework.core/-reactive-adapter-registry/index.html"><span class="identifier">ReactiveAdapterRegistry</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))), org.springframework.core.ReactiveAdapterRegistry, org.springframework.core.task.TaskExecutor, org.springframework.web.accept.ContentNegotiationManager)/executor">executor</span><span class="symbol">:</span>&nbsp;<span class="identifier">TaskExecutor</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))), org.springframework.core.ReactiveAdapterRegistry, org.springframework.core.task.TaskExecutor, org.springframework.web.accept.ContentNegotiationManager)/manager">manager</span><span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.accept/-content-negotiation-manager/index.html"><span class="identifier">ContentNegotiationManager</span></a><span class="symbol">)</span></code>
+<p>Complete constructor with pluggable "reactive" type support.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="handle-return-value.html">handleReturnValue</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleReturnValue</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/returnValue">returnValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/mavContainer">mavContainer</span><span class="symbol">:</span>&nbsp;<span class="identifier">ModelAndViewContainer</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/webRequest">webRequest</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="supports-return-type.html">supportsReturnType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsReturnType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$supportsReturnType(org.springframework.core.MethodParameter)/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

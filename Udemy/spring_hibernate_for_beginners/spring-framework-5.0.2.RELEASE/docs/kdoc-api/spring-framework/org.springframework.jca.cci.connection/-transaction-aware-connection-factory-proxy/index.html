@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TransactionAwareConnectionFactoryProxy - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.jca.cci.connection</a>&nbsp;/&nbsp;<a href=".">TransactionAwareConnectionFactoryProxy</a><br/>
+<br/>
+<h1>TransactionAwareConnectionFactoryProxy</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TransactionAwareConnectionFactoryProxy</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DelegatingConnectionFactory</span></code>
+<p>Proxy for a target CCI javax.resource.cci.ConnectionFactory, adding awareness of Spring-managed transactions. Similar to a transactional JNDI ConnectionFactory as provided by a Java EE server. 
+<p>Data access code that should remain unaware of Spring's data access support can work with this proxy to seamlessly participate in Spring-managed transactions. Note that the transaction manager, for example the CciLocalTransactionManager, still needs to work with underlying ConnectionFactory, <em>not</em> with this proxy. </p>
+<p><strong>Make sure that TransactionAwareConnectionFactoryProxy is the outermost ConnectionFactory of a chain of ConnectionFactory proxies/adapters.</strong> TransactionAwareConnectionFactoryProxy can delegate either directly to the target connection pool or to some intermediate proxy/adapter like ConnectionSpecConnectionFactoryAdapter. </p>
+<p>Delegates to ConnectionFactoryUtils for automatically participating in thread-bound transactions, for example managed by CciLocalTransactionManager. <code>getConnection</code> calls and <code>close</code> calls on returned Connections will behave properly within a transaction, i.e. always operate on the transactional Connection. If not within a transaction, normal ConnectionFactory behavior applies. </p>
+<p>This proxy allows data access code to work with the plain JCA CCI API and still participate in Spring-managed transactions, similar to CCI code in a Java EE/JTA environment. However, if possible, use Spring's ConnectionFactoryUtils, CciTemplate or CCI operation objects to get transaction participation even without a proxy for the target ConnectionFactory, avoiding the need to define such a proxy in the first place. </p>
+<p><strong>NOTE:</strong> This ConnectionFactory proxy needs to return wrapped Connections in order to handle close calls properly. Therefore, the returned Connections cannot be cast to a native CCI Connection type or to a connection pool implementation type.</p>
+</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+1.2</p>
+<p><strong>See Also</strong><br/>
+<a href="#">javax.resource.cci.ConnectionFactory#getConnection</a><a href="#">javax.resource.cci.Connection#close</a><a href="#">ConnectionFactoryUtils#doGetConnection</a><a href="#">ConnectionFactoryUtils#doReleaseConnection</a></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">TransactionAwareConnectionFactoryProxy</span><span class="symbol">(</span><span class="symbol">)</span></code><br/>
+<code><span class="identifier">TransactionAwareConnectionFactoryProxy</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jca.cci.connection.TransactionAwareConnectionFactoryProxy$<init>(javax.resource.cci.ConnectionFactory)/targetConnectionFactory">targetConnectionFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">ConnectionFactory</span><span class="symbol">)</span></code>
+<p>Create a new TransactionAwareConnectionFactoryProxy.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-connection.html">getConnection</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getConnection</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Connection</span></code>
+<p>Delegate to ConnectionFactoryUtils for automatically participating in Spring-managed transactions. Throws the original ResourceException, if any.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

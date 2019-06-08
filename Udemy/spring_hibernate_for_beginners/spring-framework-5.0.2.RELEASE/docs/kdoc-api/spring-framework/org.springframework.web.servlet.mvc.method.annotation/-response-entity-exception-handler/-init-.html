@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResponseEntityExceptionHandler.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.method.annotation</a>&nbsp;/&nbsp;<a href="index.html">ResponseEntityExceptionHandler</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler$&lt;init&gt;()"></a>
+<code><span class="identifier">ResponseEntityExceptionHandler</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A convenient base class for ControllerAdvice classes that wish to provide centralized exception handling across all <code>@RequestMapping</code> methods through <code>@ExceptionHandler</code> methods. 
+<p>This base class provides an <code>@ExceptionHandler</code> method for handling internal Spring MVC exceptions. This method returns a <code>ResponseEntity</code> for writing to the response with a HttpMessageConverter, in contrast to org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver which returns a org.springframework.web.servlet.ModelAndView. </p>
+<p>If there is no need to write error content to the response body, or when using view resolution (e.g., via <code>ContentNegotiatingViewResolver</code>), then <code>DefaultHandlerExceptionResolver</code> is good enough. </p>
+<p>Note that in order for an <code>@ControllerAdvice</code> sub-class to be detected, ExceptionHandlerExceptionResolver must be configured.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+3.2</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#handleException(Exception, WebRequest)</a>org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver</p>
+</BODY>
+</HTML>

@@ -1,0 +1,131 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResourceOverridingShadowingClassLoader - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.instrument.classloading</a>&nbsp;/&nbsp;<a href=".">ResourceOverridingShadowingClassLoader</a><br/>
+<br/>
+<h1>ResourceOverridingShadowingClassLoader</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ResourceOverridingShadowingClassLoader</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-shadowing-class-loader/index.html"><span class="identifier">ShadowingClassLoader</span></a></code>
+<p>Subclass of ShadowingClassLoader that overrides attempts to locate certain files.</p>
+<p><strong>Author</strong><br/>
+Rod Johnson</p>
+<p><strong>Author</strong><br/>
+Adrian Colyer</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ResourceOverridingShadowingClassLoader</span><span class="symbol">(</span><span class="identifier" id="org.springframework.instrument.classloading.ResourceOverridingShadowingClassLoader$<init>(java.lang.ClassLoader)/enclosingClassLoader">enclosingClassLoader</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClassLoader</span><span class="symbol">)</span></code>
+<p>Create a new ResourceOverridingShadowingClassLoader, decorating the given ClassLoader.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-shadowing-class-loader/-d-e-f-a-u-l-t_-e-x-c-l-u-d-e-d_-p-a-c-k-a-g-e-s.html">DEFAULT_EXCLUDED_PACKAGES</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">DEFAULT_EXCLUDED_PACKAGES</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Packages that are excluded by default</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="copy-overrides.html">copyOverrides</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">copyOverrides</span><span class="symbol">(</span><span class="identifier" id="org.springframework.instrument.classloading.ResourceOverridingShadowingClassLoader$copyOverrides(org.springframework.instrument.classloading.ResourceOverridingShadowingClassLoader)/other">other</span><span class="symbol">:</span>&nbsp;<span class="identifier">ResourceOverridingShadowingClassLoader</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Copy all overrides from the given ClassLoader.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-resource.html">getResource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getResource</span><span class="symbol">(</span><span class="identifier" id="org.springframework.instrument.classloading.ResourceOverridingShadowingClassLoader$getResource(kotlin.String)/requestedPath">requestedPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">URL</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-resource-as-stream.html">getResourceAsStream</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getResourceAsStream</span><span class="symbol">(</span><span class="identifier" id="org.springframework.instrument.classloading.ResourceOverridingShadowingClassLoader$getResourceAsStream(kotlin.String)/requestedPath">requestedPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">InputStream</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-resources.html">getResources</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getResources</span><span class="symbol">(</span><span class="identifier" id="org.springframework.instrument.classloading.ResourceOverridingShadowingClassLoader$getResources(kotlin.String)/requestedPath">requestedPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Enumeration</span><span class="symbol">&lt;</span><span class="identifier">URL</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="override.html">override</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">override</span><span class="symbol">(</span><span class="identifier" id="org.springframework.instrument.classloading.ResourceOverridingShadowingClassLoader$override(kotlin.String, kotlin.String)/oldPath">oldPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.instrument.classloading.ResourceOverridingShadowingClassLoader$override(kotlin.String, kotlin.String)/newPath">newPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Return the resource (if any) at the new path on an attempt to locate a resource at the old path.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="suppress.html">suppress</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">suppress</span><span class="symbol">(</span><span class="identifier" id="org.springframework.instrument.classloading.ResourceOverridingShadowingClassLoader$suppress(kotlin.String)/oldPath">oldPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Ensure that a resource with the given path is not found.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-shadowing-class-loader/add-transformer.html">addTransformer</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addTransformer</span><span class="symbol">(</span><span class="identifier" id="org.springframework.instrument.classloading.ShadowingClassLoader$addTransformer(java.lang.instrument.ClassFileTransformer)/transformer">transformer</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClassFileTransformer</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Add the given ClassFileTransformer to the list of transformers that this ClassLoader will apply.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-shadowing-class-loader/copy-transformers.html">copyTransformers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">copyTransformers</span><span class="symbol">(</span><span class="identifier" id="org.springframework.instrument.classloading.ShadowingClassLoader$copyTransformers(org.springframework.instrument.classloading.ShadowingClassLoader)/other">other</span><span class="symbol">:</span>&nbsp;<a href="../-shadowing-class-loader/index.html"><span class="identifier">ShadowingClassLoader</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Copy all ClassFileTransformers from the given ClassLoader to the list of transformers that this ClassLoader will apply.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-shadowing-class-loader/load-class.html">loadClass</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">loadClass</span><span class="symbol">(</span><span class="identifier" id="org.springframework.instrument.classloading.ShadowingClassLoader$loadClass(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

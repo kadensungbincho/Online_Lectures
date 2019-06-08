@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>StandardMultipartHttpServletRequest - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.multipart.support</a>&nbsp;/&nbsp;<a href=".">StandardMultipartHttpServletRequest</a><br/>
+<br/>
+<h1>StandardMultipartHttpServletRequest</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">StandardMultipartHttpServletRequest</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractMultipartHttpServletRequest</span></code>
+<p>Spring MultipartHttpServletRequest adapter, wrapping a Servlet 3.0 HttpServletRequest and its Part objects. Parameters get exposed through the native request's getParameter methods - without any custom processing on our side.</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">StandardMultipartHttpServletRequest</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$<init>(javax.servlet.http.HttpServletRequest)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletRequest</span><span class="symbol">)</span></code>
+<p>Create a new StandardMultipartHttpServletRequest wrapper for the given request, immediately parsing the multipart content.</p>
+<code><span class="identifier">StandardMultipartHttpServletRequest</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$<init>(javax.servlet.http.HttpServletRequest, kotlin.Boolean)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$<init>(javax.servlet.http.HttpServletRequest, kotlin.Boolean)/lazyParsing">lazyParsing</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span></code>
+<p>Create a new StandardMultipartHttpServletRequest wrapper for the given request.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-multipart-content-type.html">getMultipartContentType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMultipartContentType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$getMultipartContentType(kotlin.String)/paramOrFileName">paramOrFileName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-multipart-headers.html">getMultipartHeaders</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMultipartHeaders</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$getMultipartHeaders(kotlin.String)/paramOrFileName">paramOrFileName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HttpHeaders</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parameter-map.html">getParameterMap</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getParameterMap</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parameter-names.html">getParameterNames</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getParameterNames</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Enumeration</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

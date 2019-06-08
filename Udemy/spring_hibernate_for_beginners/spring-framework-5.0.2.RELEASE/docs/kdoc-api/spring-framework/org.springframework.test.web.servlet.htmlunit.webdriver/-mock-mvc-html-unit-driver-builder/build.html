@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MockMvcHtmlUnitDriverBuilder.build - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.test.web.servlet.htmlunit.webdriver</a>&nbsp;/&nbsp;<a href="index.html">MockMvcHtmlUnitDriverBuilder</a>&nbsp;/&nbsp;<a href=".">build</a><br/>
+<br/>
+<h1>build</h1>
+<a name="org.springframework.test.web.servlet.htmlunit.webdriver.MockMvcHtmlUnitDriverBuilder$build()"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">build</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HtmlUnitDriver</span></code>
+<p>Build the HtmlUnitDriver configured via this builder. 
+<p>The returned driver will use the configured MockMvc instance for processing any WebRequestMatcher requests and a delegate <code>HtmlUnitDriver</code> for all other requests. </p>
+<p>If a <a href="with-delegate.html">delegate</a> has been explicitly configured, it will be used; otherwise, a default <code>WebConnectionHtmlUnitDriver</code> with the BrowserVersion set to <code><a href="#">CHROME</a></code> will be configured as the delegate.</p>
+</p>
+<p><strong>Return</strong><br/>
+the <code>HtmlUnitDriver</code> to use</p>
+<p><strong>See Also</strong><br/>
+<a href="with-delegate.html">#withDelegate(WebConnectionHtmlUnitDriver)</a></p>
+</BODY>
+</HTML>

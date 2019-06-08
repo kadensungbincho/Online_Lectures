@@ -1,0 +1,134 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ServletServerContainerFactoryBean - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.server.standard</a>&nbsp;/&nbsp;<a href=".">ServletServerContainerFactoryBean</a><br/>
+<br/>
+<h1>ServletServerContainerFactoryBean</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ServletServerContainerFactoryBean</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FactoryBean</span><span class="symbol">&lt;</span><span class="identifier">WebSocketContainer</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">ServletContextAware</span><span class="symbol">, </span><span class="identifier">InitializingBean</span></code>
+<p>A FactoryBean for configuring javax.websocket.server.ServerContainer. Since there is usually only one <code>ServerContainer</code> instance accessible under a well-known <code>javax.servlet.ServletContext</code> attribute, simply declaring this FactoryBean and using its setters allows for configuring the <code>ServerContainer</code> through Spring configuration. 
+<p>This is useful even if the <code>ServerContainer</code> is not injected into any other bean within the Spring application context. For example, an application can configure a org.springframework.web.socket.server.support.DefaultHandshakeHandler, a org.springframework.web.socket.sockjs.SockJsService, or ServerEndpointExporter, and separately declare this FactoryBean in order to customize the properties of the (one and only) <code>ServerContainer</code> instance.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Sam Brannen</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ServletServerContainerFactoryBean</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A FactoryBean for configuring javax.websocket.server.ServerContainer. Since there is usually only one <code>ServerContainer</code> instance accessible under a well-known <code>javax.servlet.ServletContext</code> attribute, simply declaring this FactoryBean and using its setters allows for configuring the <code>ServerContainer</code> through Spring configuration. 
+<p>This is useful even if the <code>ServerContainer</code> is not injected into any other bean within the Spring application context. For example, an application can configure a org.springframework.web.socket.server.support.DefaultHandshakeHandler, a org.springframework.web.socket.sockjs.SockJsService, or ServerEndpointExporter, and separately declare this FactoryBean in order to customize the properties of the (one and only) <code>ServerContainer</code> instance.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="after-properties-set.html">afterPropertiesSet</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">afterPropertiesSet</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-async-send-timeout.html">getAsyncSendTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAsyncSendTimeout</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-binary-message-buffer-size.html">getMaxBinaryMessageBufferSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxBinaryMessageBufferSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-session-idle-timeout.html">getMaxSessionIdleTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxSessionIdleTimeout</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-text-message-buffer-size.html">getMaxTextMessageBufferSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxTextMessageBufferSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-object.html">getObject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getObject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ServerContainer</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-object-type.html">getObjectType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getObjectType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-singleton.html">isSingleton</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isSingleton</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-async-send-timeout.html">setAsyncSendTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAsyncSendTimeout</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.server.standard.ServletServerContainerFactoryBean$setAsyncSendTimeout(kotlin.Long)/timeoutInMillis">timeoutInMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-binary-message-buffer-size.html">setMaxBinaryMessageBufferSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxBinaryMessageBufferSize</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.server.standard.ServletServerContainerFactoryBean$setMaxBinaryMessageBufferSize(kotlin.Int)/bufferSize">bufferSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-session-idle-timeout.html">setMaxSessionIdleTimeout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxSessionIdleTimeout</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.server.standard.ServletServerContainerFactoryBean$setMaxSessionIdleTimeout(kotlin.Long)/timeoutInMillis">timeoutInMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-text-message-buffer-size.html">setMaxTextMessageBufferSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxTextMessageBufferSize</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.server.standard.ServletServerContainerFactoryBean$setMaxTextMessageBufferSize(kotlin.Int)/bufferSize">bufferSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-servlet-context.html">setServletContext</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setServletContext</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.server.standard.ServletServerContainerFactoryBean$setServletContext(javax.servlet.ServletContext)/servletContext">servletContext</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServletContext</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

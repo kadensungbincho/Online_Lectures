@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractLobStreamingResultSetExtractor.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.jdbc.core.support</a>&nbsp;/&nbsp;<a href="index.html">AbstractLobStreamingResultSetExtractor</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.jdbc.core.support.AbstractLobStreamingResultSetExtractor$&lt;init&gt;()"></a>
+<code><span class="identifier">AbstractLobStreamingResultSetExtractor</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Abstract ResultSetExtractor implementation that assumes streaming of LOB data. Typically used as inner class, with access to surrounding method arguments. 
+<p>Delegates to the <code>streamData</code> template method for streaming LOB content to some OutputStream, typically using a LobHandler. Converts an IOException thrown during streaming to a LobRetrievalFailureException. </p>
+<p>A usage example with JdbcTemplate: </p>
+<pre><code>JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource); // reusable object final LobHandler lobHandler = new DefaultLobHandler(); // reusable object jdbcTemplate.query( "SELECT content FROM imagedb WHERE image_name=?", new Object[] {name}, new AbstractLobStreamingResultSetExtractor() { public void streamData(ResultSet rs) throws SQLException, IOException { FileCopyUtils.copy(lobHandler.getBlobAsBinaryStream(rs, 1), contentStream); } } );</code></pre></p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+1.0.2</p>
+<p><strong>See Also</strong><br/>
+org.springframework.jdbc.support.lob.LobHandlerorg.springframework.jdbc.LobRetrievalFailureException</p>
+</BODY>
+</HTML>

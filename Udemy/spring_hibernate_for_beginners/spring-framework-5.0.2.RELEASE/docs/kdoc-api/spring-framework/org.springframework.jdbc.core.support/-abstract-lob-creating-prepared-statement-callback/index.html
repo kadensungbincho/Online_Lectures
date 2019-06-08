@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractLobCreatingPreparedStatementCallback - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.jdbc.core.support</a>&nbsp;/&nbsp;<a href=".">AbstractLobCreatingPreparedStatementCallback</a><br/>
+<br/>
+<h1>AbstractLobCreatingPreparedStatementCallback</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractLobCreatingPreparedStatementCallback</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PreparedStatementCallback</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">&gt;</span></code>
+<p>Abstract PreparedStatementCallback implementation that manages a LobCreator. Typically used as inner class, with access to surrounding method arguments. 
+<p>Delegates to the <code>setValues</code> template method for setting values on the PreparedStatement, using a given LobCreator for BLOB/CLOB arguments. </p>
+<p>A usage example with org.springframework.jdbc.core.JdbcTemplate: </p>
+<pre><code>JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource); // reusable object LobHandler lobHandler = new DefaultLobHandler(); // reusable object jdbcTemplate.execute( "INSERT INTO imagedb (image_name, content, description) VALUES (?, ?, ?)", new AbstractLobCreatingPreparedStatementCallback(lobHandler) { protected void setValues(PreparedStatement ps, LobCreator lobCreator) throws SQLException { ps.setString(1, name); lobCreator.setBlobAsBinaryStream(ps, 2, contentStream, contentLength); lobCreator.setClobAsString(ps, 3, description); } } );</code></pre></p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+1.0.2</p>
+<p><strong>See Also</strong><br/>
+org.springframework.jdbc.support.lob.LobCreator</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AbstractLobCreatingPreparedStatementCallback</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.core.support.AbstractLobCreatingPreparedStatementCallback$<init>(org.springframework.jdbc.support.lob.LobHandler)/lobHandler">lobHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">LobHandler</span><span class="symbol">)</span></code>
+<p>Create a new AbstractLobCreatingPreparedStatementCallback for the given LobHandler.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="do-in-prepared-statement.html">doInPreparedStatement</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">doInPreparedStatement</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jdbc.core.support.AbstractLobCreatingPreparedStatementCallback$doInPreparedStatement(java.sql.PreparedStatement)/ps">ps</span><span class="symbol">:</span>&nbsp;<span class="identifier">PreparedStatement</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

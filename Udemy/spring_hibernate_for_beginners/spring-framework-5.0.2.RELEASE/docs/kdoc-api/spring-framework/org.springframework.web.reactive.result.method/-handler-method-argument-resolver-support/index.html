@@ -1,0 +1,170 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HandlerMethodArgumentResolverSupport - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.reactive.result.method</a>&nbsp;/&nbsp;<a href=".">HandlerMethodArgumentResolverSupport</a><br/>
+<br/>
+<h1>HandlerMethodArgumentResolverSupport</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">HandlerMethodArgumentResolverSupport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-handler-method-argument-resolver/index.html"><span class="identifier">HandlerMethodArgumentResolver</span></a></code>
+<p>Base class for HandlerMethodArgumentResolver implementations with access to a <code>ReactiveAdapterRegistry</code> and methods to check for method parameter support.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+5.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-adapter-registry.html">getAdapterRegistry</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAdapterRegistry</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.springframework.core/-reactive-adapter-registry/index.html"><span class="identifier">ReactiveAdapterRegistry</span></a></code>
+<p>Return the configured ReactiveAdapterRegistry.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-handler-method-argument-resolver/resolve-argument.html">resolveArgument</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolveArgument</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.result.method.HandlerMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.reactive.BindingContext, org.springframework.web.server.ServerWebExchange)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.reactive.result.method.HandlerMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.reactive.BindingContext, org.springframework.web.server.ServerWebExchange)/bindingContext">bindingContext</span><span class="symbol">:</span>&nbsp;<span class="identifier">BindingContext</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.reactive.result.method.HandlerMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.reactive.BindingContext, org.springframework.web.server.ServerWebExchange)/exchange">exchange</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerWebExchange</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html"><span class="identifier">Mono</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Resolve the value for the method parameter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-handler-method-argument-resolver/supports-parameter.html">supportsParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">supportsParameter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.reactive.result.method.HandlerMethodArgumentResolver$supportsParameter(org.springframework.core.MethodParameter)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether this resolver supports the given method parameter.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.reactive.result.method.annotation/-errors-method-argument-resolver/index.html">ErrorsMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ErrorsMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolverSupport</span></code>
+<p>Resolve Errors or BindingResult method arguments. An <code>Errors</code> argument is expected to appear immediately after the model attribute in the method signature.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.reactive.result.method.annotation/-matrix-variable-map-method-argument-resolver/index.html">MatrixVariableMapMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MatrixVariableMapMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolverSupport</span><span class="symbol">, </span><span class="identifier">SyncHandlerMethodArgumentResolver</span></code>
+<p>Resolves arguments of type Map annotated with where</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.reactive.result.method.annotation/-model-argument-resolver/index.html">ModelArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModelArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolverSupport</span><span class="symbol">, </span><span class="identifier">SyncHandlerMethodArgumentResolver</span></code>
+<p>Resolver for a controller method argument of type Model that can also be resolved as a java.util.Map.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.reactive.result.method.annotation/-model-attribute-method-argument-resolver/index.html">ModelAttributeMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModelAttributeMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolverSupport</span></code>
+<p>Resolve <code>@ModelAttribute</code> annotated method arguments. 
+<p>Model attributes are sourced from the model, or created using a default constructor and then added to the model. Once created the attribute is populated via data binding to the request (form data, query params). Validation also may be applied if the argument is annotated with <code>@javax.validation.Valid</code> or Spring's own <code>@org.springframework.validation.annotation.Validated</code>. </p>
+<p>When this handler is created with <code>useDefaultResolution=true</code> any non-simple type argument and return value is regarded as a model attribute with or without the presence of an <code>@ModelAttribute</code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.reactive.result.method.annotation/-path-variable-map-method-argument-resolver/index.html">PathVariableMapMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PathVariableMapMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolverSupport</span><span class="symbol">, </span><span class="identifier">SyncHandlerMethodArgumentResolver</span></code>
+<p>Resolver for Map method arguments also annotated with PathVariable where the annotation does not specify a path variable name. The resulting Map argument is a coyp of all URI template name-value pairs.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.reactive.result.method.annotation/-principal-argument-resolver/index.html">PrincipalArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PrincipalArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolverSupport</span></code>
+<p>Resolves method argument value of type java.security.Principal.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.reactive.result.method.annotation/-request-header-map-method-argument-resolver/index.html">RequestHeaderMapMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RequestHeaderMapMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolverSupport</span><span class="symbol">, </span><span class="identifier">SyncHandlerMethodArgumentResolver</span></code>
+<p>Resolves Map method arguments annotated with <code>@RequestHeader</code>. For individual header values annotated with <code>@RequestHeader</code> see RequestHeaderMethodArgumentResolver instead. 
+<p>The created Map contains all request header name/value pairs. The method parameter type may be a MultiValueMap to receive all values for a header, not only the first one.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.reactive.result.method.annotation/-request-param-map-method-argument-resolver/index.html">RequestParamMapMethodArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RequestParamMapMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolverSupport</span><span class="symbol">, </span><span class="identifier">SyncHandlerMethodArgumentResolver</span></code>
+<p>Resolver for Map method arguments annotated with RequestParam where the annotation does not specify a request parameter name. See RequestParamMethodArgumentResolver for resolving Map method arguments with a request parameter name. 
+<p>The created Map contains all request parameter name-value pairs. If the method parameter type is MultiValueMap instead, the created map contains all request parameters and all there values for cases where request parameters have multiple values.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.reactive.result.method.annotation/-server-web-exchange-argument-resolver/index.html">ServerWebExchangeArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ServerWebExchangeArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolverSupport</span><span class="symbol">, </span><span class="identifier">SyncHandlerMethodArgumentResolver</span></code>
+<p>Resolves ServerWebExchange-related method argument values of the following types: <ul> <li>ServerWebExchange </li>
+<li>ServerHttpRequest </li>
+<li>ServerHttpResponse </li>
+<li>HttpMethod </li>
+<li>Locale </li>
+<li>TimeZone </li>
+<li>ZoneId </li>
+<li>UriBuilder or UriComponentsBuilder -- for building URL's relative to the current request </li>
+</ul>
+ 
+<p>For the <code>WebSession</code> see WebSessionArgumentResolver and for the <code>Principal</code> see PrincipalArgumentResolver.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.web.reactive.result.method.annotation/-web-session-argument-resolver/index.html">WebSessionArgumentResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WebSessionArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodArgumentResolverSupport</span></code>
+<p>Resolves method argument value of type WebSession.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

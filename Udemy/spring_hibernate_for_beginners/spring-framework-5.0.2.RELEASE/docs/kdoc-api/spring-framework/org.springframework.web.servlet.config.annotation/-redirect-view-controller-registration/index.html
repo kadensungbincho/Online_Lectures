@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RedirectViewControllerRegistration - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.config.annotation</a>&nbsp;/&nbsp;<a href=".">RedirectViewControllerRegistration</a><br/>
+<br/>
+<h1>RedirectViewControllerRegistration</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RedirectViewControllerRegistration</span></code>
+<p>Assist with the registration of a single redirect view controller.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">RedirectViewControllerRegistration</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.config.annotation.RedirectViewControllerRegistration$<init>(kotlin.String, kotlin.String)/urlPath">urlPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.config.annotation.RedirectViewControllerRegistration$<init>(kotlin.String, kotlin.String)/redirectUrl">redirectUrl</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="set-context-relative.html">setContextRelative</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setContextRelative</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.config.annotation.RedirectViewControllerRegistration$setContextRelative(kotlin.Boolean)/contextRelative">contextRelative</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">RedirectViewControllerRegistration</span></code>
+<p>Whether to interpret a given redirect URL that starts with a slash ("/") as relative to the current ServletContext, i.e. as relative to the web application root. 
+<p>Default is <code>true</code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-keep-query-params.html">setKeepQueryParams</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setKeepQueryParams</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.config.annotation.RedirectViewControllerRegistration$setKeepQueryParams(kotlin.Boolean)/propagate">propagate</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">RedirectViewControllerRegistration</span></code>
+<p>Whether to propagate the query parameters of the current request through to the target redirect URL. 
+<p>Default is <code>false</code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-status-code.html">setStatusCode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setStatusCode</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.config.annotation.RedirectViewControllerRegistration$setStatusCode(org.springframework.http.HttpStatus)/statusCode">statusCode</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpStatus</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">RedirectViewControllerRegistration</span></code>
+<p>Set the specific redirect 3xx status code to use. 
+<p>If not set, org.springframework.web.servlet.view.RedirectView will select <code>HttpStatus.MOVED_TEMPORARILY (302)</code> by default.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

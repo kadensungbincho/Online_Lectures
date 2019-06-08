@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HttpEntityMethodProcessor - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.method.annotation</a>&nbsp;/&nbsp;<a href=".">HttpEntityMethodProcessor</a><br/>
+<br/>
+<h1>HttpEntityMethodProcessor</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HttpEntityMethodProcessor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractMessageConverterMethodProcessor</span></code>
+<p>Resolves HttpEntity and RequestEntity method argument values and also handles HttpEntity and ResponseEntity return values. 
+<p>An HttpEntity return type has a specific purpose. Therefore this handler should be configured ahead of handlers that support any return value type annotated with <code>@ModelAttribute</code> or <code>@ResponseBody</code> to ensure they don't take over.</p>
+</p>
+<p><strong>Author</strong><br/>
+Arjen Poutsma</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Brian Clozel</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">HttpEntityMethodProcessor</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))))/converters">converters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HttpMessageConverter</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p>Basic constructor with converters only. Suitable for resolving <code>HttpEntity</code>. For handling <code>ResponseEntity</code> consider also providing a <code>ContentNegotiationManager</code>.</p>
+<code><span class="identifier">HttpEntityMethodProcessor</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))), org.springframework.web.accept.ContentNegotiationManager)/converters">converters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HttpMessageConverter</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))), org.springframework.web.accept.ContentNegotiationManager)/manager">manager</span><span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.accept/-content-negotiation-manager/index.html"><span class="identifier">ContentNegotiationManager</span></a><span class="symbol">)</span></code>
+<p>Basic constructor with converters and <code>ContentNegotiationManager</code>. Suitable for resolving <code>HttpEntity</code> and handling <code>ResponseEntity</code> without <code>Request~</code> or <code>ResponseBodyAdvice</code>.</p>
+<code><span class="identifier">HttpEntityMethodProcessor</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))), kotlin.collections.MutableList((kotlin.Any)))/converters">converters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HttpMessageConverter</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))), kotlin.collections.MutableList((kotlin.Any)))/requestResponseBodyAdvice">requestResponseBodyAdvice</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p>Complete constructor for resolving <code>HttpEntity</code> method arguments. For handling <code>ResponseEntity</code> consider also providing a <code>ContentNegotiationManager</code>.</p>
+<code><span class="identifier">HttpEntityMethodProcessor</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))), org.springframework.web.accept.ContentNegotiationManager, kotlin.collections.MutableList((kotlin.Any)))/converters">converters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HttpMessageConverter</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))), org.springframework.web.accept.ContentNegotiationManager, kotlin.collections.MutableList((kotlin.Any)))/manager">manager</span><span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.accept/-content-negotiation-manager/index.html"><span class="identifier">ContentNegotiationManager</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))), org.springframework.web.accept.ContentNegotiationManager, kotlin.collections.MutableList((kotlin.Any)))/requestResponseBodyAdvice">requestResponseBodyAdvice</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p>Complete constructor for resolving <code>HttpEntity</code> and handling <code>ResponseEntity</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="handle-return-value.html">handleReturnValue</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleReturnValue</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/returnValue">returnValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/mavContainer">mavContainer</span><span class="symbol">:</span>&nbsp;<span class="identifier">ModelAndViewContainer</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$handleReturnValue(kotlin.Any, org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest)/webRequest">webRequest</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="resolve-argument.html">resolveArgument</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">resolveArgument</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/mavContainer">mavContainer</span><span class="symbol">:</span>&nbsp;<span class="identifier">ModelAndViewContainer</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/webRequest">webRequest</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/binderFactory">binderFactory</span><span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.bind.support/-web-data-binder-factory/index.html"><span class="identifier">WebDataBinderFactory</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="supports-parameter.html">supportsParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsParameter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$supportsParameter(org.springframework.core.MethodParameter)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="supports-return-type.html">supportsReturnType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsReturnType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor$supportsReturnType(org.springframework.core.MethodParameter)/returnType">returnType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ConvertingEncoderDecoderSupport.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.adapter.standard</a>&nbsp;/&nbsp;<a href="index.html">ConvertingEncoderDecoderSupport</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.web.socket.adapter.standard.ConvertingEncoderDecoderSupport$&lt;init&gt;()"></a>
+<code><span class="identifier">ConvertingEncoderDecoderSupport</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Base class that can be used to implement a standard javax.websocket.Encoder and/or javax.websocket.Decoder. It provides encode and decode method implementations that delegate to a Spring ConversionService. 
+<p>By default, this class looks up a ConversionService registered in the <code><a href="#">active ApplicationContext</a></code> under the name <code>'webSocketConversionService'</code>. This works fine for both client and server endpoints, in a Servlet container environment. If not running in a Servlet container, subclasses will need to override the <code><a href="#">#getConversionService()</a></code> method to provide an alternative lookup strategy. </p>
+<p>Subclasses can extend this class and should also implement one or both of javax.websocket.Encoder and javax.websocket.Decoder. For convenience ConvertingEncoderDecoderSupport.BinaryEncoder, ConvertingEncoderDecoderSupport.BinaryDecoder, ConvertingEncoderDecoderSupport.TextEncoder and ConvertingEncoderDecoderSupport.TextDecoder subclasses are provided. </p>
+<p>Since JSR-356 only allows Encoder/Decoder to be registered by type, instances of this class are therefore managed by the WebSocket runtime, and do not need to be registered as Spring Beans. They can, however, by injected with Spring-managed dependencies via Autowired. </p>
+<p>Converters to convert between the <code><a href="#">type</a></code> and <code>String</code> or <code>ByteBuffer</code> should be registered.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - the type being converted to (for Encoder) or from (for Decoder)</p>
+<p><a name="&lt;M&gt;"></a>
+<code><M></code> - the WebSocket message type (String or ByteBuffer)</p>
+<p><strong>Author</strong><br/>
+Phillip Webb</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<p><strong>See Also</strong><br/>
+ConvertingEncoderDecoderSupport.BinaryEncoderConvertingEncoderDecoderSupport.BinaryDecoderConvertingEncoderDecoderSupport.TextEncoderConvertingEncoderDecoderSupport.TextDecoder</p>
+</BODY>
+</HTML>

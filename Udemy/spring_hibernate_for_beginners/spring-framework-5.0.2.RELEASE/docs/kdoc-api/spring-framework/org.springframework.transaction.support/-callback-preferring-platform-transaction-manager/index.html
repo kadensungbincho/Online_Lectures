@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CallbackPreferringPlatformTransactionManager - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.transaction.support</a>&nbsp;/&nbsp;<a href=".">CallbackPreferringPlatformTransactionManager</a><br/>
+<br/>
+<h1>CallbackPreferringPlatformTransactionManager</h1>
+<code><span class="keyword">interface </span><span class="identifier">CallbackPreferringPlatformTransactionManager</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PlatformTransactionManager</span></code>
+<p>Extension of the org.springframework.transaction.PlatformTransactionManager interface, exposing a method for executing a given callback within a transaction. 
+<p>Implementors of this interface automatically express a preference for callbacks over programmatic <code>getTransaction</code>, <code>commit</code> and <code>rollback</code> calls. Calling code may check whether a given transaction manager implements this interface to choose to prepare a callback instead of explicit transaction demarcation control. </p>
+<p>Spring's TransactionTemplate and org.springframework.transaction.interceptor.TransactionInterceptor detect and use this PlatformTransactionManager variant automatically.</p>
+</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<p><strong>See Also</strong><br/>
+TransactionTemplateorg.springframework.transaction.interceptor.TransactionInterceptor</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="execute.html">execute</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">execute</span><span class="symbol">(</span><span class="identifier" id="org.springframework.transaction.support.CallbackPreferringPlatformTransactionManager$execute(org.springframework.transaction.TransactionDefinition, org.springframework.transaction.support.TransactionCallback((org.springframework.transaction.support.CallbackPreferringPlatformTransactionManager.execute.T)))/definition">definition</span><span class="symbol">:</span>&nbsp;<span class="identifier">TransactionDefinition</span><span class="symbol">, </span><span class="identifier" id="org.springframework.transaction.support.CallbackPreferringPlatformTransactionManager$execute(org.springframework.transaction.TransactionDefinition, org.springframework.transaction.support.TransactionCallback((org.springframework.transaction.support.CallbackPreferringPlatformTransactionManager.execute.T)))/callback">callback</span><span class="symbol">:</span>&nbsp;<span class="identifier">TransactionCallback</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Execute the action specified by the given callback object within a transaction. 
+<p>Allows for returning a result object created within the transaction, that is, a domain object or a collection of domain objects. A RuntimeException thrown by the callback is treated as a fatal exception that enforces a rollback. Such an exception gets propagated to the caller of the template.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.transaction.jta/-web-sphere-uow-transaction-manager/index.html">WebSphereUowTransactionManager</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WebSphereUowTransactionManager</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JtaTransactionManager</span><span class="symbol">, </span><span class="identifier">CallbackPreferringPlatformTransactionManager</span></code>
+<p>WebSphere-specific PlatformTransactionManager implementation that delegates to a com.ibm.wsspi.uow.UOWManager instance, obtained from WebSphere's JNDI environment. This allows Spring to leverage the full power of the WebSphere transaction coordinator, including transaction suspension, in a manner that is perfectly compliant with officially supported WebSphere API. 
+<p>The CallbackPreferringPlatformTransactionManager interface implemented by this class indicates that callers should preferably pass in a TransactionCallback through the <code><a href="#">#execute</a></code> method, which will be handled through the callback-based WebSphere UOWManager API instead of through standard JTA API (UserTransaction / TransactionManager). This avoids the use of the non-public <code>javax.transaction.TransactionManager</code> API on WebSphere, staying within supported WebSphere API boundaries. </p>
+<p>This transaction manager implementation derives from Spring's standard JtaTransactionManager, inheriting the capability to support programmatic transaction demarcation via <code>getTransaction</code> / <code>commit</code> / <code>rollback</code> calls through a JTA UserTransaction handle, for callers that do not use the TransactionCallback-based <code><a href="#">#execute</a></code> method. However, transaction suspension is <em>not</em> supported in this <code>getTransaction</code> style (unless you explicitly specify a <code><a href="#">#setTransactionManager</a></code> reference, despite the official WebSphere recommendations). Use the <code><a href="#">#execute</a></code> style for any code that might require transaction suspension. </p>
+<p>This transaction manager is compatible with WebSphere 6.1.0.9 and above. The default JNDI location for the UOWManager is "java:comp/websphere/UOWManager". If the location happens to differ according to your WebSphere documentation, simply specify the actual location through this transaction manager's "uowManagerName" bean property. </p>
+<p><strong>NOTE: This JtaTransactionManager is intended to refine specific transaction demarcation behavior on Spring's side. It will happily co-exist with independently configured WebSphere transaction strategies in your persistence provider, with no need to specifically connect those setups in any way.</strong></p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RequestMappingInfoHandlerMethodMappingNamingStrategy - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.method</a>&nbsp;/&nbsp;<a href=".">RequestMappingInfoHandlerMethodMappingNamingStrategy</a><br/>
+<br/>
+<h1>RequestMappingInfoHandlerMethodMappingNamingStrategy</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RequestMappingInfoHandlerMethodMappingNamingStrategy</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethodMappingNamingStrategy</span><span class="symbol">&lt;</span><a href="../-request-mapping-info/index.html"><span class="identifier">RequestMappingInfo</span></a><span class="symbol">&gt;</span></code>
+<p>A org.springframework.web.servlet.handler.HandlerMethodMappingNamingStrategy for <code>RequestMappingInfo</code>-based handler method mappings. If the <code>RequestMappingInfo</code> name attribute is set, its value is used. Otherwise the name is based on the capital letters of the class name, followed by "#" as a separator, and the method name. For example "TC#getFoo" for a class named TestController with method getFoo.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">RequestMappingInfoHandlerMethodMappingNamingStrategy</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A org.springframework.web.servlet.handler.HandlerMethodMappingNamingStrategy for <code>RequestMappingInfo</code>-based handler method mappings. If the <code>RequestMappingInfo</code> name attribute is set, its value is used. Otherwise the name is based on the capital letters of the class name, followed by "#" as a separator, and the method name. For example "TC#getFoo" for a class named TestController with method getFoo.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-s-e-p-a-r-a-t-o-r.html">SEPARATOR</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">SEPARATOR</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Separator between the type and method-level parts of a HandlerMethod mapping name</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMethodMappingNamingStrategy$getName(org.springframework.web.method.HandlerMethod, org.springframework.web.servlet.mvc.method.RequestMappingInfo)/handlerMethod">handlerMethod</span><span class="symbol">:</span>&nbsp;<span class="identifier">HandlerMethod</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMethodMappingNamingStrategy$getName(org.springframework.web.method.HandlerMethod, org.springframework.web.servlet.mvc.method.RequestMappingInfo)/mapping">mapping</span><span class="symbol">:</span>&nbsp;<a href="../-request-mapping-info/index.html"><span class="identifier">RequestMappingInfo</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DelegatePerTargetObjectIntroductionInterceptor - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.aop.support</a>&nbsp;/&nbsp;<a href=".">DelegatePerTargetObjectIntroductionInterceptor</a><br/>
+<br/>
+<h1>DelegatePerTargetObjectIntroductionInterceptor</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DelegatePerTargetObjectIntroductionInterceptor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">IntroductionInfoSupport</span><span class="symbol">, </span><span class="identifier">IntroductionInterceptor</span></code>
+<p>Convenient implementation of the org.springframework.aop.IntroductionInterceptor interface. 
+<p>This differs from DelegatingIntroductionInterceptor in that a single instance of this class can be used to advise multiple target objects, and each target object will have its <em>own</em> delegate (whereas DelegatingIntroductionInterceptor shares the same delegate, and hence the same state across all targets). </p>
+<p>The <code>suppressInterface</code> method can be used to suppress interfaces implemented by the delegate class but which should not be introduced to the owning AOP proxy. </p>
+<p>An instance of this class is serializable if the delegates are. </p>
+<p><em>Note: There are some implementation similarities between this class and DelegatingIntroductionInterceptor that suggest a possible refactoring to extract a common ancestor class in the future.</em></p>
+</p>
+<p><strong>Author</strong><br/>
+Adrian Colyer</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#suppressInterface</a>DelegatingIntroductionInterceptor</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">DelegatePerTargetObjectIntroductionInterceptor</span><span class="symbol">(</span><span class="identifier" id="org.springframework.aop.support.DelegatePerTargetObjectIntroductionInterceptor$<init>(java.lang.Class((kotlin.Any)), java.lang.Class((kotlin.Any)))/defaultImplType">defaultImplType</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.aop.support.DelegatePerTargetObjectIntroductionInterceptor$<init>(java.lang.Class((kotlin.Any)), java.lang.Class((kotlin.Any)))/interfaceType">interfaceType</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="invoke.html">invoke</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">invoke</span><span class="symbol">(</span><span class="identifier" id="org.springframework.aop.support.DelegatePerTargetObjectIntroductionInterceptor$invoke(org.aopalliance.intercept.MethodInvocation)/mi">mi</span><span class="symbol">:</span>&nbsp;<a href="../../org.aopalliance.intercept/-method-invocation/index.html"><span class="identifier">MethodInvocation</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Subclasses may need to override this if they want to perform custom behaviour in around advice. However, subclasses should invoke this method, which handles introduced interfaces and forwarding to the target.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

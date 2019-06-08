@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MethodNameBasedMBeanInfoAssembler.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.jmx.export.assembler</a>&nbsp;/&nbsp;<a href="index.html">MethodNameBasedMBeanInfoAssembler</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.jmx.export.assembler.MethodNameBasedMBeanInfoAssembler$&lt;init&gt;()"></a>
+<code><span class="identifier">MethodNameBasedMBeanInfoAssembler</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Subclass of <code>AbstractReflectiveMBeanInfoAssembler</code> that allows to specify method names to be exposed as MBean operations and attributes. JavaBean getters and setters will automatically be exposed as JMX attributes. 
+<p>You can supply an array of method names via the <code>managedMethods</code> property. If you have multiple beans and you wish each bean to use a different set of method names, then you can map bean keys (that is the name used to pass the bean to the <code>MBeanExporter</code>) to a list of method names using the <code>methodMappings</code> property. </p>
+<p>If you specify values for both <code>methodMappings</code> and <code>managedMethods</code>, Spring will attempt to find method names in the mappings first. If no method names for the bean are found, it will use the method names defined by <code>managedMethods</code>.</p>
+</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+1.2</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#setManagedMethods</a><a href="set-method-mappings.html">#setMethodMappings</a>InterfaceBasedMBeanInfoAssemblerSimpleReflectiveMBeanInfoAssemblerMethodExclusionMBeanInfoAssemblerorg.springframework.jmx.export.MBeanExporter</p>
+</BODY>
+</HTML>

@@ -1,0 +1,140 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MappingJackson2HttpMessageConverter - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.http.converter.json</a>&nbsp;/&nbsp;<a href=".">MappingJackson2HttpMessageConverter</a><br/>
+<br/>
+<h1>MappingJackson2HttpMessageConverter</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MappingJackson2HttpMessageConverter</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-abstract-jackson2-http-message-converter/index.html"><span class="identifier">AbstractJackson2HttpMessageConverter</span></a></code>
+<p>Implementation of org.springframework.http.converter.HttpMessageConverter that can read and write JSON using <a href="#">Jackson 2.x's</a> ObjectMapper. 
+<p>This converter can be used to bind to typed beans, or untyped <code>HashMap</code> instances. </p>
+<p>By default, this converter supports <code>application/json</code> and <code>application/*+json</code> with <code>UTF-8</code> character set. This can be overridden by setting the <code><a href="#">supportedMediaTypes</a></code> property. </p>
+<p>The default constructor uses the default configuration provided by Jackson2ObjectMapperBuilder. </p>
+<p>Compatible with Jackson 2.9 and higher, as of Spring 5.0.</p>
+</p>
+<p><strong>Author</strong><br/>
+Arjen Poutsma</p>
+<p><strong>Author</strong><br/>
+Keith Donald</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Author</strong><br/>
+Sebastien Deleuze</p>
+<p><strong>Since</strong><br/>
+3.1.2</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">MappingJackson2HttpMessageConverter</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Construct a new MappingJackson2HttpMessageConverter using default configuration provided by Jackson2ObjectMapperBuilder.</p>
+<code><span class="identifier">MappingJackson2HttpMessageConverter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter$<init>(com.fasterxml.jackson.databind.ObjectMapper)/objectMapper">objectMapper</span><span class="symbol">:</span>&nbsp;<span class="identifier">ObjectMapper</span><span class="symbol">)</span></code>
+<p>Construct a new MappingJackson2HttpMessageConverter with a custom ObjectMapper. You can use Jackson2ObjectMapperBuilder to build it easily.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-abstract-jackson2-http-message-converter/-d-e-f-a-u-l-t_-c-h-a-r-s-e-t.html">DEFAULT_CHARSET</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">DEFAULT_CHARSET</span><span class="symbol">: </span><span class="identifier">Charset</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="set-json-prefix.html">setJsonPrefix</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setJsonPrefix</span><span class="symbol">(</span><span class="identifier" id="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter$setJsonPrefix(kotlin.String)/jsonPrefix">jsonPrefix</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specify a custom prefix to use for this view's JSON output. Default is none.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-prefix-json.html">setPrefixJson</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPrefixJson</span><span class="symbol">(</span><span class="identifier" id="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter$setPrefixJson(kotlin.Boolean)/prefixJson">prefixJson</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Indicate whether the JSON output by this view should be prefixed with ")]}', ". Default is false. 
+<p>Prefixing the JSON string in this manner is used to help prevent JSON Hijacking. The prefix renders the string syntactically invalid as a script so that it cannot be hijacked. This prefix should be stripped before parsing the string as JSON.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-abstract-jackson2-http-message-converter/can-read.html">canRead</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">canRead</span><span class="symbol">(</span><span class="identifier" id="org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter$canRead(java.lang.Class((kotlin.Any)), org.springframework.http.MediaType)/clazz">clazz</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter$canRead(java.lang.Class((kotlin.Any)), org.springframework.http.MediaType)/mediaType">mediaType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MediaType</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">canRead</span><span class="symbol">(</span><span class="identifier" id="org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter$canRead(java.lang.reflect.Type, java.lang.Class((kotlin.Any)), org.springframework.http.MediaType)/type">type</span><span class="symbol">:</span>&nbsp;<span class="identifier">Type</span><span class="symbol">, </span><span class="identifier" id="org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter$canRead(java.lang.reflect.Type, java.lang.Class((kotlin.Any)), org.springframework.http.MediaType)/contextClass">contextClass</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter$canRead(java.lang.reflect.Type, java.lang.Class((kotlin.Any)), org.springframework.http.MediaType)/mediaType">mediaType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MediaType</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-jackson2-http-message-converter/can-write.html">canWrite</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">canWrite</span><span class="symbol">(</span><span class="identifier" id="org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter$canWrite(java.lang.Class((kotlin.Any)), org.springframework.http.MediaType)/clazz">clazz</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter$canWrite(java.lang.Class((kotlin.Any)), org.springframework.http.MediaType)/mediaType">mediaType</span><span class="symbol">:</span>&nbsp;<span class="identifier">MediaType</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-jackson2-http-message-converter/get-object-mapper.html">getObjectMapper</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getObjectMapper</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ObjectMapper</span></code>
+<p>Return the underlying <code>ObjectMapper</code> for this view.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-jackson2-http-message-converter/read.html">read</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">read</span><span class="symbol">(</span><span class="identifier" id="org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter$read(java.lang.reflect.Type, java.lang.Class((kotlin.Any)), org.springframework.http.HttpInputMessage)/type">type</span><span class="symbol">:</span>&nbsp;<span class="identifier">Type</span><span class="symbol">, </span><span class="identifier" id="org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter$read(java.lang.reflect.Type, java.lang.Class((kotlin.Any)), org.springframework.http.HttpInputMessage)/contextClass">contextClass</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter$read(java.lang.reflect.Type, java.lang.Class((kotlin.Any)), org.springframework.http.HttpInputMessage)/inputMessage">inputMessage</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpInputMessage</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-jackson2-http-message-converter/set-object-mapper.html">setObjectMapper</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setObjectMapper</span><span class="symbol">(</span><span class="identifier" id="org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter$setObjectMapper(com.fasterxml.jackson.databind.ObjectMapper)/objectMapper">objectMapper</span><span class="symbol">:</span>&nbsp;<span class="identifier">ObjectMapper</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the <code>ObjectMapper</code> for this view. If not set, a default <code><a href="#">ObjectMapper</a></code> is used. 
+<p>Setting a custom-configured <code>ObjectMapper</code> is one way to take further control of the JSON serialization process. For example, an extended com.fasterxml.jackson.databind.ser.SerializerFactory can be configured that provides custom serializers for specific types. The other option for refining the serialization process is to use Jackson's provided annotations on the types to be serialized, in which case a custom-configured ObjectMapper is unnecessary.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-jackson2-http-message-converter/set-pretty-print.html">setPrettyPrint</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPrettyPrint</span><span class="symbol">(</span><span class="identifier" id="org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter$setPrettyPrint(kotlin.Boolean)/prettyPrint">prettyPrint</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether to use the DefaultPrettyPrinter when writing JSON. This is a shortcut for setting up an <code>ObjectMapper</code> as follows: <pre><code> ObjectMapper mapper = new ObjectMapper(); mapper.configure(SerializationFeature.INDENT_OUTPUT, true); converter.setObjectMapper(mapper); </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

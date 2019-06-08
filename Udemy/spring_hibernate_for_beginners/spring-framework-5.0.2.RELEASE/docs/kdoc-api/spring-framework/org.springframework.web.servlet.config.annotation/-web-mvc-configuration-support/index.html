@@ -1,0 +1,313 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WebMvcConfigurationSupport - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.config.annotation</a>&nbsp;/&nbsp;<a href=".">WebMvcConfigurationSupport</a><br/>
+<br/>
+<h1>WebMvcConfigurationSupport</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WebMvcConfigurationSupport</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ApplicationContextAware</span><span class="symbol">, </span><span class="identifier">ServletContextAware</span></code>
+<p>This is the main class providing the configuration behind the MVC Java config. It is typically imported by adding EnableWebMvc to an application Configuration class. An alternative more advanced option is to extend directly from this class and override methods as necessary, remembering to add Configuration to the subclass and Bean to overridden Bean methods. For more details see the javadoc of EnableWebMvc. 
+<p>This class registers the following HandlerMappings:</p>
+ <ul> <li>RequestMappingHandlerMapping ordered at 0 for mapping requests to annotated controller methods. </li>
+<li>HandlerMapping ordered at 1 to map URL paths directly to view names. </li>
+<li>BeanNameUrlHandlerMapping ordered at 2 to map URL paths to controller bean names. </li>
+<li>HandlerMapping ordered at <code>Integer.MAX_VALUE-1</code> to serve static resource requests. </li>
+<li>HandlerMapping ordered at <code>Integer.MAX_VALUE</code> to forward requests to the default servlet. </li>
+</ul>
+ 
+<p>Registers these HandlerAdapters: </p>
+<ul> <li>RequestMappingHandlerAdapter for processing requests with annotated controller methods. </li>
+<li>HttpRequestHandlerAdapter for processing requests with HttpRequestHandlers. </li>
+<li>SimpleControllerHandlerAdapter for processing requests with interface-based Controllers. </li>
+</ul>
+ 
+<p>Registers a HandlerExceptionResolverComposite with this chain of exception resolvers: </p>
+<ul> <li>ExceptionHandlerExceptionResolver for handling exceptions through @ExceptionHandler methods. </li>
+<li>ResponseStatusExceptionResolver for exceptions annotated with @ResponseStatus. </li>
+<li>DefaultHandlerExceptionResolver for resolving known Spring exception types </li>
+</ul>
+ 
+<p>Registers an AntPathMatcher and a UrlPathHelper to be used by: </p>
+<ul> <li>the RequestMappingHandlerMapping, </li>
+<li>the HandlerMapping for ViewControllers </li>
+<li>and the HandlerMapping for serving resources </li>
+</ul>
+ Note that those beans can be configured with a PathMatchConfigurer. 
+<p>Both the RequestMappingHandlerAdapter and the ExceptionHandlerExceptionResolver are configured with default instances of the following by default: </p>
+<ul> <li>a ContentNegotiationManager </li>
+<li>a DefaultFormattingConversionService </li>
+<li>a org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean if a JSR-303 implementation is available on the classpath </li>
+<li>a range of HttpMessageConverters depending on the third-party libraries available on the classpath. </li>
+</ul>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Brian Clozel</p>
+<p><strong>Author</strong><br/>
+Sebastien Deleuze</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<p><strong>See Also</strong><br/>
+EnableWebMvcWebMvcConfigurer</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">WebMvcConfigurationSupport</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>This is the main class providing the configuration behind the MVC Java config. It is typically imported by adding EnableWebMvc to an application Configuration class. An alternative more advanced option is to extend directly from this class and override methods as necessary, remembering to add Configuration to the subclass and Bean to overridden Bean methods. For more details see the javadoc of EnableWebMvc. 
+<p>This class registers the following HandlerMappings:</p>
+ <ul> <li>RequestMappingHandlerMapping ordered at 0 for mapping requests to annotated controller methods. </li>
+<li>HandlerMapping ordered at 1 to map URL paths directly to view names. </li>
+<li>BeanNameUrlHandlerMapping ordered at 2 to map URL paths to controller bean names. </li>
+<li>HandlerMapping ordered at <code>Integer.MAX_VALUE-1</code> to serve static resource requests. </li>
+<li>HandlerMapping ordered at <code>Integer.MAX_VALUE</code> to forward requests to the default servlet. </li>
+</ul>
+ 
+<p>Registers these HandlerAdapters: </p>
+<ul> <li>RequestMappingHandlerAdapter for processing requests with annotated controller methods. </li>
+<li>HttpRequestHandlerAdapter for processing requests with HttpRequestHandlers. </li>
+<li>SimpleControllerHandlerAdapter for processing requests with interface-based Controllers. </li>
+</ul>
+ 
+<p>Registers a HandlerExceptionResolverComposite with this chain of exception resolvers: </p>
+<ul> <li>ExceptionHandlerExceptionResolver for handling exceptions through @ExceptionHandler methods. </li>
+<li>ResponseStatusExceptionResolver for exceptions annotated with @ResponseStatus. </li>
+<li>DefaultHandlerExceptionResolver for resolving known Spring exception types </li>
+</ul>
+ 
+<p>Registers an AntPathMatcher and a UrlPathHelper to be used by: </p>
+<ul> <li>the RequestMappingHandlerMapping, </li>
+<li>the HandlerMapping for ViewControllers </li>
+<li>and the HandlerMapping for serving resources </li>
+</ul>
+ Note that those beans can be configured with a PathMatchConfigurer. 
+<p>Both the RequestMappingHandlerAdapter and the ExceptionHandlerExceptionResolver are configured with default instances of the following by default: </p>
+<ul> <li>a ContentNegotiationManager </li>
+<li>a DefaultFormattingConversionService </li>
+<li>a org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean if a JSR-303 implementation is available on the classpath </li>
+<li>a range of HttpMessageConverters depending on the third-party libraries available on the classpath. </li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="bean-name-handler-mapping.html">beanNameHandlerMapping</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">beanNameHandlerMapping</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BeanNameUrlHandlerMapping</span></code>
+<p>Return a BeanNameUrlHandlerMapping ordered at 2 to map URL paths to controller bean names.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="default-servlet-handler-mapping.html">defaultServletHandlerMapping</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">defaultServletHandlerMapping</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HandlerMapping</span></code>
+<p>Return a handler mapping ordered at Integer.MAX_VALUE with a mapped default servlet handler. To configure "default" Servlet handling, override <code><a href="#">#configureDefaultServletHandling</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-application-context.html">getApplicationContext</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getApplicationContext</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ApplicationContext</span></code>
+<p>Return the associated Spring ApplicationContext.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-servlet-context.html">getServletContext</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getServletContext</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ServletContext</span></code>
+<p>Return the associated javax.servlet.ServletContext.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="handler-exception-resolver.html">handlerExceptionResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handlerExceptionResolver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HandlerExceptionResolver</span></code>
+<p>Returns a HandlerExceptionResolverComposite containing a list of exception resolvers obtained either through <code><a href="#">#configureHandlerExceptionResolvers(List)</a></code> or through <code><a href="#">#addDefaultHandlerExceptionResolvers(List)</a></code>. 
+<p><strong>Note:</strong> This method cannot be made final due to CGLib constraints. Rather than overriding it, consider overriding <code><a href="#">#configureHandlerExceptionResolvers(List)</a></code>, which allows providing a list of resolvers.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="http-request-handler-adapter.html">httpRequestHandlerAdapter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">httpRequestHandlerAdapter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HttpRequestHandlerAdapter</span></code>
+<p>Returns a HttpRequestHandlerAdapter for processing requests with HttpRequestHandlers.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="mvc-content-negotiation-manager.html">mvcContentNegotiationManager</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mvcContentNegotiationManager</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.springframework.web.accept/-content-negotiation-manager/index.html"><span class="identifier">ContentNegotiationManager</span></a></code>
+<p>Return a ContentNegotiationManager instance to use to determine requested MediaType in a given request.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="mvc-conversion-service.html">mvcConversionService</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mvcConversionService</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.springframework.format.support/-formatting-conversion-service/index.html"><span class="identifier">FormattingConversionService</span></a></code>
+<p>Return a FormattingConversionService for use with annotated controller methods and the <code>spring:eval</code> JSP tag. Also see <code><a href="#">#addFormatters</a></code> as an alternative to overriding this method.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="mvc-handler-mapping-introspector.html">mvcHandlerMappingIntrospector</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mvcHandlerMappingIntrospector</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HandlerMappingIntrospector</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="mvc-path-matcher.html">mvcPathMatcher</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mvcPathMatcher</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">PathMatcher</span></code>
+<p>Return a global PathMatcher instance for path matching patterns in HandlerMappings. This instance can be configured using the PathMatchConfigurer in <code><a href="#">#configurePathMatch(PathMatchConfigurer)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="mvc-resource-url-provider.html">mvcResourceUrlProvider</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mvcResourceUrlProvider</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResourceUrlProvider</span></code>
+<p>A ResourceUrlProvider bean for use with the MVC dispatcher.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="mvc-uri-components-contributor.html">mvcUriComponentsContributor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mvcUriComponentsContributor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.springframework.web.method.support/-composite-uri-components-contributor/index.html"><span class="identifier">CompositeUriComponentsContributor</span></a></code>
+<p>Return an instance of CompositeUriComponentsContributor for use with org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="mvc-url-path-helper.html">mvcUrlPathHelper</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mvcUrlPathHelper</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">UrlPathHelper</span></code>
+<p>Return a global UrlPathHelper instance for path matching patterns in HandlerMappings. This instance can be configured using the PathMatchConfigurer in <code><a href="#">#configurePathMatch(PathMatchConfigurer)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="mvc-validator.html">mvcValidator</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mvcValidator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Validator</span></code>
+<p>Return a global Validator instance for example for validating <code>@ModelAttribute</code> and <code>@RequestBody</code> method arguments. Delegates to <code><a href="#">#getValidator()</a></code> first and if that returns <code>null</code> checks the classpath for the presence of a JSR-303 implementations before creating a <code>OptionalValidatorFactoryBean</code>.If a JSR-303 implementation is not available, a no-op Validator is returned.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="mvc-view-resolver.html">mvcViewResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mvcViewResolver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ViewResolver</span></code>
+<p>Register a ViewResolverComposite that contains a chain of view resolvers to use for view resolution. By default this resolver is ordered at 0 unless content negotiation view resolution is used in which case the order is raised to <code><a href="#"> Ordered.HIGHEST_PRECEDENCE</a></code>. 
+<p>If no other resolvers are configured, <code><a href="#">ViewResolverComposite#resolveViewName(String, Locale)</a></code> returns null in order to allow other potential ViewResolver beans to resolve views.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="request-mapping-handler-adapter.html">requestMappingHandlerAdapter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">requestMappingHandlerAdapter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">RequestMappingHandlerAdapter</span></code>
+<p>Returns a RequestMappingHandlerAdapter for processing requests through annotated controller methods. Consider overriding one of these other more fine-grained methods: <ul> <li><code><a href="#">#addArgumentResolvers</a></code> for adding custom argument resolvers. </li>
+<li><code><a href="#">#addReturnValueHandlers</a></code> for adding custom return value handlers. </li>
+<li><code><a href="#">#configureMessageConverters</a></code> for adding custom message converters. </li>
+</ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="request-mapping-handler-mapping.html">requestMappingHandlerMapping</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">requestMappingHandlerMapping</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">RequestMappingHandlerMapping</span></code>
+<p>Return a RequestMappingHandlerMapping ordered at 0 for mapping requests to annotated controllers.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="resource-handler-mapping.html">resourceHandlerMapping</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">resourceHandlerMapping</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HandlerMapping</span></code>
+<p>Return a handler mapping ordered at Integer.MAX_VALUE-1 with mapped resource handlers. To configure resource handling, override <code><a href="#">#addResourceHandlers</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-application-context.html">setApplicationContext</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setApplicationContext</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport$setApplicationContext(org.springframework.context.ApplicationContext)/applicationContext">applicationContext</span><span class="symbol">:</span>&nbsp;<span class="identifier">ApplicationContext</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the Spring ApplicationContext, e.g. for resource loading.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-servlet-context.html">setServletContext</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setServletContext</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport$setServletContext(javax.servlet.ServletContext)/servletContext">servletContext</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServletContext</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the javax.servlet.ServletContext, e.g. for resource handling, looking up file extensions, etc.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="simple-controller-handler-adapter.html">simpleControllerHandlerAdapter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">simpleControllerHandlerAdapter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SimpleControllerHandlerAdapter</span></code>
+<p>Returns a SimpleControllerHandlerAdapter for processing requests with interface-based controllers.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="view-controller-handler-mapping.html">viewControllerHandlerMapping</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">viewControllerHandlerMapping</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HandlerMapping</span></code>
+<p>Return a handler mapping ordered at 1 to map URL paths directly to view names. To configure view controllers, override <code><a href="#">#addViewControllers</a></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

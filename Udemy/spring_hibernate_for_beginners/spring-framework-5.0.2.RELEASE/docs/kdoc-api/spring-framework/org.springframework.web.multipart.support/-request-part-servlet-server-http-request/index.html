@@ -1,0 +1,109 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RequestPartServletServerHttpRequest - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.multipart.support</a>&nbsp;/&nbsp;<a href=".">RequestPartServletServerHttpRequest</a><br/>
+<br/>
+<h1>RequestPartServletServerHttpRequest</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RequestPartServletServerHttpRequest</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.springframework.http.server/-servlet-server-http-request/index.html"><span class="identifier">ServletServerHttpRequest</span></a></code>
+<p>ServerHttpRequest implementation that accesses one part of a multipart request. If using MultipartResolver configuration the part is accessed through a MultipartFile. Or if using Servlet 3.0 multipart processing the part is accessed through <code>ServletRequest.getPart</code>.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">RequestPartServletServerHttpRequest</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.multipart.support.RequestPartServletServerHttpRequest$<init>(javax.servlet.http.HttpServletRequest, kotlin.String)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">HttpServletRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.multipart.support.RequestPartServletServerHttpRequest$<init>(javax.servlet.http.HttpServletRequest, kotlin.String)/partName">partName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code>
+<p>Create a new <code>RequestPartServletServerHttpRequest</code> instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-body.html">getBody</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getBody</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">InputStream</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-headers.html">getHeaders</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getHeaders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HttpHeaders</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.springframework.http.server/-servlet-server-http-request/get-async-request-control.html">getAsyncRequestControl</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAsyncRequestControl</span><span class="symbol">(</span><span class="identifier" id="org.springframework.http.server.ServletServerHttpRequest$getAsyncRequestControl(org.springframework.http.server.ServerHttpResponse)/response">response</span><span class="symbol">:</span>&nbsp;<span class="identifier">ServerHttpResponse</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ServerHttpAsyncRequestControl</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.http.server/-servlet-server-http-request/get-local-address.html">getLocalAddress</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLocalAddress</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">InetSocketAddress</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.http.server/-servlet-server-http-request/get-method-value.html">getMethodValue</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMethodValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.http.server/-servlet-server-http-request/get-principal.html">getPrincipal</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPrincipal</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Principal</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.http.server/-servlet-server-http-request/get-remote-address.html">getRemoteAddress</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getRemoteAddress</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">InetSocketAddress</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.http.server/-servlet-server-http-request/get-servlet-request.html">getServletRequest</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getServletRequest</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HttpServletRequest</span></code>
+<p>Returns the <code>HttpServletRequest</code> this object is based on.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.springframework.http.server/-servlet-server-http-request/get-u-r-i.html">getURI</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getURI</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">URI</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

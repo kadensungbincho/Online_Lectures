@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>StandardWebSocketHandlerAdapter - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.socket.adapter.standard</a>&nbsp;/&nbsp;<a href=".">StandardWebSocketHandlerAdapter</a><br/>
+<br/>
+<h1>StandardWebSocketHandlerAdapter</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">StandardWebSocketHandlerAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Endpoint</span></code>
+<p>Adapts a WebSocketHandler to the standard WebSocket for Java API.</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">StandardWebSocketHandlerAdapter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$<init>(org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.adapter.standard.StandardWebSocketSession)/handler">handler</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebSocketHandler</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$<init>(org.springframework.web.socket.WebSocketHandler, org.springframework.web.socket.adapter.standard.StandardWebSocketSession)/wsSession">wsSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">StandardWebSocketSession</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="on-close.html">onClose</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onClose</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$onClose(javax.websocket.Session, javax.websocket.CloseReason)/session">session</span><span class="symbol">:</span>&nbsp;<span class="identifier">Session</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$onClose(javax.websocket.Session, javax.websocket.CloseReason)/reason">reason</span><span class="symbol">:</span>&nbsp;<span class="identifier">CloseReason</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-error.html">onError</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onError</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$onError(javax.websocket.Session, kotlin.Throwable)/session">session</span><span class="symbol">:</span>&nbsp;<span class="identifier">Session</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$onError(javax.websocket.Session, kotlin.Throwable)/exception">exception</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-open.html">onOpen</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onOpen</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$onOpen(javax.websocket.Session, javax.websocket.EndpointConfig)/session">session</span><span class="symbol">:</span>&nbsp;<span class="identifier">Session</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$onOpen(javax.websocket.Session, javax.websocket.EndpointConfig)/config">config</span><span class="symbol">:</span>&nbsp;<span class="identifier">EndpointConfig</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

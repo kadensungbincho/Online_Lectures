@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PathVariableMethodArgumentResolver.<init> - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.method.annotation</a>&nbsp;/&nbsp;<a href="index.html">PathVariableMethodArgumentResolver</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.springframework.web.servlet.mvc.method.annotation.PathVariableMethodArgumentResolver$&lt;init&gt;()"></a>
+<code><span class="identifier">PathVariableMethodArgumentResolver</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Resolves method arguments annotated with an @PathVariable. 
+<p>An @PathVariable is a named value that gets resolved from a URI template variable. It is always required and does not have a default value to fall back on. See the base class org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver for more information on how named values are processed. </p>
+<p>If the method parameter type is Map, the name specified in the annotation is used to resolve the URI variable String value. The value is then converted to a Map via type conversion, assuming a suitable Converter or PropertyEditor has been registered. </p>
+<p>A WebDataBinder is invoked to apply type conversion to resolved path variable values that don't yet match the method parameter type.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Arjen Poutsma</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+</BODY>
+</HTML>

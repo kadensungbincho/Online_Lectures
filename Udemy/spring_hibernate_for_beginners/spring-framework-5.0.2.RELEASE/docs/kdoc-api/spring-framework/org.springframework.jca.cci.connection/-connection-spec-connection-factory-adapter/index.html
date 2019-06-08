@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ConnectionSpecConnectionFactoryAdapter - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.jca.cci.connection</a>&nbsp;/&nbsp;<a href=".">ConnectionSpecConnectionFactoryAdapter</a><br/>
+<br/>
+<h1>ConnectionSpecConnectionFactoryAdapter</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ConnectionSpecConnectionFactoryAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DelegatingConnectionFactory</span></code>
+<p>An adapter for a target CCI javax.resource.cci.ConnectionFactory, applying the given ConnectionSpec to every standard <code>getConnection()</code> call, that is, implicitly invoking <code>getConnection(ConnectionSpec)</code> on the target. All other methods simply delegate to the corresponding methods of the target ConnectionFactory. 
+<p>Can be used to proxy a target JNDI ConnectionFactory that does not have a ConnectionSpec configured. Client code can work with the ConnectionFactory without passing in a ConnectionSpec on every <code>getConnection()</code> call. </p>
+<p>In the following example, client code can simply transparently work with the preconfigured "myConnectionFactory", implicitly accessing "myTargetConnectionFactory" with the specified user credentials. </p>
+<pre><code> &lt;bean id="myTargetConnectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean"&gt; &lt;property name="jndiName" value="java:comp/env/cci/mycf"/&gt; &lt;/bean&gt; &lt;bean id="myConnectionFactory" class="org.springframework.jca.cci.connection.ConnectionSpecConnectionFactoryAdapter"&gt; &lt;property name="targetConnectionFactory" ref="myTargetConnectionFactory"/&gt; &lt;property name="connectionSpec"&gt; &lt;bean class="your.resource.adapter.ConnectionSpecImpl"&gt; &lt;property name="username" value="myusername"/&gt; &lt;property name="password" value="mypassword"/&gt; &lt;/bean&gt; &lt;/property&gt; &lt;/bean&gt;</code></pre> 
+<p>If the "connectionSpec" is empty, this proxy will simply delegate to the standard <code>getConnection()</code> method of the target ConnectionFactory. This can be used to keep a UserCredentialsConnectionFactoryAdapter bean definition just for the <em>option</em> of implicitly passing in a ConnectionSpec if the particular target ConnectionFactory requires it.</p>
+</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+1.2</p>
+<p><strong>See Also</strong><br/>
+<a href="get-connection.html">#getConnection</a></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ConnectionSpecConnectionFactoryAdapter</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>An adapter for a target CCI javax.resource.cci.ConnectionFactory, applying the given ConnectionSpec to every standard <code>getConnection()</code> call, that is, implicitly invoking <code>getConnection(ConnectionSpec)</code> on the target. All other methods simply delegate to the corresponding methods of the target ConnectionFactory. 
+<p>Can be used to proxy a target JNDI ConnectionFactory that does not have a ConnectionSpec configured. Client code can work with the ConnectionFactory without passing in a ConnectionSpec on every <code>getConnection()</code> call. </p>
+<p>In the following example, client code can simply transparently work with the preconfigured "myConnectionFactory", implicitly accessing "myTargetConnectionFactory" with the specified user credentials. </p>
+<pre><code> &lt;bean id="myTargetConnectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean"&gt; &lt;property name="jndiName" value="java:comp/env/cci/mycf"/&gt; &lt;/bean&gt; &lt;bean id="myConnectionFactory" class="org.springframework.jca.cci.connection.ConnectionSpecConnectionFactoryAdapter"&gt; &lt;property name="targetConnectionFactory" ref="myTargetConnectionFactory"/&gt; &lt;property name="connectionSpec"&gt; &lt;bean class="your.resource.adapter.ConnectionSpecImpl"&gt; &lt;property name="username" value="myusername"/&gt; &lt;property name="password" value="mypassword"/&gt; &lt;/bean&gt; &lt;/property&gt; &lt;/bean&gt;</code></pre> 
+<p>If the "connectionSpec" is empty, this proxy will simply delegate to the standard <code>getConnection()</code> method of the target ConnectionFactory. This can be used to keep a UserCredentialsConnectionFactoryAdapter bean definition just for the <em>option</em> of implicitly passing in a ConnectionSpec if the particular target ConnectionFactory requires it.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-connection.html">getConnection</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getConnection</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Connection</span></code>
+<p>Determine whether there is currently a thread-bound ConnectionSpec, using it if available, falling back to the statically specified "connectionSpec" property else.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="remove-connection-spec-from-current-thread.html">removeConnectionSpecFromCurrentThread</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">removeConnectionSpecFromCurrentThread</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Remove any ConnectionSpec for this proxy from the current thread. A statically specified ConnectionSpec applies again afterwards.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-connection-spec.html">setConnectionSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConnectionSpec</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jca.cci.connection.ConnectionSpecConnectionFactoryAdapter$setConnectionSpec(javax.resource.cci.ConnectionSpec)/connectionSpec">connectionSpec</span><span class="symbol">:</span>&nbsp;<span class="identifier">ConnectionSpec</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the ConnectionSpec that this adapter should use for retrieving Connections. Default is none.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-connection-spec-for-current-thread.html">setConnectionSpecForCurrentThread</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConnectionSpecForCurrentThread</span><span class="symbol">(</span><span class="identifier" id="org.springframework.jca.cci.connection.ConnectionSpecConnectionFactoryAdapter$setConnectionSpecForCurrentThread(javax.resource.cci.ConnectionSpec)/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">ConnectionSpec</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set a ConnectionSpec for this proxy and the current thread. The given ConnectionSpec will be applied to all subsequent <code>getConnection()</code> calls on this ConnectionFactory proxy. 
+<p>This will override any statically specified "connectionSpec" property.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

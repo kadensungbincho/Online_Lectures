@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RequestPartMethodArgumentResolver.supportsParameter - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.method.annotation</a>&nbsp;/&nbsp;<a href="index.html">RequestPartMethodArgumentResolver</a>&nbsp;/&nbsp;<a href=".">supportsParameter</a><br/>
+<br/>
+<h1>supportsParameter</h1>
+<a name="org.springframework.web.servlet.mvc.method.annotation.RequestPartMethodArgumentResolver$supportsParameter(org.springframework.core.MethodParameter)"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsParameter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.RequestPartMethodArgumentResolver$supportsParameter(org.springframework.core.MethodParameter)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Overrides <a href="../../org.springframework.web.method.support/-handler-method-argument-resolver/supports-parameter.html">HandlerMethodArgumentResolver.supportsParameter</a></p>
+<p>Supports the following: <ul> <li>annotated with <code>@RequestPart</code> </li>
+<li>of type MultipartFile unless annotated with <code>@RequestParam</code> </li>
+<li>of type <code>javax.servlet.http.Part</code> unless annotated with <code>@RequestParam</code> </li>
+</ul>
+</p>
+</BODY>
+</HTML>

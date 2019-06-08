@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>QualifierAnnotationAutowireCandidateResolver.addQualifierType - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.beans.factory.annotation</a>&nbsp;/&nbsp;<a href="index.html">QualifierAnnotationAutowireCandidateResolver</a>&nbsp;/&nbsp;<a href=".">addQualifierType</a><br/>
+<br/>
+<h1>addQualifierType</h1>
+<a name="org.springframework.beans.factory.annotation.QualifierAnnotationAutowireCandidateResolver$addQualifierType(java.lang.Class((kotlin.Annotation)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addQualifierType</span><span class="symbol">(</span><span class="identifier" id="org.springframework.beans.factory.annotation.QualifierAnnotationAutowireCandidateResolver$addQualifierType(java.lang.Class((kotlin.Annotation)))/qualifierType">qualifierType</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><span class="identifier">Annotation</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Register the given type to be used as a qualifier when autowiring. 
+<p>This identifies qualifier annotations for direct use (on fields, method parameters and constructor parameters) as well as meta annotations that in turn identify actual qualifier annotations. </p>
+<p>This implementation only supports annotations as qualifier types. The default is Spring's Qualifier annotation which serves as a qualifier for direct use and also as a meta annotation.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="qualifierType"></a>
+<code>qualifierType</code> - the annotation type to register</p>
+</BODY>
+</HTML>

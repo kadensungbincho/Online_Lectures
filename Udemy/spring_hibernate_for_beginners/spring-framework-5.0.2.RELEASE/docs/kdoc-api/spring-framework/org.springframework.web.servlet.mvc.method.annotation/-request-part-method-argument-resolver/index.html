@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RequestPartMethodArgumentResolver - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.web.servlet.mvc.method.annotation</a>&nbsp;/&nbsp;<a href=".">RequestPartMethodArgumentResolver</a><br/>
+<br/>
+<h1>RequestPartMethodArgumentResolver</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RequestPartMethodArgumentResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractMessageConverterMethodArgumentResolver</span></code>
+<p>Resolves the following method arguments: <ul> <li>Annotated with <code>@RequestPart</code> </li>
+<li>Of type MultipartFile in conjunction with Spring's MultipartResolver abstraction </li>
+<li>Of type <code>javax.servlet.http.Part</code> in conjunction with Servlet 3.0 multipart requests </li>
+</ul>
+ 
+<p>When a parameter is annotated with <code>@RequestPart</code>, the content of the part is passed through an HttpMessageConverter to resolve the method argument with the 'Content-Type' of the request part in mind. This is analogous to what @RequestBody does to resolve an argument based on the content of a regular request. </p>
+<p>When a parameter is not annotated or the name of the part is not specified, it is derived from the name of the method argument. </p>
+<p>Automatic validation may be applied if the argument is annotated with <code>@javax.validation.Valid</code>. In case of validation failure, a MethodArgumentNotValidException is raised and a 400 response status code returned if org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver is configured.</p>
+</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Brian Clozel</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">RequestPartMethodArgumentResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.RequestPartMethodArgumentResolver$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))))/messageConverters">messageConverters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HttpMessageConverter</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p>Basic constructor with converters only.</p>
+<code><span class="identifier">RequestPartMethodArgumentResolver</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.RequestPartMethodArgumentResolver$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))), kotlin.collections.MutableList((kotlin.Any)))/messageConverters">messageConverters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HttpMessageConverter</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.RequestPartMethodArgumentResolver$<init>(kotlin.collections.MutableList((org.springframework.http.converter.HttpMessageConverter((kotlin.Any)))), kotlin.collections.MutableList((kotlin.Any)))/requestResponseBodyAdvice">requestResponseBodyAdvice</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p>Constructor with converters and <code>Request~</code> and <code>ResponseBodyAdvice</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="resolve-argument.html">resolveArgument</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">resolveArgument</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.RequestPartMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.RequestPartMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/mavContainer">mavContainer</span><span class="symbol">:</span>&nbsp;<span class="identifier">ModelAndViewContainer</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.RequestPartMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/request">request</span><span class="symbol">:</span>&nbsp;<span class="identifier">NativeWebRequest</span><span class="symbol">, </span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.RequestPartMethodArgumentResolver$resolveArgument(org.springframework.core.MethodParameter, org.springframework.web.method.support.ModelAndViewContainer, org.springframework.web.context.request.NativeWebRequest, org.springframework.web.bind.support.WebDataBinderFactory)/binderFactory">binderFactory</span><span class="symbol">:</span>&nbsp;<a href="../../org.springframework.web.bind.support/-web-data-binder-factory/index.html"><span class="identifier">WebDataBinderFactory</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="supports-parameter.html">supportsParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">supportsParameter</span><span class="symbol">(</span><span class="identifier" id="org.springframework.web.servlet.mvc.method.annotation.RequestPartMethodArgumentResolver$supportsParameter(org.springframework.core.MethodParameter)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<span class="identifier">MethodParameter</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Supports the following: <ul> <li>annotated with <code>@RequestPart</code> </li>
+<li>of type MultipartFile unless annotated with <code>@RequestParam</code> </li>
+<li>of type <code>javax.servlet.http.Part</code> unless annotated with <code>@RequestParam</code> </li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

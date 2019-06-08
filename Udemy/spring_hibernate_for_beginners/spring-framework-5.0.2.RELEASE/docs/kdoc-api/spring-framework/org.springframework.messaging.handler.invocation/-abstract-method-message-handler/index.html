@@ -1,0 +1,182 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractMethodMessageHandler - spring-framework</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">spring-framework</a>&nbsp;/&nbsp;<a href="../index.html">org.springframework.messaging.handler.invocation</a>&nbsp;/&nbsp;<a href=".">AbstractMethodMessageHandler</a><br/>
+<br/>
+<h1>AbstractMethodMessageHandler</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractMethodMessageHandler</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">MessageHandler</span><span class="symbol">, </span><span class="identifier">ApplicationContextAware</span><span class="symbol">, </span><span class="identifier">InitializingBean</span></code>
+<p>Abstract base class for HandlerMethod-based message handling. Provides most of the logic required to discover handler methods at startup, find a matching handler method at runtime for a given message and invoke it. 
+<p>Also supports discovering and invoking exception handling methods to process exceptions raised during message handling.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - the type of the Object that contains information mapping a org.springframework.messaging.handler.HandlerMethod to incoming messages</p>
+<p><strong>Author</strong><br/>
+Rossen Stoyanchev</p>
+<p><strong>Author</strong><br/>
+Juergen Hoeller</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AbstractMethodMessageHandler</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Abstract base class for HandlerMethod-based message handling. Provides most of the logic required to discover handler methods at startup, find a matching handler method at runtime for a given message and invoke it. 
+<p>Also supports discovering and invoking exception handling methods to process exceptions raised during message handling.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="after-properties-set.html">afterPropertiesSet</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">afterPropertiesSet</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-application-context.html">getApplicationContext</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getApplicationContext</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ApplicationContext</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-argument-resolvers.html">getArgumentResolvers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getArgumentResolvers</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-handler-method-argument-resolver/index.html"><span class="identifier">HandlerMethodArgumentResolver</span></a><span class="symbol">&gt;</span></code>
+<p>Return the complete list of argument resolvers.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-custom-argument-resolvers.html">getCustomArgumentResolvers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getCustomArgumentResolvers</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-handler-method-argument-resolver/index.html"><span class="identifier">HandlerMethodArgumentResolver</span></a><span class="symbol">&gt;</span></code>
+<p>Return the configured custom argument resolvers, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-custom-return-value-handlers.html">getCustomReturnValueHandlers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getCustomReturnValueHandlers</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HandlerMethodReturnValueHandler</span><span class="symbol">&gt;</span></code>
+<p>Return the configured custom return value handlers, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-destination-prefixes.html">getDestinationPrefixes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDestinationPrefixes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Return the configured destination prefixes, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-handler-methods.html">getHandlerMethods</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getHandlerMethods</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">HandlerMethod</span><span class="symbol">&gt;</span></code>
+<p>Return a map with all handler methods and their mappings.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-return-value-handlers.html">getReturnValueHandlers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getReturnValueHandlers</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HandlerMethodReturnValueHandler</span><span class="symbol">&gt;</span></code>
+<p>Return the complete list of return value handlers.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="handle-message.html">handleMessage</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleMessage</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler$handleMessage(org.springframework.messaging.Message((kotlin.Any)))/message">message</span><span class="symbol">:</span>&nbsp;<span class="identifier">Message</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-application-context.html">setApplicationContext</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setApplicationContext</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler$setApplicationContext(org.springframework.context.ApplicationContext)/applicationContext">applicationContext</span><span class="symbol">:</span>&nbsp;<span class="identifier">ApplicationContext</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-argument-resolvers.html">setArgumentResolvers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setArgumentResolvers</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler$setArgumentResolvers(kotlin.collections.MutableList((org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver)))/argumentResolvers">argumentResolvers</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-handler-method-argument-resolver/index.html"><span class="identifier">HandlerMethodArgumentResolver</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configure the complete list of supported argument types, effectively overriding the ones configured by default. This is an advanced option; for most use cases it should be sufficient to use <code><a href="#">#setCustomArgumentResolvers</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-custom-argument-resolvers.html">setCustomArgumentResolvers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setCustomArgumentResolvers</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler$setCustomArgumentResolvers(kotlin.collections.MutableList((org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver)))/customArgumentResolvers">customArgumentResolvers</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-handler-method-argument-resolver/index.html"><span class="identifier">HandlerMethodArgumentResolver</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the list of custom <code>HandlerMethodArgumentResolver</code>s that will be used after resolvers for supported argument type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-custom-return-value-handlers.html">setCustomReturnValueHandlers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setCustomReturnValueHandlers</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler$setCustomReturnValueHandlers(kotlin.collections.MutableList((org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandler)))/customReturnValueHandlers">customReturnValueHandlers</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HandlerMethodReturnValueHandler</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the list of custom <code>HandlerMethodReturnValueHandler</code>s that will be used after return value handlers for known types.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-destination-prefixes.html">setDestinationPrefixes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDestinationPrefixes</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler$setDestinationPrefixes(kotlin.collections.MutableCollection((kotlin.String)))/prefixes">prefixes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>When this property is configured only messages to destinations matching one of the configured prefixes are eligible for handling. When there is a match the prefix is removed and only the remaining part of the destination is used for method-mapping purposes. 
+<p>By default, no prefixes are configured in which case all messages are eligible for handling.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-return-value-handlers.html">setReturnValueHandlers</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReturnValueHandlers</span><span class="symbol">(</span><span class="identifier" id="org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler$setReturnValueHandlers(kotlin.collections.MutableList((org.springframework.messaging.handler.invocation.HandlerMethodReturnValueHandler)))/returnValueHandlers">returnValueHandlers</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">HandlerMethodReturnValueHandler</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configure the complete list of supported return value types, effectively overriding the ones configured by default. This is an advanced option; for most use cases it should be sufficient to use <code><a href="#">#setCustomReturnValueHandlers</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
