@@ -1,0 +1,23 @@
+{
+  "cloudwatch.emitMetrics": true,
+  "kinesis.endpoint": "",
+  "firehose.endpoint": "firehose.us-east-1.amazonaws.com",
+
+  "flows": [
+    {
+      "filePattern": "/var/log/cadabra/*log",
+      "kinesisStream": "cadabra-orders",
+      "partitionKeyOption": "RANDOM",
+      "dataProcessingOptions": [
+        {
+          "optionName": "CSVTOJSON",
+          "customFieldNames": ["InvoiceNo", "StockCode", "Description", "Quantity", "InvoiceDate", "UnitPrice", "Customer", "Country"]
+        }
+      ]
+    },
+    {
+      "filePattern": "/var/log/cadabra/*log",
+      "deliveryStream": "PurchaseLogs"
+    }
+  ]
+}
