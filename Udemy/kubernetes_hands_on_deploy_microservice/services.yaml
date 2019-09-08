@@ -1,39 +1,50 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: fleetman-webapp
+  name: fleetman-queue
 
 spec:
-  # This defines which pods are going to be represented by this service
-  # The service becomes a network endpoint for either other services
-  # or maybe external users to connect to (eg browser)
   selector:
-    app: webapp
+    app: queue
 
   ports:
     - name: http
-      port: 80
-      nodePort: 30080
+      port: 8161
+      nodePort: 30010
+
+    - name: endpoint
+      port: 61616
   
-  # ClusterIP or NodePort or LoadBalancer
-  # ClusterIP for internal app
-  # NodePort for local access 
   type: NodePort
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: fleetman-queue
+  name: fleetman-position-tracker
 
 spec:
   selector:
-    app: queue
-    release: "1"
+    app: position-tracker
 
   ports:
     - name: http
-      port: 8161
-      nodePort: 30010
+      port: 8080
   
-  type: NodePort
+  type: ClusterIP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fleetman-api-gateway
+
+spec:
+  selector:
+    app: api-gateway
+
+  ports:
+    - name: http
+      port: 8080
+  
+  type: ClusterIP
