@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mongo-pvc
 spec:
+  storageClassName: mylocastorage
   accessModes:
     - ReadWriteOnce
   resources:
@@ -12,10 +13,11 @@ spec:
 ---
 # How do we want it implemented
 apiVersion: v1
-kind: PersistentVolumn
+kind: PersistentVolume
 metadata:
   name: local-storage
 spec:
+  storageClassName: mylocastorage
   capacity:
     storage: 20Gi
   accessModes:
