@@ -19,6 +19,9 @@ spec:
           requests:
             memory: 300Mi # 1Mi = 1024Ki, 1Ki = 1024 bytes
             cpu: 100m
+          limits:
+            memory: 300Mi
+            cpu: 100m
 
 ---
 apiVersion: apps/v1
@@ -41,6 +44,16 @@ spec:
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
+        - name: DATABASE_URL
+          valueFrom:
+            configMApKeyRef:
+              name: global-database-config
+              key: database.url
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            configMApKeyRef:
+              name: global-database-config
+              key: database.password
         resources:
           requests:
             memory: 200Mi
