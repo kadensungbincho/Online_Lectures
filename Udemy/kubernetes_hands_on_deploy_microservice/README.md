@@ -89,3 +89,10 @@ kubectl get all
 - kind: ClusterRole without namespace
 
 # Config map
+- immutable config map is more easy to manage
+
+
+# Ingress Control
+- routing
+- Nginx Ingress controller
+

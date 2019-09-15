@@ -44,20 +44,30 @@ spec:
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
-        - name: DATABASE_URL
-          valueFrom:
-            configMApKeyRef:
-              name: global-database-config
-              key: database.url
-        - name: DATABASE_PASSWORD
-          valueFrom:
-            configMApKeyRef:
-              name: global-database-config
-              key: database.password
+        # - name: DATABASE_URL
+        #   valueFrom:
+        #     configMApKeyRef:
+        #       name: global-database-config
+        #       key: database.url
+        # - name: DATABASE_PASSWORD
+        #   valueFrom:
+        #     configMApKeyRef:
+        #       name: global-database-config
+        #       key: database.password
+        # envFrom:
+        # - configMapRef:
+        #   name: global-database-config-v3
+        volumeMounts:
+        - name: database-config-volume
+          mountPath: /etc/any/directory/config
         resources:
           requests:
             memory: 200Mi
             cpu: 50m
+      volumes:
+      - name: database-config-volume
+        configMap:
+          name: global-database-config-v3
 
 ---
 apiVersion: apps/v1

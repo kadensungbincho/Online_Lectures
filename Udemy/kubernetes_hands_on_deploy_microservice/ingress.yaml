@@ -1,0 +1,21 @@
+# apiVersion: networking.k8s.oi/v1beta1
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: basic-routing
+spec: 
+  rules:
+    - host: fleetman.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: fleetman-webapp
+              servicePort: 80
+    - host: queue.fleetman.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: fleetman-queue
+              servicePort: 8161

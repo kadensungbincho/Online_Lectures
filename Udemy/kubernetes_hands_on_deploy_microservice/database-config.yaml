@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: global-database-config-v3
+  namespace: default
+data:
+  DATABASE_URL: "https://dbserver.somewhere.com:3306"
+  DATABASE_PASSWORD: "PASSW0rd1"
