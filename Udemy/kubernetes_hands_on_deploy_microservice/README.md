@@ -96,3 +96,6 @@ kubectl get all
 - routing
 - Nginx Ingress controller
 
+
+# Other Workload Types
+- 
