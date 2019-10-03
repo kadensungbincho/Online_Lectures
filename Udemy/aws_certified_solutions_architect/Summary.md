@@ -97,6 +97,7 @@ dynamic port
         - you must specify a default certificate
         - You can add an optional list of certs to support multiple domains
         - clients can use SNI (Server Name Indication) to specify the hostname they reach
+            - https://aws.amazon.com/blogs/aws/new-application-load-balancer-sni/
         - Ability to specify a security policy to support older versions of SSL / TLS (legacy clients) 
 
 - Auto Scaling Groups Overview
@@ -138,4 +139,314 @@ dynamic port
 # ASG for Solutions Architects
 - ASG Default Termination Policy
     - 1. Find the AZ which has the most number of instances
-    - 2. 
+    - 2. If there are multiple instances in the AZ to choose from, delete the one with the oldest launch configuration
+- ASG tries the balance the number of instances across AZ by default
+
+- Scaling Cooldowns
+    - The cooldown period helps to ensure that your Auto Scaling group doesn't launch or terminate additional instances before the previous scaling activity takes effect
+    - In addtiion to default cooldown for Auto Scaling Group, we can create cooldowns that apply to a specific simple scaling policy
+    - A scaling-specific cooldown period overrides the default cooldown period
+    - One common use for scaling-specific cooldowns is with a scale-in policy - a policy that terminates instances based on a specific criteria or metric. Because this policy terminates instances, Amazon EC2 Auto Scaling needs less time to determine whether to terminate additional instances.
+    - If the default cooldown period of 300 seconds is too long - you can reduce costs by applying a scaling-specific cooldown period of 180 seconds to the scale-in policy
+    - If your application is scaling up and down multiple times each hour, modify the Auto Scaling Groups cool-down timers and the CloudWatch Alarm Period that triggers the scale in
+
+# EBS Intro
+- EBS Volume
+    - it's a network driver
+        - It uses the network to communicate the instance, which means there might be a bit of latency
+        - It can be dtached from an EC2 instance and attached to another one quickly
+    - It's locked to an Availability Zone
+        - An EBS volume in us-east-1  a cannot be attchedto us-east-1 b
+        - To move a volume across, you first need to snapshot it
+    - Have a provisioned capacity
+        - You get billed for all the provisioned capacity
+
+- EBS Volume Types
+    - GP2 (SSD) : General purpose SSD volume that balances price and performance for a wide variety of workloads
+    - IOI (SSD) : Highest -performance SSD volume for mission-critical low-latency or high-throughput workloads
+    - STI (HDD): Low cost HDD volume designed for frequently accessed, throughtput-intensive workloads
+    - SCI (HDD): Lowest cost HDD volume designed for less frequently accessed workloads
+- EBS volumes are characterized in Size | Throughput | IOPS
+- When in douby always consult the AWS documentation
+
+
+- GP2
+    - Recommended for most workloads
+
+- EBS Snapshots
+    - Incremental - only backup changed blocks
+    - EBS backups use IO and you shouldn'y run them while your application is handling a lot of traffic
+    - Snapshots will be stored in S3 
+    - Not necessary to detach volume to do snapshot, but recommended 
+    - Max 100,000 snapshots
+    - Can copy snapshots across AZ or Region
+    - Can make image from Snapshot
+    - EBS volumes restored by snapshots need to be pre-warmed
+
+
+- EBS Migration
+    - EBS volumnes are only locked to a specifc AZ
+    - To migrate it to a different AZ
+        - Snapshot the volume
+        - Copy the volume to a different region
+        - Create a volume from the snapshot in the AZ of your choice
+
+- EBS Encryption
+    - When you create an encrypted EBS volume, you get the following
+        - Data at rest is encrypted inside the volume
+        - All the data in flight moving between the instance and the volume is encrypted 
+        - All snapshots are encrypted
+        - All volumes created from the snapshot
+    - Encryption and decryption are handled transparently
+    - Encryption has a minimal impact on latency
+    - EBS Encryption leverages keys from KMS
+    - Copying an unencrypted snapshot allows encryption
+    - Snapshots of encrypted volumes are encrypted
+
+
+- EBS vs Instance Store
+    - Some instance do not come with Root EBS volumes
+    - Instead, they come with "Instance Store"
+    - Instance store is physically attached to the machine (EBS is a network drive)
+    - Pros
+        - Better I/O performance
+        - Good for buffer / cache / scratch data / temporary content
+    - Cons
+        - On stop or termination, the instance store is lost
+        - You can't resize the instance store
+        - Backup must be done 
+
+
+- EBS RAID Options
+    - EBS is already redundant storage 
+    - But what if you want to increase IOPS to say 100 000 IOPS
+    - You would mount volumes in parallel in RAID settings
+    - RAID is possible as long as your OS supports it
+    - Some RAID options are:
+        - RAID 0
+        - RAID 1
+        - RAID 5 (not recommended)
+        - RAID 6 (not recommended)
+    
+- RAID 0 (increase performance)
+    - Combining 2 or more volumes and getting the total disk space and I/O
+    - But one disk fails, all the data is failed
+    - Use cases would be
+        - An application that needs a lot of IOPS and doesn't need fault-tolerance
+        - A database that has replication already built-in
+    - Using this, we can have a very big disk with a lot of IOPS
+    - e.g.
+        - two 500 GiB EBS io | volumes with 4,000 provisioned IOPS each will create a
+        - 1000 GiB RAID 0 array with an available bandwidth of 8,000 IOPS and 1,000 MB/s of throughput
+    
+- RAID 1 (increase fault tolerance)
+    - Mirroring a volume to another
+    - If one disk fails, our logical volume is still working
+    - We have to send the data to two EBS volume at the same time
+    - 
+
+- EFS - Elastic File System
+    - Managd NFS (network file system) that can be mounted on many EC2
+    - EFS works with EC2 instances in multi-AZ
+    - Highly available, scalable, expensive (3x gp2), pay per use
+    - Use cases : content management, web serving, data sharing
+    - Uses NFSv4.1 protocol
+    - Uses security group to control access to EFS
+    - Compatible with Linux based AMI (not Winrdows)
+    - Performance mode:
+        - General purpose 
+        - Max I/O - used when thousands of EC2 are using the EFS
+        - EFS file sync to sync from on-premise file system to EFS
+        - Backup EFS-to-EFS (incremental - can choose frequency)
+        - Encryption at rest using KMS
+
+- EFS Hands on
+
+- EBS & EFS for solutions architect 
+    - EBS volumes can be attached to only one instance at a time
+    - EBS volumes are locked at the AZ level
+    - Migrating as EBS volume across AZ means first backing it up then recreating it in the other AZ
+    - EBS backups use IO and you shouldn't run them while your application is handling a lot of traffic
+    - Root EBS volumes of instances get terminated by default if the EC2 instance gets terminated
+
+    - Disk IO is high => Increase EBS volume size
+    - EFS mounting 100s of instances
+    - EFS share website files
+    - EBS gp2, optimize on cost
+    - Custom AMI for faster deploy on ASG
+    - EFS vs EBS vs Instance Store
+
+
+- AWS RDS Overview
+    - RDS Read Replicas for Read scalability
+        - Up to 5 read replicas
+        - within AZ, cross AZ or Cross Region
+        - Replication is ASYNC, so reads are eventually consistent
+        - Replicas can be promoted to their own DB
+        - Applications must update the connection string to leverage read replicas
+    - RDS Multi AZ
+        - SYNC replication
+        - One DNS name - automatic app failover to standby
+        - Increase availability
+        - Failover in case of loss of AZ, loss of network, instance or storage failure
+        - No manual intervention in apps
+        - Not used for scaling
+    - RDS Backups
+        - Backups are automatically enabled in RDS
+        - Automated backups
+            - Daily full snapshot of the database
+            - Capture transaction logs in real time
+            - ability to restore to any point in time
+            - 7 days retention
+        - DB snapshots
+            - Manually triggered by the use
+            - Retention of backup for as long as you want
+    - RDS Encryption
+        - Encryption at rest capability with AWS KMS - AES-256 
+        - SSL certificates to encrypt data to RDS in flight
+        - To enforce SSL
+            - PostgreSQL : rds.force_sll=1 in the AWS RDS Console
+            - MySQL : within the DB grant usage on *.* to 'mysqluser'@'%' Require ssl;
+        - To connect using SSL
+            - Provide the SSL Trust certificate
+            - Provide SSL options when connecting to database
+    - RDS Security
+    - RDS vs Aurora
+
+# AWS RDS Hands On
+
+# RDS Security for SysOps
+- Encryption at rest
+    - Is done only when you first create the DB instance
+    - or: unencrypted DB => Snapshot => copy snapshot as encrypted => create DB from snapshot
+    - Your responsibility
+        - Check the ports / IP / Security group inbound rules in DB's SG
+        - in-database user creation and permissions
+        - Creating a database with or without public access
+        - Ensure parameter groups or DB is configured to only allow SSL connnections
+    - AWS's
+        - No SSH access
+        - No manual DB patching
+        - No manual Os patching
+        - No way to audit the underlying instance
+
+# RDS for Solutions Architects
+- Read replicas are used for SELECT only kind of statements 
+- Amazon RDS supports Transparent Data Encryption for DB encryption
+    - Oracle or SQL server DB instance only
+    - TDE can be used on top of KMS
+- IAM authentication
+    - works for MySQL, PostgreSQL
+    - Lifespan of an authentication token is 15 minutes
+    - Tokens are generated by AWS credentials
+    - SSL must be used when connecting to the database
+    - Easy to use EC2 instance Roles to connect to the RDS database
+
+# Amazon Aurora
+
+# Aurora Hands On
+
+# Aurora for SA
+- Can use IAM authentication for Aurora MySQL and Postgre
+- Aurora Global databases span multiple regions and enable DR
+    - One primary region
+    - one DR region
+    - the dr region can be used for lower latency reads
+    - < 1 second replica lag on average
+- If not using Global databases, you can create cross -region read replicas 
+    - but the FAQ recommends you use Global Databases instead
+
+# AWS ElasticCache Overview
+- The same way RDS is to get managed Relational Databases
+- ElastiCache is to ge managed Redis or Memcached
+- Caches are in-memory databases with really high performance, low latency
+- Helps reduce load off of databases for read intensive workloads
+- Helps make your application stateless
+- Write Scaling using sharding
+- Read Scaling using Read Replicas
+- Multi AZ with Failover Capability
+- AWS takes care of OS maintenance / patching, optimizations, setup, configuration, monitoring, failure recovery and backups
+
+- Usages
+    - DB cache
+    - User Session Store
+        - User logs into any of the application
+        - The application writes the session data into ElastiCache
+        - The user hits another instance of our application
+        - The instance retrieves the data and the user is already logged in
+
+# ElastCache for SA
+- Security
+    - Redis support Redis AUTH (username / password)
+    - SSL in-flight encrpytion must be enabled and used
+    - Memcached support SASL authentication
+    - None of the caches support IAM authentication
+    - IAM policies on ElastiCache are only used for AWS api-level security
+- Patterns for ElastiCache
+    - Lazy Loading: All the read data is cached, data can become stale in cache
+    - Write Through: Adds or update data in the cache when written to a DB(no stale data)
+    - Session Store: store temporary session data in a cache (using TTL features)
+
+- Route 53
+    - Route 53 is a Managed DNS
+    - DNS is a collection of rules and records which helps clients understand how to reach a server through URLs
+    - In AWS, the most common records are:
+        - A: URL to IPv4
+        - AAAAL UR to IPv6
+        - CNAME: URL to URL
+        - Alias: URL to AWS resource
+
+# DNS Records TTL
+
+
+# CNAME vs Alias
+- AWS Resources expose an AWS URL:
+- CNAME
+    - porints a URL to any other URL
+    - ONLY FOR NON ROOT DOMAIN
+- Alias
+    - points a URL to an AWS Resource
+    - Works for ROOT DOMAIN and NON ROOT DOMAIN
+    - free of charge
+    - health check
+
+# Simple Routing Rolicy
+- Maps a domain to one URL
+- Use when you need to redirect to a single resource
+- You can't attach health checks to simple routing policy
+
+# Weighted Routing Policy
+- Control the % of the reqeusts that go to specific endpoint
+- Helpful to test 1% of traffic on new app version for example
+
+# Latency Routing Policy
+- Redirect to the server that has the least latency close to us
+- Super helpful when latency of users is a priority
+- Latency is evaluated in terms of user to designated AWS Region
+- Germany may be directed to the US 
+
+# Health Checks
+
+# Failover
+- 
+
+# Geo Location Routing Policy
+- Different From latency based
+- this is routing based on use location
+- here we specify : traffic from the UK should go to this specific IP
+- Should create a "default" policy
+
+# Multi Value Routing Policy
+- Use when routing traffic to multiple resources
+- Want to associate a Route 53 health checks with records
+- Up to 8
+
+# Route 53 as a Registrar
+- A domain name registrar is an organization that manages the reservation of Internet domain names
+- Famous names
+    - GoDaddy
+    - Google Domains
+
+
+# Solution Architecture Discussion Overview
+- 
