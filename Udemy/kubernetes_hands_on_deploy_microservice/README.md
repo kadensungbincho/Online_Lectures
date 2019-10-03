@@ -99,3 +99,19 @@ kubectl get all
 
 # Other Workload Types
 - 
+
+
+# DaemonSet
+- 
+
+
+# StatefulSets
+- When do we use StatefulSet?
+    - You have a database but you want to replicate it
+    - the client should write to the primary node among many nodes of mongos
+
+
+# Introduction to CI/CD
+- CruiseControl -> Hudson -> Jenkins
+
+# Github Organization
