@@ -449,4 +449,49 @@ dynamic port
 
 
 # Solution Architecture Discussion Overview
+- cost, performance, reliability, security, operational excellence
+
+# Beanstalk Overview
+- ElasticBeanStalk is a developer centric view of deploying an application on AWS
+
+# AWS S3 Encryption for Objects
+
+# AWS CLI on EC2
+- https://awspolicygen.s3.amazonaws.com/policygen.html
+
+# AWS Policy Simulator
+
+# AWS EC2 Instance Metadata
+- It allows AWS EC2 instances to learn about themselves without using an IAM Role for that purpose
+- The URL is http://169.254.169.254/latest/meta-data
+- You can retrieve the IAM Role name from the metadata, but you CANNOT retrieve the IAM policy
+- Metadata = info about the EC2 instance
+- Userdata = launch script of the EC2 instance
+
+# S3 MFA-DELETE
+
+# S3 ACcess Logs
 - 
+
+# S3 Cross Region Replication
+- 
+
+
+# S3 presigned URLs
+- 
+
+# AWS CloudFront 
+- Content Delivery Network
+- Improves read performance, content is cached at the edge
+- 136 point of Presence globally
+- Popular with S3 but works with EC2, load balancing
+- Can help protect against network attacks
+- Can provide SSL encryption (HTTPS) at the edge using ACM
+- CloudFront can use SSL encryption (HTTPS) to talk to your applications
+- Support RTMP Protocol (videos / media)
+
+# AWS CloudFront Hands On
+- We'll create an S3 bucket
+- We'll create on CloudFront distribution
+- We'll create an Origin Access Identity
+- We'll limit the S3 bucket to be accessed only using this identity
