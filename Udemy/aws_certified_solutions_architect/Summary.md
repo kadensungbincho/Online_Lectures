@@ -495,3 +495,276 @@ dynamic port
 - We'll create on CloudFront distribution
 - We'll create an Origin Access Identity
 - We'll limit the S3 bucket to be accessed only using this identity
+
+
+# CloudFront Signed URK / Signed Cookie
+- Say you wanted to distribute paid shared content to premium users over the world, the conent lives in S3
+- If S3 can only be accessed through CloudFront, we cannot used self-signed S3 URLs
+- We can use CloudFront Signed URL. We attach a policy with
+    - Includes URL expiration
+    - Includes IP ranges to access the data from
+    - Trusted signers
+- CloudFront signed URL can only be created using the AWS SDK, so you have to code an application to verify users and generate these URLS
+- How long should the URL be valid for?
+    - Shared content: make it short
+
+- CloudFront vs Cross REgion Replication
+    - CloudFront
+        - Global Edge network
+        - files are cached for a TTL
+        - Great for static content that must be available everywhere
+    - S3 Cross Region Replication
+        - Must be setup for each region you want replication to happen
+        - Files are updated in near real-time
+        - Read only
+        - Great for dynamic content that needs to be available at low-latency in few regions
+
+- CloudFront Geo Restriction
+    - You can restrict who can access your distribution
+    - Whitelist: allow your users to access your content only if they're in one of the coutries on a list of approved countries
+    - Balcklist: Prevent your users from ccessing your content if they're in oneof the coutries on
+
+# S3 Storage Tiers
+- Amazon S3 Standard - General purpose
+- IA (infrequent access)
+- One Zone-IA
+- Reduced Redundancy Storage
+- Intelligent Tiering
+- Glacier
+
+- General Purpose
+    - High durability
+    - RRS
+        - 99.99% Durability
+        - 99.99% Availability
+    - IA
+        - Suitable for data that is less frequently accessed, but requires rapid access when needed
+        - High Durability of objects across multiple AZs
+        - 99.99% Availability
+        - Low cost compared to Amazon S3 Standard
+        - Sustain 2 concurrent facility failures
+    - S3 One Zone IA
+        - Same as IA but data is stored in a single AZ
+        - High durability of objects in a single AZ; data lost when AZ is destroyed
+        - 99.95 % Availability
+        - Low cost compared to IA (by 20%)
+    - S3 Intelligent Tiering
+        - Same low latency and high throughput performance of S3 Standard
+        - Automatically moves objects between two access tiers based on chaging access patterns
+    - Glaciers
+        - Archiving or backups
+
+# S3 Lifecycle Rules
+- 
+
+# Snowball
+- Physical data transport solution that helps moving TBs or PBs of data in or out of AWS
+- Alternative to moving data over the network 
+- Secure, tamper resistant, uses KMS 256 bit encryption
+- Tracking using SNS and text message. E-int shipping label
+
+1. Request snowball devices from the AWS console for delivery
+2. Install the snowball client on your servers
+3. Connect the snowball to your servers and copy files using the client
+4. Ship back the device when you're done
+5. Data will be loaded into an S3 bucket
+6. Snowball is completely wiped
+7. Tracking is done using SNS, text messages and the AWS console
+
+- Snowball Edge
+- AWS Snowmobile
+
+# Storage Gateway for S3
+- Hybrid Cloud for Storage
+    - AWS is pushing for hybrid cloud
+        - part of your infrastructure is on the cloud
+        - and on-premise
+    - This can be due to
+        - Long cloud migrations
+        - Security requirements
+        - Compliance requirements
+        - IT strategy
+    - S3 is a proprietary storage technology, so how do you expose the S3 data on-premise?
+    - AWS Storage gateway
+
+- AWS Storage Cloud Native Options
+    - Block
+        - EBS, Instance Store
+    - File
+        - Amazon EFS
+    - Object
+        - S3, Glacier
+    
+- AWS Storage Gateway
+    - Bridge between on-premise data and cloud data in S3
+    - Use cases: DR, backup & restore, tiered storage
+
+- 3 types of Storage Gateway
+    - File Gateway
+    - Volume Gateway
+    - Tape Gateway
+
+- File Gateway
+    - Configured S3 buckets are accessible using the NFS and SMB protocol
+    - Supports S3 standard, S3 IA, S3 One Zone IA
+    - Bucket access using IAM roles for each File Gateway
+    - Most recently used data is cached in the file gateway
+    - Can be mounted on many servers
+
+- Volume Gateway
+    - Block storage using iSCSI protocol backed by S3
+    - Backed by EBS snapshots which can help restore on-premise volumes
+    - cached volumes: low latency access to most recent data
+    - Stored volumes: entire dataset is on premise, scheduled backups to S3
+
+- Tape Gateway
+    - Some companies have backup preocesses using physical tapes
+    - With Tape Gateway, companies use the same processes but in the cloud
+    - Virtual Tape Library backed by Amazon S3 and Glacier
+    - Back up data using existing tape-based processes
+    - Works with leading backup software vendors
+
+# Athena
+- Serverless service to perform analytics directly against S3 files
+- Uses SQL language to query the files
+- Has a JDBS / ODBS driver
+- Charged per query and amount of data scanned
+- Supports CSV, JSON, ORC, Avro and Parquet
+- Use cases: Business intelligence, analytics, reporting, analyze & query VPC flow logs, ELB logs, CloudTrail trails, etc
+
+# Section Intro : Messaging
+- There are two patterns of application communication
+    - Synchronous
+    - Asynchronous
+
+- Synchronous between applications can be problematic if there are sudden spikes of traffic
+- In that case, it's better to decouple your applications,
+    - using SQS: queue model
+    - using SNS: pub/sub model
+    - using Kinesis: real-time streaming model
+
+# AWS SQS
+- SQS - Standard Queue
+    - Oldest offering
+    - Fully managed
+    - Scales from 1 message per second to 10,000s per second
+    - Default retention of messages: 4 days, maximum of 14 days
+    - No limit to how many messages can be in the queue
+    - Low latency
+    - Horizontal scaling in terms of number of consumers
+    - Can have duplicate messages
+    - Can have out of order messages
+    - Limitation of 256KB per message sent
+- SQS - delay queue
+    - Delay a message (consumers don't see it immediately) up to 15 minutes
+    - Default is 0 seconds
+    - Can set a default at queue level
+    - Can override the default using the Delay Seconds parameter
+
+- SQS - Producing Messages
+    - Define Body
+    - Add message attributes
+    - Provide Delay Delivery
+    - Get back
+        - Message identifier
+        - MD5 hash of the body
+    
+- SQS - Consuming Messages
+    - Poll SQS for messages (receive up to 10 messages at a time)
+    - Process the message within the visibility timeout
+    - Delete the message using the message ID & receipt handle
+
+- SQS - visilbility timeout
+    - When a consumer polls a message from a queue, the message is "invisible" to other consumers for a defined period... the visibility timeout
+        - Set between 0 seconds and 12 hours
+        - If too high (15 minutes) and consumer fails to process the message, you must wait a long time before processing the message again
+        - If yoo low (30 seconds) and consumer needs time to process the message (2 minutes), another consumer will receive the message and the message will be processed more than once
+    - ChangeMessageVisibility API to change the visibility while processing a message
+    - DeleteMessage API to tell SQS the message was successfully processed
+
+- SQS - Dead Letter Queue
+    - If a consumer fails to process a message within the visibility timeout, the message goes back to the queue
+    - We can set a threshold of how many times a message can go back to the queue - it's caleld a redrive policy
+    - After the threshold is exceeded, the message goes into a dead letter queue (DLQ)
+    - We have to create a DLQ first and then designate it dead letter queue
+    - Make sure to process the messages in the DLQ before they expire
+
+- AWS SQS - Long Polling
+    - When a consumer requests message from the queue, it can optionally "wait" for messages to arrive if there are none in the queue
+    - This is called long polling
+    - LongPolling decreases the number of API calls made to SQS while increasing the efficiency and latency of your application
+    - The wait time can be between 1 sec to 20 sec
+    - Long Polling is preferable to Short Polling
+    - Long polling can be enabled at the queue level or at the API using WaitTimeSeconds
+
+# AWS FIFO Queue
+- Newer offering 
+- Name of the queue must end in .fifo
+- Lower throughput (up to 3,000 per second with batching 300/s without)
+- messages are processed in order by the consuemr
+- Messages are sent exactly once
+- No per message delay
+- Ability to do content based de-duplication
+- 5-minute interval de-duplication using "Duplication ID"
+- Message Groups:
+    - Possibility to group messages for FIFO ordering using "Message GroupID"
+    - Only one worker can be assigned per message group so the messages are processed in order
+    - Message group is just an extra tag on the message 
+
+
+# AWS SNS
+- What if you want to send one message to many receivers?
+    - Direct integration
+    - Pub / Sub
+- The "event producer" only sends message to one SNS topic
+- As many "event receiver" as we want to listen to the SNS topic notifications
+- Each subscriber to the topic will get all the messages
+- Up to 10,000,000 subscriptions per topic
+- 100,000 topics limit 
+- Subscribers can be:
+    - SQS
+    - HTTP / HTTPS
+    - Lambda
+    - Emails
+    - SMS messages
+    - Mobile Notifications
+
+- SNS intergrates with a lot of Amazon Products
+    - Some services can send data directly to SNS for notifications
+    - CloudWatch
+    - Auto Scaling Groups Notifications
+    - Amazon S3
+    - CloudFormation
+
+- AWS SNS - How to publish
+    - Topic publish (withi your AWS server - using the SDK)
+        - Create a topic
+        - Create a subscription
+        - Publish to the topic
+    - Direct publish (for mobile apps SDK)
+        - Create a platform application
+        - Create a platform endpoint
+        - Publish to the platform endpoint
+        - Works with Google GCM, Apple APNS, Amazon ADM
+
+- SNS + SQS: Fan Out
+    - Push onve in SNS, receive in many SQS
+    - Fully decoupled
+    - No data loss
+    - Ability to add receivers of data later
+    - SQS allows for deplated processing
+    - SQS allows for retries of work
+    - May have many workers on one queue and one worker on the other queue
+
+# AWS SNS hands on
+
+# AWS Kinesis Overview
+- Managed alternative to Apache Kafka
+- Great for application logs, metrics, IoT, clickstreams
+- Great for "real time" big data
+- Great for streaming Processing frameworks (Spark, NiFi)
+- Data is automatically replicated to 3AZ
+
+- Kinesis Streams: low latency streaming ingest at scale
+- Kinesis analytics: perform real-time analytics on streams using SQL
+- Kinesis Firehose: load streams into S3, Redshift, ElasticSearch
