@@ -768,3 +768,105 @@ dynamic port
 - Kinesis Streams: low latency streaming ingest at scale
 - Kinesis analytics: perform real-time analytics on streams using SQL
 - Kinesis Firehose: load streams into S3, Redshift, ElasticSearch
+
+- Kinesis Streams Overview
+    - Streams are divided in ordered Shards / Partitions
+    - Data retention is 1 day by default, can go up to 7 days
+    - Ability to reprocess / replay data 
+    - Multiple applications can consume the same stream
+    - Real-time processig with scale of throughput
+    - Once data is inserted in Kinesis, it can't be deleted
+
+- Kinesis Streams Shards
+    - One stream is made of many different shards
+    - 1 MB/s or 1000 messaes/s at write per shard
+    - 2 MB/s at read Per shard
+    - billing is per shard provisioned, can have as many shards as you want
+    - Batching available or per message calls
+    - the number of shards can evelve over time (rechard / merge)
+    - Records are ordered per shard
+
+- AWS Kinesis API - put records
+    - PutRecord API + Partition key that gets hashed
+    - The same key goes to the same partition ( helps with ordering for a specific key)
+    - Messages sent get a "sequence number"
+    - Choose a partition key that is highly distributed (helps prevent "hot partition")
+        - user_id if many users
+        - Not country_id if 90% of the users are in one country
+    - Use Batching with PutRecord to reduce costs and increase throughput
+    - ProvisionedThroughputExceeded if we go over the limits
+    - Can use CLI, AWS SDK, or producer libraries from various frameworks
+
+- AWS Kinesis API - Exceptions
+    - ProvisionedThroughputExceeded Exceptions
+        - Happends when sending more data
+        - Make sure you don't have a hot shard
+    - Solution
+        - Retries with backoff
+        - Increase shards
+        - Ensure your partition key is a good one
+    
+- AWS Kinesis API - Consumeres
+    - Can use a normal consumer
+    - Can use Kinesis Client Library
+        - KCL uses DynamoDB to checkpoint offsets
+        - KCL uses DynamoDB to track other workers and share the work amongst shards
+
+# Kinesis Security
+- Control Access / Authorization using IAM policies
+- Encryption in flight using HTTPS endpoints
+- Encryption at rest using KMS
+- Possibility to encrypt / decryption data client side
+- VPC Endpoints available for Kinesis to access within VPC
+
+- AWS Kinesis Data Anlytics
+    - Perform realtime analytics on Kinesis Streams using SQL
+    - Kinesis Data Analytics
+        - Auto scaling
+        - Manged : no server  to provision 
+        - Continuous: real time
+    - pay for actual consumption rate
+    - Can create streams out of the real time queries
+
+- AWS Kinesis Firehose
+    - Fully managed service
+    - Near Real time
+    - Load data into redshift / amanzon s3 / elesticsearch / splunk
+    - Automatic scaling
+    - Support many data format
+    - Pay for the amount of data going through firehose
+
+- SQS vs SNS vs Kinesis
+    - SQS
+        - Consumer pull data
+        - Data is deleted after being consumed
+        - can have as many workers as we want
+        - No need to provision throughput
+        - no ordering guarantee
+        - individual message delay capability
+    - SNS
+        - Push data to many subsribers
+        - Up to 10,000,000 subsribers
+        - Data is not persisted
+        - Pub/Sub
+        - Up to 100,000 topics
+        - No need to provision throughput
+        - Integrates with SQS for fan-out architecture pattern
+    - Kinesis
+        - Consumers pull data
+        - As many consumers as we want
+        - Possibility to replay data
+        - Meant for real-time big data analytics and ETL
+        - Ordering at the shard level
+        - Data expires after x days
+        - Must provision throughput
+
+# Amazon MQ
+- SQS, SNS are "cloud native" services, and they're using proprietary protocols from AWS
+- Traditional applications running from on-premise may use open protocols such as MQTT, AMQP, STOMP, Openwire, WSS
+- When migrating to the cloud, instread of re-engineering the application to use SQS and SNS, we can use Amazon MQ
+- Amazon MQ = managed Apache ActiveMQ
+
+- Amazon MQ doesn't "scale" as much as SQS / SNS
+- Amazon MQ runs on a dedicated machine, can run in HA with failover
+- Amazon MQ has both queue feature (~SQS) and topic features
