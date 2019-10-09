@@ -870,3 +870,38 @@ dynamic port
 - Amazon MQ doesn't "scale" as much as SQS / SNS
 - Amazon MQ runs on a dedicated machine, can run in HA with failover
 - Amazon MQ has both queue feature (~SQS) and topic features
+
+# Serverless Solution Architecture : Mobile Application
+- Expose as REST API with HTTPS
+- Serverless architecture
+- Users should be able to directly interact with their own folder in S3
+- Users should authenticate through a managed serverless service
+- The users can write and read to-dos, but they mostly read them
+- The database should scale, and have some high read throughput
+
+- Solution
+    - Serverless REST API: HTTPS, API Gateway, Lambda, DynamoDB
+    - Using Cognito to generate temporary credentials with STS to access S3 bucket with restricted policy. App users can directly access AWS resources this way. Pattern can be applied to DynamoDB, Lambda
+    - Caching the reads on DynamoDB using DAX
+    - Caching the REST requests at the API Gateway level
+    - Security for authentication and authorization with Cognito, STS
+
+# Serverless hosted website
+- This website should scale globally
+- Blogs are rarely written, but often read
+- Some of the website is purely static files, the rest is a dynamic REST API
+- Caching must be implemented where possible
+- Any new users that subsribes should receive a welcome email
+- Any photo uploaded to the blog should have a thumbnail generated
+
+# Database
+- Database Types
+    - RDBMS : RDS, Aurora - great for joins
+    - NoSQL : DynamoDB, ElastiCache, Neptune - no joines, no SQL
+    - Object Store : S3, Glacier
+    - Data Warehouse: Redshift, Athena
+    - Graph: Neptune
+
+# RDS Overview
+
+# Aurora
