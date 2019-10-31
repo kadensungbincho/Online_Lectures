@@ -905,3 +905,149 @@ dynamic port
 # RDS Overview
 
 # Aurora
+
+# CloudWatch Dashboards
+
+# AWS CloudWatch Logs
+
+# AWS CloudWatch Alarms
+
+# AWS CloudWatch Events
+
+# AWS CloudTrail
+- Provides governance, compliance and audit for your AWS Account
+- CloudTrail is enabled by default
+- Get an history of events / API calls maed within your AWS accouns by:
+    - Console
+    - SDK
+    - CLI
+    - AWS Services
+- Can put logs from CloudTrail into CloudWatch Logs
+
+# AWS Security & Encryption
+- Encryption in flight (SSL)
+    - Data is encrypted before sending and decrypted after receiving
+    - SSL certificates help with encryption (HTTPS)
+    - Encryption in flight ensures no MITM (man in the middle attack) can happen
+
+
+# AWS Parameter Store
+- Secure storage for configuration and secrets
+- Optional Seamless Encryption using KMS
+- Serverless, scalable, durable, easy SDK, free
+- Version tracking of configurations / secrets
+- Configuration management using path & IAM
+- Notifications with CloudWatch Events
+- Integration with CloudFormation
+
+# AWS STS - Security Token Service
+- Allows to grant limited and temporary access to AWS resources
+- Token is valid for up to one hour
+- Cross Account Access
+    - Allows users from one AWS account access resources in another
+- Federation (Active Directory)
+    - Provides a non-AWS user with temporary AWS access by linking users Active Directory credentials
+    - Uses SAML (Security Assertion markup language)
+    - Allows Single Sign On (SSO) which enables users to log in to AWS console without assigning IAM credentials
+- Federation with third party providers / Cognito
+    - Used mainly in web and mobile applications
+    - Makes use of Facebook / Google / Amazon etc to federate them
+
+# What's Identity Federation?
+
+
+# VPC
+
+# CIDR(Classless Inter-Domain Routing), private vs public IP
+
+# Default VPC Walkthrough
+- All new accounts have a default VPC
+- New instances are launched into default VPC if no subnet is specified
+- Default VPC have internet
+
+# VPC Overview and Hands On
+- VPC = Virtual Private Cloud
+- Your VPC CIDR should not overlap with your other networks
+
+# Subnets - IPv4
+- AWS reserves 5 IPs address (first 4 and last 1 IP address) in each Subnet
+- These 5 Ips are not available for use and cannot be assigned to an instance
+
+# Internet Gateways & Route Table
+- Internet Gateways 
+    - Internet gateways helps our VPC instances connect with the internet
+    - It scales horizontally and is HA and redundant
+    - Must be created separately from VPC
+    - One VPC can only be attached to one IGW and vice versa
+    - Internet Gateway is also a NAT for the instances that have a public IPv4
+    - Internet Gateways on their own do not allow internet access
+    - Route tables must also be edited
+
+# NAT instances - Network Address Translation
+- Allows instances in the private subnets to connect to the internet
+- Must be launched in a public subnet
+- Must disable EC2 flag: Source / Destination
+
+- Amazon Linux AMI pre-configured are available
+- Not highly available / resilient setup out of the box
+- => Would need to create ASG in multi AZ + resilient user-data script
+- Internet traffic bandwidth depends on EC2 instance performance
+- Must manage security groups & rules
+    - Inbound
+        - Allow HTTP / HTTPS traffic coming from Private Subnets
+        - Allow SSH from your home network (access is provided through Internet Gateway)
+    - Outbound  
+        - Allow HTTP / HTTPS traffic to the internet
+
+# NAT Gateway
+    - AWS managed NAT, higher bandwidth, better availability, no admin
+    - Pay by the hour for usage and bandwidth
+    - NAT is created in a specific AZ, uses an EIP
+    - Cannot be used by an instance in that subnet
+    - Requires an IGW
+
+# DNS Resolution in VPC
+- enableDnsSupport 
+    - Default True
+    - 
+
+# Netwokr ACLs & Security Group Incoming Request
+- Network ACLs
+    - NACL are like a firewall which ontrol traffic from and to subnet
+    - Default NACL allows everything outbound and every thing inbound
+    - One NACL per Subnet, new Subnotes are assigned the Default NACL
+    - Define NACL rules:
+        - Rules have a number and higher precedence with a lower number
+        - e.g. if you define \# 100 
+
+# VPC Peering
+- Connect tow VPC, privately using AWS' network
+- Make them behave as if they were in the same network
+- Must not have overlapping CIDR
+- VPC Peering connection is not transitive
+- You can do VPC peering with another AWS account
+- You must update route tavles in each VPC's subnets to ensure instances can communicate
+
+# VPC Endpoint
+
+# Flow Logs
+- Capture infromation about IP traffic going into your interfaces
+    - VPC flow logs
+    - subnet flow logs
+    - elastic network interface flow logs
+- Helps to monitor & Troubleshoot connectivity
+
+# Bastion Hosts
+- We can use a Bastion host to SSH into ouy private instances
+- The bastion is in the public subnet which is then connected to all other private subnets
+- Bastion Host security 
+
+# Site to Site VPN
+
+# Direct Connect
+
+# Egress Only Internet Gateway
+- Egress only Internet Gateway is for IPv6 only
+- Similar function as a NAT, but a NAT is for IPv4
+- Good to know: IPv6 are all public addresses
+- Therefore all our instances with IPv6 are publicly accessible

@@ -1,0 +1,15 @@
+version: '3'
+networks:
+  default:
+    external:
+      name: udemy-rhce
+
+services:
+  centos7_main:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: centos7_main
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    tmpfs: /run
