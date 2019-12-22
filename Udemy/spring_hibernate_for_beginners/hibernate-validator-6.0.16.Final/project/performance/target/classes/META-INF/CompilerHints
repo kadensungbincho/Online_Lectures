@@ -1,0 +1,11 @@
+dontinline,*.*_all_jmhStub
+dontinline,*.*_avgt_jmhStub
+dontinline,*.*_sample_jmhStub
+dontinline,*.*_ss_jmhStub
+dontinline,*.*_thrpt_jmhStub
+inline,org/hibernate/validator/performance/cascaded/CascadedValidation.testCascadedValidation
+inline,org/hibernate/validator/performance/cascaded/CascadedWithLotsOfItemsAndMoreConstraintsValidation.testCascadedValidationWithLotsOfItems
+inline,org/hibernate/validator/performance/cascaded/CascadedWithLotsOfItemsValidation.testCascadedValidationWithLotsOfItems
+inline,org/hibernate/validator/performance/simple/SimpleValidation.testSimpleBeanValidation
+inline,org/hibernate/validator/performance/statistical/StatisticalValidation.testValidationWithStatisticalGraphDepthAndConstraintValidator
+inline,org/hibernate/validator/performance/unconstrained/UnconstrainedBeanValidation.testUnconstrainedBeanValidation

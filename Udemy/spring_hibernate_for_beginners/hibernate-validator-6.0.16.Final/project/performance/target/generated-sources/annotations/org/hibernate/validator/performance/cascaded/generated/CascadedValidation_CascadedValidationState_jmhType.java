@@ -1,0 +1,4 @@
+package org.hibernate.validator.performance.cascaded.generated;
+public class CascadedValidation_CascadedValidationState_jmhType extends CascadedValidation_CascadedValidationState_jmhType_B3 {
+}
+

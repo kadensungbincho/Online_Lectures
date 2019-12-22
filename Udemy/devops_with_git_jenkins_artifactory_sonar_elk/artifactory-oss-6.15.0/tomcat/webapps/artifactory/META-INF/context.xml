@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+  ~ Artifactory is a binaries repository manager.
+  ~ Copyright (C) 2018 JFrog Ltd.
+  ~
+  ~ Artifactory is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Affero General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Artifactory is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU Affero General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Affero General Public License
+  ~ along with Artifactory.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<!-- context to be used in dev mode only. configure dev starters to use the default context.xml or move this resource to the test resources -->
+<Context>
+    <!-- disable session persistence across Tomcat restarts -->
+    <Manager pathname=""/>
+
+    <!-- disable jar scanning for web fragments, annotations and tag libraries -->
+    <JarScanner>
+        <JarScanFilter defaultPluggabilityScan="false" pluggabilitySkip="*" pluggabilityScan="" defaultTldScan="false"/>
+    </JarScanner>
+</Context>

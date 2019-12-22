@@ -1,0 +1,4 @@
+package org.hibernate.validator.performance.statistical.generated;
+public class StatisticalValidation_StatisticalValidationState_jmhType extends StatisticalValidation_StatisticalValidationState_jmhType_B3 {
+}
+

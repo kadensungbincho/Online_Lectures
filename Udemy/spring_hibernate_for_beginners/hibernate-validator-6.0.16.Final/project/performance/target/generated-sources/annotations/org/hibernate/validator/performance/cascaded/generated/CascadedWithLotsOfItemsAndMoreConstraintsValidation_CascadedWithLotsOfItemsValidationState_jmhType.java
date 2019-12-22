@@ -1,0 +1,4 @@
+package org.hibernate.validator.performance.cascaded.generated;
+public class CascadedWithLotsOfItemsAndMoreConstraintsValidation_CascadedWithLotsOfItemsValidationState_jmhType extends CascadedWithLotsOfItemsAndMoreConstraintsValidation_CascadedWithLotsOfItemsValidationState_jmhType_B3 {
+}
+

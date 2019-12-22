@@ -1,0 +1,59 @@
+<!--
+  ~ Artifactory is a binaries repository manager.
+  ~ Copyright (C) 2018 JFrog Ltd.
+  ~
+  ~ Artifactory is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Affero General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Artifactory is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU Affero General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Affero General Public License
+  ~ along with Artifactory.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<!DOCTYPE html>
+<html ng-app="artifactory.ui">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.3184.ico"/>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/vendorStyles.3184.css"/>
+    <link rel="stylesheet" href="css/application.3184.css"/>
+
+    <title></title>
+</head>
+
+<body jf-body-class ng-class="{'load-complete':jfBodyClass.isLoadCompleted()}">
+<jf-spinner domain="body"></jf-spinner>
+<toaster-container toaster-options="{'position-class': 'toast-top-center', 'newest-on-top': true}"></toaster-container>
+
+<ui-view></ui-view>
+
+<!-- Javascript -->
+<script type="text/javascript" src="vendorScripts.3184.js"></script>
+<script type="text/javascript" src="templates.3184.js"></script>
+
+<!-- Application code -->
+<script src="artifactory_core.3184.js"></script>
+<script src="artifactory_services.3184.js"></script>
+<script src="artifactory_dao.3184.js"></script>
+
+<script src="artifactory_ui.3184.js"></script>
+<script src="artifactory_ui_components.3184.js"></script>
+<script src="artifactory_directives.3184.js"></script>
+<script src="artifactory_filters.3184.js"></script>
+
+<script src="artifactory_views.3184.js"></script>
+<script src="artifactory_states.3184.js"></script>
+<script src="artifactory_main.3184.js"></script>
+
+</body>
+</html>

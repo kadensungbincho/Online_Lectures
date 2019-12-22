@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="commons-codec-1.11">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/httpcomponents-client-4.5.10/lib/commons-codec-1.11.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/httpcomponents-client-4.5.10/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/httpcomponents-client-4.5.10/lib/fluent-hc-4.5.10.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/httpcomponents-client-4.5.10/lib/httpclient-4.5.10.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/httpcomponents-client-4.5.10/lib/httpclient-cache-4.5.10.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/httpcomponents-client-4.5.10/lib/httpclient-osgi-4.5.10.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/httpcomponents-client-4.5.10/lib/httpclient-win-4.5.10.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/httpcomponents-client-4.5.10/lib/httpcore-4.4.12.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/httpcomponents-client-4.5.10/lib/httpmime-4.5.10.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/httpcomponents-client-4.5.10/lib/jna-4.5.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/httpcomponents-client-4.5.10/lib/jna-platform-4.5.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

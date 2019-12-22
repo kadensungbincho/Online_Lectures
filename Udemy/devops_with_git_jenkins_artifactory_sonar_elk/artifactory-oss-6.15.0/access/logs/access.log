@@ -1,0 +1,62 @@
+2019-11-22 11:26:27,177 [localhost-startStop-1] [INFO ] (o.j.a.c.JFrogApplicationContextInitializer:74) - Using JFrog Access home at '/Users/a1101256/git/kadensungbincho/Online_Lectures/Udemy/devops_with_git_jenkins_artifactory_sonar_elk/artifactory-oss-6.15.0/access'
+2019-11-22 11:26:37,191 [localhost-startStop-1] [INFO ] (o.j.a.AccessApplication:50) - Starting AccessApplication v4.9.1 on 11ST1101256MN001.local with PID 16716 (/Users/a1101256/git/kadensungbincho/Online_Lectures/Udemy/devops_with_git_jenkins_artifactory_sonar_elk/artifactory-oss-6.15.0/tomcat/webapps/access/WEB-INF/lib/access-application-4.9.1.jar started by a1101256 in /Users/a1101256/git/kadensungbincho/Online_Lectures/Udemy/devops_with_git_jenkins_artifactory_sonar_elk/artifactory-oss-6.15.0/bin)
+2019-11-22 11:26:37,192 [localhost-startStop-1] [INFO ] (o.j.a.AccessApplication:679) - The following profiles are active: production
+2019-11-22 11:26:41,132 [localhost-startStop-1] [INFO ] (o.j.a.s.d.u.AccessJdbcHelperImpl:132) - Database: Apache Derby 10.14.2.0 - (1828579). Driver: Apache Derby Embedded JDBC Driver 10.14.2.0 - (1828579)
+2019-11-22 11:26:41,132 [localhost-startStop-1] [INFO ] (o.j.a.s.d.u.AccessJdbcHelperImpl:135) - Connection URL: jdbc:derby:/Users/a1101256/git/kadensungbincho/Online_Lectures/Udemy/devops_with_git_jenkins_artifactory_sonar_elk/artifactory-oss-6.15.0/data/derby
+2019-11-22 11:26:41,362 [localhost-startStop-1] [INFO ] (o.j.a.s.d.u.AccessJdbcHelperImpl:144) - ***Creating database schema***
+2019-11-22 11:26:41,733 [localhost-startStop-1] [INFO ] (o.j.a.s.d.u.AccessJdbcHelperImpl:160) - Setting new schema baseline to latest version: 3.14
+2019-11-22 11:26:42,215 [localhost-startStop-1] [INFO ] (o.j.c.s.InternalConfigurationServiceBase:151) - Configuration data wasn't found in db. Loading defaults
+2019-11-22 11:26:42,720 [localhost-startStop-1] [INFO ] (o.j.a.m.ConfigMigrationRunner:73) - Current version of access.properties is 1, latest version is 2. Applying migrations.
+2019-11-22 11:26:42,721 [localhost-startStop-1] [INFO ] (o.j.a.m.ConfigMigrationRunner:73) - Migrating access.properties to version 2
+2019-11-22 11:26:42,723 [localhost-startStop-1] [INFO ] (o.j.s.m.MasterKeyBootstrapper:58) - No master.key was supplied (system prop or file), attempting to generate new master.key
+2019-11-22 11:26:43,334 [localhost-startStop-1] [INFO ] (o.j.a.s.s.t.TokenServiceImpl:100) - Scheduling task for revoking expired tokens using cron expression: 0 0 0/1 * * ?
+2019-11-22 11:26:44,493 [localhost-startStop-1] [INFO ] (o.j.a.s.AccessServerBootstrapImpl:119) - [ACCESS BOOTSTRAP] Starting JFrog Access bootstrap...
+2019-11-22 11:26:44,498 [localhost-startStop-1] [INFO ] (o.j.a.s.s.CertificateServiceImpl:390) - [ACCESS BOOTSTRAP] Generating private key and root certificate
+2019-11-22 11:26:44,949 [localhost-startStop-1] [INFO ] (o.j.a.s.m.CertificateMigrationImpl:71) - [Certificate Migration] Recreating root certificate to match current certificate version
+2019-11-22 11:26:44,951 [localhost-startStop-1] [INFO ] (o.j.a.s.m.CertificateMigrationImpl:93) - [Certificate Migration] Creating root certificate for version: null
+2019-11-22 11:26:45,413 [localhost-startStop-1] [INFO ] (o.j.a.s.m.CertificateMigrationImpl:82) - [Certificate Migration] Saved new root certificate in: /Users/a1101256/git/kadensungbincho/Online_Lectures/Udemy/devops_with_git_jenkins_artifactory_sonar_elk/artifactory-oss-6.15.0/access/etc/keys/root.crt
+2019-11-22 11:26:45,766 [localhost-startStop-1] [INFO ] (o.j.a.s.r.s.GrpcServerImpl:55) - Starting gRPC Server on port 8045
+2019-11-22 11:26:51,522 [localhost-startStop-1] [INFO ] (o.j.a.s.r.s.GrpcServerImpl:72) - gRPC Server started, listening on 8045
+2019-11-22 11:26:51,532 [localhost-startStop-1] [INFO ] (o.j.a.s.AccessServerBootstrapImpl:181) - [ACCESS BOOTSTRAP] Updating server '1be937e2-0fbc-4f7a-a78f-61914b0ff667' private key finger print to: a644973508790013fc07f465044b7ecd4fd945b82324544f76597c13305d1aa7
+2019-11-22 11:26:51,580 [localhost-startStop-1] [INFO ] (o.j.a.s.AccessServerBootstrapImpl:360) - [ACCESS BOOTSTRAP] No admin user exists - generating an admin user, credentials will be saved to: /Users/a1101256/git/kadensungbincho/Online_Lectures/Udemy/devops_with_git_jenkins_artifactory_sonar_elk/artifactory-oss-6.15.0/access/etc/generated.creds
+2019-11-22 11:26:51,694 [localhost-startStop-1] [INFO ] (o.j.a.s.AccessServerBootstrapImpl:407) - [ACCESS BOOTSTRAP] Writing updated credentials to the bundling Artifactory: /Users/a1101256/git/kadensungbincho/Online_Lectures/Udemy/devops_with_git_jenkins_artifactory_sonar_elk/artifactory-oss-6.15.0/etc/security/access/bootstrap.creds
+2019-11-22 11:26:51,702 [localhost-startStop-1] [INFO ] (o.j.a.s.AccessServerBootstrapImpl:329) - [ACCESS BOOTSTRAP] Creating default access admin permission 'jfac@01dt8exm8trrhv1ts9hgtq0xch-admin'
+2019-11-22 11:26:51,729 [localhost-startStop-1] [INFO ] (o.j.a.s.AccessServerBootstrapImpl:352) - [ACCESS BOOTSTRAP] Assigning user 'access-admin' to admin permission 'jfac@01dt8exm8trrhv1ts9hgtq0xch-admin'.
+2019-11-22 11:26:51,766 [localhost-startStop-1] [INFO ] (o.j.a.s.AccessServerBootstrapImpl:142) - [ACCESS BOOTSTRAP] JFrog Access bootstrap finished.
+2019-11-22 11:26:52,686 [localhost-startStop-1] [INFO ] (o.j.a.c.RefreshableScheduledJob:53) - Scheduling heartbeat task to run every 5 seconds
+2019-11-22 11:26:52,690 [localhost-startStop-1] [INFO ] (o.j.a.c.RefreshableScheduledJob:53) - Scheduling federationCleanupService task to run every 1209600 seconds
+2019-11-22 11:26:54,496 [localhost-startStop-1] [INFO ] (o.j.a.AccessApplication:59) - Started AccessApplication in 33.428 seconds (JVM running for 35.283)
+2019-11-22 11:27:07,456 [http-nio-8040-exec-5] [INFO ] (o.j.a.s.s.r.NodeRegistryServiceImpl:43) - join: request to "join" with serviceId jfrt@01dt8ey33tf6rs0e3jkkfm1yrx and nodeId b6095e978bc2a6fc:-2cbcd7c2:16e90ee84bf:-8000
+2019-11-22 11:27:07,706 [http-nio-8040-exec-5] [INFO ] (o.j.a.c.RefreshableScheduledJob:53) - Scheduling federationCleanupService task to run every 1209600 seconds
+2019-11-22 11:27:07,821 [http-nio-8040-exec-5] [INFO ] (o.j.a.s.s.r.NodeRegistryServiceImpl:59) - join: success returning token with id f529ba49-e120-4524-87fd-ef8dc4384034 nodeId b6095e978bc2a6fc:-2cbcd7c2:16e90ee84bf:-8000 serviceId jfrt@01dt8ey33tf6rs0e3jkkfm1yrx
+2019-11-22 11:27:08,416 [http-nio-8040-exec-2] [INFO ] (o.j.a.s.s.b.AccessImporterExporterImpl:63) - Exporting users...
+2019-11-22 11:27:08,460 [http-nio-8040-exec-2] [INFO ] (o.j.a.s.s.b.AccessImporterExporterImpl:63) - Exporting tokens...
+2019-11-22 11:27:08,467 [http-nio-8040-exec-2] [INFO ] (o.j.a.s.s.b.AccessImporterExporterImpl:63) - Exporting federation_events...
+2019-11-22 11:27:08,470 [http-nio-8040-exec-2] [INFO ] (o.j.a.s.s.b.AccessImporterExporterImpl:63) - Exporting federation_servers...
+2019-11-22 11:27:08,485 [http-nio-8040-exec-2] [INFO ] (o.j.a.s.s.b.AccessImporterExporterImpl:63) - Exporting permissions...
+2019-11-22 11:27:08,504 [http-nio-8040-exec-2] [INFO ] (o.j.a.s.s.b.AccessImporterExporterImpl:63) - Exporting groups...
+2019-11-22 11:27:08,511 [http-nio-8040-exec-2] [INFO ] (o.j.a.s.s.b.AccessImporterExporterImpl:63) - Exporting config...
+2019-11-22 11:27:08,523 [http-nio-8040-exec-2] [INFO ] (o.j.a.s.s.b.AccessImporterExporterImpl:63) - Exporting encryption...
+2019-11-22 11:27:08,524 [http-nio-8040-exec-2] [INFO ] (o.j.a.s.s.b.AccessImporterExporterImpl:63) - Exporting home...
+2019-11-22 19:48:31,849 [jf-access-task1] [INFO ] (o.j.a.s.s.c.s.HeartbeatJob:69) - Refreshing server state after it was considered as stale by peers [last previous successful update 1574390654809]
+2019-11-22 19:48:31,881 [jf-access-task1] [INFO ] (o.j.c.s.InternalConfigurationServiceBase:154) - Loading configuration from db finished successfully
+2019-11-27 23:52:06,587 [localhost-startStop-1] [INFO ] (o.j.a.c.JFrogApplicationContextInitializer:74) - Using JFrog Access home at '/Users/a1101256/git/kadensungbincho/Online_Lectures/Udemy/devops_with_git_jenkins_artifactory_sonar_elk/artifactory-oss-6.15.0/access'
+2019-11-27 23:52:06,592 [localhost-startStop-1] [INFO ] (o.j.a.AccessApplication:50) - Starting AccessApplication v4.9.1 on 11ST1101256MN001.local with PID 91670 (/Users/a1101256/git/kadensungbincho/Online_Lectures/Udemy/devops_with_git_jenkins_artifactory_sonar_elk/artifactory-oss-6.15.0/tomcat/webapps/access/WEB-INF/lib/access-application-4.9.1.jar started by a1101256 in /Users/a1101256/git/kadensungbincho/Online_Lectures/Udemy/devops_with_git_jenkins_artifactory_sonar_elk/artifactory-oss-6.15.0/bin)
+2019-11-27 23:52:06,593 [localhost-startStop-1] [INFO ] (o.j.a.AccessApplication:679) - The following profiles are active: production
+2019-11-27 23:52:10,717 [localhost-startStop-1] [INFO ] (o.j.a.s.d.u.AccessJdbcHelperImpl:132) - Database: Apache Derby 10.14.2.0 - (1828579). Driver: Apache Derby Embedded JDBC Driver 10.14.2.0 - (1828579)
+2019-11-27 23:52:10,717 [localhost-startStop-1] [INFO ] (o.j.a.s.d.u.AccessJdbcHelperImpl:135) - Connection URL: jdbc:derby:/Users/a1101256/git/kadensungbincho/Online_Lectures/Udemy/devops_with_git_jenkins_artifactory_sonar_elk/artifactory-oss-6.15.0/data/derby
+2019-11-27 23:52:11,735 [localhost-startStop-1] [INFO ] (o.j.c.s.InternalConfigurationServiceBase:154) - Loading configuration from db finished successfully
+2019-11-27 23:52:12,323 [localhost-startStop-1] [INFO ] (o.j.s.m.MasterKeyBootstrapper:54) - Found master.key file at /Users/a1101256/git/kadensungbincho/Online_Lectures/Udemy/devops_with_git_jenkins_artifactory_sonar_elk/artifactory-oss-6.15.0/etc/security/master.key, using it as master.key
+2019-11-27 23:52:12,646 [localhost-startStop-1] [INFO ] (o.j.a.s.s.t.TokenServiceImpl:100) - Scheduling task for revoking expired tokens using cron expression: 0 0 0/1 * * ?
+2019-11-27 23:52:13,050 [localhost-startStop-1] [INFO ] (o.j.a.s.AccessServerBootstrapImpl:119) - [ACCESS BOOTSTRAP] Starting JFrog Access bootstrap...
+2019-11-27 23:52:13,443 [localhost-startStop-1] [INFO ] (o.j.a.s.r.s.GrpcServerImpl:55) - Starting gRPC Server on port 8045
+2019-11-27 23:52:14,301 [localhost-startStop-1] [INFO ] (o.j.a.s.r.s.GrpcServerImpl:72) - gRPC Server started, listening on 8045
+2019-11-27 23:52:14,327 [localhost-startStop-1] [INFO ] (o.j.a.s.AccessServerBootstrapImpl:181) - [ACCESS BOOTSTRAP] Updating server '1be937e2-0fbc-4f7a-a78f-61914b0ff667' private key finger print to: a644973508790013fc07f465044b7ecd4fd945b82324544f76597c13305d1aa7
+2019-11-27 23:52:14,461 [localhost-startStop-1] [INFO ] (o.j.a.s.AccessServerBootstrapImpl:142) - [ACCESS BOOTSTRAP] JFrog Access bootstrap finished.
+2019-11-27 23:52:15,435 [localhost-startStop-1] [INFO ] (o.j.a.c.RefreshableScheduledJob:53) - Scheduling heartbeat task to run every 5 seconds
+2019-11-27 23:52:15,439 [localhost-startStop-1] [INFO ] (o.j.a.c.RefreshableScheduledJob:53) - Scheduling federationCleanupService task to run every 1209600 seconds
+2019-11-27 23:52:18,013 [localhost-startStop-1] [INFO ] (o.j.a.AccessApplication:59) - Started AccessApplication in 12.715 seconds (JVM running for 14.184)
+2019-11-27 23:52:22,728 [http-nio-8040-exec-5] [INFO ] (o.j.a.s.s.r.NodeRegistryServiceImpl:43) - join: request to "join" with serviceId jfrt@01dt8ey33tf6rs0e3jkkfm1yrx and nodeId 1efbc544dcdb0eea:-1fb4b093:16ead590d4d:-8000
+2019-11-27 23:52:22,987 [http-nio-8040-exec-5] [INFO ] (o.j.a.s.s.r.NodeRegistryServiceImpl:59) - join: success returning token with id fe2db988-967f-4d33-ac2a-f0019825d849 nodeId 1efbc544dcdb0eea:-1fb4b093:16ead590d4d:-8000 serviceId jfrt@01dt8ey33tf6rs0e3jkkfm1yrx
+2019-11-28 00:13:33,514 [jf-access-task1] [INFO ] (o.j.a.s.s.c.s.HeartbeatJob:69) - Refreshing server state after it was considered as stale by peers [last previous successful update 1574867321188]
+2019-11-28 00:13:33,525 [jf-access-task1] [INFO ] (o.j.c.s.InternalConfigurationServiceBase:154) - Loading configuration from db finished successfully

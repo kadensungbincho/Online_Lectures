@@ -1,0 +1,4 @@
+package org.hibernate.validator.performance.unconstrained.generated;
+public class UnconstrainedBeanValidation_ValidationState_jmhType extends UnconstrainedBeanValidation_ValidationState_jmhType_B3 {
+}
+

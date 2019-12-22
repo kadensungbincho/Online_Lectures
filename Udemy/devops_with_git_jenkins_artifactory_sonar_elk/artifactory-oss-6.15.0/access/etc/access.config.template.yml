@@ -1,0 +1,115 @@
+# DO NOT IMPORT THIS FILE.
+# This file describes the JFrog Access YAML configuration file and should only be
+# as a reference.
+#
+# To change the configuration in an Access service, follow these instructions:
+# 1. Find the value you want to update
+# 2. Set the value in the access.config.latest.yml file under [access-home]/etc
+# 3. Change access.config.latest.yml to access.config.import.yml
+# 4. Restart Access
+---
+security:
+  password-policy:    # users' password policy
+    uppercase: 0      # minimum number of uppercase letters that the password must contain
+    lowercase: 0      # minimum number of lowercase letters that the password must contain
+    digit: 0          # minimum number of digits that the password must contain
+    length: 4         # minimum length of the password
+    not-match-old: true # should access allow setting a new password to the same one currently set for the user
+  user-lock-policy:
+    attempts: 0                     # number of failed login attempts to allow before locking a user. 0 (default) means the feature is disabled
+    seconds-to-unlock: 1            # number of seconds to wait before re-enabling login for a user that has been locked out
+    password-expiry-days: 0         # number of days before a password expires. Set by Artifactory
+    admin-password-expirable: false # does the access admin password expire
+  audit:
+    enabled: true           # should access log all requests to a specific file or not
+  password-strength: 8      # bcrypt password strength. A higher value means better security, but password verification will be slower
+  local-interfaces-expire-in-seconds: 600 # number of seconds for which local server ips should be cached for users’ allowed-ips
+  encryption-enabled: true  # specifies if users’ custom data encryption is allowed
+http:
+  port: 8340         # access port
+  tls-enabled: true  # specifies if https should be enabled or not
+grpc:
+  port: 0              # the grpc port. 0 indicates that Access should find a random available port
+router:
+  port: 0           # the port for the router (grpc)
+token:
+  refresh-expiry: 86400  # grace period (seconds) during which an expired token can still be refreshed
+  default-expiry: 3600   # default expiry period (seconds) when token expiry is set to null
+  allow-wildcard-audience: true #if to allow wildcard audiene, i.e. '*', default true
+  cache:
+    expire-after-write-seconds: 60  # number of seconds Access waits before deleting an entry from the cache
+    maximum-size: 1000              # maximum number of tokens Access allows in the cache
+  revocation:
+    minimum-revocable-expiry: -1  # (seconds) token with lifespan (issuedAt-expiry) below this value will not be revocable. (tokens without expiry are always revocable) set to -1 to make all tokens with expiry non-revocable (default).
+task:
+  revoke-expired-tokens-cron: "0 0 0/1 * * ?"  # cron expression defining when the "revoke expired token" job should run
+  heartbeat:
+    interval-seconds: 5         # interval between successive runs of the heartbeat job
+    consider-stale-seconds: 30  # the time period (seconds) a server can remain unresponsive before being considered stale in the cluster
+cluster:
+  sync:
+    timeout-millis: 100                # initial time (ms) to wait before retrying a request
+    socket-timeout-millis: 5000        # time to wait (ms) before giving up on executing a REST call on another server
+    exponential-backoff-multiplier: 2  # number by which the retry timeout should be multiplied before a subsequent retry. For example, by default, the third retry will happen after 200 ms
+    number-of-retries: 3               # maximum number of retries
+    backoff-max-delay-millis: 1000     # maximum time between successive retries regardless of other settings
+    force-rest: false                  # whether to force rest in grpc sync
+    force-grpc: false                  # whether to force grpc in grpc sync when syncing over https
+federation:
+  outbound:                    # outbound configuration specifies parameters for sending data
+    entity-types-to-sync:      # entity types to sync as part of federation (default - used if not configured for server)
+      - users
+      - groups
+      - permissions
+      - tokens
+    exclude-users: ["access-admin"] # do not put this user in the federated server (must be an array)
+    buffer-wait-millis: 30000  # amount of time (ms) data should be accumulated before being sent
+    buffer-max-size: 500       # maximum number of events that can be accumulated before triggering sending of data
+    consider-stale-hours: 168  # time (hours) server can remain unresponsive before being considered stale
+    maximum-future-time-diff-millis: 60000  # maximum difference between received data timestamp to current timestamp of the server that is allowed
+    timeout-millis: 3000               # initial wait between retries
+    exponential-backoff-multiplier: 2  # number by which the retry timeout should be multiplied before a subsequent retry. For example, by default, the third retry will happen after 6000 ms
+    initial-server-grace-period-millis: 1000 # how long to wait for the first query (due to load time etc)
+    number-of-retries: 3               # maximum number of retries
+    backoff-max-delay-millis: 10000    # maximum time between successive retries regardless of other settings
+    delay-on-error-millis: 300000      # time to wait (ms) after an error occurred
+    socket-timeout-millis: 5000        # time to wait (ms) before giving up on executing a REST call on another server
+    delete-stale-events-factor: 2.0    # how much to multiply consider-stale-hours before deleting any federation events, even if not sent
+    servers:
+      - name: hello-1                    # the name of the target server
+        url: "http:#example.com/access"  # the target server url
+        active: true                     # whether the federation to this server is enabled or not
+        entity-types-to-sync:            # entity types to sync as part of federation. if not configured - fallback to outbound entity types to sync
+        - users
+        - groups
+        - permissions
+        - tokens
+        permission-filters:             # include and exclude patterns filtering permissions to federate per server
+          include-patterns:
+            - ".*a.*"
+            - ".*b.*"
+          exclude-patterns:
+            - ".*aa.*"
+#      - name: hello-2                    # you can configure any number of target servers
+#        url: "http:#example2.com/access"
+  inbound:                # inbound configuration specifies receiving data
+    number-of-retries: 3  # number of retries to consume the incoming data
+    service-id-mapping:
+    - from: jfrt@1234567890abcdef    # service id to change from for permissions and tokens
+      to: jfrt@fedcba0987654321      # service id to change to
+    - from: jfbt@abcdefabcdefabcdef  # any number of server mappings can be specified
+      to: jfbt@aaaaaaaaaaaaaaaaa
+    backoff-max-delay-millis: 30000   # maximum time between successive retries regardless of other settings
+    exponential-backoff-multiplier: 2 # number by which the retry timeout should be multiplied before a subsequent retry. For example, by default, the third retry will happen after 6000 ms
+    timeout-millis: 1000              # initial wait between retries
+proxy:
+  host: "localhost"     # proxy's host
+  port: 4567            # proxy's port
+db:
+  batch-size: 2000
+licenses:               # should only be set by Artifactory
+  - server-name: "hello"
+    key:         "veryLongLicense"
+max-config-files-to-retain: 10  # maximum number of configuration file versions to save after being updated
+schema-version: 1         # internal for future use
+do-not-import-this-file   # Ignore: a marker to prevent import of this file

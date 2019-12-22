@@ -1,0 +1,2 @@
+2019-11-22 11:27:07,748 [AUDIT] Token created by 'anonymous': tokenId='f529ba49-e120-4524-87fd-ef8dc4384034', issuer='jfrt@01dt8ey33tf6rs0e3jkkfm1yrx', subject='jfrt@01dt8ey33tf6rs0e3jkkfm1yrx', expiry=none, refreshable=false
+2019-11-27 23:52:22,878 [AUDIT] Token created by 'anonymous': tokenId='fe2db988-967f-4d33-ac2a-f0019825d849', issuer='jfrt@01dt8ey33tf6rs0e3jkkfm1yrx', subject='jfrt@01dt8ey33tf6rs0e3jkkfm1yrx', expiry=none, refreshable=false
