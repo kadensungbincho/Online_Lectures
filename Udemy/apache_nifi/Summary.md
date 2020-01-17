@@ -1,0 +1,2 @@
+# Nifi
+- How to https://nifi.apache.org/docs/nifi-docs/html/getting-started.html#downloading-and-installing-nifi

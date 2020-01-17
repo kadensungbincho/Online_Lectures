@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+  <classpathentry kind="src" path="src/test/java" output="target/test-classes" including="**/*.java"/>
+  <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
+  <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/embed/tomcat-embed-core/8.0.28/tomcat-embed-core-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/embed/tomcat-embed-core/8.0.28/tomcat-embed-core-8.0.28-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/embed/tomcat-embed-logging-juli/8.0.28/tomcat-embed-logging-juli-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/embed/tomcat-embed-logging-juli/8.0.28/tomcat-embed-logging-juli-8.0.28-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/embed/tomcat-embed-jasper/8.0.28/tomcat-embed-jasper-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/embed/tomcat-embed-jasper/8.0.28/tomcat-embed-jasper-8.0.28-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/embed/tomcat-embed-el/8.0.28/tomcat-embed-el-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/embed/tomcat-embed-el/8.0.28/tomcat-embed-el-8.0.28-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jdt/core/compiler/ecj/4.4.2/ecj-4.4.2.jar" sourcepath="M2_REPO/org/eclipse/jdt/core/compiler/ecj/4.4.2/ecj-4.4.2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/tomcat-jasper/8.0.28/tomcat-jasper-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/tomcat-jasper/8.0.28/tomcat-jasper-8.0.28-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/tomcat-servlet-api/8.0.28/tomcat-servlet-api-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/tomcat-servlet-api/8.0.28/tomcat-servlet-api-8.0.28-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/tomcat-juli/8.0.28/tomcat-juli-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/tomcat-juli/8.0.28/tomcat-juli-8.0.28-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/tomcat-jsp-api/8.0.28/tomcat-jsp-api-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/tomcat-jsp-api/8.0.28/tomcat-jsp-api-8.0.28-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/tomcat-el-api/8.0.28/tomcat-el-api-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/tomcat-el-api/8.0.28/tomcat-el-api-8.0.28-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/tomcat-jasper-el/8.0.28/tomcat-jasper-el-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/tomcat-jasper-el/8.0.28/tomcat-jasper-el-8.0.28-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/tomcat-api/8.0.28/tomcat-api-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/tomcat-api/8.0.28/tomcat-api-8.0.28-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/tomcat-util-scan/8.0.28/tomcat-util-scan-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/tomcat-util-scan/8.0.28/tomcat-util-scan-8.0.28-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/tomcat/tomcat-util/8.0.28/tomcat-util-8.0.28.jar" sourcepath="M2_REPO/org/apache/tomcat/tomcat-util/8.0.28/tomcat-util-8.0.28-sources.jar"/>
+</classpath>
