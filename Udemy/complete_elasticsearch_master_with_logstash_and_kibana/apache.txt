@@ -1,0 +1,47 @@
+input 
+{
+	file {
+		path => "/Users/a1101256/es/logs/logs"
+		type => "logs"
+		start_position => "beginning"
+	}
+	
+}
+
+filter
+{
+	grok{
+		match => {
+			"message" => "%{COMBINEDAPACHELOG}"
+		}
+	}
+	mutate{
+		convert => { "bytes" => "integer" }
+	}
+	date {
+		match => [ "timestamp", "dd/MMM/YYYY:HH:mm:ss Z" ]
+		locale => en
+		remove_field => "timestamp"
+	}
+	geoip {
+		source => "clientip"
+	}
+	useragent {
+		source => "agent"
+		target => "useragent"
+	}
+}
+
+
+output
+{
+	stdout {
+		codec => dots
+	}
+
+ 	elasticsearch {
+
+  	}
+
+}
+
