@@ -26,4 +26,82 @@
 		<servlet-name>MenusServlet</servlet-name>
 		<url-pattern></url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>MenuSearchServlet</servlet-name>
+		<servlet-class>com.virtualpairprogrammers.servlet.MenuSearchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MenuSearchServlet</servlet-name>
+		<url-pattern>/searchResults.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>MenuOrderServlet</servlet-name>
+		<servlet-class>com.virtualpairprogrammers.servlet.MenuOrderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MenuOrderServlet</servlet-name>
+		<url-pattern>/order.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>OrderReceivedServlet</servlet-name>
+		<servlet-class>com.virtualpairprogrammers.servlet.OrderReceivedServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OrderReceivedServlet</servlet-name>
+		<url-pattern>/orderReceived.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ThankYouServlet</servlet-name>
+		<servlet-class>com.virtualpairprogrammers.servlet.ThankYouServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ThankYouServlet</servlet-name>
+		<url-pattern>/thankYou.html</url-pattern>
+	</servlet-mapping>
+	
+	<session-config>
+		<session-timeout>120</session-timeout>
+	</session-config>
+	
+	<security-role>
+		<role-name>user</role-name>
+	</security-role>
+	
+	<security-role>
+		<role-name>admin</role-name>
+	</security-role>
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>order pages</web-resource-name>
+			<url-pattern>/order.html</url-pattern>
+			<url-pattern>/thankYou.html</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>user</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>staff pages</web-resource-name>
+			<url-pattern>/admin/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/login.html</form-login-page>
+			<form-error-page>/failed-login.html</form-error-page>
+		</form-login-config>
+	</login-config>
 </web-app> 
+
