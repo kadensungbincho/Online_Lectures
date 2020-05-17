@@ -5,6 +5,7 @@ import com.hazelcast.config.ManagementCenterConfig;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,7 +18,7 @@ public class HazelcastConfiguration {
                 .setManagementCenterConfig(
                         new ManagementCenterConfig()
                             .setEnabled(true)
-                            .setUrl("http://localhost:8080/manage-clusters")
+                            .setUrl("http://localhost:8080/mancenter")
                 );
     }
 
@@ -27,7 +28,14 @@ public class HazelcastConfiguration {
     }
 
     @Bean
+    @Qualifier("nameMap")
     public IMap<String, String> nameMap(HazelcastInstance instance) {
         return instance.getMap("nameMap");
+    }
+
+    @Bean
+    @Qualifier("customerMap")
+    public IMap<Long, Customer> customerMap(HazelcastInstance instance) {
+        return instance.getMap("customerMap");
     }
 }
