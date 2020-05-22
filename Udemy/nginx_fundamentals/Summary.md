@@ -929,3 +929,623 @@ http {
 ```
 
 # Http2
+- Http1: textual protocol
+- Http2: binary protocol
+    - greatly reduce the error chance, compressed header, persistent connections, multiplex streaming(image, text or other can be combined into a single stream of data, http1 requires a dedicated connection for each resource), server push 
+
+- Why?
+    - Opening a connection requires resources for handshakes, parsing, etc. Connections are valuable resources 
+    - http1
+        - client requests html
+        - server send index.html
+        - client requests style.css
+        - server send style.css 
+        - client requests js
+        - server send js
+        - -> using 3 connections
+    - http2
+        - client requests index.html
+        - server send index.html
+        - client requests style.css and js through the same connection
+        - server send multiplex stream of both files
+        - -> using 1 connection
+
+- https
+    - requires SSL (HTTPS)
+    
+- Configure nginx
+
+    --with-http_ssl_module --with-http_v2_module 
+
+```bash
+openssl req -x509 -days 10 -nodes -newkey rsa:2048 -keyout /etc/nginx/ssl/self.key -out /etc/nginx/ssl/self.crt
+```
+
+```bash
+user www-data;
+
+worker_processes auto;
+
+events {
+  worker_connections 1024;
+}
+
+http {
+
+  include mime.types;
+
+  server {
+
+    listen 443 ssl http2;
+    server_name 67.205.154.222;
+
+    root /sites/demo;
+
+    index index.php index.html;
+
+    ssl_certificate /etc/nginx/ssl/self.crt;
+    ssl_certificate_key /etc/nginx/ssl/self.key;
+
+    location / {
+      try_files $uri $uri/ =404;
+    }
+
+    location ~\.php$ {
+      # Pass php requests to the php-fpm service (fastcgi)
+      include fastcgi.conf;
+      fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+    }
+  }
+}
+```
+
+# Server Push
+- https://nghttp2.org/
+- https://www.nginx.com/blog/nginx-1-13-9-http2-server-push/
+
+```bash
+apt-get install -y nghttp2-client
+
+nghttp -nys https://67.205.154.222/index.html
+
+# Check whether other resources are also downloaded at the same time
+nghttp -nysa https://67.205.154.222/index.html
+```
+
+```bash
+user www-data;
+
+worker_processes auto;
+
+events {
+  worker_connections 1024;
+}
+
+http {
+
+  include mime.types;
+
+  server {
+
+    listen 443 ssl http2;
+    server_name 67.205.154.222;
+
+    root /sites/demo;
+
+    index index.php index.html;
+
+    ssl_certificate /etc/nginx/ssl/self.crt;
+    ssl_certificate_key /etc/nginx/ssl/self.key;
+
+    location = /index.html {
+        http2_push /style.css;
+        http2_push /thumb.png;
+    }
+
+    location / {
+      try_files $uri $uri/ =404;
+    }
+
+    location ~\.php$ {
+      # Pass php requests to the php-fpm service (fastcgi)
+      include fastcgi.conf;
+      fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+    }
+  }
+}
+```
+
+- After we set the http2_push, check that all the resources delivered when we request like:
+```bash
+nghttp -nys https://67.205.154.222/index.html
+```
+
+# Https
+```bash
+# Make dhparam.pem 
+openssl dhparam 2048 -out /etc/nginx/ssl/dhparam.pem
+```
+
+```bash
+user www-data;
+
+worker_processes auto;
+
+events {
+  worker_connections 1024;
+}
+
+http {
+
+  include mime.types;
+
+  # Redirect all traffic to HTTPS
+  server {
+      listen 80;
+      server_name 67.205.154.222;
+      return 301 https://$host$request_uri;
+  }
+
+  server {
+
+    listen 443 ssl http2;
+    server_name 67.205.154.222;
+
+    root /sites/demo;
+
+    index index.html;
+
+    ssl_certificate /etc/nginx/ssl/self.crt;
+    ssl_certificate_key /etc/nginx/ssl/self.key;
+
+    # Disable SSL
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+
+    # Optimize cipher suits
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
+
+    # Enable DH Params
+    ssl_dhparam /etc/nginx/ssl/dhparam.pem;
+
+    # Enable HSTS
+    add_header Strict-Transport-Security "max-age=31536000" always; # header that let the browser not to load with HTTP
+
+    # SSL sessions
+    ssl_session_cache shared:SSL:40m;
+    ssl_session_timeout 4h;
+    ssl_session_tickets on;
+
+    location / {
+      try_files $uri $uri/ =404;
+    }
+
+    location ~\.php$ {
+      # Pass php requests to the php-fpm service (fastcgi)
+      include fastcgi.conf;
+      fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+    }
+  }
+}
+```
+
+- https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
+- https://hackernoon.com/algorithms-explained-diffie-hellman-1034210d5100
+
+```bash
+curl -Ik http://67.205.154.222/
+```
+
+# Rate limiting
+- Security
+- Reliability
+- Shaping
+
+- Info
+    - https://www.joedog.org/siege-home/
+    - https://www.nginx.com/blog/rate-limiting-nginx/
+    - https://www.freecodecamp.org/news/nginx-rate-limiting-in-a-nutshell-128fe9e0126c/
+
+```bash 
+apt-get install siege
+siege -v -r 2 -c 5 https://67.205.154.222/thumb.png
+
+
+New configuration template added to /root/.siege
+Run siege -C to view the current settings in that file
+** SIEGE 4.0.4
+** Preparing 5 concurrent users for battle.
+The server is now under siege...
+HTTP/1.1 200     0.03 secs:   12627 bytes ==> GET  /thumb.png
+HTTP/1.1 200     0.03 secs:   12627 bytes ==> GET  /thumb.png
+HTTP/1.1 200     0.03 secs:   12627 bytes ==> GET  /thumb.png
+HTTP/1.1 200     0.04 secs:   12627 bytes ==> GET  /thumb.png
+HTTP/1.1 200     0.02 secs:   12627 bytes ==> GET  /thumb.png
+HTTP/1.1 200     0.02 secs:   12627 bytes ==> GET  /thumb.png
+HTTP/1.1 200     0.03 secs:   12627 bytes ==> GET  /thumb.png
+HTTP/1.1 200     0.03 secs:   12627 bytes ==> GET  /thumb.png
+HTTP/1.1 200     0.03 secs:   12627 bytes ==> GET  /thumb.png
+HTTP/1.1 200     0.03 secs:   12627 bytes ==> GET  /thumb.png
+
+Transactions:		          10 hits
+Availability:		      100.00 %
+Elapsed time:		        0.08 secs
+Data transferred:	        0.12 MB
+Response time:		        0.03 secs
+Transaction rate:	      125.00 trans/sec
+Throughput:		        1.51 MB/sec
+Concurrency:		        3.62
+Successful transactions:          10
+Failed transactions:	           0
+Longest transaction:	        0.04
+Shortest transaction:	        0.02
+```
+
+```bash
+user www-data;
+
+worker_processes auto;
+
+events {
+  worker_connections 1024;
+}
+
+http {
+
+  include mime.types;
+
+  # Define limit zone
+  limit_req_zone $request_uri zone=MYZONE:10m rate=1r/s;
+
+  # Redirect all traffic to HTTPS
+  server {
+      listen 80;
+      server_name 67.205.154.222;
+      return 301 https://$host$request_uri;
+  }
+
+  server {
+
+    listen 443 ssl http2;
+    server_name 67.205.154.222;
+
+    root /sites/demo;
+
+    index index.html;
+
+    ssl_certificate /etc/nginx/ssl/self.crt;
+    ssl_certificate_key /etc/nginx/ssl/self.key;
+
+    # Disable SSL
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+
+    # Optimize cipher suits
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
+
+    # Enable DH Params
+    ssl_dhparam /etc/nginx/ssl/dhparam.pem;
+
+    # Enable HSTS
+    add_header Strict-Transport-Security "max-age=31536000" always; # header that let the browser not to load with HTTP
+
+    # SSL sessions
+    ssl_session_cache shared:SSL:40m;
+    ssl_session_timeout 4h;
+    ssl_session_tickets on;
+
+    location / {
+      limit_req zone=MYZONE; # add burst=5 to allow bursting, 1+5=6 connections max, nodelay for allowing the quick response with burst
+      try_files $uri $uri/ =404;
+    }
+
+    location ~\.php$ {
+      # Pass php requests to the php-fpm service (fastcgi)
+      include fastcgi.conf;
+      fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+    }
+  }
+}
+```
+
+- Check fail after applying limit
+```bash
+root@ubuntu-s-1vcpu-1gb-nyc1-01:~# siege -v -r 2 -c 5 https://67.205.154.222/thumb.png
+** SIEGE 4.0.4
+** Preparing 5 concurrent users for battle.
+The server is now under siege...
+HTTP/1.1 200     0.01 secs:   12627 bytes ==> GET  /thumb.png
+HTTP/1.1 503     0.03 secs:     222 bytes ==> GET  /thumb.png
+HTTP/1.1 503     0.01 secs:     222 bytes ==> GET  /thumb.png
+HTTP/1.1 503     0.03 secs:     222 bytes ==> GET  /thumb.png
+HTTP/1.1 503     0.03 secs:     222 bytes ==> GET  /thumb.png
+HTTP/1.1 503     0.03 secs:     222 bytes ==> GET  /thumb.png
+HTTP/1.1 503     0.02 secs:     222 bytes ==> GET  /thumb.png
+HTTP/1.1 503     0.01 secs:     222 bytes ==> GET  /thumb.png
+HTTP/1.1 503     0.02 secs:     222 bytes ==> GET  /thumb.png
+HTTP/1.1 503     0.02 secs:     222 bytes ==> GET  /thumb.png
+
+Transactions:		           1 hits
+Availability:		       10.00 %
+Elapsed time:		        0.06 secs
+Data transferred:	        0.01 MB
+Response time:		        0.21 secs
+Transaction rate:	       16.67 trans/sec
+Throughput:		        0.23 MB/sec
+Concurrency:		        3.50
+Successful transactions:           1
+Failed transactions:	           9
+Longest transaction:	        0.03
+Shortest transaction:	        0.01
+```
+
+# Basic Auth
+```bash
+htpasswd -c /etc/nginx/.htpasswd user1
+```
+
+```bash
+user www-data;
+
+worker_processes auto;
+
+events {
+  worker_connections 1024;
+}
+
+http {
+
+  include mime.types;
+
+  # Define limit zone
+  limit_req_zone $request_uri zone=MYZONE:10m rate=1r/s;
+
+  # Redirect all traffic to HTTPS
+  server {
+      listen 80;
+      server_name 67.205.154.222;
+      return 301 https://$host$request_uri;
+  }
+
+  server {
+
+    listen 443 ssl http2;
+    server_name 67.205.154.222;
+
+    root /sites/demo;
+
+    index index.html;
+
+    ssl_certificate /etc/nginx/ssl/self.crt;
+    ssl_certificate_key /etc/nginx/ssl/self.key;
+
+    # Disable SSL
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+
+    # Optimize cipher suits
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
+
+    # Enable DH Params
+    ssl_dhparam /etc/nginx/ssl/dhparam.pem;
+
+    # Enable HSTS
+    add_header Strict-Transport-Security "max-age=31536000" always; # header that let the browser not to load with HTTP
+
+    # SSL sessions
+    ssl_session_cache shared:SSL:40m;
+    ssl_session_timeout 4h;
+    ssl_session_tickets on;
+
+    location / {
+      auth_basic "Secure Area";
+      auth_basic_user_file /etc/nginx/.htpasswd;
+      try_files $uri $uri/ =404;
+    }
+
+    location ~\.php$ {
+      # Pass php requests to the php-fpm service (fastcgi)
+      include fastcgi.conf;
+      fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+    }
+  }
+}
+```
+
+# Hardening Nginx
+```bash
+htpasswd -c /etc/nginx/.htpasswd user1
+```
+
+```bash
+apt-get update
+```
+
+- Hide nginx versions from header
+- xframe
+- Remove unused nginx default modules like
+    - http_autoindex_module
+
+```bash
+user www-data;
+
+worker_processes auto;
+
+events {
+  worker_connections 1024;
+}
+
+http {
+
+  include mime.types;
+
+  server_tokens off;
+
+  # Redirect all traffic to HTTPS
+  server {
+      listen 80;
+      server_name 67.205.154.222;
+      return 301 https://$host$request_uri;
+  }
+
+  server {
+
+    listen 443 ssl http2;
+    server_name 67.205.154.222;
+
+    root /sites/demo;
+
+    index index.html;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-XSS-Protection "1; mode=block";
+
+    ssl_certificate /etc/nginx/ssl/self.crt;
+    ssl_certificate_key /etc/nginx/ssl/self.key;
+
+    # Disable SSL
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+
+    # Optimize cipher suits
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
+
+    # Enable DH Params
+    ssl_dhparam /etc/nginx/ssl/dhparam.pem;
+
+    # Enable HSTS
+    add_header Strict-Transport-Security "max-age=31536000" always; # header that let the browser not to load with HTTP
+
+    # SSL sessions
+    ssl_session_cache shared:SSL:40m;
+    ssl_session_timeout 4h;
+    ssl_session_tickets on;
+
+    location / {
+      try_files $uri $uri/ =404;
+    }
+
+    location ~\.php$ {
+      # Pass php requests to the php-fpm service (fastcgi)
+      include fastcgi.conf;
+      fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+    }
+  }
+}
+```
+
+# Reverse Proxy & Load Balancing
+
+```bash
+events {}
+
+http {
+    server {
+        listen 8888;
+
+        location / {
+            return 200 "Hello from NGINX";
+        }
+    }
+}
+```
+
+```bash
+nginx -c ~/nginx.conf
+
+curl http://localhost:8888
+
+# run php server 
+php -S localhost:9999 resp.txt
+```
+
+# Reverse Proxy
+- Intermediary between clients and the sources(servers)
+- Common use case
+    - php backend + nginx reverse proxy <-> client
+    - node.js, ruby ...
+
+```bash
+events {}
+
+http {
+    server {
+        listen 8888;
+
+        location / {
+            return 200 "Hello from NGINX";
+        }
+
+        location /php {
+            add_header proxied nginx; # to clients
+            proxy_set_header proxied nginx; # to servers
+            proxy_pass "http://localhost:9999/";
+        }
+    }
+}
+```
+
+# Load Balancer
+```bash
+events {}
+
+http {
+    server {
+        listen 8888;
+
+        location / {
+            proxy_pass 'http:localhost:10001/';
+        }
+    }
+}
+```
+
+```bash
+while sleep 0.5; do curl http://localhost:8888; done
+```
+
+```bash
+events {}
+
+http {
+
+    upstream php_server {
+            server localhost:10001;
+            server localhost:10002;
+            server localhost:10003;
+    }
+
+    server {
+        listen 8888;
+
+        location / {
+            proxy_pass http://php_servers;
+        }
+    }
+}
+```
+
+# LB Options
+- Sticky sessions: ip hash
+```bash
+events {}
+
+http {
+
+    upstream php_server {
+            ip_hash;
+            # least_conn; # lb by congestion
+            server localhost:10001;
+            server localhost:10002;
+            server localhost:10003;
+    }
+
+    server {
+        listen 8888;
+
+        location / {
+            proxy_pass http://php_servers;
+        }
+    }
+}
+```
