@@ -1,0 +1,41 @@
+// The syntax for this file is proto3
+syntax = "proto3";
+
+import "basics-2/3-date.proto";
+
+/* Person is used to identify users 
+ * across our system */
+message Person {
+    // the age as of the person's creation
+    int32 age = 1;
+    string first_name = 2;
+    string last_name = 3;
+    bytes small_picture = 4;
+    bool is_profile_verified  = 5;
+    float height = 6;
+
+    repeated string phone_numbers = 7;
+
+    // we currently consider only 3 eye colours
+    enum EyeColour {
+        UNKNOWN_EYE_COLOR = 0;
+        EYE_GREEN = 1;
+        EYE_BROWN = 2;
+        EYE_BLUE = 3;
+    }
+
+    EyeColour eye_colour = 8;
+
+    Date birthday = 9;
+
+    // we define the type Address within Person (full name is Person.Address)
+    message Address {
+        string address_line_1 = 1;
+        string address_line_2 = 2;
+        string zip_code = 3;
+        string city = 4;
+        string country = 5;
+    }
+
+    repeated Address addresses = 10;
+}
