@@ -1,0 +1,6 @@
+{
+    "editor.formatOnPaste": true,
+    "[go]": {
+        "editor.formatOnSave": false
+    }
+}
