@@ -113,3 +113,11 @@
 
 # Unary API
 - basic Req / Res that everyone is familiar with
+
+
+# Bi Directional Streaming API?
+- The number of requests and responses does not have to match
+
+# Advanced gRPC
+- Error Codes
+    - http://avi.im/grpc-errors/
