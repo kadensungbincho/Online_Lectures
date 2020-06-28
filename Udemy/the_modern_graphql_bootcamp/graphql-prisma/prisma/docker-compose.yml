@@ -9,15 +9,15 @@ services:
       PRISMA_CONFIG: |
         port: 4466
         # uncomment the next line and provide the env var PRISMA_MANAGEMENT_API_SECRET=my-secret to activate cluster security
-        # managementApiSecret: my-secret
+        managementApiSecret: thisismysupersecrettext
         databases:
           default:
             connector: postgres
             host: ec2-35-172-73-125.compute-1.amazonaws.com
-            database: drnb7lrmb35v8
+            database: d8mc4mcp94s020
             schema: public
-            user: nwwfblvpdssirc
-            password: d35309fe1c7542594b875c515cfe4dd674d358a2cc600d992ee6baa7b9dde991
+            user: ihncudenshlhbk
+            password: b68d3255083d4282b5d2ae3f07c9c3963ea0ee130f6150ccab6ca87a3274b38b
             ssl: true
             rawAccess: true
             port: '5432'

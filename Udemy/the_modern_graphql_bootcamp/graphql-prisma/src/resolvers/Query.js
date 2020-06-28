@@ -1,13 +1,18 @@
+import getUserId from '../utils/getUserId'
+
 const Query = {
     users(parent, args, { prisma }, info) {
-        const opArgs = {}
+        const opArgs = {
+            first: args.first,
+            skip: args.skip,
+            after: args.after,
+            orderBy: args.orderBy
+        }
 
         if (args.query) {
             opArgs.where = {
                 OR: [{
                     name_contains: args.query
-                }, {
-                    email_contains: args.query
                 }]
             }
         }
@@ -15,38 +20,90 @@ const Query = {
         return prisma.query.users(opArgs, info)
     },
     posts(parent, args, { prisma }, info) {
-        const opArgs = {}
+        const opArgs = {
+            where: {
+                published: true
+            },
+            first: args.first,
+            skip: args.skip,
+            after: args.after,
+            orderBy: args.orderBy
+        }
 
         if (args.query) {
-            opArgs.where = {
-                OR: [{
-                    title_contains: args.query
-                }, {
-                    body_contains: args.query
-                }]
-            }
+            opArgs.where.OR = [{
+                title_contains: args.query
+            }, {
+                body_contains: args.query
+            }]
+        }
+
+        return prisma.query.posts(opArgs, info)
+    },
+    myPosts(parent, args, { prisma, request }, info) {
+        const userId = getUserId(request)
+        const opArgs = {
+            where: {
+                author: {
+                    id: userId
+                }
+            },
+            first: args.first,
+            skip: args.skip,
+            after: args.after,
+            orderBy: args.orderBy
+        }
+
+        if (args.query) {
+            opArgs.where.OR = [{
+                title_contains: args.query
+            }, {
+                body_contains: args.query
+            }]
         }
 
         return prisma.query.posts(opArgs, info)
     },
     comments(parent, args, { prisma }, info) {
-        return prisma.query.comments(null, info)
-    },
-    me() {
-        return {
-            id: '1230',
-            name: 'Kaden',
-            email: 'sample@sample.com',
-            age: 28
+        const opArgs = {
+            first: args.first,
+            skip: args.skip,
+            after: args.after,
+            orderBy: args.orderBy
         }
+
+        return prisma.query.comments(opArgs, info)
     },
-    post() {
-        return {
-            id: '12111',
-            title: 'The Name',
-            body: 'This is the most exotic...',
-            published: true
+    async me(parent, args, { prisma, request }, info) {
+        const userId = getUserId(request) 
+
+        return prisma.query.user({
+            where: {
+                id: userId
+            }
+        })
+    },
+    async post(parent, args, { prisma, request }, info) {
+        const userId = getUserId(request)
+
+        const posts = await prisma.query.posts({
+            where: {
+                id: args.id,
+                OR: [{
+                    published: true
+                }, {
+                    author: {
+                        id: userId
+                    }
+                }]
+            }
+        }, info)
+
+        if (posts.length === 0) {
+            throw new Error('Post not found')
         }
+
+        return posts[0]
     }
 }
 
