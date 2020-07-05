@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: dev
+
+# or kubectl create namespace dev
+
+# kubectl get pods --namespace-dev
+# kubectl config set-context $(kubectl config current-context) --namespace=dev
+# kubectl get pods --app-namespaces

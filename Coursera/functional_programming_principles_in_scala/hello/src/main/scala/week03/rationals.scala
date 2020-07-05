@@ -8,16 +8,16 @@ object rationals extends App {
   println(x.numer)
   println(x.denom)
 
-  println(x.add(y))
+  println(x + y)
 
-  println(x.sub(y).sub(z))
+  println(x - y - z)
 
-  println(x.less(y))
+  println(x < y)
 
   println(x.max(y))
 
   val strange = new Rational(1, 1)
-  strange.add(strange)
+  strange + strange
 
   new Rational(2)
 }
@@ -34,18 +34,18 @@ class Rational(x: Int, y: Int) {
   def numer = x
   def denom = y
 
-  def less(that: Rational) = numer * that.denom < that.numer * denom
+  def < (that: Rational) = numer * that.denom < that.numer * denom
 
-  def max(that: Rational) = if (this.less(that)) that else this
+  def max(that: Rational) = if (this < that) that else this
 
-  def add(that: Rational) =
+  def + (that: Rational) =
     new Rational(
       numer * that.denom + that.numer * denom,
       denom * that.denom)
 
-  def neg: Rational = new Rational(-numer, denom)
+  def unary_- : Rational = new Rational(-numer, denom)
 
-  def sub(that: Rational) = add(that.neg)
+  def - (that: Rational) = this + -that
 
   override def toString = {
     val g = gcd(numer, denom)
