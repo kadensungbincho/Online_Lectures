@@ -297,3 +297,261 @@ service kube-apiserver start
 
 
 ```
+
+
+# Security Primitives
+- Protect kube-apiserver
+    - who can access? - authentication
+        - files
+        - certificates
+        - LDAP
+        - service accounts
+    - what can they do?
+        - RBAC
+        - ABAC
+        - Node
+        - Webhook mode
+
+- TLS Certificates
+- Network Policies for between apps communication
+
+# Authentication
+- User
+    - admins
+    - developes
+    - managed by kube-apiserver
+        - authenticate before process
+- Service Accounts
+    - can create service account
+
+- Basic Auth
+    - csv file with --basic-auth-file
+
+# TLS Introduction
+
+# TLS in Kubernetes
+- server certificates
+- root certificates
+- client certificates
+
+- kube api server   
+    - apiserver.crt
+    - apiserver.key
+
+- etcd
+    - etcdserver.crt
+    - etcdserver.key
+
+- kubelet
+    - kubelet.crt
+    - kubelet.key
+
+- user - admin -> api server
+    - admin.crt
+    - admin.key
+
+- scheuduler -> api server
+    - scheduler.crt
+    - scheduler.key
+
+- kube controller -> api server
+    -  controller.crt
+    - controller.key
+
+- kube proxy -> api server
+    - proxy.crt
+    - procy.key
+
+- api server -> etcd
+    - apiserver-etcd-client.crt
+    - apiserver-etcd-client.key
+
+- apiserver -> kubelet
+    - apiserver-kubelet-client.crt
+    - apiserver-kubelet-client.key
+
+- ca
+    - ca.crt
+    - ca.keys
+
+# TLS in kube: generation
+- easyrsa, openssl, cfssl
+
+```bash
+openssl genrsa -out ca.key 2048
+openssl req -new -key ca.key -subj "/CN=KUBERNETES-CA" out ca.csr
+openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt
+
+openssl genrsa -out admin.key 2048
+openssl req -new -key admin.key -subj "/CN=kube-admin/O=system:masters" -out admin.csr
+openssl x509 -req -in admin.csr -CA ca.crt -CAkey ca.key -out admin.crt
+```
+
+```bash
+# ETCD server, can have server and many peers' certs
+```
+
+```bash
+openssl genrsa -out apiserver.key 2048
+openssl req -new -key apiserver.key -subj "/CN=kube-apiserver" -out apiserver.csr -config openssl.cnf
+
+# openssl.cnf file
+[req]
+req_extensions = v3_req
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation,
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = kubernetes
+DNS.2 = kubernetes.default
+DNS.3 = kubernetes.default.svc
+DNS.4 = kubernetes.default.svc.cluster.local
+IP.1 = 10.96.0.1
+IP.2 = 172.17.0.87
+
+# 
+openssl x509 -req -in apiserver.csr -CA ca.crt -CAkey ca.key -out apiserver.crt
+```
+
+```bash
+# apiserver -> kubelet
+# node01, node02, node03 certificates
+
+# kubelet -> apiserver
+# system:node:node01, system:node:node02 -> group name system:node
+```
+
+# View Certificates Details
+- The Hard Way
+    - generate all certificates by self
+
+- kubeadm
+    - take care of certificates
+
+```bash
+cat /etc/kubernetes/manifests/kube-apiserver.yaml
+
+openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
+```
+
+- inspect service logs
+```bash
+journalctl -u etcd.service -l
+
+kubectl logs etcd-master
+
+docker ps -a 
+```
+# https://github.com/mmumshad/kubernetes-the-hard-way/tree/master/tools
+
+# Certificate API
+1. Create CertificateSigningRequest Object
+2. Review Requests
+3. Approve Requests
+4. Share Certs to Users
+
+- all the certificate related works done by controller manager
+    - csr-approving
+    - csr-signing
+    - by --cluster-signing-cert-file, --cluster-signing-key-file
+
+# Kubeconfig
+- clusters, users, contexts
+
+
+```bash
+kubectl config view
+```
+
+# API Groups
+- grouped into each purpose
+    - /version, /api, /metrics, /healthz, /apis, /logs
+    - /api core
+        - /v1
+            - namespaces, pods, rc, events, endpoints, nodes, bindings, pv, pvc, configmaps, secrets, services
+    - /apis named : newer features
+        - /apps
+            - /v1
+                - /deployments
+                - /replicasets
+                - /statefulsets
+                - + verbs
+        - /extensions
+        - /networking.k8s.io
+        - /storage.k8s.io
+        - /authentication.k8s.io
+        - /certificates.k8s.io
+
+- kube proxy != kubectl proxy
+
+# Role Base Access Control
+- RBAC
+
+```bash
+kubectl auth can-i create deployments --as dev-user
+
+```
+
+# Cluster Roles and RoleBinding
+- namespaced and not
+    - namespaced: pods, replicasets, jobs, deployments, services, secretes, roles, rolebindings, configmaps, pvc ...
+    - cluster scoped: nodes, pv, clusterroles, clusterrolebinding, certificatesigningrequests, namespaces ...
+
+```bash
+kubectl api-resources --namespace=true
+```
+
+# image security
+
+# security context
+- kubernetes security
+    - container level
+    - pod level
+
+# network policy
+- Traffic
+    - ingress
+    - egress
+
+- network security
+    - pod should be able to reach each other without any pre configuration
+
+# Docker Storage
+- storage drivers
+    - aufs
+    - zfs
+    - btrfs
+    - device mapper
+    - overlay
+    - overlay2
+
+# Volume driver plugin in docker
+- local, azure, convoy, digitalocean block storage, glusterfs ... 
+
+# Container storage interface
+- Container Runtime Interface
+    - doker, rkt, cri-o
+- Container Network Interface
+    - weaveworks, flannel, cilium
+
+- CSI
+    - portworx, EBS, dell emc ...
+
+- RPC : should be implemented by storage driver
+    - should call to provision a new volume
+    - should call to delete a volume
+    - should call to place a workload that uses the volume onto a node
+    - should provision a new volume on the storage
+    - should decommission a volume 
+    - should make the volume available on a node
+
+# Volumes
+
+# Core DNS in kube
+
+# Ingress
+
+
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux/amd64/kubectl
