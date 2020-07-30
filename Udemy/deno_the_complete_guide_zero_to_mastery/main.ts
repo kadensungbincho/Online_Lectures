@@ -1,1 +1,1 @@
-console.log("Hello", Deno.env.get("USER"));
+console.info("Hello", Deno.env.get("USER"));

@@ -30,3 +30,59 @@
 - Drake
 
 # How modules work in deno
+
+# Deno Caching
+# BackEnd
+
+
+# JavaScript
+- JavaScript Engine
+    - List of ECMAScript Engines
+
+# Exercise: JS Engine
+- Brendan Eich first created the JS engine
+
+# Inside the Engine
+- Parser -> AST -> Interpreter -> Bytecode
+-                              -> Profiler -> compiler -> opimized code
+    - astexplorer.net
+
+# Inside the V8 engine
+- JIT Compiler
+
+# Comparing Other Language
+- Is Javascript an interpreted language?
+    - true, when it was developed
+    - but it depends on how it's implemented
+
+# Writing optimized code
+- eval()
+- arguments
+- for in
+- with
+- delete
+
+- hidden classes
+- inline caching
+
+# Web Assembly
+
+# Call Stack & Memory Heap
+
+# Stack Overflow
+
+# Garbage Collection
+- Mark And Sweep
+
+# Memory Leaks
+- Global variable
+- Event Listeners
+- setInterval
+
+# Single Threaded
+- one call stack
+- javascript engine
+
+# JS RunTime
+
+# TypeScript

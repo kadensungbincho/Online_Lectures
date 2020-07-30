@@ -1,2 +1,2 @@
 const a: string = 'Kaden'
-console.log(a)
+console.info(a)
