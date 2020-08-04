@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: OnlineBanking
+      MYSQL_USER: banker
+      MYSQL_PASSWORD: banker
+      MYSQL_ROOT_PASSWORD: banker
+    ports:
+      - '3306:3306'
+    volumes:
+      - my-db:/var/lib/mysql
+
+volumes:
+  my-db:
