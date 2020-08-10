@@ -5,7 +5,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-public class SavingsTransaction {
+public class
+SavingsTransaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
