@@ -27,5 +27,31 @@
     - Gradle uses a Grooby DSL, which can offer greater flexibility
          - Rare the additional flexibility is needed
 
-# Introduction
+# Review of Java Compile and Packaging
 
+- Java Packaging
+    - *.jar: java archive 
+    - *.war: web application archive
+    - *.ear: enterprise archive
+    - fat jar: executable jar containing all dependencies
+    - docker container
+
+- Java Deployment
+    - Simple Jar files are typically collection of class files used to compose applications
+    - WAR, EAR files are typically complete applications which are deployed to application servers
+        - tomcat . weboss, 
+    - Fat / Uber jars are typically complete applications which contain embedded application servers
+        - can be deployed stand alone
+    - Docker images are complete applications which cann be deployed stand alone
+
+# Creating Java Jar file from Command line
+```bash
+jar cf myjar.jar HelloWorld.class 
+java -classpath myjar.jar HelloWorld
+```
+
+# Using 3rd Jars
+
+# Compiling and Packaging using Maven
+
+# Including Dependencies with Maven
