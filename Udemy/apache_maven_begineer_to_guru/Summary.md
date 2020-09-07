@@ -55,3 +55,75 @@ java -classpath myjar.jar HelloWorld
 # Compiling and Packaging using Maven
 
 # Including Dependencies with Maven
+
+# Maven Wagon
+
+# Maven Project Object Model
+- POM
+- The pom.xml is a XML document which describes a Maven Project
+- Must comply with the maven-4.0.0.xsd
+- POMs can inherit properties from a parent POM
+- Effective POM is the POM complete with ingerited properties
+
+# Maven Dependencies
+
+- Dependency scope
+    - compile
+    - provided
+    - runtime
+    - test
+    - system
+    - import
+
+# Maven Build Lifecycles
+- Maven is baed on the concept of build lifecycles
+- A lifecycle is a pre-defined group of build steps called phases
+- Each phase can be bound to one or more plugin goals
+- Keep in mind all work done in Maven is done by plugins
+- Lifecycles and phases provide the framework to call plugin goals in a sequence
+
+- Three pre-defined lifecycles: clean, default, site
+    - clean
+        - does a clean of the project, removes all build artifacts from working directory
+        - defined with plugin bingins
+    - default
+        - does the build and deployment of your project
+    - site 
+        - creates the a website for your project
+        - defined with plugin bindings
+        - least used
+        
+- default lifecycle
+    - validate
+    - compile
+    - test
+    - package
+    - verify
+    - install
+    - deploy
+
+# Maven Wrapper
+
+# Maven Archetype
+- project templates
+- "An original pattern or model from with all other things of the same kind are made"
+
+# Overview Maven Lifecycle Plugins
+- clean
+    - purpose is to remove files generated during build process
+- compiler plugin
+    - compiler:compile, compiler:testCompile
+    - by default uses the compiler javax.tools.JavaCompiler
+- resources
+    - lifecycle: default
+    - resources:resources, resources:testResources, resource:copy-resources
+- surefire
+    - surefire:test
+- jar
+    - jar:jar, jar:test-jar
+    - purpose is to build jars from compiled artifacts and project resources
+- deploy
+    - deploy:deploy, deploy:deploy-file
+    - purpose is to deploy project artifacts to remote maven repositories
+- site
+    - site, deploy, run, stage, stage-deploy, attach-descriptor, jar, effective-site
