@@ -24,8 +24,7 @@ public class PartnerRepositoryTest extends StudyApplicationTests {
         String ceoName = "Kaden";
         LocalDateTime registeredAt = LocalDateTime.now();
         LocalDateTime createdAt = LocalDateTime.now();
-        String createdBy = "Admin";
-        Long categoryId = 1L;
+        String createdBy = "A";
 
         Partner partner = new Partner();
         partner.setName(name);

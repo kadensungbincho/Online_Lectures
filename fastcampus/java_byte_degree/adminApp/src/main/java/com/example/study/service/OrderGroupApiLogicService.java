@@ -1,20 +1,15 @@
 package com.example.study.service;
 
-import com.example.study.ifs.CrudInterface;
 import com.example.study.model.entity.OrderGroup;
 import com.example.study.model.network.Header;
 import com.example.study.model.network.request.OrderGroupApiRequest;
 import com.example.study.model.network.response.OrderGroupApiResponse;
-import com.example.study.repository.OrderGroupRepository;
 import com.example.study.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class OrderGroupApiLogicService implements CrudInterface<OrderGroupApiRequest, OrderGroupApiResponse> {
-
-    @Autowired
-    private OrderGroupRepository orderGroupRepository;
+public class OrderGroupApiLogicService extends BaseService<OrderGroupApiRequest, OrderGroupApiResponse, OrderGroup> {
 
     @Autowired
     private UserRepository userRepository;
@@ -36,24 +31,51 @@ public class OrderGroupApiLogicService implements CrudInterface<OrderGroupApiReq
                 .user(userRepository.getOne(body.getUserId()))
                 .build();
 
-        OrderGroup newOrderGroup = orderGroupRepository.save(orderGroup);
+        OrderGroup newOrderGroup = baseRepository.save(orderGroup);
 
         return response(newOrderGroup);
     }
 
     @Override
     public Header<OrderGroupApiResponse> read(Long id) {
-        return null;
+        return baseRepository.findById(id)
+                .map(this::response)
+                .orElseGet(() -> Header.ERROR("Not orderGroup to read"));
     }
 
     @Override
     public Header<OrderGroupApiResponse> update(Header<OrderGroupApiRequest> request) {
-        return null;
+        OrderGroupApiRequest body = request.getData();
+
+        return baseRepository.findById(body.getId())
+                .map(orderGroup -> {
+                    orderGroup
+                            .setStatus(body.getStatus())
+                            .setOrderType(body.getOrderType())
+                            .setRevAddress(body.getRevAddress())
+                            .setRevName(body.getRevName())
+                            .setPaymentType(body.getPaymentType())
+                            .setTotalPrice(body.getTotalPrice())
+                            .setTotalQuantity(body.getTotalQuantity())
+                            .setOrderAt(body.getOrderAt())
+                            .setArrivalDate(body.getArrivalDate())
+                            .setUser(userRepository.getOne(body.getUserId()))
+                            ;
+                    return orderGroup;
+                })
+                .map(changeOrderGroup -> baseRepository.save(changeOrderGroup))
+                .map(this::response)
+                .orElseGet(() -> Header.ERROR("No orderGroup to update"));
     }
 
     @Override
-    public Header<OrderGroupApiResponse> delete(Long id) {
-        return null;
+    public Header delete(Long id) {
+        return baseRepository.findById(id)
+            .map(orderGroup -> {
+                baseRepository.delete(orderGroup);
+                return Header.OK();
+            })
+            .orElseGet(() -> Header.ERROR("No orderGroup to delete"));
     }
 
     private Header<OrderGroupApiResponse> response(OrderGroup orderGroup) {

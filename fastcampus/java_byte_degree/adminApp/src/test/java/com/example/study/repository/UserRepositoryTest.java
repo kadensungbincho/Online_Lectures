@@ -2,6 +2,7 @@ package com.example.study.repository;
 
 import com.example.study.StudyApplicationTests;
 import com.example.study.model.entity.User;
+import com.example.study.model.enumclass.UserStatus;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,6 @@ public class UserRepositoryTest extends StudyApplicationTests {
     public void create() {
         String account = "Test02";
         String password = "Test02";
-        String status = "REGISTERED";
         String email = "test01@gamail.com";
         String phoneNumber = "010-1111-2221";
         LocalDateTime registeredAt = LocalDateTime.now();
@@ -27,7 +27,7 @@ public class UserRepositoryTest extends StudyApplicationTests {
         User user = User.builder()
             .account(account)
             .password(password)
-            .status(status)
+            .status(UserStatus.REGISTERED)
             .email(email)
             .phoneNumber(phoneNumber)
             .registeredAt(registeredAt)

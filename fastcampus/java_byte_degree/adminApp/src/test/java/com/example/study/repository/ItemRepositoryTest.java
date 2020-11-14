@@ -2,10 +2,12 @@ package com.example.study.repository;
 
 import com.example.study.StudyApplicationTests;
 import com.example.study.model.entity.Item;
+import com.example.study.model.enumclass.ItemStatus;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -17,11 +19,11 @@ public class ItemRepositoryTest extends StudyApplicationTests {
     @Test
     public void create() {
         Item item = new Item();
-        item.setStatus("UNREGISTERED");
+        item.setStatus(ItemStatus.UNREGISTERED);
         item.setName("Samsung Notebook");
         item.setTitle("Samsung Notebook A100");
         item.setContent("2015");
-        item.setPrice(900000);
+        item.setPrice(BigDecimal.valueOf(900000));
         item.setBrandName("Samsung");
         item.setRegisteredAt(LocalDateTime.now());
         item.setCreatedAt(LocalDateTime.now());

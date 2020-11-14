@@ -1,23 +1,18 @@
 package com.example.study.service;
 
-import com.example.study.ifs.CrudInterface;
 import com.example.study.model.entity.Item;
 import com.example.study.model.network.Header;
 import com.example.study.model.network.request.ItemApiRequest;
 import com.example.study.model.network.response.ItemApiResponse;
-import com.example.study.repository.ItemRepository;
 import com.example.study.repository.PartnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ItemApiLogicService implements CrudInterface<ItemApiRequest, ItemApiResponse> {
+public class ItemApiLogicService extends BaseService<ItemApiRequest, ItemApiResponse, Item> {
 
     @Autowired
     private PartnerRepository partnerRepository;
-
-    @Autowired
-    private ItemRepository itemRepository;
 
     @Override
     public Header<ItemApiResponse> create(Header<ItemApiRequest> request) {
@@ -35,7 +30,7 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest, ItemAp
                     .partner(partnerRepository.getOne(body.getPartnerId()))
                     .build()
                     ;
-            Item newItem = itemRepository.save(item);
+            Item newItem = baseRepository.save(item);
             return response(newItem);
         }
         return Header.ERROR("Empty body");
@@ -43,7 +38,7 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest, ItemAp
 
     @Override
     public Header<ItemApiResponse> read(Long id) {
-        return itemRepository.findById(id)
+        return baseRepository.findById(id)
                 .map(this::response)
                 .orElseGet(() -> Header.ERROR("No Item to read"));
     }
@@ -52,7 +47,7 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest, ItemAp
     public Header<ItemApiResponse> update(Header<ItemApiRequest> request) {
         ItemApiRequest body = request.getData();
 
-        return itemRepository.findById(body.getId())
+        return baseRepository.findById(body.getId())
                 .map(entityItem -> {
                     entityItem
                             .setStatus(body.getStatus())
@@ -66,16 +61,16 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest, ItemAp
                             ;
                     return entityItem;
                 })
-                .map(newEntityItem -> itemRepository.save(newEntityItem))
+                .map(newEntityItem -> baseRepository.save(newEntityItem))
                 .map(this::response)
                 .orElseGet(() -> Header.ERROR("No item to update"));
     }
 
     @Override
     public Header delete(Long id) {
-        return itemRepository.findById(id)
+        return baseRepository.findById(id)
             .map(item -> {
-                itemRepository.delete(item);
+                baseRepository.delete(item);
                 return Header.OK();
             })
             .orElseGet(() -> Header.ERROR("Not item to delete"));

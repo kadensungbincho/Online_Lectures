@@ -1,22 +1,17 @@
 package com.example.study.service;
 
-import com.example.study.ifs.CrudInterface;
 import com.example.study.model.entity.User;
+import com.example.study.model.enumclass.UserStatus;
 import com.example.study.model.network.Header;
 import com.example.study.model.network.request.UserApiRequest;
 import com.example.study.model.network.response.UserApiResponse;
-import com.example.study.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
-public class UserApiLogicService implements CrudInterface<UserApiRequest, UserApiResponse> {
-
-    @Autowired
-    private UserRepository userRepository;
+public class UserApiLogicService extends BaseService<UserApiRequest, UserApiResponse, User> {
 
     @Override
     public Header<UserApiResponse> create(Header<UserApiRequest> request) {
@@ -26,20 +21,20 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
         User user = User.builder()
                 .account(userApiRequest.getAccount())
                 .password(userApiRequest.getPassword())
-                .status("REGISTERED")
+                .status(UserStatus.REGISTERED)
                 .phoneNumber(userApiRequest.getPhoneNumber())
                 .email(userApiRequest.getEmail())
                 .registeredAt(LocalDateTime.now())
                 .build();
 
-        User newUser = userRepository.save(user);
+        User newUser = baseRepository.save(user);
 
         return response(newUser);
     }
 
     @Override
     public Header<UserApiResponse> read(Long id) {
-        return userRepository.findById(id)
+        return baseRepository.findById(id)
                 .map(this::response)
                 .orElseGet(() -> Header.ERROR("No User to get"));
     }
@@ -49,7 +44,7 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
 
         UserApiRequest userApiRequest = request.getData();
 
-        Optional<User> optional = userRepository.findById(userApiRequest.getId());
+        Optional<User> optional = baseRepository.findById(userApiRequest.getId());
 
         return optional.map(user -> {
                     user.setAccount(userApiRequest.getAccount())
@@ -62,17 +57,17 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
                             ;
                     return user;
                 })
-                .map(user -> userRepository.save(user))
+                .map(user -> baseRepository.save(user))
                 .map(this::response)
                 .orElseGet(() -> Header.ERROR("No User to update"));
     }
 
     @Override
     public Header delete(Long id) {
-        Optional<User> optional = userRepository.findById(id);
+        Optional<User> optional = baseRepository.findById(id);
 
         return optional.map(user -> {
-            userRepository.delete(user);
+            baseRepository.delete(user);
             return Header.OK();
         })
         .orElseGet(() -> Header.ERROR("Not User to delete"));
