@@ -59,11 +59,6 @@ public class User implements UserDetails {
         return true;
     }
 
-    @Override
-    public boolean isEnabled() {
-        return enabled;
-    }
-
     public void setUsername(String username) {
         this.username = username;
     }
@@ -116,12 +111,13 @@ public class User implements UserDetails {
         this.phone = phone;
     }
 
-    public boolean isEnable() {
-        return enable;
+    @Override
+    public boolean isEnabled() {
+        return enabled;
     }
 
-    public void setEnable(boolean enable) {
-        this.enable = enable;
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     public Set<UserRole> getUserRoles() {
