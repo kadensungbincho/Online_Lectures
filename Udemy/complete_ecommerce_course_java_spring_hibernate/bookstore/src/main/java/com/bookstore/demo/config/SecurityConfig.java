@@ -2,7 +2,6 @@ package com.bookstore.demo.config;
 
 import com.bookstore.demo.service.impl.UserSecurityService;
 import com.bookstore.demo.utility.SecurityUtility;
-import org.apache.catalina.security.SecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -34,7 +33,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/js/**",
             "/image/**",
             "/",
-            "/myAccount"
+            "/newUser",
+            "/forgetPassword",
+            "/login",
+            "/fonts/**"
     };
 
     @Override
