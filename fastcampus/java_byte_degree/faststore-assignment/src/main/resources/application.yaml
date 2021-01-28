@@ -1,0 +1,8 @@
+spring:
+  profiles: test
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    database: h2
+    hibernate:
+      ddl-auto: create-drop
