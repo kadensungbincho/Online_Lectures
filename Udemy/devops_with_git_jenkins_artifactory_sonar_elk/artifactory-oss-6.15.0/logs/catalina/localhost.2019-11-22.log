@@ -1,4 +1,0 @@
-22-Nov-2019 11:26:20.863 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
-22-Nov-2019 11:26:20.992 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Using artifactory.home at '/Users/a1101256/git/kadensungbincho/Online_Lectures/Udemy/devops_with_git_jenkins_artifactory_sonar_elk/artifactory-oss-6.15.0' resolved from: System property
-22-Nov-2019 11:26:40.435 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
-22-Nov-2019 21:19:50.678 INFO [localhost-startStop-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
