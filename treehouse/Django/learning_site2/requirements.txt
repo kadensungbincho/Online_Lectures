@@ -1,4 +1,4 @@
-certifi==2017.11.5
+certifi==2022.12.7
 Django==2.0.1
 django-debug-toolbar==1.9.1
 markdown2==2.3.5
